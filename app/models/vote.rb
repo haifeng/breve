@@ -7,8 +7,19 @@ class Vote < ActiveRecord::Base
     return if post.user == user
     
     # toggle user's casted votes for the target post
+    # first check if the user has already voted on this post
     vote = self.find_by_user_id_and_voteable_id(user, post) 
-    vote = post.votes.build(:user => user, :voteable => post) if vote.nil?
+    
+    # if not, then create a new vote
+    if vote.nil?
+      vote = Vote.new do |vote|
+        vote.voteable = post
+        vote.user     = user
+      end
+    end
+    
+    #vote = post.votes.build(:user => user, :voteable => post) if vote.nil?
+    # now cast the vote
     self.transaction do
       # if user hasn't voted for the post before
       # then cast the vote...
