@@ -1,0 +1,188 @@
+@import url('default-theme/jquery-ui-1.7.2.custom.css');
+@import url('facebox-theme/facebox.css');
+
+body {
+   margin-left: 10%;
+   margin-right: 10%;
+   font-family: Delicious,Verdana,Arial,sans-serif; 
+}
+
+textarea {
+   font-family: Delicious,Verdana,Arial,sans-serif; 
+   font-size: 0.9em;
+   height: 100px;
+   display: block;
+}
+
+code {
+   margin: 0px;
+   padding: 0px;
+   font-size: 0.9em;
+   font-family: 'Consolas','Bitstream Vera Sans Mono','Andale Mono','Courier New', Courier,monospace;
+}
+
+img {
+   border: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+   font-weight: normal;
+   color: #4d2c00;
+}
+
+input[type='submit'] {
+   cursor: pointer;
+   padding: 0.3em;
+   padding-left: 0.6em;
+   padding-right: 0.6em;
+}
+
+textarea,
+input[type='text'],
+input[type='password'] {
+   border: 1px solid #aaaaaa;
+   margin-bottom: 0.2em;
+   font-size: 1em;
+}
+
+textarea {
+   font-family: Consolas,Monaco,'Andale Mono','Bitstream Vera Sans Mono','Courier New',Courier,monospace;
+}
+
+a {
+   color: steelblue;
+}
+
+a:visited {
+   color: #aaaaaa;
+}
+
+a:hover {
+   color: #88cc88;
+}
+
+.vote-button {
+  color: lightslategray; 
+  text-decoration: none;
+}
+
+a.prev_page,
+a.next_page,
+.link-button {
+   color: steelblue; 
+   text-decoration: none;
+}
+
+.hover {
+   color: green;
+}
+
+.disabled {
+   color: gainsboro;
+}
+
+.page-header {
+   border-bottom: 1px solid gainsboro;
+   margin-bottom: 5px;
+   padding-bottom: 5px;
+   font-size: 1.2em;
+}
+
+.page-menubar {
+   margin-bottom: 5px;
+}
+
+.page-footer {
+   margin-top: 5px;
+   border-top: 1px solid gainsboro;
+   padding-top: 5px;
+   font-size: 0.7em;
+   color: gray;
+}
+
+.page-header a,
+.page-menubar a,
+.page-footer a {
+   text-decoration: none;
+   color: #663300;
+}
+
+.page-header a,
+.page-menubar a {
+   color: #4d2c00;
+}
+
+a.logo {
+   font-size: 3em;
+   color: #4d2c00;
+}
+
+.page-footer a {
+   color: steelblue;
+}
+
+.page-content {
+   margin-top: 7px;
+   margin-bottom: 7px;
+   padding-top: 5px;
+   padding-bottom: 5px;
+   font-size: 0.9em;
+}
+
+.icon-separator {
+   color: gray;
+   font-size: 0.75em;
+}
+
+.icon-marker {
+   color: orange;
+   font-size: 0.75em;
+}
+
+.line-items a,
+.line-item-row a {
+   text-decoration: none;
+}
+
+.line-item-row {
+   color: gray;
+   margin-bottom: 0.3em;
+}
+
+fieldset {
+   padding: 0px;
+   border: none;
+}
+
+label {
+   text-transform: lowercase;
+   cursor: pointer;
+   color: #445544;
+}
+
+fieldset label, 
+fieldset textarea,
+fieldset input[type='text'],
+fieldset input[type='password'] {
+   width: 75px;
+   display: block;
+   float: left;
+}
+
+fieldset input[type='submit'] {
+   font-size: 1em;
+}
+
+fieldset textarea,
+fieldset input[type='text'],
+fieldset input[type='password'] {
+   width: 350px;
+}
+
+fieldset textarea {
+   width: 352px;
+}
+
+fieldset br {
+   clear: left;
+}

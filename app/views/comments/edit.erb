@@ -1,0 +1,26 @@
+<%= flash_tag %>
+<h2>Edit Comment</h2>
+<div class="line-item-row">
+  <% context = @comment.parent || @comment.topic %>
+  <!-- upvote widget -->
+  <%= render :partial => 'posts/vote_widget', :locals => { :post => context } %>
+
+  <div style="margin-left: 25px; color: #777777">
+    <b>On:</b>
+    <%=truncate_words(textualize context.headline, :notags) %>
+    <br/>
+    <!-- post item's info widget -->
+    <%= render :partial => 'posts/info_widget', :locals => { :post => context } %>
+  </div>
+
+  <div style="margin-left: 2em">
+    <% form_for @comment do |f| %>
+      <fieldset>
+        <%= f.text_area :content %><br/>
+        <%= render :partial => 'comments/textformat_help_widget' %>
+        <p/>
+        <%= f.submit 'Save changes' %>
+      </fieldset>
+    <% end %>    
+  </div>
+</div>

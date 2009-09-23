@@ -1,0 +1,11 @@
+<div style="margin-bottom: 0.3em">
+  <%= link_to truncate_words(textualize post.headline, :notags),
+        "#{comments_path_for(post.topic)}#comment-#{post.id}" %>
+  <div style="font-size: 0.5em">
+    On: <%= truncate_words(textualize post.topic.headline, :notags) %><br/>
+    <% unless post.parent.nil? %>
+      Re: <%= truncate_words(textualize post.parent.headline, :notags) %>
+    <% end %>
+  </div>
+</div>
+

@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+require File.expand_path('../../config/boot',  __FILE__)
+
+`rake tmp:clear`
+`rake db:drop:all db:create:all`
+`rake db:migrate`
+`rake db:seed`
+`rake db:rank:all`

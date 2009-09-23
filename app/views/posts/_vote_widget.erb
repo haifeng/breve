@@ -1,0 +1,15 @@
+<div style="float: left; text-align: center; padding: 5px">
+  <% if authorized? and (post.user.id == current_user(:id)) %>
+    <span style="color: orange; font-size: 1em">&#9737;</span>
+  <% else %>
+    <% if authorized? %>
+      <%= link_to_remote '&#8679;', 
+            :url     => vote_path_for(post),
+            :update  => { :success => "vote-#{post.class.name.downcase}-#{post.id}", :failure => '' },
+            :success => "$j('#vote-#{post.class.name.downcase}-#{post.id}').show('highlight', {}, 2000)",
+            :html    => { :class => 'vote-button' } %><br/>
+    <% else %>
+      <%= link_to '&#8679;', vote_path_for(post), :method => :post, :class => 'vote-button' %><br/>
+    <% end %>
+  <% end %>
+</div>

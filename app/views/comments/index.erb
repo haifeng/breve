@@ -1,0 +1,27 @@
+<%= flash_tag %>
+<div class="line-item-row">
+  <%= render :partial => 'posts/item', :object => @post %>
+  <p/>
+  
+  <div style="margin-left: 25px; font-size: 0.95em; color: #333333">
+    <%=textualize @post.content %>
+  </div>
+</div>
+<p/>
+
+<div style="font-size: 1em">
+  <h2>Comments</h2>
+  <% form_for [ @post, Comment.new ] do |f| %>
+    <fieldset>
+      <%= f.text_area :content %><br/>
+      <%= render :partial => 'comments/textformat_help_widget' %>
+      <%= f.submit 'Add Comment' %>
+    </fieldset>
+  <% end %>
+  <p/>
+  
+  <div class="line-items" style="font-size: 1.15em">
+    <%= render :partial => 'comments/comment', :collection => @post.comments_by_rank %>
+  </div>
+</div>
+

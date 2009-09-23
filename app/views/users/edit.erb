@@ -1,0 +1,22 @@
+<%= flash_tag %>
+<h2>Profile</h2>
+<%= render :partial => 'users/sidebar', :locals => { :user => @user } %>
+
+<div style="font-size: 1.1em; color: #666666">
+  Last logged-in <strong><%= distance_of_time_in_words_to_now @user.updated_at %> ago</strong><br/>
+  Member since <strong><%= @user.created_at.to_s(:date) %></strong>
+  <sup><%= link_to 'w', "http://en.wikipedia.org/wiki/#{@user.created_at.strftime('%B_%e')}", :class => 'link-button' %></sup>
+</div>
+<p/>
+
+<h2>Settings</h2>
+<% form_for @user do |f| %>
+  <fieldset>
+    <%= f.label :password %>
+    <%= f.password_field :password %><br/>
+    <%= f.label :email %>
+    <%= f.text_field :email %><br/>
+    <p/>
+    <%= f.submit 'Save Changes' %>
+  </fieldset>
+<% end %>

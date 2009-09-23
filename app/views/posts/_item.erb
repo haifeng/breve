@@ -1,0 +1,15 @@
+<div class="line-item-row">
+  <!-- upvote widget -->
+  <%= render :partial => 'posts/vote_widget', :locals => { :post => item } %>
+
+  <div style="margin-left: 25px">
+    <!-- post item widget -->
+    <%= render :partial => 'posts/headline_widget', :locals => { :post => item } %>
+  
+    <!-- post item's info widget -->
+    <%= render :partial => 'posts/info_widget', :locals => { :post => item } %>
+  
+    <!-- post item's controls widget -->
+    <%= render :partial => 'posts/controls_widget', :locals => { :post => item } %>
+  </div>
+</div>

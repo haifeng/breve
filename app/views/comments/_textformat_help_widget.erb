@@ -1,0 +1,33 @@
+<div id="textformat-help-widget" style="font-size: 0.75em; margin-bottom: 0.3em; color: #888888">
+  <a id="content-toggle" href="#" class="link-button">Formatting Text</a>
+  <p/>
+  <div id="content">
+    <table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td><code>!bold!</code></td>
+        <td>&nbsp;<b>bold</b></td>
+      </tr>
+      <tr>
+        <td>*italics*</code></td>
+        <td>&nbsp;<i>italics</i></td>
+      </tr>
+      <tr>
+        <td>`monospace`</code></td>
+        <td>&nbsp;<code>monospace</code></td>
+      </tr>
+      <tr>
+        <td><code>url(http://example.org)</code></td>
+        <td>&nbsp;<code><a href="http://example.org">http://example.org</a></code></td>
+      </tr>
+    </table>  
+  </div>
+</div>
+<p/>
+<script type="text/javascript">
+  $j(document).ready(function(){
+    $j('#textformat-help-widget #content').hide();
+    $j('#textformat-help-widget #content-toggle').click(function(){
+      $j('#textformat-help-widget #content').toggle(250);
+    });
+  })
+</script>

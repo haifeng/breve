@@ -1,0 +1,27 @@
+<%= flash_tag %>
+
+<div style="margin-bottom: 30px">
+  <h2>Login</h2>
+  <% form_for @user, :url => login_url do |f| %>
+    <fieldset>
+      <%= f.label :nickname %>
+      <%= f.text_field :nickname %><br/>
+      <%= f.label :password %>
+      <%= f.password_field :password %><br/>
+      <p/>
+      <%= f.submit 'Sign-In' %>
+    </fieldset>
+  <% end %>
+</div>
+
+<div>
+  <h3>Password Reset</h3>
+  <% form_for @user, :url => reset_url do |f| %>
+    <fieldset>
+      <%= f.label :email %>
+      <%= f.text_field :email %><br/>
+      <p/>
+      <%= f.submit 'Reset Password' %>
+    </fieldset>
+  <% end %>
+</div>

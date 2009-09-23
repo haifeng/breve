@@ -1,0 +1,80 @@
+<%= flash_tag %>
+<h2>Register</h2>
+
+Nickname and email are expected to be unique.<br/>
+Email is optional, but it's used when resetting your password.
+<p/>
+
+<% form_for @user do |f| %>
+  <fieldset>
+    <%= f.label :nickname %>
+    <%= f.text_field :nickname %><br/>
+    <%= f.label :password %>
+    <%= f.password_field :password %><br/>
+    <%= f.label :email %>
+    <%= f.text_field :email %><br/>
+    <p/>
+  
+    <!-- Define reCaptcha widget container and required elements. -->
+    <div style="width: 425px">
+      To help us thwart spammers, please key-in the pair of words 
+      that appear below.<p/>
+      <%= text_field_tag :recaptcha_response_field, '', :style => 'width: 425px' %><br/>
+      <div class="ui-widget ui-corner-all" style="border: 1px solid gainsboro; padding: 10px">
+        <div id="recaptcha_image"></div>
+        <div align="right">
+          <%= link_to_function 'Refresh Image', 'Recaptcha.reload()', :class => 'link-button' %>
+        </div>
+      </div>
+      <div style="font-size: 0.9em; color: gray">
+        Brought to you by <%= link_to 'ReCAPTCHA', 'http://recaptcha.net/'%>
+      </div>
+    </div>
+    <p/>
+
+    <script type="text/javascript" 
+      src="http://api.recaptcha.net/js/recaptcha_ajax.js">
+    </script>
+
+
+    <script type="text/javascript">
+      /**
+       * Attach function to resize captcha div and image elements.
+       */
+      Recaptcha.resizeImage = function() {
+        $j('#recaptcha_image, #recaptcha_image > img')
+          .css({ width: 500*0.5, height: 57*0.5 });       
+      };
+
+      /**
+       * Define custom-theme options, attach a callback function to
+       * resize the widget the first time it is loaded. It will also
+       * override the reload method's callback, to ensure that the
+       * widget is also resized after the call.
+       */    
+      var RecaptchaOptions = {
+        theme: 'custom',
+        callback: function() { 
+          Recaptcha.old_finish_reload = Recaptcha.finish_reload;
+          Recaptcha.finish_reload = function(a, b, c, d) {
+            Recaptcha.old_finish_reload(a, b, c, d);
+            Recaptcha.resizeImage();
+          }
+          Recaptcha.resizeImage();
+        }
+      };
+
+      /**
+       * Load widget.
+       */
+      $j(document).ready(function() {   
+        Recaptcha.create("<%= RECAPTCHA_PUBLIC_KEY %>", 
+          "recaptcha-container", 
+          RecaptchaOptions);
+      });
+    </script>
+  
+    <%= f.submit 'Register' %>
+  </fieldset>
+  <p/>
+<% end %>

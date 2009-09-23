@@ -1,0 +1,44 @@
+<div>
+  <div class="page-header">
+    <%= link_to 'breve', root_path, :class => 'logo' %>
+    <%= link_to image_tag('cappuccino.png', :width => 40), root_path %>
+    
+    <% if authorized? %>
+      <div style="float: right">
+        <b>
+          <%= link_to current_user(:nickname), settings_path %>
+          <!-- sup style="font-size: 0.5em">&#x2642;</sup -->
+          <!-- sup style="font-size: 0.5em">&#x2640;</sup -->
+        </b>
+        <%= separator_tag %>
+        <%= link_to 'Logout', logout_path %>
+      </div>
+    <% else %>
+      <div style="float: right">
+        <%= link_to 'Login', login_path %>
+        <%= separator_tag %>
+        <%= link_to 'Register', new_user_path %>
+      </div>
+    <% end %>
+  </div>
+  <div class="page-menubar">
+    <div style="float: left">
+      <b><%= link_to 'POST', new_post_path %></b>
+      <%= separator_tag %>
+      <%= link_to 'Front Page', root_path %>
+      <%= separator_tag %>
+      <%= link_to 'Latest', latest_posts_path %>
+      <!--
+      <%= separator_tag %>
+      <%= link_to 'Hot', hot_posts_path %>
+      <%= separator_tag %>
+      <%= link_to 'Comments', hot_comments_path %>
+      -->
+    </div>
+    <div align="right">
+      <%= link_to 'Guidelines', documents_path('guidelines') %>
+      <%= separator_tag %>
+      <%= link_to 'Bugs & Features' %>
+    </div>
+  </div>
+</div>

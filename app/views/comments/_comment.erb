@@ -1,0 +1,22 @@
+<div class="line-item-row">
+  <!-- upvote widget -->
+  <%= render :partial => 'posts/vote_widget', :locals => { :post => comment } %>
+
+  <div style="margin-left: 25px">
+    <div style="margin-bottom: 0.3em; font-size: 0.9em; color: #333333">
+      <a name="comment-<%= comment.id %>"></a>
+      <%= textualize(comment.content) %>
+    </div>
+
+    <!-- post item's info widget -->
+    <%= render :partial => 'posts/info_widget', :locals => { :post => comment } %>
+
+    <!-- post item's controls widget -->
+    <%= render :partial => 'comments/controls_widget', :locals => { :post => comment } %>
+  </div>
+  
+  <div style="margin-left: 1.5em">
+    <%= render :partial => 'comments/comment', :collection => comment.replies_by_rank %>
+  </div>
+</div>
+

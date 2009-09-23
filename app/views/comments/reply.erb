@@ -1,0 +1,30 @@
+<%= flash_tag %>
+<h2>Reply-To Comment</h2>
+
+<div class="line-item-row">
+  <!-- upvote widget -->
+  <%= render :partial => 'posts/vote_widget', :locals => { :post => @comment } %>
+
+  <div style="margin-left: 25px; color: #777777">
+    <% unless @comment.parent.nil? %>
+      <b>On:</b> 
+      <%=truncate_words(textualize @comment.parent.headline.truncate, :notags) %><br/>
+    <% end %>
+    <b>Re:</b>
+    <%=truncate_words(textualize @comment.headline.truncate, :notags) %>
+    <br/>
+    <!-- post item's info widget -->
+    <%= render :partial => 'posts/info_widget', :locals => { :post => @comment } %>
+  </div>
+  
+  <div style="margin-left: 2em">
+    <% form_for Comment.new, :url => send("reply_comment_path", @comment) do |f| %>
+      <fieldset>
+        <%= f.text_area :content %><br/>
+        <%= render :partial => 'comments/textformat_help_widget' %>
+        <p/>
+        <%= f.submit 'Post Reply' %>
+      </fieldset>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns= "http://www.w3.org/1999/xhtml">
+<head>
+  <%= javascript_include_tag :defaults %>
+  <%= javascript_include_tag 'jquery-plugins/autoresize.min' %>
+  <%= javascript_include_tag 'jquery-plugins/facebox/facebox' %>
+  <script>var $j = jQuery.noConflict();</script>
+  <%= stylesheet_link_tag 'default-theme' %>
+  <%= render :partial => 'main/analytics' %>
+</head>
+<body>
+  <%= render :partial => 'main/header' %>
+  <%= render :partial => 'main/welcome' if cookies[:site].nil? %>
+  <%= render :partial => 'main/body' %>
+  <%= render :partial => 'main/footer' %>
+</body>
+</html>

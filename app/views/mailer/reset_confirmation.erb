@@ -1,0 +1,11 @@
+You received this email because you requested us to reset your 
+account's password at breve.com. 
+
+To confirm this request, visit the following URL:
+
+<%= reset_url(:key => @user.reset_key, :only_path => false) %>
+
+The link is valid for 1 hour, it will take you to a page where you may 
+change your account's password.
+
+Thanks.

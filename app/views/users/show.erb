@@ -1,0 +1,27 @@
+<%= flash_tag %>
+
+<%= render :partial => 'users/sidebar', :locals => { :user => @user } %>
+
+<div style="font-size: 1.1em; color: #666666">
+  <span style="font-size: 2.5em"><%= @user.nickname %></span><br/>
+  <p/>
+  
+  Last logged-in <strong><%= distance_of_time_in_words_to_now @user.updated_at %> ago</strong><br/>
+  Member since <strong><%= @user.created_at.to_s(:date) %></strong>
+  <sup><%= link_to 'w', "http://en.wikipedia.org/wiki/#{@user.created_at.strftime('%B_%e')}", :class => 'link-button' %></sup>
+  
+  <% unless @user.top_ranked_posts.empty? %>
+    <h3>Top Posts</h3>
+    <div class="line-items" style="font-size: 0.8em">
+      <%= render :partial => 'posts/item', :collection => @user.top_ranked_posts %>
+    </div>
+  <% end %>
+  
+  <% unless @user.top_ranked_comments.empty? %>
+    <h3>Top Comments</h3>
+    <div class="line-items" style="font-size: 0.8em">
+      <%= render :partial => 'comments/item', :collection => @user.top_ranked_comments %>
+    </div>
+  <% end %>
+</div>
+
