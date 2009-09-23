@@ -1,0 +1,42 @@
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-09-22 17:49:07) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+
+ActiveRecord::StatementInvalid (PGError: ERROR:  relation "posts" does not exist
+: SELECT * FROM "posts"  ORDER BY rank DESC LIMIT 15 OFFSET 0):
+  /Users/jgalang/.gem/ruby/18/gems/mislav-will_paginate-2.3.11/lib/will_paginate/finder.rb:82:in `send'
+  /Users/jgalang/.gem/ruby/18/gems/mislav-will_paginate-2.3.11/lib/will_paginate/finder.rb:82:in `paginate'
+  /Users/jgalang/.gem/ruby/18/gems/mislav-will_paginate-2.3.11/lib/will_paginate/collection.rb:87:in `create'
+  /Users/jgalang/.gem/ruby/18/gems/mislav-will_paginate-2.3.11/lib/will_paginate/finder.rb:76:in `paginate'
+  lib/acts_as_post.rb:15:in `top_ranked'
+  app/controllers/posts_controller.rb:54:in `index'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-09-22 17:54:59) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 158ms (View: 110, DB: 41) | 200 OK [http://localhost/]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2009-09-22 17:55:14) [GET]
+  Parameters: {"action"=>"new", "controller"=>"posts"}
+Rendering template within layouts/application
+Rendering posts/new
+Completed in 12ms (View: 11, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2009-09-22 17:55:18) [POST]
+  Parameters: {"commit"=>"Submit", "post"=>{"title"=>"", "url"=>"", "content"=>"FOO"}, "action"=>"create", "authenticity_token"=>"REbYwgfRaJ+/7T9wa/F5il1Et6Cj9SBqeRugSLRao6I=", "controller"=>"posts"}
+Redirected to http://localhost:3000/posts/latest
+Completed in 11ms (DB: 3) | 302 Found [http://localhost/posts]
+
+
+Processing PostsController#latest (for 127.0.0.1 at 2009-09-22 17:55:18) [GET]
+  Parameters: {"action"=>"latest", "controller"=>"posts"}
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 117ms (View: 76, DB: 39) | 200 OK [http://localhost/posts/latest]
