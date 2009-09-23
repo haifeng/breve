@@ -28,7 +28,7 @@ users = User.create([
 10.times do |i|
   users.each do |user|
     Post.create(
-      :user_id => user.id,
+      :user    => user,
       :points  => rand(10) + 1,
       :url     => "http://www.post#{i}.com", 
       :title   => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
