@@ -9,6 +9,9 @@ class CreateComments < ActiveRecord::Migration
       t.integer :points, :default => 1
       t.float   :rank,   :default => 0
       t.timestamps
+      
+      # counter caches
+      t.integer :comments_count, :default => 0
     end
   end
 

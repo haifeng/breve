@@ -10,11 +10,11 @@ class User < ActiveRecord::Base
 
   has_many :posts
   has_many :top_ranked_posts, :limit => 5, 
-    :order => 'rank DESC', :class_name => 'Post'
+    :order => 'rank desc', :class_name => 'Post'
 
   has_many :comments
   has_many :top_ranked_comments, :limit => 5, 
-    :order => 'rank DESC', :class_name => 'Comment'
+    :order => 'rank desc', :class_name => 'Comment'
 
   has_many :votes, :as => :voteable
   has_gravatar

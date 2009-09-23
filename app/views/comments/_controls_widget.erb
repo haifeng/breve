@@ -3,7 +3,7 @@
         'reply' : "#{pluralize post.comments.count, 'reply'}", 
         reply_to_comment_for_topic_path_for(post),
         :rel => facebox_attr, :class => 'link-button' %>
-  <% if post.user.id == current_user %>
+  <% if post.author.id == current_user %>
     <%= separator_tag %>
     <%= link_to 'edit', edit_path_for(post), 
           :rel => facebox_attr, :class => 'link-button' %>

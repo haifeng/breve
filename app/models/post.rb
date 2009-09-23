@@ -5,9 +5,11 @@ class Post < ActiveRecord::Base
   validates_format_of :url, 
     :with => /^((http|https?):\/\/((?:[-a-z0-9]+\.)+[a-z]{2,}))/i, 
     :allow_blank => true
+  validates_presence_of :author
 
-  belongs_to :user
   belongs_to :section
+  belongs_to :author, :counter_cache => true, 
+    :class_name => 'User', :foreign_key => 'user_id'
   
   has_many :votes,    :as => :voteable
   has_many :comments, :as => :commentable

@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20090918192812) do
     t.float    "rank",             :default => 0.0
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "comments_count",   :default => 0
   end
 
   create_table "posts", :force => true do |t|
@@ -28,11 +29,12 @@ ActiveRecord::Schema.define(:version => 20090918192812) do
     t.string   "title"
     t.text     "content"
     t.integer  "user_id"
-    t.integer  "section_id", :default => 1
-    t.integer  "points",     :default => 1
-    t.float    "rank",       :default => 0.0
+    t.integer  "section_id",     :default => 1
+    t.integer  "points",         :default => 1
+    t.float    "rank",           :default => 0.0
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "comments_count", :default => 0
   end
 
   create_table "sections", :force => true do |t|
@@ -48,9 +50,11 @@ ActiveRecord::Schema.define(:version => 20090918192812) do
     t.string   "email"
     t.integer  "points",           :default => 1
     t.string   "reset_key"
-    t.datetime "reset_expires_at", :default => '2009-09-23 12:42:20'
+    t.datetime "reset_expires_at", :default => '2009-09-23 16:06:10'
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "posts_count",      :default => 0
+    t.integer  "comments_count",   :default => 0
   end
 
   create_table "votes", :force => true do |t|

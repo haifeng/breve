@@ -4,7 +4,7 @@ class Vote < ActiveRecord::Base
 
   def self.cast_for(user, post)
     # prevent user from voting posts it owns
-    return if post.user == user
+    return if post.author == user
     
     # toggle user's casted votes for the target post
     # first check if the user has already voted on this post

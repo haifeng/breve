@@ -14,15 +14,15 @@ namespace :db do
     task :list => :environment do 
       puts "Posts"
       puts "--------"
-      Post.find(:all, :order => 'rank DESC').each do |a|
-        puts "#{a.user.nickname}\t#{a.created_at}\t#{a.points}\t#{a.rank}"
+      Post.find(:all, :order => 'rank desc').each do |a|
+        puts "#{a.author.nickname}\t#{a.created_at}\t#{a.points}\t#{a.rank}"
       end
       puts
       
       puts "Comments"
       puts "--------"
-      Comment.find(:all, :order => 'rank DESC').each do |a|
-        puts "#{a.user.nickname}\t#{a.created_at}\t#{a.points}\t#{a.rank}"
+      Comment.find(:all, :order => 'rank desc').each do |a|
+        puts "#{a.author.nickname}\t#{a.created_at}\t#{a.points}\t#{a.rank}"
       end
     end
     

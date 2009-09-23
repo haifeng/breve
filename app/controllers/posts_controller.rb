@@ -16,8 +16,8 @@ class PostsController < ApplicationController
       return
     end
     
-    @post      = Post.new(params[:post]) 
-    @post.user = @user
+    @post        = Post.new(params[:post]) 
+    @post.author = @user
     if @post.save
       redirect_to latest_posts_url
     else

@@ -1,16 +1,18 @@
 <%= flash_tag %>
 <div>
-  <div style="float: right; width: 200px; padding: 5px; margin-left: 5px; margin-bottom: 5px">
-    <div class="ui-corner-all" style="border: 1px dotted lightgreen; padding: 15px">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </div>
-    <p/>
+  <% if @posts.current_page == 1 %>
+    <div style="float: right; width: 200px; padding: 5px; margin-left: 5px; margin-bottom: 5px">
+      <div class="ui-corner-all" style="border: 1px dotted lightgreen; padding: 15px">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </div>
+      <p/>
     
-    <div class="ui-corner-all" style="border: 1px dotted lightgreen; padding: 15px">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+      <div class="ui-corner-all" style="border: 1px dotted lightgreen; padding: 15px">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+      </div>
+      <p/>
     </div>
-    <p/>
-  </div>
+  <% end %>
   
   <div class="line-items">
     <%= render :partial => 'posts/item', :collection => @posts %>

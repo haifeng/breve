@@ -3,16 +3,17 @@ class Comment < ActiveRecord::Base
   acts_as_post
   
   validates_presence_of :content
-  validates_presence_of :user
+  validates_presence_of :author
   validates_presence_of :commentable
   
-  belongs_to :commentable, :polymorphic => true
-  belongs_to :user
+  belongs_to :commentable, :counter_cache => true, :polymorphic => true
+  belongs_to :author, :counter_cache => true, 
+    :class_name => 'User', :foreign_key => 'user_id'
   
   has_many :votes,    :as => :voteable
   has_many :comments, :as => :commentable
   has_many :comments_by_rank, :as => :commentable, 
-    :order => 'rank DESC', :class_name => 'Comment'
+    :order => 'rank desc', :class_name => 'Comment'
 
   alias :replies :comments
   alias :replies_by_rank :comments_by_rank
@@ -34,21 +35,21 @@ class Comment < ActiveRecord::Base
 
   # TODO: Refactor (see Post model)
   def self.latest(page)
-    paginate :page => page, :order => 'created_at DESC'
+    paginate :page => page, :order => 'created_at desc'
   end
   
   # TODO: Refactor (see Post model)
   def self.top_ranked(page)
-    paginate :page => page, :order => 'rank DESC'
+    paginate :page => page, :order => 'rank desc'
   end
   
   # TODO: Refactor (see Post model)
   def self.submitted_by(user, page)
-    paginate_by_user_id user, :page => page, :order => 'created_at DESC'
+    paginate_by_user_id user, :page => page, :order => 'created_at desc'
   end
   
   # TODO: Refactor (see Post model)
   def self.most_discussed(page)
-    paginate :page => page, :order => 'points DESC'
+    paginate :page => page, :order => 'points desc'
   end
 end

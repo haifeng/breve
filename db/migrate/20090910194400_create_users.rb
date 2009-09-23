@@ -7,8 +7,11 @@ class CreateUsers < ActiveRecord::Migration
       t.integer   :points, :default => 1
       t.string    :reset_key
       t.timestamp :reset_expires_at, :default => Time.now
-      
       t.timestamps
+      
+      # counter caches
+      t.integer :posts_count, :default => 0
+      t.integer :comments_count, :default => 0
     end
   end
 

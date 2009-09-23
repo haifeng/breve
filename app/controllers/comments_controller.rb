@@ -72,9 +72,9 @@ class CommentsController < ApplicationController
       comment = Comment.new(params[:comment]) do |comment|
         comment.commentable = post
         comment.parent      = post if post.instance_of? Comment
-        comment.user_id     = current_user
+        comment.author      = User.find(current_user)
       end
-      attached = comment.save
+      attached = comment.save!
       flash.now[:notice] = 'ERROR: Unable to save comment, please try again.' unless attached
       attached
     end
