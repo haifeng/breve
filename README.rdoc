@@ -1,5 +1,4 @@
 Breve
 =====
 
-Breve is an application for running a user-driven community news site (think Reddit, Hacker News, Digg, etc)
-
+Breve is a web application for running a user-driven community news site (think Reddit, Hacker News, Digg, etc)
