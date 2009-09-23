@@ -1,3 +1,5 @@
+require 'acts_as_voter'
+
 class PostsController < ApplicationController
   acts_as_voter
 
