@@ -45,23 +45,19 @@ module Gravatar
 
     # Return the gravatar URL associated with the model's instance.
     # options:: Options used to build the URL to access the model's gravatar resource.
-    #           the following fields are recognized:
-    #   * attr::     The name of the attribute that represents the email address associated with the gravatar (defaults to :email)
-    #   * size::     The gravatart image size used (defaults to 80)
-    #   * rating::   The gravatar image rating used (defaults to 'g')
-    #   * default::  The gravatar default image used when no gravatar is available (defaults to 'default')
-    #                The URI of the default image may also be specified (see: http://en.gravatar.com/site/implement/url)
+    #           This will override the options specified in the +has_gravatar+ declaration.
     def gravatar(options={})
-      options[:attr]    ||= :email
-      options[:size]    ||= 80
-      options[:rating]  ||= Rating::G
-      options[:default] ||= DefaultImage::GRAVATAR
-      options[:default] = CGI::escape(options[:default]) if options[:default] =~ /^(https?:\/\/|\/)/i 
-      email             = "#{self.send(options[:attr])}".downcase
-      id                = Digest::MD5.hexdigest(email)
-      params            = options.collect{ |k, v| "#{k}=#{v}" }.join('&')
+      configuration = gravatar_options
+
+      configuration.update(options) if options.is_a? Hash
+      if configuration[:default] =~ /^(https?:\/\/|\/)/i 
+        configuration[:default] = CGI::escape(configuration[:default]) 
+      end
+
+      email  = "#{self.send(configuration[:attr])}".downcase
+      id     = Digest::MD5.hexdigest(email)
+      params = configuration.collect{ |k, v| "#{k}=#{v}" }.join('&')
       "#{AVATAR_URL}/#{id}?#{params}"
     end
   end
 end
-

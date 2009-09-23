@@ -17,8 +17,7 @@ class User < ActiveRecord::Base
     :order => 'rank DESC', :class_name => 'Comment'
 
   has_many :votes, :as => :voteable
-  
-  include Gravatar::Attributes
+  has_gravatar
   
   # Checks if the username and password combination
   # exists in the accounts table.

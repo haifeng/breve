@@ -25,4 +25,5 @@
 #
 
 Gravatar
-ActionView::Base.class_eval { include Gravatar::ActionView }
+ActionView::Base.send   :include, Gravatar::ActionView
+ActiveRecord::Base.send :include, Gravatar::ActiveRecord
