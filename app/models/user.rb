@@ -80,4 +80,9 @@ class User < ActiveRecord::Base
     return unless user.save
     user
   end
+  
+  # HACK 
+  def <=> other
+    self.id <=> other.id
+  end
 end
