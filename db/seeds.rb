@@ -26,7 +26,7 @@ users = User.create([
 
 # dummy articles
 10.times do |i|
-  users.shuffle.each do |user|
+  users.each do |user|
     Post.create(
       :user    => user,
       :points => rand(10) + 1,
