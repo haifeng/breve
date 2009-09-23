@@ -11,27 +11,27 @@ Section.create([
 ])
 
 ## dummy users 
-#users = User.create([ 
-#  { :nickname => 'Juris',    :password => 'password' },  
-#  { :nickname => 'Kreek\'t', :password => 'password' },
-#  { :nickname => 'Libat',    :password => 'password' },
-#  { :nickname => 'Vicky',    :password => 'password' },
-#  { :nickname => 'Marj',     :password => 'password' },
-#  { :nickname => 'Justin',   :password => 'password' },
-#  { :nickname => 'Jared',    :password => 'password' },
-#  { :nickname => 'Jace',     :password => 'password' },
-#  { :nickname => 'Jaden',    :password => 'password' },
-#  { :nickname => 'Myrhon',   :password => 'password' }
-#])
-#
-## dummy articles
-#10.times do |i|
-#  users.each do |user|
-#    Post.create(
-#      :user    => user,
-#      :points => rand(10) + 1,
-#      :url    => "http://www.post#{i}.com", 
-#      :title  => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-#    )
-#  end
-#end
+users = User.create([ 
+  { :nickname => 'Juris',    :password => 'password' },  
+  { :nickname => 'Kreek\'t', :password => 'password' },
+  { :nickname => 'Libat',    :password => 'password' },
+  { :nickname => 'Vicky',    :password => 'password' },
+  { :nickname => 'Marj',     :password => 'password' },
+  { :nickname => 'Justin',   :password => 'password' },
+  { :nickname => 'Jared',    :password => 'password' },
+  { :nickname => 'Jace',     :password => 'password' },
+  { :nickname => 'Jaden',    :password => 'password' },
+  { :nickname => 'Myrhon',   :password => 'password' }
+])
+
+# dummy articles
+10.times do |i|
+  users.each do |user|
+    Post.create(
+      :user_id => user.id,
+      :points  => rand(10) + 1,
+      :url     => "http://www.post#{i}.com", 
+      :title   => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+    )
+  end
+end
