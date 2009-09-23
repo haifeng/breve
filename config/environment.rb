@@ -19,6 +19,9 @@ Rails::Initializer.run do |config|
   # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
+  config.gem 'mislav-will_paginate', :version => '2.3.11', :lib => 'will_paginate', 
+    :source => 'http://gems.github.com'
+  config.gem 'rdiscount', :version => '1.3.5'
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
@@ -40,20 +43,15 @@ Rails::Initializer.run do |config|
   # config.i18n.default_locale = :de
   
   # Default options for URL generation in ActionMailer
-  config.action_mailer.default_url_options = { :host => "breve.com" }
+  config.action_mailer.default_url_options = { :host => 'breve.com' }
 end
 
 # Dependencies
-gem 'mislav-will_paginate', '2.3.11'
-gem 'rdiscount', '1.3.5'
-
-require 'will_paginate'
-require 'rdiscount'
-
 require 'acts_as_voter'
 require 'acts_as_post'
 require 'extensions'
 
 # App sepcific globals
 RECAPTCHA_PRIVATE_KEY = "YOUR-RECAPTCHA-PRIVATE-KEY-HERE"
-RECAPTCHA_PUBLIC_KEY  = "YOUR-RECAPTCHA-PUBLIC-KEY-HERE"
+RECAPTCHA_PUBLIC_KEY  = "6LcSeAgAAAAAANqO8C9uNawTBAgly2HYgjwNDJjQ"
+                         

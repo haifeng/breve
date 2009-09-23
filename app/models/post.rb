@@ -1,5 +1,3 @@
-require 'acts_as_post'
-
 class Post < ActiveRecord::Base
   acts_as_post
   

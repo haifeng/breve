@@ -1,5 +1,3 @@
-require 'acts_as_post'
-
 class Comment < ActiveRecord::Base
   acts_as_tree
   acts_as_post

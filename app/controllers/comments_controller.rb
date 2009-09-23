@@ -1,5 +1,3 @@
-require 'acts_as_voter'
-
 class CommentsController < ApplicationController
   acts_as_voter
   
