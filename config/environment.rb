@@ -21,6 +21,7 @@ Rails::Initializer.run do |config|
   # config.gem "aws-s3", :lib => "aws/s3"
   config.gem 'mislav-will_paginate', :version => '2.3.11', :lib => 'will_paginate', 
     :source => 'http://gems.github.com'
+  config.gem 'BlueCloth', :version => '1.0.0', :lib => 'bluecloth'
   config.gem 'rdiscount', :version => '1.3.5'
 
   # Only load the plugins named here, in the order given (default is alphabetical).
@@ -54,4 +55,6 @@ require 'extensions'
 # App sepcific globals
 RECAPTCHA_PRIVATE_KEY = "YOUR-RECAPTCHA-PRIVATE-KEY-HERE"
 RECAPTCHA_PUBLIC_KEY  = "6LcSeAgAAAAAANqO8C9uNawTBAgly2HYgjwNDJjQ"
-                         
+                     
+# HACK until RDiscount is fixed    
+RDiscount = BlueCloth
