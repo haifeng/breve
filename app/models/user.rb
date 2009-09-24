@@ -1,28 +1,19 @@
 class User < ActiveRecord::Base
-  validates_uniqueness_of :nickname, 
-    :case_sensitive => false
   validates_presence_of :nickname
   validates_presence_of :password
-  validates_uniqueness_of :email, 
-    :case_sensitive => false, :allow_blank => true
-  validates_format_of :email, 
-    :with => /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/i, :allow_blank => true
+  validates_uniqueness_of :nickname, :case_sensitive => false
+  validates_uniqueness_of :email, :case_sensitive => false, :allow_blank => true
+  validates_format_of :email, :with => /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/i, :allow_blank => true
 
   has_many :posts
-  has_many :submitted_posts, :order => 'created_at desc', 
-    :include => [ :author ], :class_name => 'Post'
-  has_many :top_ranked_posts, :order => 'rank desc', :limit => 5, 
-    :include => [ :author ], :class_name => 'Post'
-  has_many :voted_posts, :through => :votes, :include => [ :author ],
-    :source => :voteable, :source_type => 'Post'
+  has_many :submitted_posts, :order => 'created_at desc', :class_name => 'Post'
+  has_many :top_ranked_posts, :order => 'rank desc', :limit => 5, :class_name => 'Post'
+  has_many :voted_posts, :through => :votes, :source => :voteable, :source_type => 'Post'
 
   has_many :comments
-  has_many :submitted_comments, :order => 'created_at desc', 
-    :include => [ :author ], :class_name => 'Comment'
-  has_many :top_ranked_comments, :order => 'rank desc', :limit => 5, 
-    :include => [ :author ], :class_name => 'Comment'
-  has_many :voted_comments, :through => :votes, :include => [ :author ],
-    :source => :voteable, :source_type => 'Comment'
+  has_many :submitted_comments, :order => 'created_at desc', :class_name => 'Comment'
+  has_many :top_ranked_comments, :order => 'rank desc', :limit => 5, :class_name => 'Comment'
+  has_many :voted_comments, :through => :votes, :source => :voteable, :source_type => 'Comment'
 
   has_many :votes
   has_gravatar

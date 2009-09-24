@@ -8,11 +8,11 @@ module ActiveRecord
       def acts_as_post; end
 
       def latest(page)
-        paginate :page => page, :order => 'created_at desc', :include => [ :author ]
+        paginate :page => page, :order => 'created_at desc'
       end
   
       def top_ranked(page)
-        paginate :page => page, :order => 'rank desc', :include => [ :author ]
+        paginate :page => page, :order => 'rank desc'
       end
   
       def method_missing(name, *args)
