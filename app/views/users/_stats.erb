@@ -20,6 +20,14 @@
         <td align="right"><%= user.comments.count %></td>
         <td><%= link_to_unless user.comments.empty?, "comments posted", submitted_user_comments_path(user), :class => 'link-button' %></td>
       </tr>
+      <tr>
+        <td align="right"><%= user.voted_posts.count %></td>
+        <td><%= link_to_unless user.voted_posts.empty?, "topic or articles voted", voted_user_posts_path(user), :class => 'link-button' %></td>
+      </tr>
+      <tr>
+        <td align="right"><%= user.voted_comments.count %></td>
+        <td><%= link_to_unless user.voted_comments.empty?, "comments voted", voted_user_comments_path(user), :class => 'link-button' %></td>
+      </tr>
     </table>
   </div>
 </div>

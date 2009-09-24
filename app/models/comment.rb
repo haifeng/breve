@@ -32,24 +32,4 @@ class Comment < ActiveRecord::Base
     @headline = @headline.truncate(maxlen) if mode == :truncate
     @headline
   end
-
-  # TODO: Refactor (see Post model)
-  def self.latest(page)
-    paginate :page => page, :order => 'created_at desc'
-  end
-  
-  # TODO: Refactor (see Post model)
-  def self.top_ranked(page)
-    paginate :page => page, :order => 'rank desc'
-  end
-  
-  # TODO: Refactor (see Post model)
-  def self.submitted_by(user, page)
-    paginate_by_user_id user, :page => page, :order => 'created_at desc'
-  end
-  
-  # TODO: Refactor (see Post model)
-  def self.most_discussed(page)
-    paginate :page => page, :order => 'points desc'
-  end
 end

@@ -1,0 +1,14 @@
+<%= flash_tag %>
+<h2>Topics or Articles Voted</h2>
+<div>
+  <div class="line-items">
+    <% unless @posts.empty? %>
+      <%= render :partial => 'posts/item', :collection => @posts %>
+    <% else %>
+      <center>You have none.</center>
+    <% end %>
+  </div>
+  <p/>
+  
+  <%= will_paginate @posts, :previous_label => '< prev', :next_label => 'next >', :page_links => false, :separator => " #{separator_tag} " %>
+</div>

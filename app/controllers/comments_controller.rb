@@ -5,7 +5,11 @@ class CommentsController < ApplicationController
     :only => [ :new, :create, :reply, :edit, :update, :destroy, :vote ]
     
   def submitted
-    @comments = Comment.submitted_by params[:user_id], params[:page]
+    @comments = Comment.submitted_by(params[:user_id], params[:page])
+  end
+
+  def voted
+    @comments = Comment.voted_by(params[:user_id], params[:page])
   end
   
   def index

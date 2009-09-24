@@ -15,13 +15,14 @@ module ActiveRecord
         paginate :page => page, :order => 'rank desc', :include => [ :author ]
       end
   
-      def submitted_by(user, page)
-        paginate_by_user_id user, :page => page, :order => 'created_at desc', :include => [ :author ]
-      end
-  
-      # TODO: Need to fix query for most discussed posts
-      def most_discussed(page)
-        paginate :page => page, :order => 'points desc', :include => [ :author ]
+      def method_missing(name, *args)
+        super(name, args) unless name.to_s =~ /_by$/
+
+        name = name.to_s.sub(/_by$/, '')
+        source = self.to_s.downcase.pluralize
+        author = User.find(args.first)
+        page   = args.last
+        author.send("#{name}_#{source}").paginate(:page => page)
       end
     end
   end

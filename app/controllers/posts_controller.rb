@@ -57,13 +57,12 @@ class PostsController < ApplicationController
     render :action => :index
   end
   
-  def hot
-    @posts = Post.most_discussed(params[:page])
-    render :action => :index
-  end
-
   def submitted
     @posts = Post.submitted_by(params[:user_id], params[:page])
+  end
+  
+  def voted
+    @posts = Post.voted_by(params[:user_id], params[:page])
   end
   
   def destroy

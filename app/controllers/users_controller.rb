@@ -112,6 +112,5 @@ class UsersController < ApplicationController
   protected
   def authorize(user)
     session[:user] = User.authorize(user[:nickname], user[:password])
-    puts "XXX: #{not session[:user].nil?}"
   end
 end

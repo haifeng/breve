@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(:version => 20090918192812) do
     t.string   "email"
     t.integer  "points",           :default => 1
     t.string   "reset_key"
-    t.datetime "reset_expires_at", :default => '2009-09-23 16:06:10'
+    t.datetime "reset_expires_at", :default => '2009-09-23 20:17:20'
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "posts_count",      :default => 0

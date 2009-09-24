@@ -6,20 +6,19 @@ ActionController::Routing::Routes.draw do |map|
   map.documents 'documents/:name', :controller => 'main',  :action => 'view'
 
   map.resources :posts, 
-    :member => { :comment => :post, :vote => :post }, 
+    :member     => { :comment => :post, :vote => :post }, 
     :collection => { :latest => :get, :hot => :get } do |posts|
-    posts.resources :comments, 
-      :member => { :reply => [ :get, :post ], :vote => :post }
-  end
+      posts.resources :comments, :member => { :reply => [ :get, :post ], :vote => :post }
+    end
   
   map.resources :comments, 
-    :has_many => :comments, 
-    :member => { :reply => [ :get, :post ], :vote => :post, :replies => :get },
+    :has_many   => :comments, 
+    :member     => { :reply => [ :get, :post ], :vote => :post, :replies => :get },
     :collection => { :hot => :get }
   
   map.resources :users do |users| 
-    users.resources :posts, :collection => { :submitted => :get }
-    users.resources :comments, :collection => { :submitted => :get }
+    users.resources :posts,    :collection => { :submitted => :get, :voted => :get }
+    users.resources :comments, :collection => { :submitted => :get, :voted => :get }
   end
 
   map.root :controller => 'posts'

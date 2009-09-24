@@ -9,14 +9,22 @@ class User < ActiveRecord::Base
     :with => /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/i, :allow_blank => true
 
   has_many :posts
-  has_many :top_ranked_posts, :limit => 5, 
-    :order => 'rank desc', :class_name => 'Post'
+  has_many :submitted_posts, :order => 'created_at desc', 
+    :include => [ :author ], :class_name => 'Post'
+  has_many :top_ranked_posts, :order => 'rank desc', :limit => 5, 
+    :include => [ :author ], :class_name => 'Post'
+  has_many :voted_posts, :through => :votes, :include => [ :author ],
+    :source => :voteable, :source_type => 'Post'
 
   has_many :comments
-  has_many :top_ranked_comments, :limit => 5, 
-    :order => 'rank desc', :class_name => 'Comment'
+  has_many :submitted_comments, :order => 'created_at desc', 
+    :include => [ :author ], :class_name => 'Comment'
+  has_many :top_ranked_comments, :order => 'rank desc', :limit => 5, 
+    :include => [ :author ], :class_name => 'Comment'
+  has_many :voted_comments, :through => :votes, :include => [ :author ],
+    :source => :voteable, :source_type => 'Comment'
 
-  has_many :votes, :as => :voteable
+  has_many :votes
   has_gravatar
   
   # Checks if the username and password combination
@@ -44,11 +52,11 @@ class User < ActiveRecord::Base
   end
 
   def post_points
-    @post_points ||= self.posts.sum(:points) - self.posts.count
+    self.posts.sum(:points) - self.posts.count
   end
-
+  
   def comment_points
-    @comment_points ||= self.comments.sum(:points) - self.comments.count
+    self.comments.sum(:points) - self.comments.count
   end
 
   def self.configure_for_reset(email)
