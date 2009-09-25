@@ -1,4 +1,4 @@
-<div style="margin-bottom: 0.3em; font-size: 0.9em">
+<div style="margin-bottom: 0.3em; font-size: 0.8em">
   <%= link_to post.comments.empty? ? 
         'discuss' : "#{pluralize post.comments.count, 'comment'}", 
         comments_path_for(post), :class => 'link-button' %>
