@@ -48,8 +48,8 @@ Rails::Initializer.run do |config|
 end
 
 # App sepcific globals
-RECAPTCHA_PRIVATE_KEY = "6LdkMwYAAAAAAGMAhg_3Ytt2hSZ3Z8BDHz1CqFYA"
-RECAPTCHA_PUBLIC_KEY  = "6LdkMwYAAAAAAKJOZ5hgbYF40pUMkDCb_aOIAyEs"
+RECAPTCHA_PRIVATE_KEY = ENV['RECAPTCHA_PRIVATE_KEY']
+RECAPTCHA_PUBLIC_KEY  = ENV['RECAPTCHA_PUBLIC_KEY']
                      
 # HACK until RDiscount is fixed    
 RDiscount = BlueCloth
