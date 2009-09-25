@@ -47,11 +47,6 @@ Rails::Initializer.run do |config|
   config.action_mailer.default_url_options = { :host => 'breve.com' }
 end
 
-# Dependencies
-require 'acts_as_voter'
-require 'acts_as_post'
-require 'extensions'
-
 # App sepcific globals
 RECAPTCHA_PRIVATE_KEY = "YOUR-RECAPTCHA-PRIVATE-KEY-HERE"
 RECAPTCHA_PUBLIC_KEY  = "6LcSeAgAAAAAANqO8C9uNawTBAgly2HYgjwNDJjQ"
