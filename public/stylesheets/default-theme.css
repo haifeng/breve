@@ -68,7 +68,7 @@ a:hover {
 
 a.prev_page,
 a.next_page,
-.link-button {
+a.link-button {
    color: steelblue; 
    text-decoration: none;
 }
