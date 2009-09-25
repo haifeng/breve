@@ -34,6 +34,6 @@ config.action_mailer.smtp_settings = {
   :address              => "smtp.gmail.com",
   :port                 => 587,
   :authentication       => :plain,
-  :user_name            => "username@gmail.com",
-  :password             => "password"  
+  :user_name            => "mailbox656@gmail.com",
+  :password             => "2d5f093edea7d11c9716d72a0a31126e"  
 }
