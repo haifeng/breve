@@ -25,7 +25,7 @@ config.action_view.cache_template_loading            = true
 # config.threadsafe!
 
 # ActiveMailer settings
-# config.action_mailer.raise_delivery_errors = false
+config.action_mailer.raise_delivery_errors = false
 config.action_mailer.perform_deliveries    = true
 config.action_mailer.default_charset       = "iso-8859-1"
 config.action_mailer.delivery_method       = :smtp
