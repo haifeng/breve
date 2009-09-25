@@ -3,7 +3,7 @@ class Mailer < ActionMailer::Base
     content_type 'text/plain'
     sent_on      Time.now
     recipients   user.email
-    from         'no-reply@breve.com'
+    from         'no-reply@stark-robot-87.com'
     subject      'Password reset confirmation from breve.com'
     body         :user => user
   end

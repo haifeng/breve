@@ -44,7 +44,7 @@ Rails::Initializer.run do |config|
   # config.i18n.default_locale = :de
   
   # Default options for URL generation in ActionMailer
-  config.action_mailer.default_url_options = { :host => 'breve.com' }
+  config.action_mailer.default_url_options = { :host => 'stark-robot-87.heroku.com' }
 end
 
 # App sepcific globals
