@@ -31,9 +31,9 @@ config.action_mailer.default_charset       = "iso-8859-1"
 config.action_mailer.delivery_method       = :smtp
 config.action_mailer.smtp_settings = {
   :enable_starttls_auto => true,
-  :address              => "smtp.gmail.com",
+  :address              => 'smtp.gmail.com',
   :port                 => 587,
   :authentication       => :plain,
-  :user_name            => "mailbox656",
-  :password             => "2d5f093edea7d11c9716d72a0a31126e"  
+  :user_name            => 'mailbox656@gmail.com',
+  :password             => '2d5f093edea7d11c9716d72a0a31126e' 
 }
