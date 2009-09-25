@@ -11,6 +11,10 @@ class CommentsController < ApplicationController
   def voted
     @comments = Comment.voted_by(params[:user_id], params[:page])
   end
+
+  def top_ranked
+    @comments = Comment.top_ranked(params[:page])
+  end
   
   def index
     @post     = find_commentable

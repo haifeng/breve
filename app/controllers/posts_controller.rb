@@ -48,13 +48,12 @@ class PostsController < ApplicationController
     end
   end
 
-  def index
+  def top_ranked
     @posts = Post.top_ranked(params[:page])
   end
   
   def latest
     @posts = Post.latest(params[:page]) 
-    render :action => :index
   end
   
   def submitted

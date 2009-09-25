@@ -1,0 +1,13 @@
+<%= flash_tag %>
+<div>
+  <div class="line-items">
+    <%= render :partial => 'comments/item', :collection => @comments %>
+  </div>
+  <p/>
+  
+  <%= will_paginate @comments, 
+        :previous_label => '< prev', 
+        :next_label => 'next >', 
+        :page_links => false, 
+        :separator => " #{separator_tag} " %>
+</div>
