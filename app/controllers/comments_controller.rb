@@ -18,7 +18,7 @@ class CommentsController < ApplicationController
   
   def index
     @post     = find_commentable
-    @comments = @post.comments
+    @comments = @post.comments_by_rank
   end
 
   def create
