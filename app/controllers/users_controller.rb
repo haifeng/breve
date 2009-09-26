@@ -14,8 +14,8 @@ class UsersController < ApplicationController
         session[:referer] = nil
         redirect_to referer
       else
-        @user = User.new(:nickname => params[:user][:nickname])
-        flash.now[:notice] = 'ERROR: Invalid username or password.' 
+        @user = User.new(:email => params[:user][:email])
+        flash.now[:notice] = 'ERROR: Invalid credentials.' 
       end
     end
   end
@@ -58,6 +58,7 @@ class UsersController < ApplicationController
     if @user.update_attributes(params[:user])
       flash[:notice]   = 'Changes saved.'
       @user[:password] = nil
+      session[:user]   = @user.digest
       redirect_to edit_user_url(@user)
     else
       @user[:password]   = nil
@@ -89,7 +90,7 @@ class UsersController < ApplicationController
         render :action => :reset
       else
         flash[:notice] = 'Password changed.'
-        authorize(:nickname => @user.nickname, :password => password)
+        authorize(:email => @user.email, :password => password)
         redirect_to edit_user_url(@user)
       end
       
@@ -111,6 +112,6 @@ class UsersController < ApplicationController
 
   protected
   def authorize(user)
-    session[:user] = User.authorize(user[:nickname], user[:password])
+    session[:user] = User.authorize(user[:email], user[:password])
   end
 end

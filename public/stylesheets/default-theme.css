@@ -155,9 +155,10 @@ fieldset {
 }
 
 label {
-   text-transform: lowercase;
    cursor: pointer;
    color: #445544;
+   font-size: 0.95em;
+   font-weight: bolder;
 }
 
 fieldset label, 
@@ -185,4 +186,8 @@ fieldset textarea {
 
 fieldset br {
    clear: left;
+}
+
+form {
+   width: 5in;
 }

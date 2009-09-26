@@ -1,10 +1,10 @@
 <%= flash_tag %>
 <h2>Password Reset</h2>
 
-Set the new password for your account.
-<p/>
-
 <% form_for @user, :url => reset_url(:key => params[:key]), :html => { :method => :put } do |f| %>
+  Set the new <%= f.label :password %> for your account.
+  <p/>
+
   <fieldset>
     <%= f.label :password %>
     <%= f.password_field :password %><br/>

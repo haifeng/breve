@@ -1,14 +1,19 @@
 <%= flash_tag %>
-<h2>Comments Posted</h2>
+<h2>Comments or Replies</h2>
+
 <div>
   <div class="line-items">
     <% unless @comments.empty? %>
       <%= render :partial => 'comments/item', :collection => @comments %>
     <% else %>
-      <center>You have none.</center>
+      <center>None Found.</center>
     <% end %>
   </div>
   <p/>
 
-  <%= will_paginate @comments, :previous_label => '< prev', :next_label => 'next >', :page_links => false, :separator => " #{separator_tag} " %>
+  <%= will_paginate @comments, 
+        :previous_label => '< prev', 
+        :next_label => 'next >', 
+        :page_links => false, 
+        :separator => " #{separator_tag} " %>
 </div>

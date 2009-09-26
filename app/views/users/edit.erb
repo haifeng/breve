@@ -11,11 +11,25 @@
 
 <h2>Settings</h2>
 <% form_for @user do |f| %>
+  All of these fields are required. <%= label_tag :nickname, 'Alias' %>
+  is used as byline for your posts and other activities; leave it blank if you
+  wish to use your <%= label_tag :firstname, 'First' %> and <%= label_tag :lastname, 'Last Name' %>
+  instead.
+  <p/>
+  
   <fieldset>
-    <%= f.label :password %>
-    <%= f.password_field :password %><br/>
     <%= f.label :email %>
     <%= f.text_field :email %><br/>
+    <%= f.label :password %>
+    <%= f.password_field :password %><br/>
+
+    <%= f.label :lastname, 'Last Name' %>
+    <%= f.text_field :lastname %><br/>
+    <%= f.label :firstname, 'First Name' %>
+    <%= f.text_field :firstname %><br/>
+    
+    <%= f.label :nickname, 'Alias' %>
+    <%= f.text_field :nickname %><br/>
     <p/>
     <%= f.submit 'Save Changes' %>
   </fieldset>

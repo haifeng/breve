@@ -45,16 +45,20 @@ ActiveRecord::Schema.define(:version => 20090918192812) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "nickname"
-    t.string   "password"
     t.string   "email"
-    t.integer  "points",           :default => 1
-    t.string   "reset_key"
-    t.datetime "reset_expires_at", :default => '2009-09-23 20:17:20'
+    t.string   "password"
+    t.string   "lastname"
+    t.string   "firstname"
+    t.string   "nickname"
+    t.integer  "points",                :default => 1
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "posts_count",      :default => 0
-    t.integer  "comments_count",   :default => 0
+    t.string   "activation_key"
+    t.datetime "activation_expires_at", :default => '2009-09-25 17:35:28'
+    t.string   "reset_key"
+    t.datetime "reset_expires_at",      :default => '2009-09-25 17:35:28'
+    t.integer  "posts_count",           :default => 0
+    t.integer  "comments_count",        :default => 0
   end
 
   create_table "votes", :force => true do |t|

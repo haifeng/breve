@@ -1,9 +1,11 @@
 class User < ActiveRecord::Base
-  validates_presence_of :nickname
-  validates_presence_of :password
-  validates_uniqueness_of :nickname, :case_sensitive => false
-  validates_uniqueness_of :email, :case_sensitive => false, :allow_blank => true
-  validates_format_of :email, :with => /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/i, :allow_blank => true
+  validates_presence_of   :email
+  validates_uniqueness_of :email, :case_sensitive => false
+  validates_format_of     :email, :with => /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/i
+  validates_presence_of   :password
+  validates_presence_of   :lastname
+  validates_presence_of   :firstname
+  validates_uniqueness_of :nickname, :case_sensitive => false, :allow_blank => true
 
   has_many :posts
   has_many :submitted_posts, :order => 'created_at desc', :class_name => 'Post'
@@ -17,11 +19,16 @@ class User < ActiveRecord::Base
 
   has_many :votes
   has_gravatar
+
+  composed_of :fullname, :class_name => 'FullName', 
+    :mapping => [%w(firstname), %w(lastname)] do |params|
+      FullName.new params[:firstname], params[:lastname]
+    end
   
   # Checks if the username and password combination
   # exists in the accounts table.
-  def self.authorize(nickname, password)
-    user = self.find :first, :conditions => [ "lower(nickname) = ?", (nickname.downcase) ]
+  def self.authorize(email, password)
+    user = self.find :first, :conditions => [ "lower(email) = ?", (email.downcase) ]
     return user.digest if not user.nil? and Password::check(password, user.password)
   end
 
@@ -31,12 +38,15 @@ class User < ActiveRecord::Base
   end  
 
   def digest
-    attributes            = self.attributes
-    attributes[:id]       = self[:id]
-    attributes[:password] = ''
-    attributes
+    self
   end
 
+  def nickname
+    self[:nickname] = self.fullname              if self[:nickname].blank?
+    self[:nickname] = self.email.sub(/@.+$/, '') if self[:nickname].blank?
+    self[:nickname]
+  end
+  
   def vote_for(post)
     Vote.cast_for self, post
     post

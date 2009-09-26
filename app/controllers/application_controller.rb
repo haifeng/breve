@@ -24,7 +24,8 @@ class ApplicationController < ActionController::Base
   end
   
   def current_user(field = :id)
-    (session[:user] || {})[field.to_s]
+    return '' if session[:user].nil?
+    session[:user].send(field)
   end
 
   # filters

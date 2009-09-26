@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
   acts_as_post
-  
+
   validate :must_have_title_or_narrative
   validates_format_of :url, 
     :with => /^((http|https?):\/\/((?:[-a-z0-9]+\.)+[a-z]{2,}))/i, 

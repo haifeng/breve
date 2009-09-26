@@ -1,18 +1,29 @@
 <%= flash_tag %>
 <h2>Register</h2>
 
-Nickname and email are expected to be unique.<br/>
-Email is optional, but it's used when resetting your password.
-<p/>
-
 <% form_for @user do |f| %>
+  All of these fields are required. <%= label_tag :nickname, 'Alias' %>
+  is used as byline for your posts and other activities; leave it blank if you
+  wish to use your <%= label_tag :firstname, 'First' %> and <%= label_tag :lastname, 'Last Name' %>
+  instead.
+  <p/>
+  Please use a valid <%= label_tag :email %> address, this is where we'll send a 
+  confirmation to activate your account.
+  <p/>
+  
   <fieldset>
-    <%= f.label :nickname %>
-    <%= f.text_field :nickname %><br/>
-    <%= f.label :password %>
-    <%= f.password_field :password %><br/>
     <%= f.label :email %>
     <%= f.text_field :email %><br/>
+    <%= f.label :password %>
+    <%= f.password_field :password %><br/>
+
+    <%= f.label :lastname, 'Last Name' %>
+    <%= f.text_field :lastname %><br/>
+    <%= f.label :firstname, 'First Name' %>
+    <%= f.text_field :firstname %><br/>
+    
+    <%= f.label :nickname, 'Alias' %>
+    <%= f.text_field :nickname %><br/>
     <p/>
   
     <!-- Define reCaptcha widget container and required elements. -->
@@ -20,7 +31,7 @@ Email is optional, but it's used when resetting your password.
       To help us thwart spammers, please key-in the pair of words 
       that appear below.<p/>
       <%= text_field_tag :recaptcha_response_field, '', :style => 'width: 425px' %><br/>
-      <div class="ui-widget ui-corner-all" style="border: 1px solid gainsboro; padding: 10px">
+      <div class="ui-widget ui-corner-all" style="border: 1px solid gainsboro; padding: 10px; width: 410px">
         <div id="recaptcha_image"></div>
         <div align="right">
           <%= link_to_function 'Refresh Image', 'Recaptcha.reload()', :class => 'link-button' %>
