@@ -38,9 +38,15 @@ class User < ActiveRecord::Base
   end  
 
   def digest
+    self[:password] = ''
+    self[:email]    = ''
     self
   end
 
+  def byline
+    @byline ||= self.fullname
+  end
+  
   def nickname
     self[:nickname] = self.fullname              if self[:nickname].blank?
     self[:nickname] = self.email.sub(/@.+$/, '') if self[:nickname].blank?

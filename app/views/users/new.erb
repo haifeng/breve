@@ -2,10 +2,10 @@
 <h2>Register</h2>
 
 <% form_for @user do |f| %>
-  All of these fields are required. <%= label_tag :nickname, 'Alias' %>
-  is used as byline for your posts and other activities; leave it blank if you
-  wish to use your <%= label_tag :firstname, 'First' %> and <%= label_tag :lastname, 'Last Name' %>
-  instead.
+  All of these fields are required. Your
+  <%= label_tag :firstname, 'First' %> and 
+  <%= label_tag :lastname, 'Last Name' %>
+  is used as byline for your posts.
   <p/>
   Please use a valid <%= label_tag :email %> address, this is where we'll send a 
   confirmation to activate your account.
@@ -21,9 +21,6 @@
     <%= f.text_field :lastname %><br/>
     <%= f.label :firstname, 'First Name' %>
     <%= f.text_field :firstname %><br/>
-    
-    <%= f.label :nickname, 'Alias' %>
-    <%= f.text_field :nickname %><br/>
     <p/>
   
     <!-- Define reCaptcha widget container and required elements. -->

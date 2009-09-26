@@ -2,7 +2,7 @@
   <span id="vote-<%= post.class.name.downcase %>-<%= post.id %>" style="font-size: 1.1em">
     <%= post.points %>
   </span> 
-  points from <%= link_to h(post.author.nickname), 
+  points from <%= link_to h(post.author.byline), 
     user_path(post.author), 
     :class => 'link-button' %>
   <%= time_ago_in_words post.created_at %> ago

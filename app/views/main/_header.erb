@@ -5,11 +5,7 @@
     
     <% if authorized? %>
       <div style="float: right">
-        <b>
-          <%= link_to current_user(:nickname), settings_path %>
-          <!-- sup style="font-size: 0.5em">&#x2642;</sup -->
-          <!-- sup style="font-size: 0.5em">&#x2640;</sup -->
-        </b>
+        <b><%= link_to current_user(:fullname), settings_path %></b>
         <%= separator_tag %>
         <%= link_to 'Logout', logout_path %>
       </div>
