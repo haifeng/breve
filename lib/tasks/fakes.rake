@@ -1,5 +1,5 @@
 namespace :db do
-  task :fakeseed => :environment do 
+  task :fakes => :environment do 
     users = User.create([ 
       { :email => 'juris@breve.com',    :password => 'password', :lastname => 'galang', :firstname => 'juris'   },  
       { :email => 'kreek`t@breve.com',  :password => 'password', :lastname => 'rebaño', :firstname => 'kreek`t' },  
