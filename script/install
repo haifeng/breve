@@ -7,4 +7,3 @@ require File.expand_path('../../config/boot',  __FILE__)
 `rake db:create:all`
 `rake db:migrate`
 `rake db:seed`
-`rake db:rank:all`
