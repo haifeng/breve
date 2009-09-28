@@ -18,6 +18,8 @@ class Comment < ActiveRecord::Base
   alias :replies :comments
   alias :replies_by_rank :comments_by_rank
 
+  before_destroy :ensure_it_has_no_comments
+
   cattr_reader :per_page
   @@per_page = 15
   
@@ -31,5 +33,10 @@ class Comment < ActiveRecord::Base
     @headline = content
     @headline = @headline.truncate(maxlen) if mode == :truncate
     @headline
+  end
+  
+  protected
+  def ensure_it_has_no_comments
+    self.comments.empty?
   end
 end

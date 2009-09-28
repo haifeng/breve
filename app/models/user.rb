@@ -1,6 +1,4 @@
 class User < ActiveRecord::Base
-  before_validation_on_create :configure_for_activation
-  
   validates_presence_of   :email
   validates_uniqueness_of :email, :case_sensitive => false
   validates_format_of     :email, :with => /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/i
@@ -21,6 +19,9 @@ class User < ActiveRecord::Base
 
   has_many :votes
   has_gravatar
+
+  before_validation_on_create :configure_for_activation
+  before_destroy :ensure_it_has_no_comments
 
   # Checks if the username and password combination
   # exists in the accounts table.

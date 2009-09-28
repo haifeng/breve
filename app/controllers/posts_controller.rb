@@ -66,13 +66,13 @@ class PostsController < ApplicationController
   
   def destroy
     @post = Post.find(params[:id])
-    if not @post.comments.empty?
+    @post.destroy
+    if @post.frozen?
+      redirect_to request.referer
+    else
       flash[:notice] = 'WARN: Posts with comments may not be deleted, add a comment on the post instead.'
       redirect_to post_comments_url(@post)
       return
     end
-    
-    @post.destroy
-    redirect_to request.referer
   end
 end

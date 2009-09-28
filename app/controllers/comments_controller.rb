@@ -56,13 +56,14 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment = Comment.find(params[:id])
-    if not @comment.replies.empty?
+    @comment.destroy
+    if @comment.frozen?
+      redirect_to request.referer
+    else
       flash[:notice] = 'WARN: Comments with replies may not be deleted.'
       redirect_to post_comments_url(@comment.topic)
       return
     end
-    @comment.destroy
-    redirect_to request.referer
   end
   
   protected

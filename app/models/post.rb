@@ -16,7 +16,7 @@ class Post < ActiveRecord::Base
   has_many :comments_by_rank, :as => :commentable, 
     :order => "rank desc", :class_name => 'Comment'
 
-  before_destroy :ensure_action_is_allowed
+  before_destroy :ensure_it_has_no_comments
   before_save :normalize_field_values
   
   cattr_reader :per_page
@@ -41,8 +41,8 @@ class Post < ActiveRecord::Base
   end
 
   protected
-  def ensure_action_is_allowed
-    # TODO: NEED TO IMPLEMENT ensure_action_is_allowed
+  def ensure_it_has_no_comments
+    self.comments.empty?
   end
   
   def normalize_field_values
