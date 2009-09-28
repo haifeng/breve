@@ -1,0 +1,11 @@
+You received this email because you registered for an account at breve.com 
+You will first need to confirm your registration before you can use your account.
+
+To confirm, please visit the following URL:
+
+<%= activation_url(:key => @user.activation_key, :only_path => false) %>
+
+The link will expire 2 weeks from now, it will take you to a page that will 
+activate your account.
+
+Thanks.

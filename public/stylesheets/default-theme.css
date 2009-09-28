@@ -81,6 +81,12 @@ a.link-button {
    color: gainsboro;
 }
 
+.important {
+   color: red;
+   font-style: italic;
+   font-weight: bolder;
+}
+
 .page-header {
    border-bottom: 1px solid gainsboro;
    margin-bottom: 5px;

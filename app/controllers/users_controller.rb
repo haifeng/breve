@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     if request.get?
       @user = User.new
     else
-      authorize params[:user]
+      authorize(params[:user])
       if authorized?
         referer           = session[:referer] || root_url
         session[:referer] = nil
@@ -36,8 +36,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     raise 'CAPTCHA validation failed' unless Recaptcha.verify(RECAPTCHA_PRIVATE_KEY, request.remote_ip, params) 
+    
     if @user.save
-      authorize params[:user]
+      flash[:notice] = 'We sent you an email with instructions on how to activate your account.'
       redirect_to root_url
     else
       raise 'There\'s a problem with your registration'
@@ -56,14 +57,25 @@ class UsersController < ApplicationController
   def update
     @user = User.find current_user
     if @user.update_attributes(params[:user])
-      flash[:notice]   = 'Changes saved.'
-      @user[:password] = nil
-      session[:user]   = @user.digest
+      flash[:notice] = 'Changes saved.'
+      create_session_for @user
       redirect_to edit_user_url(@user)
     else
       @user[:password]   = nil
       flash.now[:notice] = 'ERROR: There was a problem with your changes, please try again.'
       render :action => :edit
+    end
+  end
+  
+  def activate
+    @user = User.activate(params[:key])
+    if @user.nil?
+      flash[:notice] = "ERROR: Invalid or expired activation key, please try again."
+      redirect_to new_user_url
+    else
+      flash[:notice] = "Your account has been activated. You will need to set your password."
+      create_session_for @user
+      redirect_to edit_user_url(@user)
     end
   end
   
@@ -96,9 +108,9 @@ class UsersController < ApplicationController
       
     # edit password (because of reset request)
     when request.get?
-      @user = User.find_by_reset_key(params[:key])
-      if @user.nil? or @user.reset_expires_at < Time.now
-        flash[:notice] = "ERROR: Reset confirmation window expired, please try again."
+      @user = User.reset_allowed?(params[:key])
+      if @user.nil?
+        flash[:notice] = "ERROR: Invalid or expired reset key, please try again."
         redirect_to login_url
       else
         @user[:password] = nil
@@ -112,6 +124,16 @@ class UsersController < ApplicationController
 
   protected
   def authorize(user)
-    session[:user] = User.authorize(user[:email], user[:password])
+    create_session_for User.authorize(user[:email], user[:password])
+  end
+  
+  def create_session_for(user)
+    if user.nil?
+      session[:user]  = nil
+    else
+      user[:password] = nil
+      session[:user]  = user.digest
+    end
+    user
   end
 end

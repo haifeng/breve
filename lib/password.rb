@@ -20,6 +20,10 @@ module Password
     end
   end
 
+  def Password.keystring(*values)
+    Digest::SHA1.hexdigest("#{values.join}:#{Password.salt}")
+  end
+
   protected
   # Generates a psuedo-random 64 character string
   def Password.salt
@@ -32,7 +36,7 @@ module Password
   def Password.hash(password,salt)
     Digest::SHA512.hexdigest("#{password}:#{salt}")
   end
-
+  
   # Mixes the hash and salt together for storage
   def Password.store(hash, salt)
     hash + salt
@@ -48,3 +52,4 @@ module Password
     store[128..192]
   end
 end
+

@@ -1,9 +1,10 @@
 ActionController::Routing::Routes.draw do |map|
-  map.login     'login',           :controller => 'users', :action => 'login'
-  map.logout    'logout',          :controller => 'users', :action => 'logout'
-  map.reset     'reset',           :controller => 'users', :action => 'reset'
-  map.settings  'settings',        :controller => 'users', :action => 'edit'
-  map.documents 'documents/:name', :controller => 'main',  :action => 'view'
+  map.login      'login',           :controller => 'users', :action => 'login'
+  map.logout     'logout',          :controller => 'users', :action => 'logout'
+  map.reset      'reset',           :controller => 'users', :action => 'reset'
+  map.activation 'activate',        :controller => 'users', :action => 'activate'
+  map.settings   'settings',        :controller => 'users', :action => 'edit'
+  map.documents  'documents/:name', :controller => 'main',  :action => 'view'
 
   map.resources :posts, 
     :member     => { :comment => :post, :vote => :post }, 

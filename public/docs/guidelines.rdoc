@@ -1,7 +1,7 @@
-Guidelines
-==========
+Community Guidelines
+====================
 
-These are meant to help maintain a good signal-to-noise ratio.
+These are meant to help maintain a good signal-to-noise ratio. It benefits you and the community.
 
 As a member you could do your part by keeping in mind these guidelines before posting a comment or an article for discussion. 
 
@@ -11,60 +11,16 @@ By doing this, you help to keep the level of discourse and the quality of articl
 On Posts
 --------
 
-Post links to articles that you find interesting. 
-
-As much as possible, post links to articles that are not news. Or at least avoid posting links to content that you'd normally find on tabloid pages - a host of other community-driven sites already cater to these.
-
-Keep the title of your posts concise, but informative. 
-
-Let the content carry your post. Avoid sensationalizing or using attention grabbing techniques (like using all-caps or an inordinate amount of exclamation points) on your titles. 
-
-Use proper-cases and formatting when composing the title or narratives of your posts. 
-
-With narratives, treat it as you would when writing a letter. It doesn't have to be formal, but it has to be legible and readable.
-
-Check your spelling, at least.
-
-If you post a link that has a payload other than text, please warn the community. You do this by prepending the type of the payload in square-brackets on your title. For example: *[PDF] Eternal Sunshine of the Spotless Mind*
-
-Post often, but do not spam. Everyone knows what this means, and how annoying. We didn't put any safeguards in place for this (and we hope to not need to), so most likely we'll just delete your account and all of your posts. 
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 
-On Discussions
---------------
+On Comments
+-----------
 
-The comment-and-reply feature is the way you would start and carry a discussion 
-on a post in the system. 
-
-When posting or replying to a comment, keep in mind to not to say anything you 
-wouldn't otherwise say when in-person. 
-
-It's easy to be rude by mail, or when you're several miles away, or can hide behind 
-an alias. It's passive-aggressive behavior, even cowardly to do so.
-
-If you have to disagree, then disagree on the issue. Do not attack the poster, 
-it's stupid and unproductive and a sure way to devolve a conversation.
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 
-On Voting
----------
+Regarding Karma
+---------------
 
-Vote on the posts that you've enjoyed or find truly interesting. 
-Similarly vote on comments and replies. 
-
-Vote on comments that you think is fair, even if you disagree with it. 
-
-
-On Karma
---------
-
-Unlike most community-driven sites, we did not implement a *karma* rating system. 
-Only your posts are rated and whatever feature we implement is available to everyone all the time.
-
-But if you want one, then here's how it works: 
-
-*Your actions affect the community, and it, in turn affects you. 
-Good posts, begats good comments, begats good replies, begats good posts.* 
-
-Om. 
-
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.

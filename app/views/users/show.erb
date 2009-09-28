@@ -2,7 +2,7 @@
 
 <%= render :partial => 'users/sidebar', :locals => { :user => @user } %>
 <div style="font-size: 1.1em; color: #666666">
-  <span style="font-size: 2.5em"><%= @user.byline %></span>
+  <span style="font-size: 2.5em"><%= @user.displayname %></span>
   <p/>
   
   Last logged-in <strong><%= distance_of_time_in_words_to_now @user.updated_at %> ago</strong><br/>

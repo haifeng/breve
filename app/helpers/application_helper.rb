@@ -39,14 +39,17 @@ module ApplicationHelper
   
   def textualize(text, mode = :tags)
     text = html_escape(text)
-    map  = { :'!' => 'strong', :'*' => 'em', :'`' => 'code' }
     unless mode == :notags
       text.gsub!(/\n/, '<br/>')
-      text.gsub!(/(`|\*|!)(\w+)(`|\*|!)/) { code = map[$1.to_sym]; "<#{code}>#$2</#{code}>" }
-      text.gsub!(/url\((.+)\)/ ) { "<code><a href=\"#$1\">#$1</a></code>" }
-      text.gsub!(/&lt;code&gt;(.+)&lt;\/code&gt;/) { "<pre><code>#$1</code></pre>" }
+      text.gsub!(/&lt;(\/?)(b|i)&gt;/) { "<#$1#$2>" }
+      text.gsub!(/&lt;url&gt;(.+)&lt;\/url&gt;/) { "<code><a href=\"#$1\">#$1</a></code>" }
+      text.gsub!(/&lt;code&gt;(.+)&lt;\/code&gt;/) do 
+        value = $1
+        value.gsub!(/<br\/>/, '')
+        "<pre><code>#{value}</code></pre>"
+      end
     else
-      text.gsub!(/&lt;code&gt;(.+)&lt;\/code&gt;/, '')
+      text.gsub!(/&lt;\/?(b|i|url|code)&gt;/, '')
     end
     text
   end

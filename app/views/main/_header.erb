@@ -1,6 +1,6 @@
 <div>
   <div class="page-header">
-    <%= link_to 'breve', root_path, :class => 'logo' %>
+    <!-- %= link_to 'breve', root_path, :class => 'logo' % -->
     <%= link_to image_tag('cappuccino.png', :width => 40), root_path %>
     
     <% if authorized? %>
@@ -28,8 +28,6 @@
       <%= link_to 'Comments', top_ranked_comments_path %>
     </div>
     <div align="right">
-      <%= link_to 'Guidelines', documents_path('guidelines') %>
-      <%= separator_tag %>
       <%= link_to 'Bugs & Features', 'http://github.com/jurisgalang/breve/issues' %>
     </div>
   </div>
