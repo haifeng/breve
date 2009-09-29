@@ -5,7 +5,7 @@ function applyDefaultStyles() {
    $j('button, input[type="submit"]').addClass('ui-corner-all ui-state-default')
       .hover(function(){ $j(this).addClass('ui-state-hover') },
              function(){ $j(this).removeClass('ui-state-hover') })
-      .css({ 'text-transform': 'lowercase', 'font-size': '0.95em' });
+      .css({ 'text-transform': 'capitalize', 'font-size': '0.95em' });
    $j('.prev_page, .next_page')
       .addClass('link-button');
    $j('.link-button')
