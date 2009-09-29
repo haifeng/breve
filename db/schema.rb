@@ -49,14 +49,14 @@ ActiveRecord::Schema.define(:version => 20090918192812) do
     t.string   "password"
     t.string   "lastname"
     t.string   "firstname"
-    t.string   "nickname"
+    t.string   "alias"
     t.integer  "points",                :default => 1
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "activation_key"
-    t.datetime "activation_expires_at", :default => '2009-09-28 17:03:22'
+    t.datetime "activation_expires_at", :default => '2009-09-29 14:07:25'
     t.string   "reset_key"
-    t.datetime "reset_expires_at",      :default => '2009-09-28 17:03:22'
+    t.datetime "reset_expires_at",      :default => '2009-09-29 14:07:25'
     t.integer  "posts_count",           :default => 0
     t.integer  "comments_count",        :default => 0
   end

@@ -1,6 +1,4 @@
 <%= flash_tag %>
-<h2>Latest Posts</h2>
-
 <div>
   <div class="line-items">
     <%= render :partial => 'posts/item', :collection => @posts %>
@@ -13,3 +11,8 @@
         :page_links => false, 
         :separator => " #{separator_tag} " %>
 </div>
+<script type="text/javascript">
+  $j(document).ready(function(){
+    $j('a#latest').addClass('selected-menu-item');
+  });
+</script>

@@ -11,7 +11,9 @@
 
 <h2>Settings</h2>
 <% form_for @user do |f| %>
-  All of these fields are required.
+  Your <%= label_tag :alias %> is used to associate your account to your posts
+  and comments. Leave it blank to use your <%= label_tag :first %> 
+  and <%= label_tag :last, 'Last Name' %> instead.
   <p/>
   
   <fieldset>
@@ -19,11 +21,16 @@
     <%= f.text_field :email %><br/>
     <%= f.label :password %>
     <%= f.password_field :password %><br/>
-
+    <p/>
+    
     <%= f.label :firstname, 'First Name' %>
     <%= f.text_field :firstname %><br/>
     <%= f.label :lastname, 'Last Name' %>
     <%= f.text_field :lastname %><br/>
+    <p/>
+    
+    <%= f.label :alias %>
+    <%= f.text_field :alias %><br/>
     <p/>
     
     <%= f.submit 'Save Changes' %>

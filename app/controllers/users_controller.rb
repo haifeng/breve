@@ -37,12 +37,9 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     raise 'CAPTCHA validation failed' unless Recaptcha.verify(RECAPTCHA_PRIVATE_KEY, request.remote_ip, params) 
     
-    if @user.save
-      flash[:notice] = 'We sent you an email with instructions on how to activate your account.'
-      redirect_to root_url
-    else
-      raise 'There\'s a problem with your registration'
-    end
+    @user.save!
+    flash[:notice] = 'We sent you an email with instructions on how to activate your account.'
+    redirect_to root_url
   rescue
     flash.now[:notice] = "ERROR: #{$!.message}, please try again."
     @user[:password]   = nil
@@ -56,15 +53,14 @@ class UsersController < ApplicationController
   
   def update
     @user = User.find current_user
-    if @user.update_attributes(params[:user])
-      flash[:notice] = 'Changes saved.'
-      create_session_for @user
-      redirect_to edit_user_url(@user)
-    else
-      @user[:password]   = nil
-      flash.now[:notice] = 'ERROR: There was a problem with your changes, please try again.'
-      render :action => :edit
-    end
+    @user.update_attributes!(params[:user])
+    flash[:notice] = 'Changes saved.'
+    create_session_for @user
+    redirect_to edit_user_url(@user)
+  rescue
+    flash.now[:notice] = "ERROR: #{$!.message}, please try again."
+    @user[:password]   = nil
+    render :action => :edit
   end
   
   def activate

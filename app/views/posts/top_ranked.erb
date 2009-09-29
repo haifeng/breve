@@ -1,5 +1,4 @@
 <%= flash_tag %>
-<h2>Top Ranked Posts</h2>
 <div>
   <% if false %>
     <div style="float: right; width: 200px; padding: 5px; margin-left: 5px; margin-bottom: 5px">
@@ -26,3 +25,8 @@
         :page_links => false, 
         :separator => " #{separator_tag} " %>
 </div>
+<script type="text/javascript">
+  $j(document).ready(function(){
+    $j('a#top').addClass('selected-menu-item');
+  });
+</script>

@@ -5,7 +5,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string    :password
       t.string    :lastname
       t.string    :firstname
-      t.string    :nickname
+      t.string    :alias
       t.integer   :points, :default => 1
       t.timestamps
 

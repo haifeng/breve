@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   validates_presence_of   :password
   validates_presence_of   :lastname
   validates_presence_of   :firstname
-  validates_uniqueness_of :nickname, :case_sensitive => false, :allow_blank => true
+  validates_uniqueness_of :alias, :case_sensitive => false, :allow_blank => true
 
   has_many :posts
   has_many :submitted_posts, :order => 'created_at desc', :class_name => 'Post'
@@ -46,13 +46,10 @@ class User < ActiveRecord::Base
   end
   
   def displayname
-    @displayname ||= self.fullname
-  end
-  
-  def nickname
-    self[:nickname] = self.fullname              if self[:nickname].blank?
-    self[:nickname] = self.email.sub(/@.+$/, '') if self[:nickname].blank?
-    self[:nickname]
+    return @displayname          unless @displayname.blank?
+    @displayname = self.alias    unless self.alias.blank?
+    @displayname = self.fullname if @displayname.blank?
+    @displayname
   end
   
   def vote_for(post)

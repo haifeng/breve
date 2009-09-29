@@ -1,6 +1,4 @@
 <%= flash_tag %>
-<h2>Top Ranked Comments</h2>
-
 <div>
   <div class="line-items">
     <%= render :partial => 'comments/item', :collection => @comments %>
@@ -13,3 +11,8 @@
         :page_links => false, 
         :separator => " #{separator_tag} " %>
 </div>
+<script type="text/javascript">
+  $j(document).ready(function(){
+    $j('a#comments').addClass('selected-menu-item');
+  });
+</script>

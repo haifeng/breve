@@ -5,7 +5,7 @@ These are meant to help maintain a good signal-to-noise ratio. It benefits you a
 
 As a member you could do your part by keeping in mind these guidelines before posting a comment or an article for discussion. 
 
-By doing this, you help to keep the level of discourse and the quality of articles submitted at a good level.
+By doing this, you help to improve the level of discourse and the quality of articles for everyone.
 
 
 On Posts
@@ -24,3 +24,9 @@ Regarding Karma
 ---------------
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+
+Regarding Bugs & Features
+-------------------------
+
+If you find a bug or would like to see a feature implemented, please do so via the [issue tracking](http://github.com/jurisgalang/breve/issues) form for the the project that runs this site at [GitHub](http://github.com)

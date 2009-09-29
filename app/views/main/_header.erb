@@ -2,33 +2,30 @@
   <div class="page-header">
     <!-- %= link_to 'breve', root_path, :class => 'logo' % -->
     <%= link_to image_tag('cappuccino.png', :width => 40), root_path %>
-    
-    <% if authorized? %>
-      <div style="float: right">
+
+    <div class="ui-corner-tl ui-corner-bl" style="float: right; background: #ecedf0; text-align: right; padding-left: 10px; padding-right: 5px; padding-bottom: 4px">
+      <% if authorized? %>
         <b><%= link_to current_user(:fullname), settings_path %></b>
         <%= separator_tag %>
         <%= link_to 'Logout', logout_path %>
-      </div>
-    <% else %>
-      <div style="float: right">
+      <% else %>
         <%= link_to 'Login', login_path %>
         <%= separator_tag %>
         <%= link_to 'Register', new_user_path %>
-      </div>
-    <% end %>
+      <% end %>
+      <%= separator_tag %>
+      <%= link_to '&#x2623; Report Bugs', 'http://github.com/jurisgalang/breve/issues' %>
+    </div>
   </div>
   <div class="page-menubar">
-    <div style="float: left">
-      <b><%= link_to 'POST', new_post_path %></b>
+    <div>
+      <%= link_to 'Top', root_path, :id => 'top' %>
       <%= separator_tag %>
-      <%= link_to 'Top', root_path %>
+      <%= link_to 'Latest', latest_posts_path, :id => 'latest' %>
       <%= separator_tag %>
-      <%= link_to 'Latest', latest_posts_path %>
+      <%= link_to 'Comments', top_ranked_comments_path, :id => 'comments' %>
       <%= separator_tag %>
-      <%= link_to 'Comments', top_ranked_comments_path %>
-    </div>
-    <div align="right">
-      <%= link_to 'Bugs & Features', 'http://github.com/jurisgalang/breve/issues' %>
+      <%= link_to '&#x270d; Post', new_post_path %>
     </div>
   </div>
 </div>

@@ -1,13 +1,13 @@
 namespace :db do
   task :fakes => :environment do 
     users = User.create([ 
-      { :email => 'juris@breve.com',    :password => 'password', :lastname => 'galang', :firstname => 'juris'   },  
-      { :email => 'kreek`t@breve.com',  :password => 'password', :lastname => 'rebaño', :firstname => 'kreek`t' },  
-      { :email => 'myrhon@breve.com',   :password => 'password', :lastname => 'galang', :firstname => 'myrhon'  },  
-      { :email => 'jared@breve.com',    :password => 'password', :lastname => 'galang', :firstname => 'jared'   },  
-      { :email => 'jace@breve.com',     :password => 'password', :lastname => 'galang', :firstname => 'jace'    },  
-      { :email => 'justin@breve.com',   :password => 'password', :lastname => 'galang', :firstname => 'justin'  },  
-      { :email => 'jaden@breve.com',    :password => 'password', :lastname => 'galang', :firstname => 'jaden'   }  
+      { :email => 'juris@breve.com',   :password => 'password', :lastname => 'galang', :firstname => 'juris'   },  
+      { :email => 'kreek`t@breve.com', :password => 'password', :lastname => 'rebaño', :firstname => 'kreek`t' },  
+      { :email => 'myrhon@breve.com',  :password => 'password', :lastname => 'galang', :firstname => 'myrhon'  },  
+      { :email => 'jared@breve.com',   :password => 'password', :lastname => 'galang', :firstname => 'jared'   },  
+      { :email => 'jace@breve.com',    :password => 'password', :lastname => 'galang', :firstname => 'jace'    },  
+      { :email => 'justin@breve.com',  :password => 'password', :lastname => 'galang', :firstname => 'justin'  },  
+      { :email => 'jaden@breve.com',   :password => 'password', :lastname => 'galang', :firstname => 'jaden'   }  
       ])
 
     (rand(10) + 5).times do |i|

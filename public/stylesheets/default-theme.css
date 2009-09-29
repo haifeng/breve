@@ -61,16 +61,16 @@ a:hover {
    color: #88cc88;
 }
 
-.vote-button {
-  color: lightslategray; 
-  text-decoration: none;
-}
-
 a.prev_page,
 a.next_page,
 a.link-button {
    color: steelblue; 
    text-decoration: none;
+}
+
+.vote-button {
+  color: lightslategray; 
+  text-decoration: none;
 }
 
 .hover {
@@ -91,7 +91,7 @@ a.link-button {
    border-bottom: 1px solid gainsboro;
    margin-bottom: 5px;
    padding-bottom: 5px;
-   font-size: 1.2em;
+   font-size: 0.85em;
 }
 
 .page-menubar {
@@ -102,7 +102,7 @@ a.link-button {
    margin-top: 5px;
    border-top: 1px solid gainsboro;
    padding-top: 5px;
-   font-size: 0.7em;
+   font-size: 0.8em;
    color: gray;
 }
 
@@ -116,6 +116,11 @@ a.link-button {
 .page-header a,
 .page-menubar a {
    color: #4d2c00;
+}
+
+a.selected-menu-item {
+   color: chocolate;
+   font-weight: bolder;
 }
 
 a.logo {
@@ -197,3 +202,4 @@ fieldset br {
 form {
    width: 5in;
 }
+

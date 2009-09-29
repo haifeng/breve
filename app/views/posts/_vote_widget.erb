@@ -1,6 +1,6 @@
 <div style="float: left; text-align: center; padding: 5px">
   <% if authorized? and (post.author.id == current_user) %>
-    <span style="color: orange; font-size: 1em">&#9737;</span>
+    <span style="color: orange; font-size: 1em">&#x272a;<!-- &#x272a; --></span>
   <% else %>
     <% if authorized? %>
       <%= link_to_remote '&#8679;', 

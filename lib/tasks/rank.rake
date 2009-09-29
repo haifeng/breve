@@ -15,14 +15,14 @@ namespace :db do
       puts "Posts"
       puts "--------"
       Post.find(:all, :order => 'rank desc').each do |a|
-        puts "#{a.author.nickname}\t#{a.created_at}\t#{a.points}\t#{a.rank}"
+        puts "#{a.author.alias}\t#{a.created_at}\t#{a.points}\t#{a.rank}"
       end
       puts
       
       puts "Comments"
       puts "--------"
       Comment.find(:all, :order => 'rank desc').each do |a|
-        puts "#{a.author.nickname}\t#{a.created_at}\t#{a.points}\t#{a.rank}"
+        puts "#{a.author.alias}\t#{a.created_at}\t#{a.points}\t#{a.rank}"
       end
     end
     
