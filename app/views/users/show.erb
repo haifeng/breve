@@ -2,8 +2,14 @@
 
 <%= render :partial => 'users/sidebar', :locals => { :user => @user } %>
 <div style="font-size: 1.1em; color: #666666">
-  <span style="font-size: 2.5em"><%= @user.displayname %></span>
+  <span style="font-size: 2.5em">
+    <%= @user.fullname %>
+    <% unless @user[:alias].blank? %>
+      <sup style="font-size: 0.5em">aka: <%= @user.displayname %></sup>
+    <% end %>
+  </span>
   <p/>
+  
   
   Last logged-in <strong><%= distance_of_time_in_words_to_now @user.updated_at %> ago</strong><br/>
   Member since <strong><%= @user.created_at.to_s(:date) %></strong>
