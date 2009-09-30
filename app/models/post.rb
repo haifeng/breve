@@ -22,8 +22,21 @@ class Post < ActiveRecord::Base
   cattr_reader :per_page
   @@per_page = 15
 
-  def self.was_submitted_before?(params)
-    find_by_url(params[:url]) unless params[:url].blank?
+  def self.was_submitted_before?(url)
+    find_by_url(url) unless url.blank?
+  end
+
+  def self.submit!(author, content={})
+    post = Post.was_submitted_before?(content[:url])
+    raise DuplicatePostException.new(post), "Duplicate post, please join in the discussion instead." unless post.nil?
+    begin
+      post        = Post.new(content) 
+      post.author = User.find(author)
+      post.save!
+      post
+    rescue
+      raise PostException.new(post), $!.message
+    end
   end
   
   def host

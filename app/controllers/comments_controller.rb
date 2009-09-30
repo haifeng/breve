@@ -4,6 +4,10 @@ class CommentsController < ApplicationController
   before_filter :ensure_user_is_authenticated, 
     :only => [ :new, :create, :reply, :edit, :update, :destroy, :vote ]
     
+  def top_ranked
+    @comments = Comment.top_ranked(params[:page])
+  end
+
   def submitted
     @comments = Comment.submitted_by(params[:user_id], params[:page])
   end
@@ -11,11 +15,7 @@ class CommentsController < ApplicationController
   def voted
     @comments = Comment.voted_by(params[:user_id], params[:page])
   end
-
-  def top_ranked
-    @comments = Comment.top_ranked(params[:page])
-  end
-  
+    
   def index
     @post     = find_commentable
     @comments = @post.comments_by_rank
@@ -66,7 +66,6 @@ class CommentsController < ApplicationController
     else
       flash[:notice] = 'WARN: Comments with replies may not be deleted.'
       redirect_to post_comments_url(@comment.topic)
-      return
     end
   end
   

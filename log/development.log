@@ -8672,3 +8672,1974 @@ Rendered main/_header (1.6ms)
 Rendered main/_body (0.1ms)
 Rendered main/_footer (0.6ms)
 Completed in 128ms (View: 111, DB: 6) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#top_ranked (for 127.0.0.1 at 2009-09-30 13:14:00) [GET]
+  Parameters: {"action"=>"top_ranked", "controller"=>"posts"}
+  [4;36;1mPost Load (2.5ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY rank desc LIMIT 15 OFFSET 0[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/top_ranked
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 5) [0m
+Rendered posts/_vote_widget (16.1ms)
+Rendered posts/_headline_widget (3.0ms)
+Rendered posts/_info_widget (35.7ms)
+  [4;35;1mSQL (0.9ms)[0m   [0mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".commentable_id = 90 AND "comments".commentable_type = E'Post') [0m
+Rendered posts/_controls_widget (12.7ms)
+Rendered posts/_item (85.3ms)
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendered posts/_vote_widget (0.9ms)
+Rendered posts/_headline_widget (0.4ms)
+Rendered posts/_info_widget (0.7ms)
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".commentable_id = 82 AND "comments".commentable_type = E'Post') [0m
+Rendered posts/_controls_widget (4.7ms)
+Rendered posts/_item (7.5ms)
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_vote_widget (3.0ms)
+Rendered posts/_headline_widget (0.4ms)
+Rendered posts/_info_widget (0.7ms)
+Rendered posts/_controls_widget (0.6ms)
+Rendered posts/_item (5.5ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 5) [0m
+Rendered posts/_vote_widget (3.3ms)
+Rendered posts/_headline_widget (0.4ms)
+Rendered posts/_info_widget (0.7ms)
+Rendered posts/_controls_widget (0.6ms)
+Rendered posts/_item (59.8ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendered posts/_vote_widget (0.4ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.6ms)
+Rendered posts/_controls_widget (3.5ms)
+Rendered posts/_item (5.5ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendered posts/_vote_widget (0.4ms)
+Rendered posts/_headline_widget (0.4ms)
+Rendered posts/_info_widget (0.6ms)
+Rendered posts/_controls_widget (3.6ms)
+Rendered posts/_item (5.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_vote_widget (2.3ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.6ms)
+Rendered posts/_controls_widget (0.5ms)
+Rendered posts/_item (4.4ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_vote_widget (2.3ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.6ms)
+Rendered posts/_controls_widget (0.5ms)
+Rendered posts/_item (5.2ms)
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 6) [0m
+Rendered posts/_vote_widget (2.9ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.6ms)
+Rendered posts/_controls_widget (0.5ms)
+Rendered posts/_item (5.0ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendered posts/_vote_widget (0.4ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.5ms)
+Rendered posts/_controls_widget (4.2ms)
+Rendered posts/_item (6.1ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 6) [0m
+Rendered posts/_vote_widget (2.3ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.6ms)
+Rendered posts/_controls_widget (0.5ms)
+Rendered posts/_item (4.4ms)
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendered posts/_vote_widget (2.8ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.6ms)
+Rendered posts/_controls_widget (0.6ms)
+Rendered posts/_item (5.0ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 6) [0m
+Rendered posts/_vote_widget (2.3ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.6ms)
+Rendered posts/_controls_widget (0.6ms)
+Rendered posts/_item (4.4ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendered posts/_vote_widget (2.3ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.6ms)
+Rendered posts/_controls_widget (0.5ms)
+Rendered posts/_item (4.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 6) [0m
+Rendered posts/_vote_widget (2.4ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.6ms)
+Rendered posts/_controls_widget (0.6ms)
+Rendered posts/_item (4.7ms)
+Rendered main/_analytics (0.7ms)
+Rendered main/_header (2.9ms)
+Rendered main/_body (0.4ms)
+Rendered main/_footer (1.2ms)
+Completed in 267ms (View: 249, DB: 6) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#new (for 127.0.0.1 at 2009-09-30 13:14:06) [GET]
+  Parameters: {"action"=>"new", "controller"=>"posts"}
+Rendering template within layouts/application
+Rendering posts/new
+Rendered comments/_textformat_help_widget (0.8ms)
+Rendered posts/_form (11.8ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.6ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.6ms)
+Completed in 45ms (View: 34, DB: 0) | 200 OK [http://localhost/posts/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#create (for 127.0.0.1 at 2009-09-30 13:14:18) [POST]
+  Parameters: {"commit"=>"Submit", "post"=>{"title"=>"", "text"=>"", "url"=>"http://www.post12.com"}, "action"=>"create", "authenticity_token"=>"i8VDVRU8Y0NmjWWOyP5Xy95QqPPM2/ToRtdG+j3i4wo=", "controller"=>"posts"}
+Rendering template within layouts/application
+Rendering posts/new
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #1 of app/views/posts/_form.erb:
+1: <% form_for @post do |f| %>
+2:   If you haven't read it yet, please take the time to read our community's 
+3:   <%= link_to 'guidelines', documents_path('guidelines') %>
+4:   <p/>
+
+    app/views/posts/_form.erb:1
+    app/views/posts/new.erb:3
+    app/controllers/posts_controller.rb:20:in `create'
+
+Rendered rescues/_trace (51.3ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#new (for 127.0.0.1 at 2009-09-30 13:15:09) [GET]
+  Parameters: {"action"=>"new", "controller"=>"posts"}
+Rendering template within layouts/application
+Rendering posts/new
+Rendered comments/_textformat_help_widget (0.1ms)
+Rendered posts/_form (5.2ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.6ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.6ms)
+Completed in 24ms (View: 12, DB: 0) | 200 OK [http://localhost/posts/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#create (for 127.0.0.1 at 2009-09-30 13:15:13) [POST]
+  Parameters: {"commit"=>"Submit", "post"=>{"title"=>"", "text"=>"", "url"=>"http://www.post122.com"}, "action"=>"create", "authenticity_token"=>"i8VDVRU8Y0NmjWWOyP5Xy95QqPPM2/ToRtdG+j3i4wo=", "controller"=>"posts"}
+Rendering template within layouts/application
+Rendering posts/new
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #1 of app/views/posts/_form.erb:
+1: <% form_for @post do |f| %>
+2:   If you haven't read it yet, please take the time to read our community's 
+3:   <%= link_to 'guidelines', documents_path('guidelines') %>
+4:   <p/>
+
+    app/views/posts/_form.erb:1
+    app/views/posts/new.erb:3
+    app/controllers/posts_controller.rb:20:in `create'
+
+Rendered rescues/_trace (47.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#new (for 127.0.0.1 at 2009-09-30 13:15:17) [GET]
+  Parameters: {"action"=>"new", "controller"=>"posts"}
+Rendering template within layouts/application
+Rendering posts/new
+Rendered comments/_textformat_help_widget (0.1ms)
+Rendered posts/_form (5.2ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.7ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.6ms)
+Completed in 24ms (View: 12, DB: 0) | 200 OK [http://localhost/posts/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#create (for 127.0.0.1 at 2009-09-30 13:16:24) [POST]
+  Parameters: {"commit"=>"Submit", "post"=>{"title"=>"", "text"=>"", "url"=>"http://www.post122.com"}, "action"=>"create", "authenticity_token"=>"i8VDVRU8Y0NmjWWOyP5Xy95QqPPM2/ToRtdG+j3i4wo=", "controller"=>"posts"}
+Rendering template within layouts/application
+Rendering posts/new
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #1 of app/views/posts/_form.erb:
+1: <% form_for @post do |f| %>
+2:   If you haven't read it yet, please take the time to read our community's 
+3:   <%= link_to 'guidelines', documents_path('guidelines') %>
+4:   <p/>
+
+    app/views/posts/_form.erb:1
+    app/views/posts/new.erb:3
+    app/controllers/posts_controller.rb:20:in `create'
+
+Rendered rescues/_trace (55.4ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#new (for 127.0.0.1 at 2009-09-30 13:16:34) [GET]
+  Parameters: {"action"=>"new", "controller"=>"posts"}
+Rendering template within layouts/application
+Rendering posts/new
+Rendered comments/_textformat_help_widget (0.9ms)
+Rendered posts/_form (23.2ms)
+Rendered main/_analytics (0.7ms)
+Rendered main/_header (2.9ms)
+Rendered main/_body (0.5ms)
+Rendered main/_footer (2.0ms)
+Completed in 61ms (View: 50, DB: 0) | 200 OK [http://localhost/posts/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#create (for 127.0.0.1 at 2009-09-30 13:16:45) [POST]
+  Parameters: {"commit"=>"Submit", "post"=>{"title"=>"", "text"=>"F", "url"=>"http://www.post12.com"}, "action"=>"create", "authenticity_token"=>"i8VDVRU8Y0NmjWWOyP5Xy95QqPPM2/ToRtdG+j3i4wo=", "controller"=>"posts"}
+Rendering template within layouts/application
+Rendering posts/new
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #1 of app/views/posts/_form.erb:
+1: <% form_for @post do |f| %>
+2:   If you haven't read it yet, please take the time to read our community's 
+3:   <%= link_to 'guidelines', documents_path('guidelines') %>
+4:   <p/>
+
+    app/views/posts/_form.erb:1
+    app/views/posts/new.erb:3
+    app/controllers/posts_controller.rb:20:in `create'
+
+Rendered rescues/_trace (105.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#new (for 127.0.0.1 at 2009-09-30 13:16:47) [GET]
+  Parameters: {"action"=>"new", "controller"=>"posts"}
+Rendering template within layouts/application
+Rendering posts/new
+Rendered comments/_textformat_help_widget (0.1ms)
+Rendered posts/_form (5.0ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.6ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 24ms (View: 12, DB: 0) | 200 OK [http://localhost/posts/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#create (for 127.0.0.1 at 2009-09-30 13:19:09) [POST]
+  Parameters: {"commit"=>"Submit", "post"=>{"title"=>"", "text"=>"F", "url"=>"http://www.post12.com"}, "action"=>"create", "authenticity_token"=>"i8VDVRU8Y0NmjWWOyP5Xy95QqPPM2/ToRtdG+j3i4wo=", "controller"=>"posts"}
+Rendering template within layouts/application
+Rendering posts/new
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #1 of app/views/posts/_form.erb:
+1: <% form_for @post do |f| %>
+2:   If you haven't read it yet, please take the time to read our community's 
+3:   <%= link_to 'guidelines', documents_path('guidelines') %>
+4:   <p/>
+
+    app/views/posts/_form.erb:1
+    app/views/posts/new.erb:3
+    app/controllers/posts_controller.rb:22:in `create'
+
+Rendered rescues/_trace (49.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#new (for 127.0.0.1 at 2009-09-30 13:19:33) [GET]
+  Parameters: {"action"=>"new", "controller"=>"posts"}
+Rendering template within layouts/application
+Rendering posts/new
+Rendered comments/_textformat_help_widget (0.1ms)
+Rendered posts/_form (5.3ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.6ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 24ms (View: 13, DB: 0) | 200 OK [http://localhost/posts/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#create (for 127.0.0.1 at 2009-09-30 13:19:35) [POST]
+  Parameters: {"commit"=>"Submit", "post"=>{"title"=>"", "text"=>"F", "url"=>"http://www.post12.com"}, "action"=>"create", "authenticity_token"=>"i8VDVRU8Y0NmjWWOyP5Xy95QqPPM2/ToRtdG+j3i4wo=", "controller"=>"posts"}
+  [4;36;1mPost Load (1.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."url" = E'http://www.post12.com') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering posts/new
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #1 of app/views/posts/_form.erb:
+1: <% form_for @post do |f| %>
+2:   If you haven't read it yet, please take the time to read our community's 
+3:   <%= link_to 'guidelines', documents_path('guidelines') %>
+4:   <p/>
+
+    app/views/posts/_form.erb:1
+    app/views/posts/new.erb:3
+    app/controllers/posts_controller.rb:22:in `create'
+
+Rendered rescues/_trace (47.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#new (for 127.0.0.1 at 2009-09-30 13:19:36) [GET]
+  Parameters: {"action"=>"new", "controller"=>"posts"}
+Rendering template within layouts/application
+Rendering posts/new
+Rendered comments/_textformat_help_widget (0.1ms)
+Rendered posts/_form (5.8ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.7ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 86ms (View: 13, DB: 0) | 200 OK [http://localhost/posts/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#create (for 127.0.0.1 at 2009-09-30 13:26:30) [POST]
+  Parameters: {"commit"=>"Submit", "post"=>{"title"=>"", "text"=>"F", "url"=>"http://www.post12.com"}, "action"=>"create", "authenticity_token"=>"i8VDVRU8Y0NmjWWOyP5Xy95QqPPM2/ToRtdG+j3i4wo=", "controller"=>"posts"}
+  [4;36;1mPost Load (1.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."url" = E'http://www.post12.com') LIMIT 1[0m
+
+NameError (uninitialized constant PostsController::Breve):
+  app/controllers/posts_controller.rb:15:in `create'
+
+Rendered rescues/_trace (30.5ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#new (for 127.0.0.1 at 2009-09-30 13:26:33) [GET]
+  Parameters: {"action"=>"new", "controller"=>"posts"}
+Rendering template within layouts/application
+Rendering posts/new
+Rendered comments/_textformat_help_widget (0.8ms)
+Rendered posts/_form (77.2ms)
+Rendered main/_analytics (0.7ms)
+Rendered main/_header (2.9ms)
+Rendered main/_body (0.5ms)
+Rendered main/_footer (1.3ms)
+Completed in 180ms (View: 168, DB: 0) | 200 OK [http://localhost/posts/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#create (for 127.0.0.1 at 2009-09-30 13:29:33) [POST]
+  Parameters: {"commit"=>"Submit", "post"=>{"title"=>"", "text"=>"F", "url"=>"http://www.post12.com"}, "action"=>"create", "authenticity_token"=>"i8VDVRU8Y0NmjWWOyP5Xy95QqPPM2/ToRtdG+j3i4wo=", "controller"=>"posts"}
+  [4;36;1mPost Load (1.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."url" = E'http://www.post12.com') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering posts/new
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #1 of app/views/posts/_form.erb:
+1: <% form_for @post do |f| %>
+2:   If you haven't read it yet, please take the time to read our community's 
+3:   <%= link_to 'guidelines', documents_path('guidelines') %>
+4:   <p/>
+
+    app/views/posts/_form.erb:1
+    app/views/posts/new.erb:3
+    app/controllers/posts_controller.rb:22:in `create'
+
+Rendered rescues/_trace (51.4ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#new (for 127.0.0.1 at 2009-09-30 13:29:34) [GET]
+  Parameters: {"action"=>"new", "controller"=>"posts"}
+Rendering template within layouts/application
+Rendering posts/new
+Rendered comments/_textformat_help_widget (0.8ms)
+Rendered posts/_form (22.1ms)
+Rendered main/_analytics (0.6ms)
+Rendered main/_header (2.8ms)
+Rendered main/_body (0.5ms)
+Rendered main/_footer (1.2ms)
+Completed in 57ms (View: 44, DB: 1) | 200 OK [http://localhost/posts/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#create (for 127.0.0.1 at 2009-09-30 13:30:40) [POST]
+  Parameters: {"commit"=>"Submit", "post"=>{"title"=>"", "text"=>"F", "url"=>"http://www.post12.com"}, "action"=>"create", "authenticity_token"=>"i8VDVRU8Y0NmjWWOyP5Xy95QqPPM2/ToRtdG+j3i4wo=", "controller"=>"posts"}
+  [4;36;1mPost Load (1.0ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."url" = E'http://www.post12.com') LIMIT 1[0m
+
+NoMethodError (undefined method `post' for #<DuplicatePostException:0x2637854>):
+  app/controllers/posts_controller.rb:18:in `create'
+
+Rendered rescues/_trace (31.4ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#new (for 127.0.0.1 at 2009-09-30 13:31:03) [GET]
+  Parameters: {"action"=>"new", "controller"=>"posts"}
+Rendering template within layouts/application
+Rendering posts/new
+Rendered comments/_textformat_help_widget (0.9ms)
+Rendered posts/_form (79.9ms)
+Rendered main/_analytics (0.6ms)
+Rendered main/_header (2.9ms)
+Rendered main/_body (0.5ms)
+Rendered main/_footer (1.2ms)
+Completed in 129ms (View: 118, DB: 0) | 200 OK [http://localhost/posts/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#create (for 127.0.0.1 at 2009-09-30 13:31:05) [POST]
+  Parameters: {"commit"=>"Submit", "post"=>{"title"=>"", "text"=>"F", "url"=>"http://www.post12.com"}, "action"=>"create", "authenticity_token"=>"i8VDVRU8Y0NmjWWOyP5Xy95QqPPM2/ToRtdG+j3i4wo=", "controller"=>"posts"}
+  [4;35;1mPost Load (1.0ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."url" = E'http://www.post12.com') LIMIT 1[0m
+
+NoMethodError (undefined method `post' for #<DuplicatePostException:0x2647a10>):
+  app/controllers/posts_controller.rb:18:in `create'
+
+Rendered rescues/_trace (30.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#new (for 127.0.0.1 at 2009-09-30 13:31:08) [GET]
+  Parameters: {"action"=>"new", "controller"=>"posts"}
+Rendering template within layouts/application
+Rendering posts/new
+Rendered comments/_textformat_help_widget (0.1ms)
+Rendered posts/_form (5.2ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.8ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.8ms)
+Completed in 24ms (View: 13, DB: 0) | 200 OK [http://localhost/posts/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#new (for 127.0.0.1 at 2009-09-30 13:31:14) [GET]
+  Parameters: {"action"=>"new", "controller"=>"posts"}
+Rendering template within layouts/application
+Rendering posts/new
+Rendered comments/_textformat_help_widget (0.8ms)
+Rendered posts/_form (22.7ms)
+Rendered main/_analytics (0.7ms)
+Rendered main/_header (3.0ms)
+Rendered main/_body (0.4ms)
+Rendered main/_footer (1.4ms)
+Completed in 74ms (View: 61, DB: 0) | 200 OK [http://localhost/posts/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#create (for 127.0.0.1 at 2009-09-30 13:31:22) [POST]
+  Parameters: {"commit"=>"Submit", "post"=>{"title"=>"", "text"=>"", "url"=>"http://www.post5.com"}, "action"=>"create", "authenticity_token"=>"i8VDVRU8Y0NmjWWOyP5Xy95QqPPM2/ToRtdG+j3i4wo=", "controller"=>"posts"}
+  [4;36;1mPost Load (1.0ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."url" = E'http://www.post5.com') LIMIT 1[0m
+Redirected to http://localhost:3000/posts/38/comments
+Completed in 16ms (DB: 1) | 302 Found [http://localhost/posts]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2009-09-30 13:31:22) [GET]
+  Parameters: {"post_id"=>"38", "action"=>"index", "controller"=>"comments"}
+  [4;35;1mPost Load (0.7ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 38) [0m
+Rendering template within layouts/application
+Rendering comments/index
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendered posts/_vote_widget (6.9ms)
+Rendered posts/_headline_widget (2.3ms)
+Rendered posts/_info_widget (54.0ms)
+Rendered posts/_controls_widget (1.6ms)
+Rendered posts/_item (80.4ms)
+Rendered comments/_textformat_help_widget (0.1ms)
+  [4;35;1mComment Load (1.1ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".commentable_id = 38 AND "comments".commentable_type = E'Post') ORDER BY rank desc[0m
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.6ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.6ms)
+Completed in 124ms (View: 101, DB: 3) | 200 OK [http://localhost/posts/38/comments]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#new (for 127.0.0.1 at 2009-09-30 13:32:27) [GET]
+  Parameters: {"action"=>"new", "controller"=>"posts"}
+Rendering template within layouts/application
+Rendering posts/new
+Rendered comments/_textformat_help_widget (0.1ms)
+Rendered posts/_form (5.6ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.6ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 25ms (View: 13, DB: 0) | 200 OK [http://localhost/posts/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#create (for 127.0.0.1 at 2009-09-30 13:32:29) [POST]
+  Parameters: {"commit"=>"Submit", "post"=>{"title"=>"", "text"=>"", "url"=>"http://www.post5.com"}, "action"=>"create", "authenticity_token"=>"i8VDVRU8Y0NmjWWOyP5Xy95QqPPM2/ToRtdG+j3i4wo=", "controller"=>"posts"}
+  [4;36;1mPost Load (1.0ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."url" = E'http://www.post5.com') LIMIT 1[0m
+Redirected to http://localhost:3000/posts/38/comments
+Completed in 15ms (DB: 1) | 302 Found [http://localhost/posts]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2009-09-30 13:32:29) [GET]
+  Parameters: {"post_id"=>"38", "action"=>"index", "controller"=>"comments"}
+  [4;35;1mPost Load (0.7ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 38) [0m
+Rendering template within layouts/application
+Rendering comments/index
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendered posts/_vote_widget (5.3ms)
+Rendered posts/_headline_widget (2.6ms)
+Rendered posts/_info_widget (4.6ms)
+Rendered posts/_controls_widget (0.9ms)
+Rendered posts/_item (14.6ms)
+Rendered comments/_textformat_help_widget (0.1ms)
+  [4;35;1mComment Load (1.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".commentable_id = 38 AND "comments".commentable_type = E'Post') ORDER BY rank desc[0m
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.6ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 49ms (View: 28, DB: 3) | 200 OK [http://localhost/posts/38/comments]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#new (for 127.0.0.1 at 2009-09-30 13:32:30) [GET]
+  Parameters: {"action"=>"new", "controller"=>"posts"}
+Rendering template within layouts/application
+Rendering posts/new
+Rendered comments/_textformat_help_widget (0.1ms)
+Rendered posts/_form (5.7ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.8ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 85ms (View: 13, DB: 0) | 200 OK [http://localhost/posts/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#create (for 127.0.0.1 at 2009-09-30 13:32:58) [POST]
+  Parameters: {"commit"=>"Submit", "post"=>{"title"=>"", "text"=>"", "url"=>"http://www.post5.com"}, "action"=>"create", "authenticity_token"=>"i8VDVRU8Y0NmjWWOyP5Xy95QqPPM2/ToRtdG+j3i4wo=", "controller"=>"posts"}
+  [4;36;1mPost Load (1.0ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."url" = E'http://www.post5.com') LIMIT 1[0m
+Redirected to http://localhost:3000/posts/38/comments
+Completed in 15ms (DB: 1) | 302 Found [http://localhost/posts]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2009-09-30 13:32:58) [GET]
+  Parameters: {"post_id"=>"38", "action"=>"index", "controller"=>"comments"}
+  [4;35;1mPost Load (0.7ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 38) [0m
+Rendering template within layouts/application
+Rendering comments/index
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendered posts/_vote_widget (6.1ms)
+Rendered posts/_headline_widget (1.9ms)
+Rendered posts/_info_widget (4.5ms)
+Rendered posts/_controls_widget (0.8ms)
+Rendered posts/_item (14.5ms)
+Rendered comments/_textformat_help_widget (0.1ms)
+  [4;35;1mComment Load (1.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".commentable_id = 38 AND "comments".commentable_type = E'Post') ORDER BY rank desc[0m
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (2.1ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 51ms (View: 28, DB: 3) | 200 OK [http://localhost/posts/38/comments]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#new (for 127.0.0.1 at 2009-09-30 13:33:03) [GET]
+  Parameters: {"action"=>"new", "controller"=>"posts"}
+Rendering template within layouts/application
+Rendering posts/new
+Rendered comments/_textformat_help_widget (0.1ms)
+Rendered posts/_form (5.5ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.7ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 92ms (View: 13, DB: 0) | 200 OK [http://localhost/posts/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#create (for 127.0.0.1 at 2009-09-30 13:33:04) [POST]
+  Parameters: {"commit"=>"Submit", "post"=>{"title"=>"", "text"=>"", "url"=>"http://www.post5.com"}, "action"=>"create", "authenticity_token"=>"i8VDVRU8Y0NmjWWOyP5Xy95QqPPM2/ToRtdG+j3i4wo=", "controller"=>"posts"}
+  [4;36;1mPost Load (1.0ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."url" = E'http://www.post5.com') LIMIT 1[0m
+Redirected to http://localhost:3000/posts/38/comments
+Completed in 15ms (DB: 1) | 302 Found [http://localhost/posts]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2009-09-30 13:33:04) [GET]
+  Parameters: {"post_id"=>"38", "action"=>"index", "controller"=>"comments"}
+  [4;35;1mPost Load (0.7ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 38) [0m
+Rendering template within layouts/application
+Rendering comments/index
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendered posts/_vote_widget (6.0ms)
+Rendered posts/_headline_widget (2.0ms)
+Rendered posts/_info_widget (4.6ms)
+Rendered posts/_controls_widget (0.8ms)
+Rendered posts/_item (14.4ms)
+Rendered comments/_textformat_help_widget (0.1ms)
+  [4;35;1mComment Load (1.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".commentable_id = 38 AND "comments".commentable_type = E'Post') ORDER BY rank desc[0m
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.5ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.6ms)
+Completed in 50ms (View: 28, DB: 3) | 200 OK [http://localhost/posts/38/comments]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#new (for 127.0.0.1 at 2009-09-30 13:33:06) [GET]
+  Parameters: {"action"=>"new", "controller"=>"posts"}
+Rendering template within layouts/application
+Rendering posts/new
+Rendered comments/_textformat_help_widget (0.1ms)
+Rendered posts/_form (5.2ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.6ms)
+Rendered main/_body (0.2ms)
+Rendered main/_footer (0.7ms)
+Completed in 85ms (View: 74, DB: 0) | 200 OK [http://localhost/posts/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#create (for 127.0.0.1 at 2009-09-30 13:33:09) [POST]
+  Parameters: {"commit"=>"Submit", "post"=>{"title"=>"", "text"=>"", "url"=>""}, "action"=>"create", "authenticity_token"=>"i8VDVRU8Y0NmjWWOyP5Xy95QqPPM2/ToRtdG+j3i4wo=", "controller"=>"posts"}
+Rendering template within layouts/application
+Rendering posts/new
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #1 of app/views/posts/_form.erb:
+1: <% form_for @post do |f| %>
+2:   If you haven't read it yet, please take the time to read our community's 
+3:   <%= link_to 'guidelines', documents_path('guidelines') %>
+4:   <p/>
+
+    app/views/posts/_form.erb:1
+    app/views/posts/new.erb:3
+    app/controllers/posts_controller.rb:20:in `create'
+
+Rendered rescues/_trace (46.0ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#new (for 127.0.0.1 at 2009-09-30 13:43:40) [GET]
+  Parameters: {"action"=>"new", "controller"=>"posts"}
+Rendering template within layouts/application
+Rendering posts/new
+Rendered comments/_textformat_help_widget (1.2ms)
+Rendered posts/_form (25.1ms)
+Rendered main/_analytics (0.7ms)
+Rendered main/_header (3.0ms)
+Rendered main/_body (0.5ms)
+Rendered main/_footer (1.4ms)
+Completed in 78ms (View: 65, DB: 0) | 200 OK [http://localhost/posts/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#create (for 127.0.0.1 at 2009-09-30 13:43:42) [POST]
+  Parameters: {"commit"=>"Submit", "post"=>{"title"=>"", "text"=>"", "url"=>""}, "action"=>"create", "authenticity_token"=>"i8VDVRU8Y0NmjWWOyP5Xy95QqPPM2/ToRtdG+j3i4wo=", "controller"=>"posts"}
+Rendering template within layouts/application
+Rendering posts/new
+Rendered comments/_textformat_help_widget (0.1ms)
+Rendered posts/_form (3.8ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (58.0ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 88ms (View: 68, DB: 0) | 200 OK [http://localhost/posts]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#new (for 127.0.0.1 at 2009-09-30 13:43:49) [GET]
+  Parameters: {"action"=>"new", "controller"=>"posts"}
+Rendering template within layouts/application
+Rendering posts/new
+Rendered comments/_textformat_help_widget (0.1ms)
+Rendered posts/_form (5.3ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.7ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 24ms (View: 13, DB: 0) | 200 OK [http://localhost/posts/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#create (for 127.0.0.1 at 2009-09-30 13:43:50) [POST]
+  Parameters: {"commit"=>"Submit", "post"=>{"title"=>"", "text"=>"", "url"=>""}, "action"=>"create", "authenticity_token"=>"i8VDVRU8Y0NmjWWOyP5Xy95QqPPM2/ToRtdG+j3i4wo=", "controller"=>"posts"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+Rendering template within layouts/application
+Rendering posts/new
+Rendered comments/_textformat_help_widget (0.1ms)
+Rendered posts/_form (3.8ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.5ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.6ms)
+Completed in 33ms (View: 10, DB: 1) | 200 OK [http://localhost/posts]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#create (for 127.0.0.1 at 2009-09-30 13:44:05) [POST]
+  Parameters: {"commit"=>"Submit", "post"=>{"title"=>"", "text"=>"", "url"=>""}, "action"=>"create", "authenticity_token"=>"i8VDVRU8Y0NmjWWOyP5Xy95QqPPM2/ToRtdG+j3i4wo=", "controller"=>"posts"}
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+
+ActiveRecord::RecordInvalid (Validation failed: Must at least have a Title or Text):
+  app/models/post.rb:35:in `submit!'
+  app/controllers/posts_controller.rb:12:in `create'
+
+Rendered rescues/_trace (104.6ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (unprocessable_entity)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#create (for 127.0.0.1 at 2009-09-30 13:44:19) [POST]
+  Parameters: {"commit"=>"Submit", "post"=>{"title"=>"", "text"=>"", "url"=>""}, "action"=>"create", "authenticity_token"=>"i8VDVRU8Y0NmjWWOyP5Xy95QqPPM2/ToRtdG+j3i4wo=", "controller"=>"posts"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+Rendering template within layouts/application
+Rendering posts/new
+Rendered comments/_textformat_help_widget (0.1ms)
+Rendered posts/_form (3.5ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.5ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 32ms (View: 11, DB: 1) | 200 OK [http://localhost/posts]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CommentsController#top_ranked (for 127.0.0.1 at 2009-09-30 13:54:38) [GET]
+  Parameters: {"action"=>"top_ranked", "controller"=>"comments"}
+  [4;36;1mComment Load (2.3ms)[0m   [0;1mSELECT * FROM "comments" ORDER BY rank desc LIMIT 15 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering comments/top_ranked
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendered posts/_vote_widget (16.6ms)
+  [4;36;1mPost Load (1.3ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 90) [0m
+Rendered comments/_headline_widget (12.6ms)
+Rendered posts/_info_widget (42.5ms)
+  [4;35;1mSQL (0.9ms)[0m   [0mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".commentable_id = 5 AND "comments".commentable_type = E'Comment') [0m
+Rendered comments/_controls_widget (7.9ms)
+Rendered comments/_item (99.8ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendered posts/_vote_widget (0.5ms)
+  [4;35;1mComment Load (0.4ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 90) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+Rendered comments/_headline_widget (2.4ms)
+Rendered posts/_info_widget (0.9ms)
+Rendered comments/_controls_widget (4.6ms)
+Rendered comments/_item (9.4ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendered posts/_vote_widget (0.5ms)
+  [4;35;1mComment Load (0.4ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 90) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 7) [0m
+Rendered comments/_headline_widget (2.5ms)
+Rendered posts/_info_widget (0.7ms)
+Rendered comments/_controls_widget (3.9ms)
+Rendered comments/_item (63.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendered posts/_vote_widget (0.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 90) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 7) [0m
+Rendered comments/_headline_widget (2.1ms)
+Rendered posts/_info_widget (0.6ms)
+Rendered comments/_controls_widget (3.8ms)
+Rendered comments/_item (7.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendered posts/_vote_widget (0.4ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 90) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 7) [0m
+Rendered comments/_headline_widget (1.9ms)
+Rendered posts/_info_widget (0.6ms)
+Rendered comments/_controls_widget (3.8ms)
+Rendered comments/_item (7.4ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendered posts/_vote_widget (0.4ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 90) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+Rendered comments/_headline_widget (1.5ms)
+Rendered posts/_info_widget (0.7ms)
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".commentable_id = 7 AND "comments".commentable_type = E'Comment') [0m
+Rendered comments/_controls_widget (4.8ms)
+Rendered comments/_item (8.1ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendered posts/_vote_widget (0.4ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 90) [0m
+Rendered comments/_headline_widget (0.9ms)
+Rendered posts/_info_widget (0.6ms)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".commentable_id = 11 AND "comments".commentable_type = E'Comment') [0m
+Rendered comments/_controls_widget (5.5ms)
+Rendered comments/_item (8.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendered posts/_vote_widget (0.4ms)
+  [4;36;1mComment Load (0.3ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 11) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 90) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 11) [0m
+Rendered comments/_headline_widget (2.1ms)
+Rendered posts/_info_widget (0.7ms)
+Rendered comments/_controls_widget (3.8ms)
+Rendered comments/_item (7.7ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendered posts/_vote_widget (0.5ms)
+  [4;36;1mPost Load (0.4ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 82) [0m
+Rendered comments/_headline_widget (1.5ms)
+Rendered posts/_info_widget (0.7ms)
+Rendered comments/_controls_widget (3.9ms)
+Rendered comments/_item (7.5ms)
+Rendered main/_analytics (0.7ms)
+Rendered main/_header (3.1ms)
+Rendered main/_body (0.4ms)
+Rendered main/_footer (1.2ms)
+Completed in 267ms (View: 250, DB: 8) | 200 OK [http://localhost/comments/top_ranked]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CommentsController#reply (for 127.0.0.1 at 2009-09-30 13:54:42) [GET]
+  Parameters: {"post_id"=>"90", "action"=>"reply", "id"=>"5", "controller"=>"comments"}
+  [4;35;1mComment Load (0.6ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 90) [0m
+Rendering template within layouts/facebox
+Rendering comments/reply
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendered posts/_vote_widget (3.2ms)
+Rendered posts/_info_widget (6.1ms)
+Rendered comments/_textformat_help_widget (0.8ms)
+Completed in 46ms (View: 24, DB: 2) | 200 OK [http://localhost/posts/90/comments/5/reply]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CommentsController#reply (for 127.0.0.1 at 2009-09-30 13:54:45) [POST]
+  Parameters: {"comment"=>{"text"=>"xxxxxxxxxx"}, "commit"=>"Post Reply", "action"=>"reply", "authenticity_token"=>"i8VDVRU8Y0NmjWWOyP5Xy95QqPPM2/ToRtdG+j3i4wo=", "id"=>"5", "controller"=>"comments"}
+  [4;36;1mComment Load (0.6ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 90) [0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "commentable_type", "commentable_id", "updated_at", "text", "points", "rank", "user_id", "parent_id", "comments_count") VALUES('2009-09-30 20:54:45.459222', E'Comment', 5, '2009-09-30 20:54:45.459222', E'xxxxxxxxxx', 1, 0.0, 4, 5, 0) RETURNING "id"[0m
+  [4;35;1mComment Update (0.3ms)[0m   [0mUPDATE "comments" SET "comments_count" = COALESCE("comments_count", 0) + 1 WHERE ("id" = 5) [0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "comments_count" = COALESCE("comments_count", 0) + 1 WHERE ("id" = 4) [0m
+  [4;35;1mSQL (150.4ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/posts/90/comments
+Completed in 257ms (DB: 153) | 302 Found [http://localhost/comments/5/reply]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2009-09-30 13:54:45) [GET]
+  Parameters: {"post_id"=>"90", "action"=>"index", "controller"=>"comments"}
+  [4;36;1mPost Load (0.7ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 90) [0m
+Rendering template within layouts/application
+Rendering comments/index
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 5) [0m
+Rendered posts/_vote_widget (6.2ms)
+Rendered posts/_headline_widget (2.4ms)
+Rendered posts/_info_widget (4.5ms)
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".commentable_id = 90 AND "comments".commentable_type = E'Post') [0m
+Rendered posts/_controls_widget (5.9ms)
+Rendered posts/_item (27.1ms)
+Rendered comments/_textformat_help_widget (0.1ms)
+  [4;35;1mComment Load (0.7ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".commentable_id = 90 AND "comments".commentable_type = E'Post') ORDER BY rank desc[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendered posts/_vote_widget (1.3ms)
+Rendered posts/_info_widget (0.7ms)
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".commentable_id = 11 AND "comments".commentable_type = E'Comment') [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 90) [0m
+Rendered comments/_controls_widget (5.9ms)
+  [4;35;1mComment Load (0.4ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".commentable_id = 11 AND "comments".commentable_type = E'Comment') ORDER BY rank desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendered posts/_vote_widget (0.5ms)
+Rendered posts/_info_widget (0.7ms)
+  [4;35;1mComment Load (0.4ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 11) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 90) [0m
+Rendered comments/_controls_widget (5.3ms)
+  [4;35;1mComment Load (0.4ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".commentable_id = 12 AND "comments".commentable_type = E'Comment') ORDER BY rank desc[0m
+Rendered comments/_comment (8.4ms)
+Rendered comments/_comment (19.8ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendered posts/_vote_widget (0.5ms)
+Rendered posts/_info_widget (1.1ms)
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".commentable_id = 5 AND "comments".commentable_type = E'Comment') [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 90) [0m
+Rendered comments/_controls_widget (5.3ms)
+  [4;35;1mComment Load (0.4ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".commentable_id = 5 AND "comments".commentable_type = E'Comment') ORDER BY rank desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendered posts/_vote_widget (0.4ms)
+Rendered posts/_info_widget (0.7ms)
+  [4;35;1mComment Load (0.3ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 90) [0m
+Rendered comments/_controls_widget (5.3ms)
+  [4;35;1mComment Load (0.3ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".commentable_id = 6 AND "comments".commentable_type = E'Comment') ORDER BY rank desc[0m
+Rendered comments/_comment (7.9ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendered posts/_vote_widget (0.5ms)
+Rendered posts/_info_widget (0.7ms)
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".commentable_id = 7 AND "comments".commentable_type = E'Comment') [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 90) [0m
+Rendered comments/_controls_widget (5.6ms)
+  [4;36;1mComment Load (0.4ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".commentable_id = 7 AND "comments".commentable_type = E'Comment') ORDER BY rank desc[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendered posts/_vote_widget (0.6ms)
+Rendered posts/_info_widget (0.7ms)
+  [4;36;1mComment Load (0.5ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 90) [0m
+Rendered comments/_controls_widget (6.4ms)
+  [4;35;1mComment Load (0.4ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".commentable_id = 8 AND "comments".commentable_type = E'Comment') ORDER BY rank desc[0m
+Rendered comments/_comment (9.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendered posts/_vote_widget (0.4ms)
+Rendered posts/_info_widget (0.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 90) [0m
+Rendered comments/_controls_widget (4.9ms)
+  [4;36;1mComment Load (0.4ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".commentable_id = 9 AND "comments".commentable_type = E'Comment') ORDER BY rank desc[0m
+Rendered comments/_comment (7.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendered posts/_vote_widget (0.5ms)
+Rendered posts/_info_widget (0.7ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 90) [0m
+Rendered comments/_controls_widget (6.0ms)
+  [4;35;1mComment Load (0.4ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".commentable_id = 10 AND "comments".commentable_type = E'Comment') ORDER BY rank desc[0m
+Rendered comments/_comment (9.0ms)
+Rendered comments/_comment (35.4ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendered posts/_vote_widget (0.5ms)
+Rendered posts/_info_widget (0.7ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 90) [0m
+Rendered comments/_controls_widget (4.6ms)
+  [4;35;1mComment Load (0.4ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".commentable_id = 15 AND "comments".commentable_type = E'Comment') ORDER BY rank desc[0m
+Rendered comments/_comment (7.3ms)
+Rendered comments/_comment (59.6ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.9ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.6ms)
+Completed in 220ms (View: 191, DB: 10) | 200 OK [http://localhost/posts/90/comments]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CommentsController#top_ranked (for 127.0.0.1 at 2009-09-30 13:54:48) [GET]
+  Parameters: {"action"=>"top_ranked", "controller"=>"comments"}
+  [4;36;1mComment Load (3.2ms)[0m   [0;1mSELECT * FROM "comments" ORDER BY rank desc LIMIT 15 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering comments/top_ranked
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendered posts/_vote_widget (7.0ms)
+  [4;36;1mComment Load (0.3ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 90) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+Rendered comments/_headline_widget (11.1ms)
+Rendered posts/_info_widget (6.4ms)
+Rendered comments/_controls_widget (4.3ms)
+Rendered comments/_item (30.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendered posts/_vote_widget (0.5ms)
+  [4;36;1mComment Load (0.4ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 90) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 7) [0m
+Rendered comments/_headline_widget (2.5ms)
+Rendered posts/_info_widget (0.7ms)
+Rendered comments/_controls_widget (4.0ms)
+Rendered comments/_item (8.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendered posts/_vote_widget (0.4ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 90) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 7) [0m
+Rendered comments/_headline_widget (2.4ms)
+Rendered posts/_info_widget (1.1ms)
+Rendered comments/_controls_widget (3.8ms)
+Rendered comments/_item (8.5ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendered posts/_vote_widget (0.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 90) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 7) [0m
+Rendered comments/_headline_widget (2.1ms)
+Rendered posts/_info_widget (0.7ms)
+Rendered comments/_controls_widget (4.0ms)
+Rendered comments/_item (7.9ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendered posts/_vote_widget (0.5ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 90) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+Rendered comments/_headline_widget (4.7ms)
+Rendered posts/_info_widget (0.7ms)
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".commentable_id = 7 AND "comments".commentable_type = E'Comment') [0m
+Rendered comments/_controls_widget (6.5ms)
+Rendered comments/_item (13.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendered posts/_vote_widget (0.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 90) [0m
+Rendered comments/_headline_widget (1.0ms)
+Rendered posts/_info_widget (0.7ms)
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".commentable_id = 11 AND "comments".commentable_type = E'Comment') [0m
+Rendered comments/_controls_widget (6.7ms)
+Rendered comments/_item (9.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendered posts/_vote_widget (0.5ms)
+  [4;35;1mComment Load (0.4ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 11) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 90) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 11) [0m
+Rendered comments/_headline_widget (2.8ms)
+Rendered posts/_info_widget (0.7ms)
+Rendered comments/_controls_widget (3.8ms)
+Rendered comments/_item (8.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendered posts/_vote_widget (0.4ms)
+  [4;35;1mPost Load (0.4ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 82) [0m
+Rendered comments/_headline_widget (1.4ms)
+Rendered posts/_info_widget (0.7ms)
+Rendered comments/_controls_widget (3.7ms)
+Rendered comments/_item (6.9ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendered posts/_vote_widget (0.4ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 90) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+Rendered comments/_headline_widget (1.5ms)
+Rendered posts/_info_widget (0.6ms)
+Rendered comments/_controls_widget (3.7ms)
+Rendered comments/_item (6.8ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendered posts/_vote_widget (0.4ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 90) [0m
+Rendered comments/_headline_widget (0.8ms)
+Rendered posts/_info_widget (0.6ms)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".commentable_id = 5 AND "comments".commentable_type = E'Comment') [0m
+Rendered comments/_controls_widget (4.8ms)
+Rendered comments/_item (7.8ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.5ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 128ms (View: 112, DB: 8) | 200 OK [http://localhost/comments/top_ranked]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CommentsController#reply (for 127.0.0.1 at 2009-09-30 13:54:52) [GET]
+  Parameters: {"post_id"=>"7", "action"=>"reply", "id"=>"9", "controller"=>"comments"}
+  [4;35;1mComment Load (0.6ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 9) [0m
+  [4;36;1mComment Load (0.4ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 7) [0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments"."id" = 5) [0m
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 90) [0m
+Rendering template within layouts/facebox
+Rendering comments/reply
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendered posts/_vote_widget (3.0ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 7) [0m
+Rendered posts/_info_widget (6.8ms)
+Rendered comments/_textformat_help_widget (0.1ms)
+Completed in 38ms (View: 14, DB: 3) | 200 OK [http://localhost/posts/7/comments/9/reply]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#top_ranked (for 127.0.0.1 at 2009-09-30 13:57:31) [GET]
+  Parameters: {"action"=>"top_ranked", "controller"=>"posts"}
+  [4;35;1mPost Load (2.7ms)[0m   [0mSELECT * FROM "posts" ORDER BY rank desc LIMIT 15 OFFSET 0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/top_ranked
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 5) [0m
+Rendered posts/_vote_widget (5.8ms)
+Rendered posts/_headline_widget (1.8ms)
+Rendered posts/_info_widget (4.4ms)
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".commentable_id = 90 AND "comments".commentable_type = E'Post') [0m
+Rendered posts/_controls_widget (11.3ms)
+Rendered posts/_item (24.9ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendered posts/_vote_widget (0.9ms)
+Rendered posts/_headline_widget (0.4ms)
+Rendered posts/_info_widget (0.7ms)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".commentable_id = 82 AND "comments".commentable_type = E'Post') [0m
+Rendered posts/_controls_widget (5.2ms)
+Rendered posts/_item (8.1ms)
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_vote_widget (3.9ms)
+Rendered posts/_headline_widget (0.4ms)
+Rendered posts/_info_widget (0.7ms)
+Rendered posts/_controls_widget (0.6ms)
+Rendered posts/_item (6.4ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 5) [0m
+Rendered posts/_vote_widget (2.4ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.7ms)
+Rendered posts/_controls_widget (0.5ms)
+Rendered posts/_item (4.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendered posts/_vote_widget (0.4ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.6ms)
+Rendered posts/_controls_widget (3.6ms)
+Rendered posts/_item (5.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendered posts/_vote_widget (0.5ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.8ms)
+Rendered posts/_controls_widget (3.5ms)
+Rendered posts/_item (5.9ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_vote_widget (2.4ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.6ms)
+Rendered posts/_controls_widget (0.5ms)
+Rendered posts/_item (4.7ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_vote_widget (2.3ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.7ms)
+Rendered posts/_controls_widget (0.6ms)
+Rendered posts/_item (4.5ms)
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 6) [0m
+Rendered posts/_vote_widget (3.0ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.6ms)
+Rendered posts/_controls_widget (0.5ms)
+Rendered posts/_item (5.1ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendered posts/_vote_widget (0.4ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.6ms)
+Rendered posts/_controls_widget (3.4ms)
+Rendered posts/_item (5.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 6) [0m
+Rendered posts/_vote_widget (2.4ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.6ms)
+Rendered posts/_controls_widget (0.5ms)
+Rendered posts/_item (4.5ms)
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendered posts/_vote_widget (3.6ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.6ms)
+Rendered posts/_controls_widget (0.6ms)
+Rendered posts/_item (5.9ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 6) [0m
+Rendered posts/_vote_widget (2.3ms)
+Rendered posts/_headline_widget (0.6ms)
+Rendered posts/_info_widget (0.8ms)
+Rendered posts/_controls_widget (0.6ms)
+Rendered posts/_item (5.1ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendered posts/_vote_widget (2.3ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.6ms)
+Rendered posts/_controls_widget (0.5ms)
+Rendered posts/_item (4.4ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 6) [0m
+Rendered posts/_vote_widget (2.5ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.7ms)
+Rendered posts/_controls_widget (0.6ms)
+Rendered posts/_item (4.8ms)
+Rendered main/_analytics (0.2ms)
+Rendered main/_header (2.5ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.6ms)
+Completed in 138ms (View: 119, DB: 7) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#new (for 127.0.0.1 at 2009-09-30 13:57:32) [GET]
+  Parameters: {"action"=>"new", "controller"=>"posts"}
+Rendering template within layouts/application
+Rendering posts/new
+Rendered comments/_textformat_help_widget (0.1ms)
+Rendered posts/_form (6.7ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.5ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.6ms)
+Completed in 32ms (View: 20, DB: 0) | 200 OK [http://localhost/posts/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#create (for 127.0.0.1 at 2009-09-30 13:57:35) [POST]
+  Parameters: {"commit"=>"Submit", "post"=>{"title"=>"", "text"=>"xxxxxxxxxxx", "url"=>""}, "action"=>"create", "authenticity_token"=>"i8VDVRU8Y0NmjWWOyP5Xy95QqPPM2/ToRtdG+j3i4wo=", "controller"=>"posts"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-09-30 20:57:35.473329', E'', 1, '2009-09-30 20:57:35.473329', E'', E'xxxxxxxxxxx', 1, 0.0, 4, 0) RETURNING "id"[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 4) [0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/posts/latest
+Completed in 27ms (DB: 4) | 302 Found [http://localhost/posts]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#latest (for 127.0.0.1 at 2009-09-30 13:57:35) [GET]
+  Parameters: {"action"=>"latest", "controller"=>"posts"}
+  [4;35;1mPost Load (2.6ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at desc LIMIT 15 OFFSET 0[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/latest
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendered posts/_vote_widget (4.3ms)
+Rendered posts/_headline_widget (2.0ms)
+Rendered posts/_info_widget (4.5ms)
+Rendered posts/_controls_widget (10.1ms)
+Rendered posts/_item (22.0ms)
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 6) [0m
+Rendered posts/_vote_widget (3.1ms)
+Rendered posts/_headline_widget (0.4ms)
+Rendered posts/_info_widget (0.7ms)
+Rendered posts/_controls_widget (0.6ms)
+Rendered posts/_item (5.4ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 5) [0m
+Rendered posts/_vote_widget (2.8ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.6ms)
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".commentable_id = 90 AND "comments".commentable_type = E'Post') [0m
+Rendered posts/_controls_widget (4.5ms)
+Rendered posts/_item (8.9ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendered posts/_vote_widget (0.5ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.7ms)
+Rendered posts/_controls_widget (3.5ms)
+Rendered posts/_item (5.6ms)
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendered posts/_vote_widget (72.1ms)
+Rendered posts/_headline_widget (0.4ms)
+Rendered posts/_info_widget (0.7ms)
+Rendered posts/_controls_widget (0.6ms)
+Rendered posts/_item (74.7ms)
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendered posts/_vote_widget (2.9ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.6ms)
+Rendered posts/_controls_widget (0.5ms)
+Rendered posts/_item (5.0ms)
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_vote_widget (2.9ms)
+Rendered posts/_headline_widget (0.4ms)
+Rendered posts/_info_widget (0.8ms)
+Rendered posts/_controls_widget (0.6ms)
+Rendered posts/_item (5.4ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 6) [0m
+Rendered posts/_vote_widget (2.3ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.6ms)
+Rendered posts/_controls_widget (0.5ms)
+Rendered posts/_item (4.3ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 5) [0m
+Rendered posts/_vote_widget (2.3ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.6ms)
+Rendered posts/_controls_widget (0.5ms)
+Rendered posts/_item (4.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendered posts/_vote_widget (0.5ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.6ms)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".commentable_id = 82 AND "comments".commentable_type = E'Post') [0m
+Rendered posts/_controls_widget (5.2ms)
+Rendered posts/_item (7.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendered posts/_vote_widget (2.3ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.6ms)
+Rendered posts/_controls_widget (0.5ms)
+Rendered posts/_item (4.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendered posts/_vote_widget (2.4ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (1.2ms)
+Rendered posts/_controls_widget (0.6ms)
+Rendered posts/_item (5.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_vote_widget (2.3ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.6ms)
+Rendered posts/_controls_widget (0.5ms)
+Rendered posts/_item (4.3ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 6) [0m
+Rendered posts/_vote_widget (2.3ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.6ms)
+Rendered posts/_controls_widget (0.5ms)
+Rendered posts/_item (4.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 5) [0m
+Rendered posts/_vote_widget (2.2ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.6ms)
+Rendered posts/_controls_widget (0.5ms)
+Rendered posts/_item (4.2ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.7ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.6ms)
+Completed in 196ms (View: 176, DB: 7) | 200 OK [http://localhost/posts/latest]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#edit (for 127.0.0.1 at 2009-09-30 13:57:39) [GET]
+  Parameters: {"action"=>"edit", "id"=>"92", "controller"=>"posts"}
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 92) [0m
+Rendering template within layouts/application
+Rendering posts/edit
+Rendered comments/_textformat_help_widget (0.1ms)
+Rendered posts/_form (6.1ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.7ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.6ms)
+Completed in 71ms (View: 53, DB: 1) | 200 OK [http://localhost/posts/92/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#latest (for 127.0.0.1 at 2009-09-30 13:57:40) [GET]
+  Parameters: {"action"=>"latest", "controller"=>"posts"}
+  [4;35;1mPost Load (2.7ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at desc LIMIT 15 OFFSET 0[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/latest
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendered posts/_vote_widget (3.7ms)
+Rendered posts/_headline_widget (2.2ms)
+Rendered posts/_info_widget (76.6ms)
+Rendered posts/_controls_widget (10.7ms)
+Rendered posts/_item (94.4ms)
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 6) [0m
+Rendered posts/_vote_widget (3.0ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.7ms)
+Rendered posts/_controls_widget (0.6ms)
+Rendered posts/_item (5.2ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 5) [0m
+Rendered posts/_vote_widget (2.8ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.6ms)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".commentable_id = 90 AND "comments".commentable_type = E'Post') [0m
+Rendered posts/_controls_widget (3.4ms)
+Rendered posts/_item (8.5ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendered posts/_vote_widget (0.4ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.6ms)
+Rendered posts/_controls_widget (3.6ms)
+Rendered posts/_item (5.7ms)
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendered posts/_vote_widget (2.9ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.6ms)
+Rendered posts/_controls_widget (0.5ms)
+Rendered posts/_item (5.1ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendered posts/_vote_widget (3.2ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.6ms)
+Rendered posts/_controls_widget (0.5ms)
+Rendered posts/_item (5.3ms)
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_vote_widget (2.8ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.6ms)
+Rendered posts/_controls_widget (0.5ms)
+Rendered posts/_item (4.9ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 6) [0m
+Rendered posts/_vote_widget (2.2ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.6ms)
+Rendered posts/_controls_widget (0.5ms)
+Rendered posts/_item (4.2ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 5) [0m
+Rendered posts/_vote_widget (2.2ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.6ms)
+Rendered posts/_controls_widget (0.7ms)
+Rendered posts/_item (4.4ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendered posts/_vote_widget (0.4ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.6ms)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".commentable_id = 82 AND "comments".commentable_type = E'Post') [0m
+Rendered posts/_controls_widget (4.4ms)
+Rendered posts/_item (6.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendered posts/_vote_widget (2.4ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.6ms)
+Rendered posts/_controls_widget (0.6ms)
+Rendered posts/_item (4.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendered posts/_vote_widget (2.3ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.6ms)
+Rendered posts/_controls_widget (0.5ms)
+Rendered posts/_item (4.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_vote_widget (2.2ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.6ms)
+Rendered posts/_controls_widget (1.1ms)
+Rendered posts/_item (4.8ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 6) [0m
+Rendered posts/_vote_widget (3.4ms)
+Rendered posts/_headline_widget (0.4ms)
+Rendered posts/_info_widget (0.7ms)
+Rendered posts/_controls_widget (0.6ms)
+Rendered posts/_item (5.9ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 5) [0m
+Rendered posts/_vote_widget (2.3ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.6ms)
+Rendered posts/_controls_widget (0.5ms)
+Rendered posts/_item (4.3ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.7ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.6ms)
+Completed in 196ms (View: 174, DB: 7) | 200 OK [http://localhost/posts/latest]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2009-09-30 13:57:41) [GET]
+  Parameters: {"post_id"=>"92", "action"=>"index", "controller"=>"comments"}
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 92) [0m
+Rendering template within layouts/application
+Rendering comments/index
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendered posts/_vote_widget (3.1ms)
+Rendered posts/_headline_widget (1.8ms)
+Rendered posts/_info_widget (4.4ms)
+Rendered posts/_controls_widget (3.8ms)
+Rendered posts/_item (14.4ms)
+Rendered comments/_textformat_help_widget (0.1ms)
+  [4;36;1mComment Load (1.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".commentable_id = 92 AND "comments".commentable_type = E'Post') ORDER BY rank desc[0m
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.7ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.6ms)
+Completed in 45ms (View: 27, DB: 2) | 200 OK [http://localhost/posts/92/comments]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2009-09-30 13:57:44) [POST]
+  Parameters: {"comment"=>{"text"=>"sdfsdf"}, "commit"=>"Add Comment", "post_id"=>"92", "action"=>"create", "authenticity_token"=>"i8VDVRU8Y0NmjWWOyP5Xy95QqPPM2/ToRtdG+j3i4wo=", "controller"=>"comments"}
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 92) [0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "commentable_type", "commentable_id", "updated_at", "text", "points", "rank", "user_id", "parent_id", "comments_count") VALUES('2009-09-30 20:57:44.692307', E'Post', 92, '2009-09-30 20:57:44.692307', E'sdfsdf', 1, 0.0, 4, NULL, 0) RETURNING "id"[0m
+  [4;35;1mPost Update (0.4ms)[0m   [0mUPDATE "posts" SET "comments_count" = COALESCE("comments_count", 0) + 1 WHERE ("id" = 92) [0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "comments_count" = COALESCE("comments_count", 0) + 1 WHERE ("id" = 4) [0m
+  [4;35;1mSQL (13.3ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/posts/92/comments
+Completed in 49ms (DB: 16) | 302 Found [http://localhost/posts/92/comments]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2009-09-30 13:57:44) [GET]
+  Parameters: {"post_id"=>"92", "action"=>"index", "controller"=>"comments"}
+  [4;36;1mPost Load (0.7ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 92) [0m
+Rendering template within layouts/application
+Rendering comments/index
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendered posts/_vote_widget (3.3ms)
+Rendered posts/_headline_widget (2.4ms)
+Rendered posts/_info_widget (10.9ms)
+  [4;36;1mSQL (2.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".commentable_id = 92 AND "comments".commentable_type = E'Post') [0m
+Rendered posts/_controls_widget (9.1ms)
+Rendered posts/_item (26.8ms)
+Rendered comments/_textformat_help_widget (0.1ms)
+  [4;35;1mComment Load (0.6ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".commentable_id = 92 AND "comments".commentable_type = E'Post') ORDER BY rank desc[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendered posts/_vote_widget (0.6ms)
+Rendered posts/_info_widget (0.7ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 92) [0m
+Rendered comments/_controls_widget (4.4ms)
+  [4;36;1mComment Load (0.4ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".commentable_id = 16 AND "comments".commentable_type = E'Comment') ORDER BY rank desc[0m
+Rendered comments/_comment (7.4ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.7ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.6ms)
+Completed in 69ms (View: 44, DB: 5) | 200 OK [http://localhost/posts/92/comments]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#top_ranked (for 127.0.0.1 at 2009-09-30 13:57:47) [GET]
+  Parameters: {"action"=>"top_ranked", "controller"=>"posts"}
+  [4;35;1mPost Load (2.4ms)[0m   [0mSELECT * FROM "posts" ORDER BY rank desc LIMIT 15 OFFSET 0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/top_ranked
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 5) [0m
+Rendered posts/_vote_widget (5.1ms)
+Rendered posts/_headline_widget (1.8ms)
+Rendered posts/_info_widget (4.3ms)
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".commentable_id = 90 AND "comments".commentable_type = E'Post') [0m
+Rendered posts/_controls_widget (69.2ms)
+Rendered posts/_item (81.2ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendered posts/_vote_widget (0.9ms)
+Rendered posts/_headline_widget (0.4ms)
+Rendered posts/_info_widget (0.7ms)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".commentable_id = 82 AND "comments".commentable_type = E'Post') [0m
+Rendered posts/_controls_widget (4.6ms)
+Rendered posts/_item (7.2ms)
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_vote_widget (2.9ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.6ms)
+Rendered posts/_controls_widget (0.6ms)
+Rendered posts/_item (5.8ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 5) [0m
+Rendered posts/_vote_widget (2.3ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.6ms)
+Rendered posts/_controls_widget (0.6ms)
+Rendered posts/_item (4.4ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendered posts/_vote_widget (0.4ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.6ms)
+Rendered posts/_controls_widget (4.2ms)
+Rendered posts/_item (6.1ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendered posts/_vote_widget (0.5ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.6ms)
+Rendered posts/_controls_widget (3.7ms)
+Rendered posts/_item (5.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_vote_widget (2.4ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.6ms)
+Rendered posts/_controls_widget (0.6ms)
+Rendered posts/_item (4.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_vote_widget (2.2ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.6ms)
+Rendered posts/_controls_widget (1.0ms)
+Rendered posts/_item (4.7ms)
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 6) [0m
+Rendered posts/_vote_widget (2.9ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.6ms)
+Rendered posts/_controls_widget (0.6ms)
+Rendered posts/_item (5.2ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendered posts/_vote_widget (0.4ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.6ms)
+Rendered posts/_controls_widget (3.5ms)
+Rendered posts/_item (5.4ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 6) [0m
+Rendered posts/_vote_widget (2.3ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.6ms)
+Rendered posts/_controls_widget (0.6ms)
+Rendered posts/_item (4.4ms)
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendered posts/_vote_widget (2.9ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.6ms)
+Rendered posts/_controls_widget (0.5ms)
+Rendered posts/_item (5.1ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 6) [0m
+Rendered posts/_vote_widget (2.3ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.6ms)
+Rendered posts/_controls_widget (0.5ms)
+Rendered posts/_item (4.2ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendered posts/_vote_widget (2.3ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.6ms)
+Rendered posts/_controls_widget (0.5ms)
+Rendered posts/_item (4.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 6) [0m
+Rendered posts/_vote_widget (2.2ms)
+Rendered posts/_headline_widget (0.4ms)
+Rendered posts/_info_widget (0.6ms)
+Rendered posts/_controls_widget (0.5ms)
+Rendered posts/_item (4.3ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.5ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 176ms (View: 159, DB: 6) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#vote (for 127.0.0.1 at 2009-09-30 13:57:48) [POST]
+  Parameters: {"action"=>"vote", "authenticity_token"=>"i8VDVRU8Y0NmjWWOyP5Xy95QqPPM2/ToRtdG+j3i4wo=", "id"=>"90", "controller"=>"posts"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 90) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 5) [0m
+  [4;35;1mVote Load (23.2ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = 4 AND "votes"."voteable_id" = 90) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO "votes" ("voteable_id", "voteable_type", "created_at", "updated_at", "user_id", "value") VALUES(90, E'Post', '2009-09-30 20:57:48.833836', '2009-09-30 20:57:48.833836', 4, 3) RETURNING "id"[0m
+  [4;36;1mPost Update (0.4ms)[0m   [0;1mUPDATE "posts" SET "updated_at" = '2009-09-30 20:57:48.841101', "points" = 16 WHERE "id" = 90[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCOMMIT[0m
+Completed in 58ms (View: 1, DB: 27) | 200 OK [http://localhost/posts/90/vote]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#vote (for 127.0.0.1 at 2009-09-30 13:57:51) [POST]
+  Parameters: {"action"=>"vote", "authenticity_token"=>"i8VDVRU8Y0NmjWWOyP5Xy95QqPPM2/ToRtdG+j3i4wo=", "id"=>"78", "controller"=>"posts"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 78) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mVote Load (0.5ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = 4 AND "votes"."voteable_id" = 78) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mINSERT INTO "votes" ("voteable_id", "voteable_type", "created_at", "updated_at", "user_id", "value") VALUES(78, E'Post', '2009-09-30 20:57:51.570735', '2009-09-30 20:57:51.570735', 4, 3) RETURNING "id"[0m
+  [4;36;1mPost Update (0.3ms)[0m   [0;1mUPDATE "posts" SET "updated_at" = '2009-09-30 20:57:51.577116', "points" = 13 WHERE "id" = 78[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+Completed in 102ms (View: 1, DB: 4) | 200 OK [http://localhost/posts/78/vote]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#vote (for 127.0.0.1 at 2009-09-30 13:57:55) [POST]
+  Parameters: {"action"=>"vote", "authenticity_token"=>"i8VDVRU8Y0NmjWWOyP5Xy95QqPPM2/ToRtdG+j3i4wo=", "id"=>"90", "controller"=>"posts"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;35;1mPost Load (2.0ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 90) [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 5) [0m
+  [4;35;1mVote Load (0.5ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = 4 AND "votes"."voteable_id" = 90) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPost Update (0.4ms)[0m   [0mUPDATE "posts" SET "updated_at" = '2009-09-30 20:57:55.168370', "points" = 13 WHERE "id" = 90[0m
+  [4;36;1mVote Delete all (0.3ms)[0m   [0;1mDELETE FROM "votes" WHERE ("id" IN (6)) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+Completed in 31ms (View: 1, DB: 5) | 200 OK [http://localhost/posts/90/vote]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#vote (for 127.0.0.1 at 2009-09-30 13:57:56) [POST]
+  Parameters: {"action"=>"vote", "authenticity_token"=>"i8VDVRU8Y0NmjWWOyP5Xy95QqPPM2/ToRtdG+j3i4wo=", "id"=>"90", "controller"=>"posts"}
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;35;1mPost Load (0.7ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 90) [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 5) [0m
+  [4;35;1mVote Load (0.5ms)[0m   [0mSELECT * FROM "votes" WHERE ("votes"."user_id" = 4 AND "votes"."voteable_id" = 90) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mINSERT INTO "votes" ("voteable_id", "voteable_type", "created_at", "updated_at", "user_id", "value") VALUES(90, E'Post', '2009-09-30 20:57:56.059263', '2009-09-30 20:57:56.059263', 4, 3) RETURNING "id"[0m
+  [4;36;1mPost Update (0.4ms)[0m   [0;1mUPDATE "posts" SET "updated_at" = '2009-09-30 20:57:56.067053', "points" = 16 WHERE "id" = 90[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+Completed in 36ms (View: 1, DB: 4) | 200 OK [http://localhost/posts/90/vote]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#latest (for 127.0.0.1 at 2009-09-30 13:57:58) [GET]
+  Parameters: {"action"=>"latest", "controller"=>"posts"}
+  [4;36;1mPost Load (2.6ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at desc LIMIT 15 OFFSET 0[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/latest
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendered posts/_vote_widget (3.4ms)
+Rendered posts/_headline_widget (2.0ms)
+Rendered posts/_info_widget (5.9ms)
+  [4;35;1mSQL (1.5ms)[0m   [0mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".commentable_id = 92 AND "comments".commentable_type = E'Post') [0m
+Rendered posts/_controls_widget (17.6ms)
+Rendered posts/_item (30.2ms)
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 6) [0m
+Rendered posts/_vote_widget (3.1ms)
+Rendered posts/_headline_widget (0.4ms)
+Rendered posts/_info_widget (0.7ms)
+Rendered posts/_controls_widget (0.6ms)
+Rendered posts/_item (5.6ms)
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 5) [0m
+Rendered posts/_vote_widget (3.6ms)
+Rendered posts/_headline_widget (0.4ms)
+Rendered posts/_info_widget (0.7ms)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".commentable_id = 90 AND "comments".commentable_type = E'Post') [0m
+Rendered posts/_controls_widget (2.2ms)
+Rendered posts/_item (7.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendered posts/_vote_widget (0.4ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.7ms)
+Rendered posts/_controls_widget (3.5ms)
+Rendered posts/_item (5.6ms)
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendered posts/_vote_widget (2.9ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.6ms)
+Rendered posts/_controls_widget (0.6ms)
+Rendered posts/_item (5.2ms)
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendered posts/_vote_widget (2.8ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.6ms)
+Rendered posts/_controls_widget (0.5ms)
+Rendered posts/_item (4.8ms)
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_vote_widget (66.8ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.6ms)
+Rendered posts/_controls_widget (0.6ms)
+Rendered posts/_item (69.0ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 6) [0m
+Rendered posts/_vote_widget (2.4ms)
+Rendered posts/_headline_widget (0.4ms)
+Rendered posts/_info_widget (0.7ms)
+Rendered posts/_controls_widget (0.6ms)
+Rendered posts/_item (5.2ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 5) [0m
+Rendered posts/_vote_widget (2.3ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.6ms)
+Rendered posts/_controls_widget (0.5ms)
+Rendered posts/_item (4.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendered posts/_vote_widget (0.4ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.5ms)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".commentable_id = 82 AND "comments".commentable_type = E'Post') [0m
+Rendered posts/_controls_widget (5.1ms)
+Rendered posts/_item (7.0ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendered posts/_vote_widget (2.5ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.6ms)
+Rendered posts/_controls_widget (0.6ms)
+Rendered posts/_item (4.8ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendered posts/_vote_widget (2.3ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.6ms)
+Rendered posts/_controls_widget (0.6ms)
+Rendered posts/_item (4.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_vote_widget (2.4ms)
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.6ms)
+Rendered posts/_controls_widget (0.5ms)
+Rendered posts/_item (5.3ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 6) [0m
+Rendered posts/_vote_widget (2.3ms)
+Rendered posts/_headline_widget (0.4ms)
+Rendered posts/_info_widget (0.7ms)
+Rendered posts/_controls_widget (0.6ms)
+Rendered posts/_item (4.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 5) [0m
+Rendered posts/_vote_widget (3.9ms)
+Rendered posts/_headline_widget (0.4ms)
+Rendered posts/_info_widget (0.7ms)
+Rendered posts/_controls_widget (0.6ms)
+Rendered posts/_item (6.3ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.6ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.6ms)
+Completed in 194ms (View: 175, DB: 8) | 200 OK [http://localhost/posts/latest]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#logout (for 127.0.0.1 at 2009-09-30 13:58:59) [GET]
+  Parameters: {"action"=>"logout", "controller"=>"users"}
+Redirected to http://localhost:3000/
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/logout]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#top_ranked (for 127.0.0.1 at 2009-09-30 13:58:59) [GET]
+  Parameters: {"action"=>"top_ranked", "controller"=>"posts"}
+  [4;36;1mPost Load (2.4ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY rank desc LIMIT 15 OFFSET 0[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/top_ranked
+Rendered posts/_vote_widget (2.3ms)
+Rendered posts/_headline_widget (1.7ms)
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 5) [0m
+Rendered posts/_info_widget (7.8ms)
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".commentable_id = 90 AND "comments".commentable_type = E'Post') [0m
+Rendered posts/_controls_widget (9.6ms)
+Rendered posts/_item (22.6ms)
+Rendered posts/_vote_widget (2.0ms)
+Rendered posts/_headline_widget (0.4ms)
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendered posts/_info_widget (1.5ms)
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".commentable_id = 82 AND "comments".commentable_type = E'Post') [0m
+Rendered posts/_controls_widget (1.4ms)
+Rendered posts/_item (5.9ms)
+Rendered posts/_vote_widget (2.0ms)
+Rendered posts/_headline_widget (0.3ms)
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_info_widget (1.5ms)
+Rendered posts/_controls_widget (0.5ms)
+Rendered posts/_item (5.4ms)
+Rendered posts/_vote_widget (2.0ms)
+Rendered posts/_headline_widget (0.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 5) [0m
+Rendered posts/_info_widget (0.9ms)
+Rendered posts/_controls_widget (0.5ms)
+Rendered posts/_item (4.3ms)
+Rendered posts/_vote_widget (1.9ms)
+Rendered posts/_headline_widget (0.3ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendered posts/_info_widget (0.9ms)
+Rendered posts/_controls_widget (0.5ms)
+Rendered posts/_item (4.1ms)
+Rendered posts/_vote_widget (1.9ms)
+Rendered posts/_headline_widget (0.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendered posts/_info_widget (0.8ms)
+Rendered posts/_controls_widget (0.5ms)
+Rendered posts/_item (4.1ms)
+Rendered posts/_vote_widget (2.0ms)
+Rendered posts/_headline_widget (0.3ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_info_widget (0.9ms)
+Rendered posts/_controls_widget (1.0ms)
+Rendered posts/_item (4.8ms)
+Rendered posts/_vote_widget (1.9ms)
+Rendered posts/_headline_widget (0.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_info_widget (0.9ms)
+Rendered posts/_controls_widget (0.5ms)
+Rendered posts/_item (4.2ms)
+Rendered posts/_vote_widget (1.9ms)
+Rendered posts/_headline_widget (0.3ms)
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 6) [0m
+Rendered posts/_info_widget (1.5ms)
+Rendered posts/_controls_widget (0.5ms)
+Rendered posts/_item (4.9ms)
+Rendered posts/_vote_widget (2.0ms)
+Rendered posts/_headline_widget (0.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendered posts/_info_widget (0.9ms)
+Rendered posts/_controls_widget (0.5ms)
+Rendered posts/_item (4.3ms)
+Rendered posts/_vote_widget (1.9ms)
+Rendered posts/_headline_widget (0.3ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 6) [0m
+Rendered posts/_info_widget (0.9ms)
+Rendered posts/_controls_widget (0.5ms)
+Rendered posts/_item (4.8ms)
+Rendered posts/_vote_widget (2.2ms)
+Rendered posts/_headline_widget (0.4ms)
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendered posts/_info_widget (1.6ms)
+Rendered posts/_controls_widget (0.6ms)
+Rendered posts/_item (75.9ms)
+Rendered posts/_vote_widget (1.9ms)
+Rendered posts/_headline_widget (0.3ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 6) [0m
+Rendered posts/_info_widget (1.0ms)
+Rendered posts/_controls_widget (0.5ms)
+Rendered posts/_item (4.5ms)
+Rendered posts/_vote_widget (2.2ms)
+Rendered posts/_headline_widget (0.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendered posts/_info_widget (1.1ms)
+Rendered posts/_controls_widget (0.6ms)
+Rendered posts/_item (5.0ms)
+Rendered posts/_vote_widget (2.0ms)
+Rendered posts/_headline_widget (0.3ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 6) [0m
+Rendered posts/_info_widget (0.9ms)
+Rendered posts/_controls_widget (0.5ms)
+Rendered posts/_item (4.3ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.6ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.6ms)
+Completed in 183ms (View: 166, DB: 6) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-09-30 13:59:00) [GET]
+  Parameters: {"action"=>"login", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/login
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.6ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.6ms)
+Completed in 25ms (View: 18, DB: 0) | 200 OK [http://localhost/login]
