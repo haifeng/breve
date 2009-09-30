@@ -20,7 +20,7 @@
   <div style="margin-left: 2em">
     <% form_for Comment.new, :url => send("reply_comment_path", @comment) do |f| %>
       <fieldset>
-        <%= f.text_area :content %><br/>
+        <%= f.text_area :text %><br/>
         <%= render :partial => 'comments/textformat_help_widget' %>
         <p/>
         <%= f.submit 'Post Reply' %>

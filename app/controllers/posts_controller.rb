@@ -15,15 +15,13 @@ class PostsController < ApplicationController
       redirect_to post_comments_url(@post)
       return
     end
-    
     @post        = Post.new(params[:post]) 
     @post.author = @user
-    if @post.save
-      redirect_to latest_posts_url
-    else
-      flash.now[:notice] = 'ERROR: There was a problem with your post, please try again.'
-      render :action => :new
-    end
+    @post.save!
+    redirect_to latest_posts_url
+  rescue
+    flash.now[:notice] = "ERROR: #{$!.message}, please try again."
+    render :action => :new
   end
   
   def edit
@@ -37,15 +35,14 @@ class PostsController < ApplicationController
   
   def update
     @post = Post.find(params[:id])
-    if @post.update_attributes(params[:post])
-      flash[:notice]     = 'Changes saved.'
-      referer            = session['referer']
-      session['referer'] = nil
-      redirect_to referer
-    else
-      flash.now[:notice] = 'ERROR: There was a problem with your changes, please try again.'
-      render :action => :edit
-    end
+    @post.update_attributes!(params[:post])
+    flash[:notice]     = 'Changes saved.'
+    referer            = session['referer']
+    session['referer'] = nil
+    redirect_to referer
+  rescue
+    flash.now[:notice] = "ERROR: #{$!.message}, please try again."
+    render :action => :edit
   end
 
   def top_ranked
@@ -72,7 +69,6 @@ class PostsController < ApplicationController
     else
       flash[:notice] = 'WARN: Posts with comments may not be deleted, add a comment on the post instead.'
       redirect_to post_comments_url(@post)
-      return
     end
   end
 end

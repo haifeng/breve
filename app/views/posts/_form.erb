@@ -4,8 +4,8 @@
   <p/>
   
   Omit the <%= f.label :url %> if you only wish to pose a question or topic for discussion.
-  Use the <%= f.label :content, 'Text' %> field to expand on your topic.
-  If ommited, the <%= f.label :content, 'Narrative' %> field's value is used in lieu 
+  Use the <%= f.label :text %> field to expand on your topic.
+  If ommited, the <%= f.label :text %> field's value is used in lieu 
   of the <%= f.label :title %>.
   <p/>
   
@@ -14,8 +14,8 @@
     <%= f.text_field :title %><br/>
     <%= f.label :url %>
     <%= f.text_field :url %><br/>
-    <%= f.label :content, 'Narrative' %>
-    <%= f.text_area :content %><br/>
+    <%= f.label :text %>
+    <%= f.text_area :text %><br/>
     <div style="margin-left: 75px">
       <%= render :partial => 'comments/textformat_help_widget' %>
     </div>

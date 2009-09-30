@@ -2,7 +2,7 @@ class Comment < ActiveRecord::Base
   acts_as_tree
   acts_as_post
   
-  validates_presence_of :content
+  validates_presence_of :text
   validates_presence_of :author
   validates_presence_of :commentable
   
@@ -27,16 +27,5 @@ class Comment < ActiveRecord::Base
     @topic ||= self.commentable
     @topic = @topic.commentable until not @topic.respond_to? :commentable
     @topic
-  end
-
-  def headline(mode = :full, maxlen = -1)
-    @headline = content
-    @headline = @headline.truncate(maxlen) if mode == :truncate
-    @headline
-  end
-  
-  protected
-  def ensure_it_has_no_comments
-    self.comments.empty?
   end
 end

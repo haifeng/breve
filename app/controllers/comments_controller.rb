@@ -49,8 +49,12 @@ class CommentsController < ApplicationController
   end
   
   def update
-    @comment       = Comment.find(params[:id])
-    flash[:notice] = 'Changes saved.' if @comment.update_attributes(params[:comment])
+    @comment = Comment.find(params[:id])
+    @comment.update_attributes!(params[:comment])
+    flash[:notice] = 'Changes saved.'
+  rescue
+    flash.now[:notice] = "ERROR: #{$!.message}, please try again."
+  ensure
     redirect_to comments_path_for(@comment.topic)
   end
 
@@ -74,22 +78,14 @@ class CommentsController < ApplicationController
     nil 
   end
 
-  def attach_comment_to? post
-    if params[:comment][:content].blank?
-      false
-    else
-      comment = Comment.new(params[:comment]) do |comment|
-        comment.commentable = post
-        comment.parent      = post if post.instance_of? Comment
-        comment.author      = User.find(current_user)
-      end
-      attached = comment.save!
-      flash.now[:notice] = 'ERROR: Unable to save comment, please try again.' unless attached
-      attached
+  def attach_comment_to(post)
+    comment = Comment.new(params[:comment]) do |comment|
+      comment.commentable = post
+      comment.parent      = post if post.instance_of? Comment
+      comment.author      = User.find(current_user)
     end
+    comment.save! rescue flash.now[:notice] = "ERROR: #{$!.message}, please try again."
   end
   
-  alias :attach_reply_to?  :attach_comment_to?
-  alias :attach_reply_to   :attach_comment_to?
-  alias :attach_comment_to :attach_comment_to?
+  alias :attach_reply_to :attach_comment_to
 end

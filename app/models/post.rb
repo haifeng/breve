@@ -30,26 +30,16 @@ class Post < ActiveRecord::Base
     topic_for_discussion? ? '' : URI.parse(self.url).host
   end
   
-  def headline(mode = :full, maxlen = -1)
-    @headline = (title.blank? ? content : title)
-    @headline = @headline.truncate(maxlen) if mode == :truncate
-    @headline
-  end
-  
   def topic_for_discussion?
     url.blank?
   end
-
-  protected
-  def ensure_it_has_no_comments
-    self.comments.empty?
-  end
   
+  protected
   def normalize_field_values
     self[:url].downcase! unless self[:url].blank?
   end
   
   def must_have_title_or_narrative
-    errors.add_to_base("Must at least have a Title or Narrative") if title.blank? and content.blank?
+    errors.add_to_base("Must at least have a Title or Text") if title.blank? and text.blank?
   end
 end

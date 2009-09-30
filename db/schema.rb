@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(:version => 20090918192812) do
     t.integer  "commentable_id"
     t.string   "commentable_type"
     t.integer  "user_id"
-    t.text     "content"
+    t.text     "text"
     t.integer  "points",           :default => 1
     t.float    "rank",             :default => 0.0
     t.datetime "created_at"
@@ -25,15 +25,15 @@ ActiveRecord::Schema.define(:version => 20090918192812) do
   end
 
   create_table "posts", :force => true do |t|
-    t.string   "url"
-    t.string   "title"
-    t.text     "content"
     t.integer  "user_id"
     t.integer  "section_id",     :default => 1
     t.integer  "points",         :default => 1
     t.float    "rank",           :default => 0.0
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "url"
+    t.string   "title"
+    t.text     "text"
     t.integer  "comments_count", :default => 0
   end
 
@@ -54,9 +54,9 @@ ActiveRecord::Schema.define(:version => 20090918192812) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "activation_key"
-    t.datetime "activation_expires_at", :default => '2009-09-29 14:07:25'
+    t.datetime "activation_expires_at", :default => '2009-09-30 11:47:21'
     t.string   "reset_key"
-    t.datetime "reset_expires_at",      :default => '2009-09-29 14:07:25'
+    t.datetime "reset_expires_at",      :default => '2009-09-30 11:47:21'
     t.integer  "posts_count",           :default => 0
     t.integer  "comments_count",        :default => 0
   end

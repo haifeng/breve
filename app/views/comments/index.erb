@@ -4,7 +4,7 @@
   <p/>
   
   <div style="margin-left: 25px; font-size: 0.95em; color: #333333">
-    <%=textualize @post.content %>
+    <%=textualize @post.text %>
   </div>
 </div>
 <p/>
@@ -13,7 +13,7 @@
   <h2>Comments</h2>
   <% form_for [ @post, Comment.new ] do |f| %>
     <fieldset>
-      <%= f.text_area :content %><br/>
+      <%= f.text_area :text %><br/>
       <%= render :partial => 'comments/textformat_help_widget' %>
       <%= f.submit 'Add Comment' %>
     </fieldset>
