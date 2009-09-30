@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   acts_as_voter
 
   before_filter :ensure_user_is_authenticated, 
-  :only => [ :new, :create, :edit, :update, :destroy, :vote ]
+    :only => [ :new, :create, :edit, :update, :destroy, :vote ]
 
   def top_ranked
     @posts = Post.top_ranked(params[:page])
@@ -25,11 +25,11 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.submit!(current_user, params[:post])
-    @user = @post.author
+    @user = User.find(current_user)
+    @post = @user.submit!(params[:post])
     redirect_to latest_posts_url
   rescue DuplicatePostException
-    flash[:notice] = "WARN: #{$!.message}"
+    flash[:notice] = "WARN: #{$!.message}, please join the discussion instead."
     redirect_to post_comments_url($!.post)
   rescue PostException
     flash.now[:notice] = "ERROR: #{$!.message}, please try again."

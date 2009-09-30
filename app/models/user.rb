@@ -44,23 +44,34 @@ class User < ActiveRecord::Base
   def fullname
     @fullname ||= "#{firstname.titleize} #{lastname.titleize}"
   end
-  
+
   def displayname
     return @displayname          unless @displayname.blank?
     @displayname = self.alias    unless self.alias.blank?
     @displayname = self.fullname if @displayname.blank?
     @displayname
   end
-  
+
   def vote_for(post)
     Vote.cast_for self, post
     post
   end
 
+  def submit!(content={})
+    post = Post.was_submitted_before?(content[:url])
+    raise DuplicatePostException.new(post), 'Duplicate post' unless post.nil?
+    
+    post = posts.new(content)
+    post.save!
+    post
+  rescue ActiveRecord::RecordInvalid
+    raise PostException.new(post), $!.message
+  end
+
   def post_points
     self.posts.sum(:points) - self.posts.count
   end
-  
+
   def comment_points
     self.comments.sum(:points) - self.comments.count
   end
@@ -73,11 +84,11 @@ class User < ActiveRecord::Base
       user.save
     end
   end
-  
+
   def self.reset(key, password)
     user = self.reset_allowed?(key)
     return if user.nil?
-    
+
     # when password arg is blank, we clear the password
     # field, we expect the validation for the password
     # field (if any) to take over when the record is
@@ -89,24 +100,24 @@ class User < ActiveRecord::Base
       user.reset_key        = nil
       user.reset_expires_at = Time.now
     end
-    
+
     return unless user.save
     user
   end
-  
+
   def self.reset_allowed?(key)
     user = User.find_by_reset_key(key)
     return if user.nil? or user.reset_expires_at < Time.now
     user
   end
-  
+
   def self.activate(key)
     user = User.find_by_activation_key(key)
     return if user.nil? or user.activation_expires_at < Time.now
 
     user.activation_key        = nil
     user.activation_expires_at = Time.now
-    
+
     return unless user.save
     user
   end
