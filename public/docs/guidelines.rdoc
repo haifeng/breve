@@ -17,16 +17,20 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 On Comments
 -----------
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+When posting comments regarding an article or responding to another comment: *be civil and be on point.*
 
 
 Regarding Karma
 ---------------
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Unlike most community-driven sites, we did not implement a karma-system. 
+
+Instead we associate your true identity with all of your activities. This we hope, is incentive enough towards positive behavior in the community.
+
+The *karma*, if there must be one, is the value you derive from being a member of the community. 
 
 
-Regarding Bugs & Features
--------------------------
+Regarding Bugs
+--------------
 
 If you find a bug or would like to see a feature implemented, please do so via the [issue tracking](http://github.com/jurisgalang/breve/issues) form for the the project that runs this site at [GitHub](http://github.com)
