@@ -20,17 +20,21 @@ Rails::Initializer.run do |config|
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
   config.gem 'rdiscount', :version => '1.3.5'
-  config.gem 'BlueCloth', :version => '1.0.0', :lib => 'bluecloth'
-  config.gem 'mislav-will_paginate', :version => '2.3.11', :lib => 'will_paginate', 
-    :source => 'http://gems.github.com'
+  config.gem 'BlueCloth', :version => '1.0.0', 
+    :lib => 'bluecloth'
+  config.gem 'mislav-will_paginate', :version => '2.3.11', 
+    :lib => 'will_paginate', :source => 'http://gems.github.com'
 
   if RUBY_VERSION == '1.8.6' 
-    config.gem 'openrain-action_mailer_tls', :verison => '1.1.3', :lib => 'smtp_tls.rb', 
-      :source => 'http://gems.github.com'
+    config.gem 'openrain-action_mailer_tls', :verison => '1.1.3', 
+      :lib => 'smtp_tls.rb', :source => 'http://gems.github.com'
   end
   
   if ENV['RAILS_ENV'] !~ /^production$/
-    config.gem "thoughtbot-shoulda", :lib => "shoulda", :source => "http://gems.github.com"
+    config.gem 'thoughtbot-shoulda', 
+      :lib => 'shoulda', :source => 'http://gems.github.com'
+    config.gem 'thoughtbot-factory_girl', 
+      :lib => 'factory_girl', :source => 'http://gems.github.com'
   end
     
   # Only load the plugins named here, in the order given (default is alphabetical).
