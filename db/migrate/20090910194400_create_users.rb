@@ -9,6 +9,9 @@ class CreateUsers < ActiveRecord::Migration
       t.integer   :points, :default => 1
       t.timestamps
 
+      # quick & dirty role/privilege management (should move this out later)
+      t.boolean   :admin, :default => false
+      
       # activation and reset
       t.string    :activation_key
       t.timestamp :activation_expires_at, :default => Time.now
