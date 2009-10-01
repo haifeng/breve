@@ -53,8 +53,8 @@ Rails::Initializer.run do |config|
 end
 
 # App sepcific globals
-BREVE_PRIVATE_KEY     = ENV['BREVE_APPLICATION_KEY']
-BREVE_PUBLIC_KEY      = ENV['BREVE_APPLICATION_KEY']
+BREVE_PRIVATE_KEY     = ENV['BREVE_APPLICATION_KEY'] || 'http://stark-robot-87.heroku.com'
+BREVE_PUBLIC_KEY      = ENV['BREVE_APPLICATION_KEY'] || 'http://stark-robot-87.heroku.com'
 
 RECAPTCHA_PRIVATE_KEY = ENV['RECAPTCHA_PRIVATE_KEY']
 RECAPTCHA_PUBLIC_KEY  = ENV['RECAPTCHA_PUBLIC_KEY']
