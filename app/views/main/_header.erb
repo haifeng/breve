@@ -19,13 +19,13 @@
   </div>
   <div class="page-menubar">
     <div>
+      <%= link_to '&#x270d; Post', new_post_path %>
+      <%= separator_tag %>
       <%= link_to 'Top', root_path, :id => 'top' %>
       <%= separator_tag %>
       <%= link_to 'Latest', latest_posts_path, :id => 'latest' %>
       <%= separator_tag %>
       <%= link_to 'Comments', top_ranked_comments_path, :id => 'comments' %>
-      <%= separator_tag %>
-      <%= link_to '&#x270d; Post', new_post_path %>
     </div>
   </div>
 </div>
