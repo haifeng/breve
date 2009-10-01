@@ -26,17 +26,6 @@ module ActiveRecord
             :conditions => ['votes.user_id = ?', author_id] } }
         EOV
       end
-
-
-      #def method_missing(name, *args)
-      #  super(name, args) unless name.to_s =~ /_by$/
-      #
-      #  name = name.to_s.sub(/_by$/, '')
-      #  source = self.to_s.downcase.pluralize
-      #  author = User.find(args.first)
-      #  page   = args.last
-      #  #author.send("#{name}_#{source}").paginate(:page => page)
-      #end
     end
     
     module InstanceMethods
