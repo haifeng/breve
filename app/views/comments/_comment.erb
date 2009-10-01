@@ -16,7 +16,7 @@
   </div>
   
   <div style="margin-left: 1.5em">
-    <%= render :partial => 'comments/comment', :collection => comment.replies_by_rank %>
+    <%= render :partial => 'comments/comment', :collection => comment.replies.top_ranked %>
   </div>
 </div>
 

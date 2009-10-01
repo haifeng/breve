@@ -5,19 +5,19 @@ class PostsController < ApplicationController
     :only => [ :new, :create, :edit, :update, :destroy, :vote ]
 
   def top_ranked
-    @posts = Post.top_ranked(params[:page])
+    @posts = Post.top_ranked.paginate(:page => params[:page])
   end
 
   def latest
-    @posts = Post.latest(params[:page]) 
+    @posts = Post.latest.paginate(:page => params[:page])
   end
 
   def submitted
-    @posts = Post.submitted_by(params[:user_id], params[:page])
+    @posts = Post.authored_by(params[:user_id]).paginate(:page => params[:page])
   end
 
   def voted
-    @posts = Post.voted_by(params[:user_id], params[:page])
+    @posts = Post.voted_by(params[:user_id]).paginate(:page => params[:page])
   end
 
   def new

@@ -12,11 +12,8 @@ class Comment < ActiveRecord::Base
   
   has_many :votes,    :as => :voteable
   has_many :comments, :as => :commentable
-  has_many :comments_by_rank, :as => :commentable, 
-    :order => 'rank desc', :class_name => 'Comment'
 
   alias :replies :comments
-  alias :replies_by_rank :comments_by_rank
 
   before_destroy :ensure_it_has_no_comments
 

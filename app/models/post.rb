@@ -14,12 +14,10 @@ class Post < ActiveRecord::Base
   
   has_many :votes,    :as => :voteable
   has_many :comments, :as => :commentable
-  has_many :comments_by_rank, :as => :commentable, 
-    :order => "rank desc", :class_name => 'Comment'
 
   before_save :normalize_field_values
   before_destroy :ensure_it_has_no_comments
-  
+
   cattr_reader :per_page
   @@per_page = 15
 

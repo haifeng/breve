@@ -8,26 +8,35 @@ module ActiveRecord
       def acts_as_post 
         class_eval <<-EOV
           include ActiveRecord::ActsAsPost::InstanceMethods
+
+          named_scope :latest, lambda { |*args| {
+            :conditions => ['created_at > ?', 90.days.ago ], 
+            :order => 'created_at desc', 
+            :limit => args.first || 250 } }
+
+          named_scope :top_ranked, lambda { |*args| {
+            :order => 'rank desc', 
+            :limit => args.first || 250 } }
+            
+          named_scope :authored_by, lambda { |author_id| { 
+            :conditions => ['user_id = ?', author_id] } }
+            
+          named_scope :voted_by, lambda { |author_id| { 
+            :include => :votes, 
+            :conditions => ['votes.user_id = ?', author_id] } }
         EOV
       end
 
-      def latest(page)
-        paginate :page => page, :order => 'created_at desc', :limit => 250
-      end
-  
-      def top_ranked(page)
-        paginate :page => page, :order => 'rank desc', :limit => 250
-      end
-      
-      def method_missing(name, *args)
-        super(name, args) unless name.to_s =~ /_by$/
 
-        name = name.to_s.sub(/_by$/, '')
-        source = self.to_s.downcase.pluralize
-        author = User.find(args.first)
-        page   = args.last
-        author.send("#{name}_#{source}").paginate(:page => page)
-      end
+      #def method_missing(name, *args)
+      #  super(name, args) unless name.to_s =~ /_by$/
+      #
+      #  name = name.to_s.sub(/_by$/, '')
+      #  source = self.to_s.downcase.pluralize
+      #  author = User.find(args.first)
+      #  page   = args.last
+      #  #author.send("#{name}_#{source}").paginate(:page => page)
+      #end
     end
     
     module InstanceMethods

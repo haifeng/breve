@@ -8,14 +8,7 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :alias, :case_sensitive => false, :allow_blank => true
 
   has_many :posts
-  has_many :submitted_posts, :order => 'created_at desc', :class_name => 'Post'
-  has_many :top_ranked_posts, :order => 'rank desc', :limit => 5, :class_name => 'Post'
-  has_many :voted_posts, :through => :votes, :source => :voteable, :source_type => 'Post'
-
   has_many :comments
-  has_many :submitted_comments, :order => 'created_at desc', :class_name => 'Comment'
-  has_many :top_ranked_comments, :order => 'rank desc', :limit => 5, :class_name => 'Comment'
-  has_many :voted_comments, :through => :votes, :source => :voteable, :source_type => 'Comment'
 
   has_many :votes
   has_gravatar
@@ -28,6 +21,14 @@ class User < ActiveRecord::Base
   def self.authorize(email, password)
     user = self.find :first, :conditions => [ "lower(email) = ?", (email.downcase) ]
     return user if not user.nil? and user.activated? and Password::check(password, user.password) 
+  end
+  
+  def top_ranked_posts
+    Post.authored_by(self).top_ranked(5)
+  end
+
+  def top_ranked_comments
+    Comment.authored_by(self).top_ranked(5)
   end
 
   # Obfuscate the password field's value on storage

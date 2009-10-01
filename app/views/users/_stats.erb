@@ -21,12 +21,12 @@
         <td><%= link_to_unless user.comments.empty?, "comments or replies", submitted_user_comments_path(user), :class => 'link-button' %></td>
       </tr>
       <tr>
-        <td align="right"><%= user.voted_posts.count %></td>
-        <td><%= link_to_unless user.voted_posts.empty?, "articles voted", voted_user_posts_path(user), :class => 'link-button' %></td>
+        <td align="right"><%= Post.voted_by(user).count %></td>
+        <td><%= link_to_unless Post.voted_by(user).empty?, "articles voted", voted_user_posts_path(user), :class => 'link-button' %></td>
       </tr>
       <tr>
-        <td align="right"><%= user.voted_comments.count %></td>
-        <td><%= link_to_unless user.voted_comments.empty?, "comments voted", voted_user_comments_path(user), :class => 'link-button' %></td>
+        <td align="right"><%= Comment.voted_by(user).count %></td>
+        <td><%= link_to_unless Comment.voted_by(user).empty?, "comments voted", voted_user_comments_path(user), :class => 'link-button' %></td>
       </tr>
     </table>
   </div>

@@ -5,11 +5,11 @@ class CommentsController < ApplicationController
     :only => [ :new, :create, :reply, :edit, :update, :destroy, :vote ]
     
   def top_ranked
-    @comments = Comment.top_ranked(params[:page])
+    @comments = Comment.top_ranked.paginate(:page => params[:page])
   end
 
   def submitted
-    @comments = Comment.submitted_by(params[:user_id], params[:page])
+    @comments = Comment.authored_by(params[:user_id]).paginate(:page => params[:page])
   end
 
   def voted
@@ -18,7 +18,7 @@ class CommentsController < ApplicationController
     
   def index
     @post     = find_commentable
-    @comments = @post.comments_by_rank
+    @comments = @post.comments.top_ranked
   end
 
   def create

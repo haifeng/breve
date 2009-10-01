@@ -18,7 +18,7 @@ class Vote < ActiveRecord::Base
       end
     end
     
-    #vote = post.votes.build(:user => user, :voteable => post) if vote.nil?
+    # vote = post.votes.build(:user => user, :voteable => post) if vote.nil?
     # now cast the vote
     self.transaction do
       # if user hasn't voted for the post before
