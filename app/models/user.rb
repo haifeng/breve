@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
   # Checks if the username and password combination
   # exists in the accounts table.
   def self.authorize(email, password)
-    user = self.find :first, :conditions => [ "lower(email) = ?", (email.downcase) ]
+    user = self.find :first, :conditions => [ "email = ?", Password::encrypt(BREVE_PRIVATE_KEY, email.downcase) ]
     return user if not user.nil? and user.activated? and Password::check(password, user.password) 
   end
   
@@ -31,10 +31,17 @@ class User < ActiveRecord::Base
     Comment.authored_by(self).top_ranked(5)
   end
 
-  # Obfuscate the password field's value on storage
-  def password=(plaintext)
-    self[:password] = Password::update(plaintext) unless plaintext.blank? 
-  end  
+  def password=(value)
+    self[:password] = Password::update(value) unless value.blank? 
+  end
+  
+  def email=(value)
+    self[:email] = Password::encrypt(BREVE_PRIVATE_KEY, value.downcase)
+  end
+
+  def email
+    Password::decrypt(BREVE_PRIVATE_KEY, self[:email])
+  end
 
   def digest
     self[:password] = ''
@@ -81,7 +88,7 @@ class User < ActiveRecord::Base
     user = self.find :first, :conditions => [ "lower(email) = ?", (email.downcase) ]
     unless user.nil?
       user.reset_expires_at = 1.hour.from_now
-      user.reset_key        = Password::keystring(BREVE_PRIVATE_KEY, email) 
+      user.reset_key        = Password::serial_number(BREVE_PRIVATE_KEY, email) 
       user.save
     end
   end
@@ -131,6 +138,6 @@ class User < ActiveRecord::Base
   def configure_for_activation
     self.password              = Password::salt
     self.activation_expires_at = 2.weeks.from_now
-    self.activation_key        = Password::keystring(BREVE_PRIVATE_KEY, self.email) 
+    self.activation_key        = Password::serial_number(BREVE_PRIVATE_KEY, self.email) 
   end
 end

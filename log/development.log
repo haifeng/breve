@@ -1,0 +1,1209 @@
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (130.0ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;35;1mSQL (18.4ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosts (20090910185613)
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (25.0ms)[0m   [0;1mCREATE TABLE "posts" ("id" serial primary key, "user_id" integer, "section_id" integer DEFAULT 1, "points" integer DEFAULT 1, "rank" float DEFAULT 0, "created_at" timestamp, "updated_at" timestamp, "url" character varying(255), "title" character varying(255), "text" text, "comments_count" integer DEFAULT 0) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090910185613')[0m
+  [4;36;1mSQL (3.4ms)[0m   [0;1mCOMMIT[0m
+Migrating to CreateUsers (20090910194400)
+  [4;35;1mSQL (0.6ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (6.9ms)[0m   [0;1mCREATE TABLE "users" ("id" serial primary key, "email" character varying(255), "password" character varying(255), "lastname" character varying(255), "firstname" character varying(255), "alias" character varying(255), "points" integer DEFAULT 1, "created_at" timestamp, "updated_at" timestamp, "admin" boolean DEFAULT 'f', "activation_key" character varying(255), "activation_expires_at" timestamp DEFAULT '2009-10-01 12:34:23.041523', "reset_key" character varying(255), "reset_expires_at" timestamp DEFAULT '2009-10-01 12:34:23.041579', "posts_count" integer DEFAULT 0, "comments_count" integer DEFAULT 0) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090910194400')[0m
+  [4;36;1mSQL (11.2ms)[0m   [0;1mCOMMIT[0m
+Migrating to CreateVotes (20090910231230)
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (11.4ms)[0m   [0;1mCREATE TABLE "votes" ("id" serial primary key, "voteable_id" integer, "voteable_type" character varying(255), "user_id" integer, "value" integer DEFAULT 3, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090910231230')[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mCOMMIT[0m
+Migrating to CreateComments (20090911003327)
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (14.4ms)[0m   [0;1mCREATE TABLE "comments" ("id" serial primary key, "parent_id" integer, "commentable_id" integer, "commentable_type" character varying(255), "user_id" integer, "text" text, "points" integer DEFAULT 1, "rank" float DEFAULT 0, "created_at" timestamp, "updated_at" timestamp, "comments_count" integer DEFAULT 0) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090911003327')[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mCOMMIT[0m
+Migrating to CreateSections (20090918192812)
+  [4;35;1mSQL (0.6ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (23.6ms)[0m   [0;1mCREATE TABLE "sections" ("id" serial primary key, "name" character varying(255), "description" text, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090918192812')[0m
+  [4;36;1mSQL (12.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO "sections" ("name", "created_at", "updated_at", "description") VALUES(E'Breve', '2009-10-01 19:34:24.730696', '2009-10-01 19:34:24.730696', E'RESERVED. This is the default section used for posts.') RETURNING "id"[0m
+  [4;36;1mSQL (18.4ms)[0m   [0;1mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO "sections" ("name", "created_at", "updated_at", "description") VALUES(E'Breve', '2009-10-01 19:34:42.969705', '2009-10-01 19:34:42.969705', E'RESERVED. This is the default section used for posts.') RETURNING "id"[0m
+  [4;36;1mSQL (5.0ms)[0m   [0;1mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (8.0ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;35;1mSQL (16.3ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosts (20090910185613)
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (6.7ms)[0m   [0;1mCREATE TABLE "posts" ("id" serial primary key, "user_id" integer, "section_id" integer DEFAULT 1, "points" integer DEFAULT 1, "rank" float DEFAULT 0, "created_at" timestamp, "updated_at" timestamp, "url" character varying(255), "title" character varying(255), "text" text, "comments_count" integer DEFAULT 0) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090910185613')[0m
+  [4;36;1mSQL (19.5ms)[0m   [0;1mCOMMIT[0m
+Migrating to CreateUsers (20090910194400)
+  [4;35;1mSQL (0.6ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (13.5ms)[0m   [0;1mCREATE TABLE "users" ("id" serial primary key, "email" character varying(255), "password" character varying(255), "lastname" character varying(255), "firstname" character varying(255), "alias" character varying(255), "points" integer DEFAULT 1, "created_at" timestamp, "updated_at" timestamp, "admin" boolean DEFAULT 'f', "activation_key" character varying(255), "activation_expires_at" timestamp DEFAULT '2009-10-01 12:34:51.183972', "reset_key" character varying(255), "reset_expires_at" timestamp DEFAULT '2009-10-01 12:34:51.184026', "posts_count" integer DEFAULT 0, "comments_count" integer DEFAULT 0) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090910194400')[0m
+  [4;36;1mSQL (5.2ms)[0m   [0;1mCOMMIT[0m
+Migrating to CreateVotes (20090910231230)
+  [4;35;1mSQL (2.7ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (15.2ms)[0m   [0;1mCREATE TABLE "votes" ("id" serial primary key, "voteable_id" integer, "voteable_type" character varying(255), "user_id" integer, "value" integer DEFAULT 3, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090910231230')[0m
+  [4;36;1mSQL (23.4ms)[0m   [0;1mCOMMIT[0m
+Migrating to CreateComments (20090911003327)
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (13.8ms)[0m   [0;1mCREATE TABLE "comments" ("id" serial primary key, "parent_id" integer, "commentable_id" integer, "commentable_type" character varying(255), "user_id" integer, "text" text, "points" integer DEFAULT 1, "rank" float DEFAULT 0, "created_at" timestamp, "updated_at" timestamp, "comments_count" integer DEFAULT 0) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090911003327')[0m
+  [4;36;1mSQL (14.2ms)[0m   [0;1mCOMMIT[0m
+Migrating to CreateSections (20090918192812)
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (21.7ms)[0m   [0;1mCREATE TABLE "sections" ("id" serial primary key, "name" character varying(255), "description" text, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090918192812')[0m
+  [4;36;1mSQL (3.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mINSERT INTO "sections" ("name", "created_at", "updated_at", "description") VALUES(E'Breve', '2009-10-01 19:34:52.893829', '2009-10-01 19:34:52.893829', E'RESERVED. This is the default section used for posts.') RETURNING "id"[0m
+  [4;36;1mSQL (14.8ms)[0m   [0;1mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = E'juris@breve.com') LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPGError: ERROR: invalid byte sequence for encoding "UTF8": 0x83
+HINT: This error can also happen if the byte sequence does not match the encoding expected by the server, which is controlled by "client_encoding".
+: INSERT INTO "users" ("activation_key", "created_at", "updated_at", "admin", "lastname", "points", "posts_count", "reset_key", "firstname", "alias", "reset_expires_at", "comments_count", "password", "activation_expires_at", "email") VALUES(E'263532f571d20a7d63c14b564ebe40d3826f32a575d631a79f57ad1f6c037680', '2009-10-01 19:38:09.743244', '2009-10-01 19:38:09.743244', 'f', E'galang', 1, 0, NULL, E'juris', NULL, '2009-10-01 12:34:51.184026', 0, E'f12b01a1ec007d7b77a5228284b53d0531682a86f8c3c9277c024f1158bcb87d90b227a76ba5d62858f059eacc857a260662dfd8f8b500e61d58397d2a6795d8d5AfGs9l8hEzAMTO7FIumr1mi6yOLO83frBkAscaRpvgENlHKGxkffgZtmG5ZNah', '2009-10-15 19:38:09.428978', E'n`ƒHŸû†èøÆBÇÚ') RETURNING "id"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = E'juris@breve.com') LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPGError: ERROR: invalid byte sequence for encoding "UTF8": 0x83
+HINT: This error can also happen if the byte sequence does not match the encoding expected by the server, which is controlled by "client_encoding".
+: INSERT INTO "users" ("activation_key", "created_at", "updated_at", "admin", "lastname", "points", "posts_count", "reset_key", "firstname", "alias", "reset_expires_at", "comments_count", "password", "activation_expires_at", "email") VALUES(E'1d56d9fc4ead0ff2e8ce97115ed688f7e8bd1064f0c3a775f20ed7b265abd135', '2009-10-01 19:39:05.815210', '2009-10-01 19:39:05.815210', 'f', E'galang', 1, 0, NULL, E'juris', NULL, '2009-10-01 12:34:51.184026', 0, E'b9034afb6cd1727d95899ff43b81caa17cd54342bc4636790e01963b71239293d37be0c526abc4dfffc969d73483f74cbdaf3c19a98663dcdfbc4f3d22788fd6d4LKDUxX1ep6Xe4ykQSL5wNe4yClfiGHbzMIGoI9tEjHSSnLwNCS9ldeZQj2HaSw', '2009-10-15 19:39:05.632118', E'n`ƒHŸû†èøÆBÇÚ') RETURNING "id"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = E'juris@breve.com') LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPGError: ERROR: invalid byte sequence for encoding "UTF8": 0x83
+HINT: This error can also happen if the byte sequence does not match the encoding expected by the server, which is controlled by "client_encoding".
+: INSERT INTO "users" ("activation_key", "created_at", "updated_at", "admin", "lastname", "points", "posts_count", "reset_key", "firstname", "alias", "reset_expires_at", "comments_count", "password", "activation_expires_at", "email") VALUES(E'69af465c921629f150217a5af1a36305661dc6275ebff331f17b5d5ce9b8abfa', '2009-10-01 19:39:32.484530', '2009-10-01 19:39:32.484530', 'f', E'galang', 1, 0, NULL, E'juris', NULL, '2009-10-01 12:34:51.184026', 0, E'4773c98d312409567fec9fbfbdac2cb56126365c11e7bcd674bcd96adadf035a6e4b706d1f245eb1034bb88a10917130053284b5075303265663221745e40849AvUX4UMTysaOkcfod3glMvz85dlyHqAxBvkxPOkLLpBmZIHLyFxiHCu542hKRyuh', '2009-10-15 19:39:32.303696', E'n`ƒHŸû†èøÆBÇÚ') RETURNING "id"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = E'juris@breve.com') LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPGError: ERROR: invalid byte sequence for encoding "UTF8": 0x83
+HINT: This error can also happen if the byte sequence does not match the encoding expected by the server, which is controlled by "client_encoding".
+: INSERT INTO "users" ("activation_key", "created_at", "updated_at", "admin", "lastname", "points", "posts_count", "reset_key", "firstname", "alias", "reset_expires_at", "comments_count", "password", "activation_expires_at", "email") VALUES(E'c7f6e75f640a0976b24c009a0d3618b99b9af5e2b148191a7f7d85caa85386de', '2009-10-01 19:45:26.181134', '2009-10-01 19:45:26.181134', 'f', E'galang', 1, 0, NULL, E'juris', NULL, '2009-10-01 12:34:51.184026', 0, E'3d436218302ef7e69b066bcb6cedc9bf18a6de3e947e9034883b715f1ce0057e013fb3c82d9f422caf50efdf864db95d499e42d9fdd9d1e19b3e478781c3c2a3XuqGqjD2vWSPUpM7iDAhQye634MWVi4x4zo3RHTzyLeZ8gVhhXJtJuLmVqtjiSzA', '2009-10-15 19:45:25.996128', E'n`ƒHŸû†èøÆBÇÚ') RETURNING "id"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = E'juris@breve.com') LIMIT 1[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mINSERT INTO "users" ("activation_key", "created_at", "updated_at", "admin", "lastname", "points", "posts_count", "reset_key", "firstname", "alias", "reset_expires_at", "comments_count", "password", "activation_expires_at", "email") VALUES(E'362c4a530990b64d0e9ec0e98f14221810c7012c69e70bf020aafa0e1a23af8c', '2009-10-01 19:49:43.273517', '2009-10-01 19:49:43.273517', 'f', E'galang', 1, 0, NULL, E'juris', NULL, '2009-10-01 12:34:51.184026', 0, E'1a50fe5d0dcf34b5f18ee452682918d115a04976234676899d18c1c5a6f6838f19be2852401d8e0a00be86296704dc938ab12d15d397ee8ba323623bd53ea258nGyJa70tjOS1OzwIt2t94s6EdOA3vvSPKt7vZvcDAe68IkwUNdSRz4weykO7bBGE', '2009-10-15 19:49:43.090838', E'bmCDSJ/7HIbo+AzGDkLH2g==
+') RETURNING "id"[0m
+Sent mail to juris@breve.com
+
+Date: Thu, 1 Oct 2009 12:49:43 -0700
+From: noreply@breve.com
+Reply-To: noreply@breve.com
+To: juris@breve.com
+Subject: Account confirmation from breve.com
+Mime-Version: 1.0
+Content-Type: text/plain; charset=iso-8859-1
+
+You received this email because you registered for an account at breve.com 
+You will first need to confirm your registration before you can use your account.
+
+To confirm, please visit the following URL:
+
+http://stark-robot-87.heroku.com/activate?key=362c4a530990b64d0e9ec0e98f14221810c7012c69e70bf020aafa0e1a23af8c
+
+The link will expire 2 weeks from now, it will take you to a page that will 
+activate your account.
+
+Thanks.
+  [4;35;1mSQL (11.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = E'kreek`t@breve.com') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = E'myrhon@breve.com') LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO "users" ("activation_key", "created_at", "updated_at", "admin", "lastname", "points", "posts_count", "reset_key", "firstname", "alias", "reset_expires_at", "comments_count", "password", "activation_expires_at", "email") VALUES(E'ce2468ca801c103e159c8abd5ba71ea6358c2a253da98d15a3fa28a63f4d6e11', '2009-10-01 19:49:43.822386', '2009-10-01 19:49:43.822386', 'f', E'galang', 1, 0, NULL, E'myrhon', NULL, '2009-10-01 12:34:51.184026', 0, E'6a6f40f230476a87f33e7d4fd9edd4f6f072811db57effa9e4a3bc4fce7c5534a8385b66693635d4cc9ca32cb60b0ba98ea97c31a71d79b8b3bbb1226d11b13cuVVHmUNYj9sXSp23CCOutjDiDuCUoXNAJklN2zPsUHAKNrO7NKVR8Zpmz77DSCz5', '2009-10-15 19:49:43.819468', E'EL8nchomsSLdo4pAufXwqbfyEAGVfln1Cxhrq9wjs2A=
+') RETURNING "id"[0m
+Sent mail to myrhon@breve.com
+
+Date: Thu, 1 Oct 2009 12:49:43 -0700
+From: noreply@breve.com
+Reply-To: noreply@breve.com
+To: myrhon@breve.com
+Subject: Account confirmation from breve.com
+Mime-Version: 1.0
+Content-Type: text/plain; charset=iso-8859-1
+
+You received this email because you registered for an account at breve.com 
+You will first need to confirm your registration before you can use your account.
+
+To confirm, please visit the following URL:
+
+http://stark-robot-87.heroku.com/activate?key=ce2468ca801c103e159c8abd5ba71ea6358c2a253da98d15a3fa28a63f4d6e11
+
+The link will expire 2 weeks from now, it will take you to a page that will 
+activate your account.
+
+Thanks.
+  [4;36;1mSQL (6.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = E'jared@breve.com') LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO "users" ("activation_key", "created_at", "updated_at", "admin", "lastname", "points", "posts_count", "reset_key", "firstname", "alias", "reset_expires_at", "comments_count", "password", "activation_expires_at", "email") VALUES(E'e49a76bc664fa2d213de58aebb292012d1a830784d978936fa867b93e346efa3', '2009-10-01 19:49:43.876904', '2009-10-01 19:49:43.876904', 'f', E'galang', 1, 0, NULL, E'jared', NULL, '2009-10-01 12:34:51.184026', 0, E'ae48a511a081dba7af2c9613029c09508433e1f24f4f3de725ea49a1f4a0a960cdb659a992e14f1cc1b0764e668d83218fb7133987311ca6d32dc8b56aedcd33kpFFbQSC622xzS7cHv5LXAW3h787usfWsT6UKqwjnU26Oq6oqj9Hbcbi37g5eNrT', '2009-10-15 19:49:43.873673', E'IZKayhyCEqbVDxE+GG2bNg==
+') RETURNING "id"[0m
+Sent mail to jared@breve.com
+
+Date: Thu, 1 Oct 2009 12:49:43 -0700
+From: noreply@breve.com
+Reply-To: noreply@breve.com
+To: jared@breve.com
+Subject: Account confirmation from breve.com
+Mime-Version: 1.0
+Content-Type: text/plain; charset=iso-8859-1
+
+You received this email because you registered for an account at breve.com 
+You will first need to confirm your registration before you can use your account.
+
+To confirm, please visit the following URL:
+
+http://stark-robot-87.heroku.com/activate?key=e49a76bc664fa2d213de58aebb292012d1a830784d978936fa867b93e346efa3
+
+The link will expire 2 weeks from now, it will take you to a page that will 
+activate your account.
+
+Thanks.
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = E'jace@breve.com') LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO "users" ("activation_key", "created_at", "updated_at", "admin", "lastname", "points", "posts_count", "reset_key", "firstname", "alias", "reset_expires_at", "comments_count", "password", "activation_expires_at", "email") VALUES(E'1e334ff41ae0a318d652b72d6bdfec4ccfff7164654076278df0aa3954f53e93', '2009-10-01 19:49:43.995153', '2009-10-01 19:49:43.995153', 'f', E'galang', 1, 0, NULL, E'jace', NULL, '2009-10-01 12:34:51.184026', 0, E'e176ec348753d12cc839161cada437f934362dc1a2e578b843f78dcbfafe867defcdc4df7a1e410541eeda29bb6f42f0779a26313e1a43c7a490ca0d118b6012DQkFosv4GliiW73uomtYskI0b6h7j2822MEIj6MTNiLM5zAUYMbswotzmsgwDz84', '2009-10-15 19:49:43.992030', E'6tkcqe2xKjrJDxg2bkqXPg==
+') RETURNING "id"[0m
+Sent mail to jace@breve.com
+
+Date: Thu, 1 Oct 2009 12:49:43 -0700
+From: noreply@breve.com
+Reply-To: noreply@breve.com
+To: jace@breve.com
+Subject: Account confirmation from breve.com
+Mime-Version: 1.0
+Content-Type: text/plain; charset=iso-8859-1
+
+You received this email because you registered for an account at breve.com 
+You will first need to confirm your registration before you can use your account.
+
+To confirm, please visit the following URL:
+
+http://stark-robot-87.heroku.com/activate?key=1e334ff41ae0a318d652b72d6bdfec4ccfff7164654076278df0aa3954f53e93
+
+The link will expire 2 weeks from now, it will take you to a page that will 
+activate your account.
+
+Thanks.
+  [4;36;1mSQL (6.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = E'justin@breve.com') LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO "users" ("activation_key", "created_at", "updated_at", "admin", "lastname", "points", "posts_count", "reset_key", "firstname", "alias", "reset_expires_at", "comments_count", "password", "activation_expires_at", "email") VALUES(E'a0e47c7849916157759ebeeb461a597758010421f60c7fd7f9ba205de6682063', '2009-10-01 19:49:44.055213', '2009-10-01 19:49:44.055213', 'f', E'galang', 1, 0, NULL, E'justin', NULL, '2009-10-01 12:34:51.184026', 0, E'e4e5886054bd817f7c36d79caaca408b7e081b0f08d94fb020df128a4eb8c54f46f33ae22900cd5e53d9e631c8a389abc01ee49c896c4860efb5988a605471d14NX42BKJHaPGozrQqcrUWOvxalKO68dlYa7D5huUukg33CYDpmFG4AEsUTWr0Fvr', '2009-10-15 19:49:44.050492', E'yTixTY5Bv5KeSLDcN24LfEP6hjwegcexPA330En0cC4=
+') RETURNING "id"[0m
+Sent mail to justin@breve.com
+
+Date: Thu, 1 Oct 2009 12:49:44 -0700
+From: noreply@breve.com
+Reply-To: noreply@breve.com
+To: justin@breve.com
+Subject: Account confirmation from breve.com
+Mime-Version: 1.0
+Content-Type: text/plain; charset=iso-8859-1
+
+You received this email because you registered for an account at breve.com 
+You will first need to confirm your registration before you can use your account.
+
+To confirm, please visit the following URL:
+
+http://stark-robot-87.heroku.com/activate?key=a0e47c7849916157759ebeeb461a597758010421f60c7fd7f9ba205de6682063
+
+The link will expire 2 weeks from now, it will take you to a page that will 
+activate your account.
+
+Thanks.
+  [4;36;1mSQL (32.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = E'jaden@breve.com') LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO "users" ("activation_key", "created_at", "updated_at", "admin", "lastname", "points", "posts_count", "reset_key", "firstname", "alias", "reset_expires_at", "comments_count", "password", "activation_expires_at", "email") VALUES(E'21aa4afb65aaf92ed2cb1f4d533ee12a62d8016a493a586ab2135c240b7ff32e', '2009-10-01 19:49:44.129180', '2009-10-01 19:49:44.129180', 'f', E'galang', 1, 0, NULL, E'jaden', NULL, '2009-10-01 12:34:51.184026', 0, E'a5ee2134d9889ecee05c4366e333978abb1c61bc934173c7de18f8cd4388db90df55b657ba36d8013009ab57810149d5896b12e09787808ba0f2fb2acc686c8bbEiRn496hSPyLEkII0ryEdIusxlxTeJLAiKDUeQaNHw9zAvXea3GMk204YrcRPeK', '2009-10-15 19:49:44.126320', E'DY/eN+WH3C+zfgoune2T1w==
+') RETURNING "id"[0m
+Sent mail to jaden@breve.com
+
+Date: Thu, 1 Oct 2009 12:49:44 -0700
+From: noreply@breve.com
+Reply-To: noreply@breve.com
+To: jaden@breve.com
+Subject: Account confirmation from breve.com
+Mime-Version: 1.0
+Content-Type: text/plain; charset=iso-8859-1
+
+You received this email because you registered for an account at breve.com 
+You will first need to confirm your registration before you can use your account.
+
+To confirm, please visit the following URL:
+
+http://stark-robot-87.heroku.com/activate?key=21aa4afb65aaf92ed2cb1f4d533ee12a62d8016a493a586ab2135c240b7ff32e
+
+The link will expire 2 weeks from now, it will take you to a page that will 
+activate your account.
+
+Thanks.
+  [4;36;1mSQL (291.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:44.821930', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:44.821930', E'http://www.post0.com', NULL, 6, 0.0, 1, 0) RETURNING "id"[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 1) [0m
+  [4;36;1mSQL (76.2ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = E'kreek`t@breve.com') LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:44.909498', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:44.909498', E'http://www.post0.com', NULL, 10, 0.0, NULL, 0) RETURNING "id"[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = NULL) [0m
+  [4;35;1mSQL (35.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:44.948597', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:44.948597', E'http://www.post0.com', NULL, 6, 0.0, 2, 0) RETURNING "id"[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 2) [0m
+  [4;35;1mSQL (35.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:44.987864', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:44.987864', E'http://www.post0.com', NULL, 7, 0.0, 3, 0) RETURNING "id"[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 3) [0m
+  [4;35;1mSQL (64.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.056670', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.056670', E'http://www.post0.com', NULL, 8, 0.0, 4, 0) RETURNING "id"[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 4) [0m
+  [4;35;1mSQL (3.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.063830', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.063830', E'http://www.post0.com', NULL, 4, 0.0, 5, 0) RETURNING "id"[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 5) [0m
+  [4;35;1mSQL (13.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.081152', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.081152', E'http://www.post0.com', NULL, 4, 0.0, 6, 0) RETURNING "id"[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 6) [0m
+  [4;35;1mSQL (15.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.100442', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.100442', E'http://www.post1.com', NULL, 5, 0.0, 1, 0) RETURNING "id"[0m
+  [4;36;1mUser Update (0.6ms)[0m   [0;1mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 1) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = E'kreek`t@breve.com') LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.108008', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.108008', E'http://www.post1.com', NULL, 8, 0.0, NULL, 0) RETURNING "id"[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = NULL) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.111922', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.111922', E'http://www.post1.com', NULL, 10, 0.0, 2, 0) RETURNING "id"[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 2) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.115805', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.115805', E'http://www.post1.com', NULL, 1, 0.0, 3, 0) RETURNING "id"[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 3) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.120564', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.120564', E'http://www.post1.com', NULL, 6, 0.0, 4, 0) RETURNING "id"[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 4) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.124168', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.124168', E'http://www.post1.com', NULL, 10, 0.0, 5, 0) RETURNING "id"[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 5) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.127942', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.127942', E'http://www.post1.com', NULL, 1, 0.0, 6, 0) RETURNING "id"[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 6) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.131298', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.131298', E'http://www.post2.com', NULL, 2, 0.0, 1, 0) RETURNING "id"[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 1) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = E'kreek`t@breve.com') LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.137371', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.137371', E'http://www.post2.com', NULL, 7, 0.0, NULL, 0) RETURNING "id"[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = NULL) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.141138', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.141138', E'http://www.post2.com', NULL, 5, 0.0, 2, 0) RETURNING "id"[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 2) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.144613', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.144613', E'http://www.post2.com', NULL, 5, 0.0, 3, 0) RETURNING "id"[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 3) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.148387', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.148387', E'http://www.post2.com', NULL, 5, 0.0, 4, 0) RETURNING "id"[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 4) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.151981', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.151981', E'http://www.post2.com', NULL, 7, 0.0, 5, 0) RETURNING "id"[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 5) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.155194', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.155194', E'http://www.post2.com', NULL, 8, 0.0, 6, 0) RETURNING "id"[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 6) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.159010', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.159010', E'http://www.post3.com', NULL, 10, 0.0, 1, 0) RETURNING "id"[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 1) [0m
+  [4;35;1mSQL (7.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = E'kreek`t@breve.com') LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.174077', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.174077', E'http://www.post3.com', NULL, 6, 0.0, NULL, 0) RETURNING "id"[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = NULL) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.178194', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.178194', E'http://www.post3.com', NULL, 7, 0.0, 2, 0) RETURNING "id"[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 2) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.182793', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.182793', E'http://www.post3.com', NULL, 8, 0.0, 3, 0) RETURNING "id"[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 3) [0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.188928', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.188928', E'http://www.post3.com', NULL, 8, 0.0, 4, 0) RETURNING "id"[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 4) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.193253', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.193253', E'http://www.post3.com', NULL, 4, 0.0, 5, 0) RETURNING "id"[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 5) [0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.198111', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.198111', E'http://www.post3.com', NULL, 2, 0.0, 6, 0) RETURNING "id"[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 6) [0m
+  [4;36;1mSQL (6.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.208892', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.208892', E'http://www.post4.com', NULL, 7, 0.0, 1, 0) RETURNING "id"[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 1) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = E'kreek`t@breve.com') LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.215453', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.215453', E'http://www.post4.com', NULL, 5, 0.0, NULL, 0) RETURNING "id"[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = NULL) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.219282', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.219282', E'http://www.post4.com', NULL, 10, 0.0, 2, 0) RETURNING "id"[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 2) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.222651', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.222651', E'http://www.post4.com', NULL, 9, 0.0, 3, 0) RETURNING "id"[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 3) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.226058', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.226058', E'http://www.post4.com', NULL, 3, 0.0, 4, 0) RETURNING "id"[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 4) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.229445', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.229445', E'http://www.post4.com', NULL, 4, 0.0, 5, 0) RETURNING "id"[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 5) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.232761', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.232761', E'http://www.post4.com', NULL, 9, 0.0, 6, 0) RETURNING "id"[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 6) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.236102', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.236102', E'http://www.post5.com', NULL, 9, 0.0, 1, 0) RETURNING "id"[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 1) [0m
+  [4;35;1mSQL (15.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = E'kreek`t@breve.com') LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.257969', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.257969', E'http://www.post5.com', NULL, 7, 0.0, NULL, 0) RETURNING "id"[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = NULL) [0m
+  [4;36;1mSQL (12.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.274393', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.274393', E'http://www.post5.com', NULL, 1, 0.0, 2, 0) RETURNING "id"[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 2) [0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.279797', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.279797', E'http://www.post5.com', NULL, 1, 0.0, 3, 0) RETURNING "id"[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 3) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.284088', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.284088', E'http://www.post5.com', NULL, 9, 0.0, 4, 0) RETURNING "id"[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 4) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.289508', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.289508', E'http://www.post5.com', NULL, 1, 0.0, 5, 0) RETURNING "id"[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 5) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.294728', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.294728', E'http://www.post5.com', NULL, 8, 0.0, 6, 0) RETURNING "id"[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 6) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.298276', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.298276', E'http://www.post6.com', NULL, 9, 0.0, 1, 0) RETURNING "id"[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 1) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = E'kreek`t@breve.com') LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.306709', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.306709', E'http://www.post6.com', NULL, 5, 0.0, NULL, 0) RETURNING "id"[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = NULL) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.310219', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.310219', E'http://www.post6.com', NULL, 1, 0.0, 2, 0) RETURNING "id"[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 2) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.408710', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.408710', E'http://www.post6.com', NULL, 1, 0.0, 3, 0) RETURNING "id"[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 3) [0m
+  [4;35;1mSQL (2.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (2.8ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.419648', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.419648', E'http://www.post6.com', NULL, 2, 0.0, 4, 0) RETURNING "id"[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 4) [0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.429066', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.429066', E'http://www.post6.com', NULL, 3, 0.0, 5, 0) RETURNING "id"[0m
+  [4;36;1mUser Update (0.7ms)[0m   [0;1mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 5) [0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.434973', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.434973', E'http://www.post6.com', NULL, 3, 0.0, 6, 0) RETURNING "id"[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 6) [0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.439206', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.439206', E'http://www.post7.com', NULL, 2, 0.0, 1, 0) RETURNING "id"[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 1) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = E'kreek`t@breve.com') LIMIT 1[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.446101', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.446101', E'http://www.post7.com', NULL, 4, 0.0, NULL, 0) RETURNING "id"[0m
+  [4;35;1mUser Update (0.6ms)[0m   [0mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = NULL) [0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.451906', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.451906', E'http://www.post7.com', NULL, 3, 0.0, 2, 0) RETURNING "id"[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 2) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.455476', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.455476', E'http://www.post7.com', NULL, 3, 0.0, 3, 0) RETURNING "id"[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 3) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.459587', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.459587', E'http://www.post7.com', NULL, 8, 0.0, 4, 0) RETURNING "id"[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 4) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.463958', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.463958', E'http://www.post7.com', NULL, 7, 0.0, 5, 0) RETURNING "id"[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 5) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (2.8ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.472038', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.472038', E'http://www.post7.com', NULL, 7, 0.0, 6, 0) RETURNING "id"[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 6) [0m
+  [4;36;1mSQL (24.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.500483', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.500483', E'http://www.post8.com', NULL, 8, 0.0, 1, 0) RETURNING "id"[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 1) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = E'kreek`t@breve.com') LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.506803', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.506803', E'http://www.post8.com', NULL, 3, 0.0, NULL, 0) RETURNING "id"[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = NULL) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.511255', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.511255', E'http://www.post8.com', NULL, 5, 0.0, 2, 0) RETURNING "id"[0m
+  [4;36;1mUser Update (2.0ms)[0m   [0;1mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 2) [0m
+  [4;35;1mSQL (11.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.548042', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.548042', E'http://www.post8.com', NULL, 2, 0.0, 3, 0) RETURNING "id"[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 3) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.552571', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.552571', E'http://www.post8.com', NULL, 2, 0.0, 4, 0) RETURNING "id"[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 4) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.555757', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.555757', E'http://www.post8.com', NULL, 1, 0.0, 5, 0) RETURNING "id"[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 5) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.559382', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.559382', E'http://www.post8.com', NULL, 6, 0.0, 6, 0) RETURNING "id"[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 6) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.563198', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.563198', E'http://www.post9.com', NULL, 10, 0.0, 1, 0) RETURNING "id"[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 1) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = E'kreek`t@breve.com') LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.568753', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.568753', E'http://www.post9.com', NULL, 8, 0.0, NULL, 0) RETURNING "id"[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = NULL) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.571982', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.571982', E'http://www.post9.com', NULL, 2, 0.0, 2, 0) RETURNING "id"[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 2) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.575627', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.575627', E'http://www.post9.com', NULL, 6, 0.0, 3, 0) RETURNING "id"[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 3) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.578918', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.578918', E'http://www.post9.com', NULL, 9, 0.0, 4, 0) RETURNING "id"[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 4) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.582293', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.582293', E'http://www.post9.com', NULL, 3, 0.0, 5, 0) RETURNING "id"[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 5) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:45.585447', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:45.585447', E'http://www.post9.com', NULL, 2, 0.0, 6, 0) RETURNING "id"[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 6) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mPost Load (0.8ms)[0m   [0mSELECT * FROM "posts" [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPost Destroy (0.4ms)[0m   [0mDELETE FROM "posts" WHERE "id" = 2[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 5) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 6) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 9) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPost Destroy (0.2ms)[0m   [0mDELETE FROM "posts" WHERE "id" = 9[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 5) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 6) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 16) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPost Destroy (0.2ms)[0m   [0mDELETE FROM "posts" WHERE "id" = 16[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 5) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 6) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 23) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPost Destroy (0.2ms)[0m   [0mDELETE FROM "posts" WHERE "id" = 23[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 5) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 6) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 30) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPost Destroy (0.2ms)[0m   [0mDELETE FROM "posts" WHERE "id" = 30[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 5) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 6) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 37) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPost Destroy (0.2ms)[0m   [0mDELETE FROM "posts" WHERE "id" = 37[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 5) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 6) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 44) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPost Destroy (0.2ms)[0m   [0mDELETE FROM "posts" WHERE "id" = 44[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 5) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 6) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 51) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPost Destroy (0.2ms)[0m   [0mDELETE FROM "posts" WHERE "id" = 51[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 5) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 6) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 58) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPost Destroy (0.2ms)[0m   [0mDELETE FROM "posts" WHERE "id" = 58[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 5) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 6) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 65) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPost Destroy (0.1ms)[0m   [0mDELETE FROM "posts" WHERE "id" = 65[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 5) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 6) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mPost Update (38.7ms)[0m   [0;1mUPDATE "posts" SET rank = (points - 1) / (EXTRACT(epoch from AGE(NOW() at time zone 'UTC', created_at)) / 60 / 60 + 2) ^ 1.5 [0m
+  [4;35;1mComment Update (0.8ms)[0m   [0mUPDATE "comments" SET rank = (points - 1) / (EXTRACT(epoch from AGE(NOW() at time zone 'UTC', created_at)) / 60 / 60 + 2) ^ 1.5 [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = E'juris@breve.com') LIMIT 1[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mINSERT INTO "users" ("activation_key", "created_at", "updated_at", "admin", "lastname", "points", "posts_count", "reset_key", "firstname", "alias", "reset_expires_at", "comments_count", "password", "activation_expires_at", "email") VALUES(E'c943d293c04f8aec0878a35908d783f2e1eec5d86cb03689f67d79b330e4be31', '2009-10-01 19:49:51.791320', '2009-10-01 19:49:51.791320', 'f', E'galang', 1, 0, NULL, E'juris', NULL, '2009-10-01 12:34:51.184026', 0, E'a60c074a30f54638e09c07b09db56bbdb16e3e7147cf7608030a61efd969d235b79a3b1ddac87a6739d278632ee2fb0dada7297c9d484a90ac3bb98c9d2895d1uojmr7xNfDZaqhLyLePWYFijDnUDHT2df9ml5wRXr2NDbGVib8ov5Fo4ANhlNHJV', '2009-10-15 19:49:51.606886', E'bmCDSJ/7HIbo+AzGDkLH2g==
+') RETURNING "id"[0m
+Sent mail to juris@breve.com
+
+Date: Thu, 1 Oct 2009 12:49:51 -0700
+From: noreply@breve.com
+Reply-To: noreply@breve.com
+To: juris@breve.com
+Subject: Account confirmation from breve.com
+Mime-Version: 1.0
+Content-Type: text/plain; charset=iso-8859-1
+
+You received this email because you registered for an account at breve.com 
+You will first need to confirm your registration before you can use your account.
+
+To confirm, please visit the following URL:
+
+http://stark-robot-87.heroku.com/activate?key=c943d293c04f8aec0878a35908d783f2e1eec5d86cb03689f67d79b330e4be31
+
+The link will expire 2 weeks from now, it will take you to a page that will 
+activate your account.
+
+Thanks.
+  [4;35;1mSQL (0.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = E'kreek`t@breve.com') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = E'myrhon@breve.com') LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO "users" ("activation_key", "created_at", "updated_at", "admin", "lastname", "points", "posts_count", "reset_key", "firstname", "alias", "reset_expires_at", "comments_count", "password", "activation_expires_at", "email") VALUES(E'd151986917fd158b427f3f37609ff981a55a3c4434c70699e99b51dc79f2f8d1', '2009-10-01 19:49:51.844508', '2009-10-01 19:49:51.844508', 'f', E'galang', 1, 0, NULL, E'myrhon', NULL, '2009-10-01 12:34:51.184026', 0, E'055c7bcdec7f29a86bb16b3e464f838ecca23814543dbeb365882d4fb74faa99585ec4c291217d7408f6834d08c18234647329588d284bcefb8851c02e6c2a14VP6D3kBt2SRepoqOT3C8wMIEvYIPaSCNdunF2e4BLNJEn2I3PDRQ191SHjSAwGON', '2009-10-15 19:49:51.840825', E'EL8nchomsSLdo4pAufXwqbfyEAGVfln1Cxhrq9wjs2A=
+') RETURNING "id"[0m
+Sent mail to myrhon@breve.com
+
+Date: Thu, 1 Oct 2009 12:49:51 -0700
+From: noreply@breve.com
+Reply-To: noreply@breve.com
+To: myrhon@breve.com
+Subject: Account confirmation from breve.com
+Mime-Version: 1.0
+Content-Type: text/plain; charset=iso-8859-1
+
+You received this email because you registered for an account at breve.com 
+You will first need to confirm your registration before you can use your account.
+
+To confirm, please visit the following URL:
+
+http://stark-robot-87.heroku.com/activate?key=d151986917fd158b427f3f37609ff981a55a3c4434c70699e99b51dc79f2f8d1
+
+The link will expire 2 weeks from now, it will take you to a page that will 
+activate your account.
+
+Thanks.
+  [4;36;1mSQL (1.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = E'jared@breve.com') LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO "users" ("activation_key", "created_at", "updated_at", "admin", "lastname", "points", "posts_count", "reset_key", "firstname", "alias", "reset_expires_at", "comments_count", "password", "activation_expires_at", "email") VALUES(E'22117033155039a4d32ab09b00fdeb112dd21406607d633549e47e3dcb6da130', '2009-10-01 19:49:51.896925', '2009-10-01 19:49:51.896925', 'f', E'galang', 1, 0, NULL, E'jared', NULL, '2009-10-01 12:34:51.184026', 0, E'0038a999a6b30f8c039bf6a9a6d92c048d0180a0e698f661023d8f9aaa1bf317e5e7c360c3f515eeb375a65e8aef3d00e3df141d50fcd65b3dd4311a78ae05a2gLlwzCUoIyYHnKIiyf4w4Tmma2JCqrLUGlltamy2d0zKddCH26j6NO4tPgMMev77', '2009-10-15 19:49:51.893008', E'IZKayhyCEqbVDxE+GG2bNg==
+') RETURNING "id"[0m
+Sent mail to jared@breve.com
+
+Date: Thu, 1 Oct 2009 12:49:51 -0700
+From: noreply@breve.com
+Reply-To: noreply@breve.com
+To: jared@breve.com
+Subject: Account confirmation from breve.com
+Mime-Version: 1.0
+Content-Type: text/plain; charset=iso-8859-1
+
+You received this email because you registered for an account at breve.com 
+You will first need to confirm your registration before you can use your account.
+
+To confirm, please visit the following URL:
+
+http://stark-robot-87.heroku.com/activate?key=22117033155039a4d32ab09b00fdeb112dd21406607d633549e47e3dcb6da130
+
+The link will expire 2 weeks from now, it will take you to a page that will 
+activate your account.
+
+Thanks.
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = E'jace@breve.com') LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO "users" ("activation_key", "created_at", "updated_at", "admin", "lastname", "points", "posts_count", "reset_key", "firstname", "alias", "reset_expires_at", "comments_count", "password", "activation_expires_at", "email") VALUES(E'8140409926227d34436d1fff41c72ceead860917db2042e6a4c5c4d905d50b47', '2009-10-01 19:49:51.939396', '2009-10-01 19:49:51.939396', 'f', E'galang', 1, 0, NULL, E'jace', NULL, '2009-10-01 12:34:51.184026', 0, E'b47f1bbd2f7ba4b2880cd3decd3ffb028163ad30daf203e3283465c8904494ef39aa39480860ce9d04236913c238c46573ef5a91c3a54f9fd370124a24f12c75JieiQ1YliUH4VqhYYtCN2Kh1vnnIlcaDxtf7TOB88WNRZ8LLsk2tqsxDiNlUZLev', '2009-10-15 19:49:51.935713', E'6tkcqe2xKjrJDxg2bkqXPg==
+') RETURNING "id"[0m
+Sent mail to jace@breve.com
+
+Date: Thu, 1 Oct 2009 12:49:51 -0700
+From: noreply@breve.com
+Reply-To: noreply@breve.com
+To: jace@breve.com
+Subject: Account confirmation from breve.com
+Mime-Version: 1.0
+Content-Type: text/plain; charset=iso-8859-1
+
+You received this email because you registered for an account at breve.com 
+You will first need to confirm your registration before you can use your account.
+
+To confirm, please visit the following URL:
+
+http://stark-robot-87.heroku.com/activate?key=8140409926227d34436d1fff41c72ceead860917db2042e6a4c5c4d905d50b47
+
+The link will expire 2 weeks from now, it will take you to a page that will 
+activate your account.
+
+Thanks.
+  [4;36;1mSQL (2.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = E'justin@breve.com') LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO "users" ("activation_key", "created_at", "updated_at", "admin", "lastname", "points", "posts_count", "reset_key", "firstname", "alias", "reset_expires_at", "comments_count", "password", "activation_expires_at", "email") VALUES(E'7e8dd52091f2bfd880a685bdbe30d873250d523adedad2fc143f6a9c3cb743a8', '2009-10-01 19:49:51.985528', '2009-10-01 19:49:51.985528', 'f', E'galang', 1, 0, NULL, E'justin', NULL, '2009-10-01 12:34:51.184026', 0, E'6665ea18f458c3cd1b53db5efbde2b00b38821381bacd392f2753d692226c622e045b008b1b8018286cf4ae1c45a250e1ca810b5cbd7af6fa8dcac07391f6004YY8LFjPL9GsUMe0zwcFL9465gXgMus6bGEGeeoAOm645KgwRHkg8BXNbKFc71PVB', '2009-10-15 19:49:51.981491', E'yTixTY5Bv5KeSLDcN24LfEP6hjwegcexPA330En0cC4=
+') RETURNING "id"[0m
+Sent mail to justin@breve.com
+
+Date: Thu, 1 Oct 2009 12:49:51 -0700
+From: noreply@breve.com
+Reply-To: noreply@breve.com
+To: justin@breve.com
+Subject: Account confirmation from breve.com
+Mime-Version: 1.0
+Content-Type: text/plain; charset=iso-8859-1
+
+You received this email because you registered for an account at breve.com 
+You will first need to confirm your registration before you can use your account.
+
+To confirm, please visit the following URL:
+
+http://stark-robot-87.heroku.com/activate?key=7e8dd52091f2bfd880a685bdbe30d873250d523adedad2fc143f6a9c3cb743a8
+
+The link will expire 2 weeks from now, it will take you to a page that will 
+activate your account.
+
+Thanks.
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = E'jaden@breve.com') LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO "users" ("activation_key", "created_at", "updated_at", "admin", "lastname", "points", "posts_count", "reset_key", "firstname", "alias", "reset_expires_at", "comments_count", "password", "activation_expires_at", "email") VALUES(E'51a856aa7612afd23e58a5ca659968eeee2642ee456515532cc8a98db621f0e5', '2009-10-01 19:49:52.020070', '2009-10-01 19:49:52.020070', 'f', E'galang', 1, 0, NULL, E'jaden', NULL, '2009-10-01 12:34:51.184026', 0, E'5ad2c197831e7a04485ba0d54628d239ee0501dc99252c8e333cef5a2620b81f9806c41c5ba32b6514996f35b21412c75977b511075bac3a076a066aa033ac65BVuLqQke3hLOrsK2cG8Ud4gH8aT2uAwm3oVecVMgONN9tsbM2rhmtZJgWQoSfaVy', '2009-10-15 19:49:52.017333', E'DY/eN+WH3C+zfgoune2T1w==
+') RETURNING "id"[0m
+Sent mail to jaden@breve.com
+
+Date: Thu, 1 Oct 2009 12:49:52 -0700
+From: noreply@breve.com
+Reply-To: noreply@breve.com
+To: jaden@breve.com
+Subject: Account confirmation from breve.com
+Mime-Version: 1.0
+Content-Type: text/plain; charset=iso-8859-1
+
+You received this email because you registered for an account at breve.com 
+You will first need to confirm your registration before you can use your account.
+
+To confirm, please visit the following URL:
+
+http://stark-robot-87.heroku.com/activate?key=51a856aa7612afd23e58a5ca659968eeee2642ee456515532cc8a98db621f0e5
+
+The link will expire 2 weeks from now, it will take you to a page that will 
+activate your account.
+
+Thanks.
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:52.076216', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:52.076216', E'http://www.post0.com', NULL, 10, 0.0, 7, 0) RETURNING "id"[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 7) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = E'kreek`t@breve.com') LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:52.085865', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:52.085865', E'http://www.post0.com', NULL, 4, 0.0, NULL, 0) RETURNING "id"[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = NULL) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:52.089661', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:52.089661', E'http://www.post0.com', NULL, 8, 0.0, 8, 0) RETURNING "id"[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 8) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:52.093410', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:52.093410', E'http://www.post0.com', NULL, 5, 0.0, 9, 0) RETURNING "id"[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 9) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:52.096816', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:52.096816', E'http://www.post0.com', NULL, 4, 0.0, 10, 0) RETURNING "id"[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 10) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:52.100555', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:52.100555', E'http://www.post0.com', NULL, 3, 0.0, 11, 0) RETURNING "id"[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 11) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:52.104158', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:52.104158', E'http://www.post0.com', NULL, 1, 0.0, 12, 0) RETURNING "id"[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 12) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:52.107463', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:52.107463', E'http://www.post1.com', NULL, 1, 0.0, 7, 0) RETURNING "id"[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 7) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = E'kreek`t@breve.com') LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:52.113380', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:52.113380', E'http://www.post1.com', NULL, 6, 0.0, NULL, 0) RETURNING "id"[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = NULL) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:52.116912', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:52.116912', E'http://www.post1.com', NULL, 5, 0.0, 8, 0) RETURNING "id"[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 8) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:52.120288', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:52.120288', E'http://www.post1.com', NULL, 6, 0.0, 9, 0) RETURNING "id"[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 9) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:52.123732', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:52.123732', E'http://www.post1.com', NULL, 2, 0.0, 10, 0) RETURNING "id"[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 10) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:52.127336', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:52.127336', E'http://www.post1.com', NULL, 3, 0.0, 11, 0) RETURNING "id"[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 11) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:52.131194', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:52.131194', E'http://www.post1.com', NULL, 9, 0.0, 12, 0) RETURNING "id"[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 12) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:52.134759', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:52.134759', E'http://www.post2.com', NULL, 2, 0.0, 7, 0) RETURNING "id"[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 7) [0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = E'kreek`t@breve.com') LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:52.141388', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:52.141388', E'http://www.post2.com', NULL, 10, 0.0, NULL, 0) RETURNING "id"[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = NULL) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:52.144943', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:52.144943', E'http://www.post2.com', NULL, 2, 0.0, 8, 0) RETURNING "id"[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 8) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:52.148285', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:52.148285', E'http://www.post2.com', NULL, 5, 0.0, 9, 0) RETURNING "id"[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 9) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:52.151857', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:52.151857', E'http://www.post2.com', NULL, 6, 0.0, 10, 0) RETURNING "id"[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 10) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:52.155124', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:52.155124', E'http://www.post2.com', NULL, 8, 0.0, 11, 0) RETURNING "id"[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 11) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:52.158309', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:52.158309', E'http://www.post2.com', NULL, 10, 0.0, 12, 0) RETURNING "id"[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 12) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:52.161761', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:52.161761', E'http://www.post3.com', NULL, 7, 0.0, 7, 0) RETURNING "id"[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 7) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = E'kreek`t@breve.com') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:52.167494', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:52.167494', E'http://www.post3.com', NULL, 1, 0.0, NULL, 0) RETURNING "id"[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = NULL) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:52.170860', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:52.170860', E'http://www.post3.com', NULL, 2, 0.0, 8, 0) RETURNING "id"[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 8) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:52.174444', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:52.174444', E'http://www.post3.com', NULL, 9, 0.0, 9, 0) RETURNING "id"[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 9) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:52.177978', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:52.177978', E'http://www.post3.com', NULL, 4, 0.0, 10, 0) RETURNING "id"[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 10) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:52.181496', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:52.181496', E'http://www.post3.com', NULL, 1, 0.0, 11, 0) RETURNING "id"[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 11) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:52.184855', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:52.184855', E'http://www.post3.com', NULL, 8, 0.0, 12, 0) RETURNING "id"[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 12) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:52.188151', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:52.188151', E'http://www.post4.com', NULL, 9, 0.0, 7, 0) RETURNING "id"[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 7) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = E'kreek`t@breve.com') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:52.193883', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:52.193883', E'http://www.post4.com', NULL, 10, 0.0, NULL, 0) RETURNING "id"[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = NULL) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:52.197308', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:52.197308', E'http://www.post4.com', NULL, 9, 0.0, 8, 0) RETURNING "id"[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 8) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:52.200610', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:52.200610', E'http://www.post4.com', NULL, 1, 0.0, 9, 0) RETURNING "id"[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 9) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:52.204009', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:52.204009', E'http://www.post4.com', NULL, 8, 0.0, 10, 0) RETURNING "id"[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 10) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:52.207209', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:52.207209', E'http://www.post4.com', NULL, 9, 0.0, 11, 0) RETURNING "id"[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 11) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-01 19:49:52.210513', E'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 1, '2009-10-01 19:49:52.210513', E'http://www.post4.com', NULL, 8, 0.0, 12, 0) RETURNING "id"[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 12) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mPost Load (1.5ms)[0m   [0;1mSELECT * FROM "posts" [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 5) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 6) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 5) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 6) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 5) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 6) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 5) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 6) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 5) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 6) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 5) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 6) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 5) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 6) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 5) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 6) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 5) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 6) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 5) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 6) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 7) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 72) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPost Destroy (0.4ms)[0m   [0;1mDELETE FROM "posts" WHERE "id" = 72[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 8) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 9) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 10) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 11) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 7) [0m
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 79) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPost Destroy (0.2ms)[0m   [0;1mDELETE FROM "posts" WHERE "id" = 79[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 8) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 9) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 10) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 11) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 7) [0m
+  [4;36;1mPost Load (0.9ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 86) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPost Destroy (0.2ms)[0m   [0;1mDELETE FROM "posts" WHERE "id" = 86[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 8) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 9) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 10) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 11) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 7) [0m
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 93) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPost Destroy (0.2ms)[0m   [0;1mDELETE FROM "posts" WHERE "id" = 93[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 8) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 9) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 10) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 11) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 7) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 100) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPost Destroy (0.1ms)[0m   [0;1mDELETE FROM "posts" WHERE "id" = 100[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 8) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 9) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 10) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 11) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mPost Update (5.7ms)[0m   [0;1mUPDATE "posts" SET rank = (points - 1) / (EXTRACT(epoch from AGE(NOW() at time zone 'UTC', created_at)) / 60 / 60 + 2) ^ 1.5 [0m
+  [4;35;1mComment Update (0.7ms)[0m   [0mUPDATE "comments" SET rank = (points - 1) / (EXTRACT(epoch from AGE(NOW() at time zone 'UTC', created_at)) / 60 / 60 + 2) ^ 1.5 [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (4.0ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;35;1mSQL (2.5ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosts (20090910185613)
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (6.4ms)[0m   [0;1mCREATE TABLE "posts" ("id" serial primary key, "user_id" integer, "section_id" integer DEFAULT 1, "points" integer DEFAULT 1, "rank" float DEFAULT 0, "created_at" timestamp, "updated_at" timestamp, "url" character varying(255), "title" character varying(255), "text" text, "comments_count" integer DEFAULT 0) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090910185613')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+Migrating to CreateUsers (20090910194400)
+  [4;35;1mSQL (0.7ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (7.0ms)[0m   [0;1mCREATE TABLE "users" ("id" serial primary key, "email" character varying(255), "password" character varying(255), "lastname" character varying(255), "firstname" character varying(255), "alias" character varying(255), "points" integer DEFAULT 1, "created_at" timestamp, "updated_at" timestamp, "admin" boolean DEFAULT 'f', "activation_key" character varying(255), "activation_expires_at" timestamp DEFAULT '2009-10-01 12:50:04.958872', "reset_key" character varying(255), "reset_expires_at" timestamp DEFAULT '2009-10-01 12:50:04.958925', "posts_count" integer DEFAULT 0, "comments_count" integer DEFAULT 0) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090910194400')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+Migrating to CreateVotes (20090910231230)
+  [4;35;1mSQL (1.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (3.4ms)[0m   [0;1mCREATE TABLE "votes" ("id" serial primary key, "voteable_id" integer, "voteable_type" character varying(255), "user_id" integer, "value" integer DEFAULT 3, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090910231230')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+Migrating to CreateComments (20090911003327)
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (6.5ms)[0m   [0;1mCREATE TABLE "comments" ("id" serial primary key, "parent_id" integer, "commentable_id" integer, "commentable_type" character varying(255), "user_id" integer, "text" text, "points" integer DEFAULT 1, "rank" float DEFAULT 0, "created_at" timestamp, "updated_at" timestamp, "comments_count" integer DEFAULT 0) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090911003327')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+Migrating to CreateSections (20090918192812)
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (5.6ms)[0m   [0;1mCREATE TABLE "sections" ("id" serial primary key, "name" character varying(255), "description" text, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090918192812')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mINSERT INTO "sections" ("name", "created_at", "updated_at", "description") VALUES(E'Breve', '2009-10-01 19:50:06.989738', '2009-10-01 19:50:06.989738', E'RESERVED. This is the default section used for posts.') RETURNING "id"[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSection Load (1.4ms)[0m   [0;1mSELECT * FROM "sections" [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET search_path TO public[0m
+  [4;36;1mSQL (419.7ms)[0m   [0;1mDROP DATABASE IF EXISTS "breve_test"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET search_path TO public[0m
+  [4;36;1mSQL (454.5ms)[0m   [0;1mCREATE DATABASE "breve_test" ENCODING = 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (11.3ms)[0m   [0mCREATE TABLE "comments" ("id" serial primary key, "parent_id" integer, "commentable_id" integer, "commentable_type" character varying(255), "user_id" integer, "text" text, "points" integer DEFAULT 1, "rank" float DEFAULT 0.0, "created_at" timestamp, "updated_at" timestamp, "comments_count" integer DEFAULT 0) [0m
+  [4;36;1mSQL (6.3ms)[0m   [0;1mCREATE TABLE "posts" ("id" serial primary key, "user_id" integer, "section_id" integer DEFAULT 1, "points" integer DEFAULT 1, "rank" float DEFAULT 0.0, "created_at" timestamp, "updated_at" timestamp, "url" character varying(255), "title" character varying(255), "text" text, "comments_count" integer DEFAULT 0) [0m
+  [4;35;1mSQL (8.7ms)[0m   [0mCREATE TABLE "sections" ("id" serial primary key, "name" character varying(255), "description" text, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (7.0ms)[0m   [0;1mCREATE TABLE "users" ("id" serial primary key, "email" character varying(255), "password" character varying(255), "lastname" character varying(255), "firstname" character varying(255), "alias" character varying(255), "points" integer DEFAULT 1, "created_at" timestamp, "updated_at" timestamp, "admin" boolean DEFAULT 'f', "activation_key" character varying(255), "activation_expires_at" timestamp DEFAULT E'2009-10-01 12:50:04', "reset_key" character varying(255), "reset_expires_at" timestamp DEFAULT E'2009-10-01 12:50:04', "posts_count" integer DEFAULT 0, "comments_count" integer DEFAULT 0) [0m
+  [4;35;1mSQL (4.7ms)[0m   [0mCREATE TABLE "votes" ("id" serial primary key, "voteable_id" integer, "voteable_type" character varying(255), "user_id" integer, "value" integer DEFAULT 3, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090918192812')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090910185613')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090910194400')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090910231230')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090911003327')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET search_path TO public[0m
+  [4;36;1mSQL (270.5ms)[0m   [0;1mDROP DATABASE IF EXISTS "breve_test"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET search_path TO public[0m
+  [4;36;1mSQL (292.7ms)[0m   [0;1mCREATE DATABASE "breve_test" ENCODING = 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (10.5ms)[0m   [0mCREATE TABLE "comments" ("id" serial primary key, "parent_id" integer, "commentable_id" integer, "commentable_type" character varying(255), "user_id" integer, "text" text, "points" integer DEFAULT 1, "rank" float DEFAULT 0.0, "created_at" timestamp, "updated_at" timestamp, "comments_count" integer DEFAULT 0) [0m
+  [4;36;1mSQL (6.9ms)[0m   [0;1mCREATE TABLE "posts" ("id" serial primary key, "user_id" integer, "section_id" integer DEFAULT 1, "points" integer DEFAULT 1, "rank" float DEFAULT 0.0, "created_at" timestamp, "updated_at" timestamp, "url" character varying(255), "title" character varying(255), "text" text, "comments_count" integer DEFAULT 0) [0m
+  [4;35;1mSQL (7.8ms)[0m   [0mCREATE TABLE "sections" ("id" serial primary key, "name" character varying(255), "description" text, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (9.0ms)[0m   [0;1mCREATE TABLE "users" ("id" serial primary key, "email" character varying(255), "password" character varying(255), "lastname" character varying(255), "firstname" character varying(255), "alias" character varying(255), "points" integer DEFAULT 1, "created_at" timestamp, "updated_at" timestamp, "admin" boolean DEFAULT 'f', "activation_key" character varying(255), "activation_expires_at" timestamp DEFAULT E'2009-10-01 12:50:04', "reset_key" character varying(255), "reset_expires_at" timestamp DEFAULT E'2009-10-01 12:50:04', "posts_count" integer DEFAULT 0, "comments_count" integer DEFAULT 0) [0m
+  [4;35;1mSQL (12.5ms)[0m   [0mCREATE TABLE "votes" ("id" serial primary key, "voteable_id" integer, "voteable_type" character varying(255), "user_id" integer, "value" integer DEFAULT 3, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;35;1mSQL (1.8ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090918192812')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090910185613')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090910194400')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090910231230')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090911003327')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET search_path TO public[0m
+  [4;36;1mSQL (114.5ms)[0m   [0;1mDROP DATABASE IF EXISTS "breve_test"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET search_path TO public[0m
+  [4;36;1mSQL (283.2ms)[0m   [0;1mCREATE DATABASE "breve_test" ENCODING = 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (10.9ms)[0m   [0mCREATE TABLE "comments" ("id" serial primary key, "parent_id" integer, "commentable_id" integer, "commentable_type" character varying(255), "user_id" integer, "text" text, "points" integer DEFAULT 1, "rank" float DEFAULT 0.0, "created_at" timestamp, "updated_at" timestamp, "comments_count" integer DEFAULT 0) [0m
+  [4;36;1mSQL (7.6ms)[0m   [0;1mCREATE TABLE "posts" ("id" serial primary key, "user_id" integer, "section_id" integer DEFAULT 1, "points" integer DEFAULT 1, "rank" float DEFAULT 0.0, "created_at" timestamp, "updated_at" timestamp, "url" character varying(255), "title" character varying(255), "text" text, "comments_count" integer DEFAULT 0) [0m
+  [4;35;1mSQL (8.1ms)[0m   [0mCREATE TABLE "sections" ("id" serial primary key, "name" character varying(255), "description" text, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (6.8ms)[0m   [0;1mCREATE TABLE "users" ("id" serial primary key, "email" character varying(255), "password" character varying(255), "lastname" character varying(255), "firstname" character varying(255), "alias" character varying(255), "points" integer DEFAULT 1, "created_at" timestamp, "updated_at" timestamp, "admin" boolean DEFAULT 'f', "activation_key" character varying(255), "activation_expires_at" timestamp DEFAULT E'2009-10-01 12:50:04', "reset_key" character varying(255), "reset_expires_at" timestamp DEFAULT E'2009-10-01 12:50:04', "posts_count" integer DEFAULT 0, "comments_count" integer DEFAULT 0) [0m
+  [4;35;1mSQL (8.5ms)[0m   [0mCREATE TABLE "votes" ("id" serial primary key, "voteable_id" integer, "voteable_type" character varying(255), "user_id" integer, "value" integer DEFAULT 3, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;35;1mSQL (2.7ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090918192812')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090910185613')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090910194400')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090910231230')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090911003327')[0m

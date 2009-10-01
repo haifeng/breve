@@ -3,7 +3,9 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 describe Comment do
   before(:each) do
     @valid_attributes = {
-      
+      :text        => 'Lorem ipsum dolor...',
+      :commentable => mock_model(Post),
+      :author      => mock_model(User)
     }
   end
 
