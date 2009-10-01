@@ -1,4 +1,5 @@
-require 'digest/sha2'
+require 'openssl'
+require 'base64'
 
 # This module contains functions for hashing and storing passwords
 module Password
@@ -20,8 +21,34 @@ module Password
     end
   end
 
-  def Password.keystring(*values)
-    Digest::SHA1.hexdigest("#{values.join}:#{Password.salt}")
+  # Concatenates values to generate a key serial number
+  def Password.serial_number(*values)
+    Digest::SHA2.hexdigest("#{values.join}:#{Password.salt}")
+  end
+
+  # Encrypt text with key
+  # TODO: should use an IV later
+  def Password.encrypt(key, text)
+    c = OpenSSL::Cipher::Cipher.new("aes-256-cbc")
+    c.encrypt
+    c.key = key = Digest::SHA256.digest(key)
+    #c.iv = iv = c.random_iv
+    e = c.update(text)
+    e << c.final
+    #[ e, iv ]
+    Base64.encode64(e)
+  end
+  
+  # Decrypt text with key
+  # TODO: should use an IV later
+  def Password.decrypt(key, text)
+    c = OpenSSL::Cipher::Cipher.new("aes-256-cbc")
+    c.decrypt
+    c.key = Digest::SHA256.digest(key)
+    # c.iv = iv
+    d = c.update(Base64.decode64(text))
+    d << c.final
+    d
   end
 
   protected
@@ -52,4 +79,3 @@ module Password
     store[128..192]
   end
 end
-
