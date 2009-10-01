@@ -24,6 +24,8 @@ Rails::Initializer.run do |config|
     :lib => 'bluecloth'
   config.gem 'mislav-will_paginate', :version => '2.3.11', 
     :lib => 'will_paginate', :source => 'http://gems.github.com'
+  config.gem 'thoughtbot-pacecar', :version => '1.1.6', 
+    :lib => 'pacecar', :source => 'http://gems.github.com'
 
   if RUBY_VERSION == '1.8.6' 
     config.gem 'openrain-action_mailer_tls', :verison => '1.1.3', 
