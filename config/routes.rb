@@ -6,11 +6,16 @@ ActionController::Routing::Routes.draw do |map|
   map.settings   'settings',        :controller => 'users', :action => 'edit'
   map.documents  'documents/:name', :controller => 'main',  :action => 'view'
 
+  map.namespace :admin do |admin|
+    map.admin 'admin/', :controller => 'main'
+    admin.resources :users
+  end
+
   map.resources :posts, 
     :member     => { :comment => :post, :vote => :post }, 
-    :collection => { :top_ranked => :get, :latest => :get } do |posts|
-      posts.resources :comments, :member => { :reply => [ :get, :post ], :vote => :post }
-    end
+    :collection => { :top_ranked => :get, :latest => :get, :voted_by => :get } do |posts|
+                     posts.resources :comments, :member => { :reply => [ :get, :post ], :vote => :post }
+                   end
   
   map.resources :comments, 
     :has_many   => :comments, 
