@@ -9,12 +9,11 @@ class User < ActiveRecord::Base
 
   has_many :posts
   has_many :comments
-
   has_many :votes
+  
   has_gravatar
 
   before_validation_on_create :configure_for_activation
-  before_destroy :ensure_it_has_no_comments
 
   # Checks if the username and password combination
   # exists in the accounts table.
@@ -36,7 +35,7 @@ class User < ActiveRecord::Base
   end
   
   def email=(value)
-    self[:email] = Password::encrypt(BREVE_PRIVATE_KEY, value.downcase)
+    self[:email] = Password::encrypt(BREVE_PRIVATE_KEY, value.downcase) unless value.blank?
   end
 
   def email

@@ -1207,3 +1207,81 @@ Migrating to CreateSections (20090918192812)
   [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090910194400')[0m
   [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090910231230')[0m
   [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090911003327')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET search_path TO public[0m
+  [4;36;1mSQL (121.2ms)[0m   [0;1mDROP DATABASE IF EXISTS "breve_test"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET search_path TO public[0m
+  [4;36;1mSQL (281.7ms)[0m   [0;1mCREATE DATABASE "breve_test" ENCODING = 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (10.1ms)[0m   [0mCREATE TABLE "comments" ("id" serial primary key, "parent_id" integer, "commentable_id" integer, "commentable_type" character varying(255), "user_id" integer, "text" text, "points" integer DEFAULT 1, "rank" float DEFAULT 0.0, "created_at" timestamp, "updated_at" timestamp, "comments_count" integer DEFAULT 0) [0m
+  [4;36;1mSQL (6.4ms)[0m   [0;1mCREATE TABLE "posts" ("id" serial primary key, "user_id" integer, "section_id" integer DEFAULT 1, "points" integer DEFAULT 1, "rank" float DEFAULT 0.0, "created_at" timestamp, "updated_at" timestamp, "url" character varying(255), "title" character varying(255), "text" text, "comments_count" integer DEFAULT 0) [0m
+  [4;35;1mSQL (9.4ms)[0m   [0mCREATE TABLE "sections" ("id" serial primary key, "name" character varying(255), "description" text, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (8.6ms)[0m   [0;1mCREATE TABLE "users" ("id" serial primary key, "email" character varying(255), "password" character varying(255), "lastname" character varying(255), "firstname" character varying(255), "alias" character varying(255), "points" integer DEFAULT 1, "created_at" timestamp, "updated_at" timestamp, "admin" boolean DEFAULT 'f', "activation_key" character varying(255), "activation_expires_at" timestamp DEFAULT E'2009-10-01 12:50:04', "reset_key" character varying(255), "reset_expires_at" timestamp DEFAULT E'2009-10-01 12:50:04', "posts_count" integer DEFAULT 0, "comments_count" integer DEFAULT 0) [0m
+  [4;35;1mSQL (4.5ms)[0m   [0mCREATE TABLE "votes" ("id" serial primary key, "voteable_id" integer, "voteable_type" character varying(255), "user_id" integer, "value" integer DEFAULT 3, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (8.3ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;35;1mSQL (2.5ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090918192812')[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090910185613')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090910194400')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090910231230')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090911003327')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET search_path TO public[0m
+  [4;36;1mSQL (113.9ms)[0m   [0;1mDROP DATABASE IF EXISTS "breve_test"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET search_path TO public[0m
+  [4;36;1mSQL (281.2ms)[0m   [0;1mCREATE DATABASE "breve_test" ENCODING = 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (10.2ms)[0m   [0mCREATE TABLE "comments" ("id" serial primary key, "parent_id" integer, "commentable_id" integer, "commentable_type" character varying(255), "user_id" integer, "text" text, "points" integer DEFAULT 1, "rank" float DEFAULT 0.0, "created_at" timestamp, "updated_at" timestamp, "comments_count" integer DEFAULT 0) [0m
+  [4;36;1mSQL (6.2ms)[0m   [0;1mCREATE TABLE "posts" ("id" serial primary key, "user_id" integer, "section_id" integer DEFAULT 1, "points" integer DEFAULT 1, "rank" float DEFAULT 0.0, "created_at" timestamp, "updated_at" timestamp, "url" character varying(255), "title" character varying(255), "text" text, "comments_count" integer DEFAULT 0) [0m
+  [4;35;1mSQL (6.3ms)[0m   [0mCREATE TABLE "sections" ("id" serial primary key, "name" character varying(255), "description" text, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (6.2ms)[0m   [0;1mCREATE TABLE "users" ("id" serial primary key, "email" character varying(255), "password" character varying(255), "lastname" character varying(255), "firstname" character varying(255), "alias" character varying(255), "points" integer DEFAULT 1, "created_at" timestamp, "updated_at" timestamp, "admin" boolean DEFAULT 'f', "activation_key" character varying(255), "activation_expires_at" timestamp DEFAULT E'2009-10-01 12:50:04', "reset_key" character varying(255), "reset_expires_at" timestamp DEFAULT E'2009-10-01 12:50:04', "posts_count" integer DEFAULT 0, "comments_count" integer DEFAULT 0) [0m
+  [4;35;1mSQL (3.4ms)[0m   [0mCREATE TABLE "votes" ("id" serial primary key, "voteable_id" integer, "voteable_type" character varying(255), "user_id" integer, "value" integer DEFAULT 3, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;35;1mSQL (1.5ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090918192812')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090910185613')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090910194400')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090910231230')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090911003327')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET search_path TO public[0m
+  [4;36;1mSQL (117.4ms)[0m   [0;1mDROP DATABASE IF EXISTS "breve_test"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET search_path TO public[0m
+  [4;36;1mSQL (310.5ms)[0m   [0;1mCREATE DATABASE "breve_test" ENCODING = 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (18.0ms)[0m   [0mCREATE TABLE "comments" ("id" serial primary key, "parent_id" integer, "commentable_id" integer, "commentable_type" character varying(255), "user_id" integer, "text" text, "points" integer DEFAULT 1, "rank" float DEFAULT 0.0, "created_at" timestamp, "updated_at" timestamp, "comments_count" integer DEFAULT 0) [0m
+  [4;36;1mSQL (9.0ms)[0m   [0;1mCREATE TABLE "posts" ("id" serial primary key, "user_id" integer, "section_id" integer DEFAULT 1, "points" integer DEFAULT 1, "rank" float DEFAULT 0.0, "created_at" timestamp, "updated_at" timestamp, "url" character varying(255), "title" character varying(255), "text" text, "comments_count" integer DEFAULT 0) [0m
+  [4;35;1mSQL (13.2ms)[0m   [0mCREATE TABLE "sections" ("id" serial primary key, "name" character varying(255), "description" text, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (10.4ms)[0m   [0;1mCREATE TABLE "users" ("id" serial primary key, "email" character varying(255), "password" character varying(255), "lastname" character varying(255), "firstname" character varying(255), "alias" character varying(255), "points" integer DEFAULT 1, "created_at" timestamp, "updated_at" timestamp, "admin" boolean DEFAULT 'f', "activation_key" character varying(255), "activation_expires_at" timestamp DEFAULT E'2009-10-01 12:50:04', "reset_key" character varying(255), "reset_expires_at" timestamp DEFAULT E'2009-10-01 12:50:04', "posts_count" integer DEFAULT 0, "comments_count" integer DEFAULT 0) [0m
+  [4;35;1mSQL (5.8ms)[0m   [0mCREATE TABLE "votes" ("id" serial primary key, "voteable_id" integer, "voteable_type" character varying(255), "user_id" integer, "value" integer DEFAULT 3, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;35;1mSQL (1.6ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (2.6ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090918192812')[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090910185613')[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090910194400')[0m
+  [4;36;1mSQL (3.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090910231230')[0m
+  [4;35;1mSQL (9.5ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090911003327')[0m
