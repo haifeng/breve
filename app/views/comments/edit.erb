@@ -1,9 +1,11 @@
 <%= flash_tag %>
 <h2>Edit Comment</h2>
+
 <div class="line-item-row">
   <% context = @comment.parent || @comment.topic %>
+
   <!-- upvote widget -->
-  <%= render :partial => 'posts/vote_widget', :locals => { :post => context } %>
+  <!-- %= render_cell :vote_widget, :show, :post => context % -->
 
   <div style="margin-left: 25px; color: #777777">
     <b>On:</b>

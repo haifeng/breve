@@ -1,4 +1,5 @@
 require 'openssl'
+#require 'digest/sha2'
 require 'base64'
 
 # This module contains functions for hashing and storing passwords
@@ -6,7 +7,7 @@ module Password
   # Generates a new salt and rehashes the password
   def Password.update(password)
     salt = self.salt
-    hash = self.hash(password,salt)
+    hash = self.hash(password, salt)
     self.store(hash, salt)
   end
 
@@ -14,11 +15,7 @@ module Password
   def Password.check(password, store)
     hash = self.get_hash(store)
     salt = self.get_salt(store)
-    if self.hash(password,salt) == hash
-      true
-    else
-      false
-    end
+    self.hash(password, salt) == hash
   end
 
   # Concatenates values to generate a key serial number
@@ -60,7 +57,7 @@ module Password
   end
 
   # Generates a 128 character hash
-  def Password.hash(password,salt)
+  def Password.hash(password, salt)
     Digest::SHA512.hexdigest("#{password}:#{salt}")
   end
   

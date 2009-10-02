@@ -1,6 +1,6 @@
 <div class="line-item-row">
   <!-- upvote widget -->
-  <%= render :partial => 'posts/vote_widget', :locals => { :post => comment } %>
+  <%= render_cell :vote_widget, :show, :post => comment %>
 
   <div style="margin-left: 25px">
     <div style="margin-bottom: 0.3em; font-size: 0.9em; color: #333333">

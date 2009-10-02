@@ -2,7 +2,7 @@
   <div class="page-header">
     <!-- %= link_to 'breve', root_path, :class => 'logo' % -->
     <%= link_to image_tag('cappuccino.png', :width => 40), root_path %>
-
+    
     <div class="ui-corner-tl ui-corner-bl" style="float: right; background: #ecedf0; text-align: right; padding-left: 10px; padding-right: 5px; padding-bottom: 4px">
       <% if authorized? %>
         <b><%= link_to current_user(:fullname), settings_path %></b>

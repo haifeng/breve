@@ -3,7 +3,7 @@
 
 <div class="line-item-row">
   <!-- upvote widget -->
-  <%= render :partial => 'posts/vote_widget', :locals => { :post => @comment } %>
+  <!-- %= render_cell :vote_widget, :show, :post => @comment % -->
 
   <div style="margin-left: 25px; color: #777777">
     <% unless @comment.parent.nil? %>

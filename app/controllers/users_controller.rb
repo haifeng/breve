@@ -85,7 +85,7 @@ class UsersController < ApplicationController
         render :action => :login
       else
         User.configure_for_reset(email)
-        flash[:notice] = "Reset confirmation sent to #{email}"
+        flash[:notice] = "Reset confirmation sent."
         redirect_to login_url
       end
       

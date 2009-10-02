@@ -1,6 +1,6 @@
 <div class="line-item-row">
   <!-- upvote widget -->
-  <%= render :partial => 'posts/vote_widget', :locals => { :post => item } %>
+  <%= render_cell :vote_widget, :show, :post => item %>
 
   <div style="margin-left: 25px">
     <!-- post item widget -->
