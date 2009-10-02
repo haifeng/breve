@@ -14,8 +14,8 @@ class UsersController < ApplicationController
         session[:referer] = nil
         redirect_to referer
       else
-        @user = User.new(:email => params[:user][:email])
         flash.now[:notice] = 'ERROR: Invalid credentials.' 
+        @user = User.new(:email => params[:user][:email])
       end
     end
   end
@@ -42,24 +42,22 @@ class UsersController < ApplicationController
     redirect_to root_url
   rescue
     flash.now[:notice] = "ERROR: #{$!.message}, please try again."
-    @user[:password]   = nil
     render :action => :new
   end
 
   def edit
-    @user = User.find current_user
-    @user[:password] = nil
+    @user = User.find(current_user).digest
   end
   
   def update
-    @user = User.find current_user
-    @user.update_attributes!(params[:user])
     flash[:notice] = 'Changes saved.'
-    create_session_for @user
+    @user          = User.find(current_user)
+    @user.update_attributes!(params[:user])
+    update_session_for @user
     redirect_to edit_user_url(@user)
   rescue
     flash.now[:notice] = "ERROR: #{$!.message}, please try again."
-    @user[:password]   = nil
+    @user = @user.digest
     render :action => :edit
   end
   
@@ -108,8 +106,6 @@ class UsersController < ApplicationController
       if @user.nil?
         flash[:notice] = "ERROR: Invalid or expired reset key, please try again."
         redirect_to login_url
-      else
-        @user[:password] = nil
       end
       
     # shouldn't happen
@@ -122,14 +118,15 @@ class UsersController < ApplicationController
   def authorize(user)
     create_session_for User.authorize(user[:email], user[:password])
   end
-  
+
   def create_session_for(user)
     if user.nil?
       session[:user]  = nil
     else
-      user[:password] = nil
       session[:user]  = user.digest
     end
     user
   end
+  
+  alias :update_session_for :create_session_for
 end

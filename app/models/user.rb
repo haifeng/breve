@@ -14,6 +14,7 @@ class User < ActiveRecord::Base
   has_gravatar
 
   before_validation_on_create :configure_for_activation
+  before_save :encrypt_fields
 
   # Checks if the username and password combination
   # exists in the accounts table.
@@ -31,20 +32,22 @@ class User < ActiveRecord::Base
   end
 
   def password=(value)
-    self[:password] = Password::update(value) unless value.blank? 
+    self[:password] = value unless value.blank?
   end
   
   def email=(value)
-    self[:email] = Password::encrypt(BREVE_PRIVATE_KEY, value.downcase) unless value.blank?
+    if value.blank?
+      # HACK: we reassign the decrypted value if argument is blank
+      # that way when it gets saved, email is back in plaintext
+      # before the encryption is applied
+      self[:email] = Password::decrypt(BREVE_PRIVATE_KEY, email)
+    else
+      self[:email] = value unless value.blank?
+    end
   end
-
-  def email
-    Password::decrypt(BREVE_PRIVATE_KEY, self[:email])
-  end
-
+  
   def digest
-    self[:password] = ''
-    self[:email]    = ''
+    decrypt_fields
     self
   end
 
@@ -135,6 +138,16 @@ class User < ActiveRecord::Base
   end
 
   protected
+  def encrypt_fields
+    self[:email]    = Password::encrypt(BREVE_PRIVATE_KEY, email.downcase) unless email.blank?
+    self[:password] = Password::update(password) unless password.blank? 
+  end
+  
+  def decrypt_fields
+    self[:email]    = Password::decrypt(BREVE_PRIVATE_KEY, email) unless email.blank?
+    self[:password] = nil
+  end
+  
   def configure_for_activation
     password              = Password::salt
     activation_expires_at = 2.weeks.from_now
