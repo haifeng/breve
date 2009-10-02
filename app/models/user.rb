@@ -149,8 +149,8 @@ class User < ActiveRecord::Base
   end
   
   def configure_for_activation
-    password              = Password::salt
-    activation_expires_at = 2.weeks.from_now
-    activation_key        = Password::serial_number(BREVE_PRIVATE_KEY, email) 
+    self[:password]              = Password::salt
+    self[:activation_expires_at] = 2.weeks.from_now
+    self[:activation_key]        = Password::serial_number(BREVE_PRIVATE_KEY, email) 
   end
 end
