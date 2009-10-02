@@ -46,7 +46,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(current_user).digest
+    @user = User.find(current_user).normalized
   end
   
   def update
@@ -57,7 +57,7 @@ class UsersController < ApplicationController
     redirect_to edit_user_url(@user)
   rescue
     flash.now[:notice] = "ERROR: #{$!.message}, please try again."
-    @user = @user.digest
+    @user = @user.normalized
     render :action => :edit
   end
   
@@ -123,7 +123,7 @@ class UsersController < ApplicationController
     if user.nil?
       session[:user]  = nil
     else
-      session[:user]  = user.digest
+      session[:user]  = user.normalized
     end
     user
   end

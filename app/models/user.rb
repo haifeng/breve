@@ -14,12 +14,11 @@ class User < ActiveRecord::Base
   has_gravatar
 
   before_validation_on_create :configure_for_activation
-  before_save :encrypt_fields
 
   # Checks if the username and password combination
   # exists in the accounts table.
   def User.authorize(email, password)
-    user = find :first, :conditions => [ "email = ?", Password::encrypt(BREVE_PRIVATE_KEY, email.downcase) ]
+    user = find :first, :conditions => [ "lower(email) = ?", email.downcase ]
     return user if not user.nil? and user.activated? and Password::check(password, user.password) 
   end
   
@@ -32,22 +31,15 @@ class User < ActiveRecord::Base
   end
 
   def password=(value)
-    self[:password] = value unless value.blank?
+    self[:password] = Password::update(value) unless value.blank?
   end
   
   def email=(value)
-    if value.blank?
-      # HACK: we reassign the decrypted value if argument is blank
-      # that way when it gets saved, email is back in plaintext
-      # before the encryption is applied
-      self[:email] = Password::decrypt(BREVE_PRIVATE_KEY, email)
-    else
-      self[:email] = value unless value.blank?
-    end
+    self[:email] = value unless value.blank?
   end
   
-  def digest
-    decrypt_fields
+  def normalized(blankout_password=true)
+    self[:password] = nil if blankout_password
     self
   end
 
@@ -88,7 +80,7 @@ class User < ActiveRecord::Base
   end
 
   def User.configure_for_reset(email)
-    user = find :first, :conditions => [ "email = ?", Password::encrypt(BREVE_PRIVATE_KEY, email.downcase) ]
+    user = find(:first, :conditions => [ "lower(email) = ?", email.downcase ])
     unless user.nil?
       user.reset_expires_at = 1.hour.from_now
       user.reset_key        = Password::serial_number(BREVE_PRIVATE_KEY, email) 
@@ -113,13 +105,13 @@ class User < ActiveRecord::Base
     end
 
     return unless user.save
-    user
+    user.normalized
   end
 
   def User.reset_allowed?(key)
     user = User.find_by_reset_key(key)
     return if user.nil? or user.reset_expires_at < Time.now
-    user
+    user.normalized
   end
 
   def User.activate(key)
@@ -137,17 +129,6 @@ class User < ActiveRecord::Base
     activation_key.nil?
   end
 
-  protected
-  def encrypt_fields
-    self[:email]    = Password::encrypt(BREVE_PRIVATE_KEY, email.downcase) unless email.blank?
-    self[:password] = Password::update(password) unless password.blank? 
-  end
-  
-  def decrypt_fields
-    self[:email]    = Password::decrypt(BREVE_PRIVATE_KEY, email) unless email.blank?
-    self[:password] = nil
-  end
-  
   def configure_for_activation
     self[:password]              = Password::salt
     self[:activation_expires_at] = 2.weeks.from_now

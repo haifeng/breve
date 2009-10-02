@@ -55,9 +55,9 @@ ActiveRecord::Schema.define(:version => 20090918192812) do
     t.datetime "updated_at"
     t.boolean  "admin",                 :default => false
     t.string   "activation_key"
-    t.datetime "activation_expires_at", :default => '2009-10-01 22:23:24'
+    t.datetime "activation_expires_at", :default => '2009-10-02 16:09:29'
     t.string   "reset_key"
-    t.datetime "reset_expires_at",      :default => '2009-10-01 22:23:24'
+    t.datetime "reset_expires_at",      :default => '2009-10-02 16:09:29'
     t.integer  "posts_count",           :default => 0
     t.integer  "comments_count",        :default => 0
   end
