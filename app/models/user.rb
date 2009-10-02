@@ -17,8 +17,8 @@ class User < ActiveRecord::Base
 
   # Checks if the username and password combination
   # exists in the accounts table.
-  def self.authorize(email, password)
-    user = self.find :first, :conditions => [ "email = ?", Password::encrypt(BREVE_PRIVATE_KEY, email.downcase) ]
+  def User.authorize(email, password)
+    user = find :first, :conditions => [ "email = ?", Password::encrypt(BREVE_PRIVATE_KEY, email.downcase) ]
     return user if not user.nil? and user.activated? and Password::check(password, user.password) 
   end
   
@@ -53,9 +53,10 @@ class User < ActiveRecord::Base
   end
 
   def displayname
-    return @displayname          unless @displayname.blank?
-    @displayname = self.alias    unless self.alias.blank?
-    @displayname = self.fullname if @displayname.blank?
+    if @displayname.blank?
+      @displayname = self.alias    unless self.alias.blank?
+      @displayname = self.fullname if @displayname.blank?
+    end
     @displayname
   end
 
@@ -76,15 +77,15 @@ class User < ActiveRecord::Base
   end
 
   def post_points
-    self.posts.sum(:points) - self.posts.count
+    posts.sum(:points) - posts.count
   end
 
   def comment_points
-    self.comments.sum(:points) - self.comments.count
+    comments.sum(:points) - comments.count
   end
 
-  def self.configure_for_reset(email)
-    user = self.find :first, :conditions => [ "lower(email) = ?", (email.downcase) ]
+  def User.configure_for_reset(email)
+    user = find :first, :conditions => [ "email = ?", Password::encrypt(BREVE_PRIVATE_KEY, email.downcase) ]
     unless user.nil?
       user.reset_expires_at = 1.hour.from_now
       user.reset_key        = Password::serial_number(BREVE_PRIVATE_KEY, email) 
@@ -92,8 +93,8 @@ class User < ActiveRecord::Base
     end
   end
 
-  def self.reset(key, password)
-    user = self.reset_allowed?(key)
+  def User.reset(key, password)
+    user = reset_allowed?(key)
     return if user.nil?
 
     # when password arg is blank, we clear the password
@@ -112,13 +113,13 @@ class User < ActiveRecord::Base
     user
   end
 
-  def self.reset_allowed?(key)
+  def User.reset_allowed?(key)
     user = User.find_by_reset_key(key)
     return if user.nil? or user.reset_expires_at < Time.now
     user
   end
 
-  def self.activate(key)
+  def User.activate(key)
     user = User.find_by_activation_key(key)
     return if user.nil? or user.activation_expires_at < Time.now
 
@@ -130,13 +131,13 @@ class User < ActiveRecord::Base
   end
 
   def activated?
-    self.activation_key.nil?
+    activation_key.nil?
   end
 
   protected
   def configure_for_activation
-    self.password              = Password::salt
-    self.activation_expires_at = 2.weeks.from_now
-    self.activation_key        = Password::serial_number(BREVE_PRIVATE_KEY, self.email) 
+    password              = Password::salt
+    activation_expires_at = 2.weeks.from_now
+    activation_key        = Password::serial_number(BREVE_PRIVATE_KEY, email) 
   end
 end
