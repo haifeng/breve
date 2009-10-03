@@ -3,10 +3,11 @@
 <%= render :partial => 'users/sidebar', :locals => { :user => @user } %>
 <div style="font-size: 1.1em; color: #666666">
   <span style="font-size: 2.5em">
-    <%= @user.fullname %>
-    <% unless @user[:alias].blank? %>
-      <sup style="font-size: 0.5em">aka: <%= @user.displayname %></sup>
-    <% end %>
+    <%= @user.displayname %>
+    <!-- %= @user.fullname % -->
+    <!-- % unless @user[:alias].blank? % -->
+    <!--  <sup style="font-size: 0.5em">aka: <%= @user.displayname %></sup> -->
+    <!-- % end % --> 
   </span>
   <p/>
   
