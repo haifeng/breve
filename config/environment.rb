@@ -20,11 +20,9 @@ Rails::Initializer.run do |config|
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
   config.gem 'rdiscount', :version => '1.3.5'
-  config.gem 'BlueCloth', :version => '1.0.0', 
-    :lib => 'bluecloth'
   config.gem 'mislav-will_paginate', :version => '2.3.11', 
     :lib => 'will_paginate', :source => 'http://gems.github.com'
-  config.gem 'thoughtbot-pacecar', :version => '1.1.6', 
+  config.gem 'thoughtbot-pacecar', :version => '1.1.7', 
     :lib => 'pacecar', :source => 'http://gems.github.com'
 
   if RUBY_VERSION == '1.8.6' 
@@ -68,6 +66,3 @@ BREVE_PUBLIC_KEY      = ENV['BREVE_APPLICATION_KEY'] || 'http://stark-robot-87.h
 
 RECAPTCHA_PRIVATE_KEY = ENV['RECAPTCHA_PRIVATE_KEY']
 RECAPTCHA_PUBLIC_KEY  = ENV['RECAPTCHA_PUBLIC_KEY']
-
-# HACK until RDiscount is fixed    
-RDiscount = BlueCloth

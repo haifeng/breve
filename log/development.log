@@ -21959,3 +21959,595 @@ Processing PostsController#vote (for 127.0.0.1 at 2009-10-02 17:20:41) [POST]
   [4;35;1mPost Update (0.4ms)[0m   [0mUPDATE "posts" SET "updated_at" = '2009-10-03 00:20:41.790638', "points" = 4 WHERE "id" = 1[0m
   [4;36;1mSQL (30.8ms)[0m   [0;1mCOMMIT[0m
 Completed in 68ms (View: 1, DB: 35) | 200 OK [http://localhost/posts/1/vote]
+/!\ FAILSAFE /!\  Mon Oct 05 12:05:18 -0700 2009
+  Status: 500 Internal Server Error
+  could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/tmp/.s.PGSQL.5432"?
+
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/postgresql_adapter.rb:968:in `initialize'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/postgresql_adapter.rb:968:in `connect'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/postgresql_adapter.rb:968:in `connect'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/postgresql_adapter.rb:217:in `initialize'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `new'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    /opt/ruby18/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:28:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/actionpack-2.3.4/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/actionpack-2.3.4/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/actionpack-2.3.4/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:114:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/actionpack-2.3.4/lib/action_controller/reloader.rb:34:in `run'
+    /Users/jgalang/.gem/ruby/18/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rails-2.3.4/lib/rails/rack/static.rb:31:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rails-2.3.4/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/handler/webrick.rb:46:in `service'
+    /opt/ruby18/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/ruby18/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/ruby18/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/ruby18/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/ruby18/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/ruby18/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/ruby18/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/ruby18/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/ruby18/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/ruby18/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/handler/webrick.rb:13:in `run'
+    /Users/jgalang/.gem/ruby/18/gems/rails-2.3.4/lib/commands/server.rb:111
+    /opt/ruby18/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /opt/ruby18/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    ./script/server:3
+/!\ FAILSAFE /!\  Mon Oct 05 12:06:24 -0700 2009
+  Status: 500 Internal Server Error
+  could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/tmp/.s.PGSQL.5432"?
+
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/postgresql_adapter.rb:968:in `initialize'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/postgresql_adapter.rb:968:in `connect'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/postgresql_adapter.rb:968:in `connect'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/postgresql_adapter.rb:217:in `initialize'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `new'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    /opt/ruby18/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:28:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/actionpack-2.3.4/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/actionpack-2.3.4/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/actionpack-2.3.4/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:114:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/actionpack-2.3.4/lib/action_controller/reloader.rb:34:in `run'
+    /Users/jgalang/.gem/ruby/18/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rails-2.3.4/lib/rails/rack/static.rb:31:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rails-2.3.4/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/handler/webrick.rb:46:in `service'
+    /opt/ruby18/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/ruby18/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/ruby18/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/ruby18/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/ruby18/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/ruby18/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/ruby18/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/ruby18/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/ruby18/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/ruby18/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/handler/webrick.rb:13:in `run'
+    /Users/jgalang/.gem/ruby/18/gems/rails-2.3.4/lib/commands/server.rb:111
+    /opt/ruby18/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /opt/ruby18/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    ./script/server:3
+/!\ FAILSAFE /!\  Mon Oct 05 12:06:30 -0700 2009
+  Status: 500 Internal Server Error
+  could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/tmp/.s.PGSQL.5432"?
+
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/postgresql_adapter.rb:968:in `initialize'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/postgresql_adapter.rb:968:in `connect'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/postgresql_adapter.rb:968:in `connect'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/postgresql_adapter.rb:217:in `initialize'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `new'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    /opt/ruby18/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:28:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/actionpack-2.3.4/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/actionpack-2.3.4/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/actionpack-2.3.4/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:114:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/actionpack-2.3.4/lib/action_controller/reloader.rb:34:in `run'
+    /Users/jgalang/.gem/ruby/18/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rails-2.3.4/lib/rails/rack/static.rb:31:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rails-2.3.4/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/handler/webrick.rb:46:in `service'
+    /opt/ruby18/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/ruby18/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/ruby18/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/ruby18/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/ruby18/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/ruby18/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/ruby18/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/ruby18/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/ruby18/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/ruby18/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/handler/webrick.rb:13:in `run'
+    /Users/jgalang/.gem/ruby/18/gems/rails-2.3.4/lib/commands/server.rb:111
+    /opt/ruby18/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /opt/ruby18/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    ./script/server:3
+/!\ FAILSAFE /!\  Mon Oct 05 12:16:11 -0700 2009
+  Status: 500 Internal Server Error
+  Connection refused - connect(2)
+    /Users/jgalang/.gem/ruby/18/gems/postgres-pr-0.6.1/lib/postgres-pr/connection.rb:165:in `initialize'
+    /Users/jgalang/.gem/ruby/18/gems/postgres-pr-0.6.1/lib/postgres-pr/connection.rb:165:in `new'
+    /Users/jgalang/.gem/ruby/18/gems/postgres-pr-0.6.1/lib/postgres-pr/connection.rb:165:in `establish_connection'
+    /Users/jgalang/.gem/ruby/18/gems/postgres-pr-0.6.1/lib/postgres-pr/connection.rb:51:in `initialize'
+    /Users/jgalang/.gem/ruby/18/gems/postgres-pr-0.6.1/lib/postgres-pr/postgres-compat.rb:23:in `new'
+    /Users/jgalang/.gem/ruby/18/gems/postgres-pr-0.6.1/lib/postgres-pr/postgres-compat.rb:23:in `initialize'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/postgresql_adapter.rb:968:in `connect'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/postgresql_adapter.rb:968:in `connect'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/postgresql_adapter.rb:217:in `initialize'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `new'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    /opt/ruby18/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:28:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/actionpack-2.3.4/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/actionpack-2.3.4/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/actionpack-2.3.4/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:114:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/actionpack-2.3.4/lib/action_controller/reloader.rb:34:in `run'
+    /Users/jgalang/.gem/ruby/18/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rails-2.3.4/lib/rails/rack/static.rb:31:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rails-2.3.4/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/handler/webrick.rb:46:in `service'
+    /opt/ruby18/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/ruby18/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/ruby18/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/ruby18/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/ruby18/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/ruby18/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/ruby18/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/ruby18/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/ruby18/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/ruby18/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/handler/webrick.rb:13:in `run'
+    /Users/jgalang/.gem/ruby/18/gems/rails-2.3.4/lib/commands/server.rb:111
+    /opt/ruby18/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /opt/ruby18/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    ./script/server:3
+/!\ FAILSAFE /!\  Mon Oct 05 12:16:12 -0700 2009
+  Status: 500 Internal Server Error
+  Connection refused - connect(2)
+    /Users/jgalang/.gem/ruby/18/gems/postgres-pr-0.6.1/lib/postgres-pr/connection.rb:165:in `initialize'
+    /Users/jgalang/.gem/ruby/18/gems/postgres-pr-0.6.1/lib/postgres-pr/connection.rb:165:in `new'
+    /Users/jgalang/.gem/ruby/18/gems/postgres-pr-0.6.1/lib/postgres-pr/connection.rb:165:in `establish_connection'
+    /Users/jgalang/.gem/ruby/18/gems/postgres-pr-0.6.1/lib/postgres-pr/connection.rb:51:in `initialize'
+    /Users/jgalang/.gem/ruby/18/gems/postgres-pr-0.6.1/lib/postgres-pr/postgres-compat.rb:23:in `new'
+    /Users/jgalang/.gem/ruby/18/gems/postgres-pr-0.6.1/lib/postgres-pr/postgres-compat.rb:23:in `initialize'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/postgresql_adapter.rb:968:in `connect'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/postgresql_adapter.rb:968:in `connect'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/postgresql_adapter.rb:217:in `initialize'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `new'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    /opt/ruby18/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:28:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/actionpack-2.3.4/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/actionpack-2.3.4/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/actionpack-2.3.4/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:114:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/actionpack-2.3.4/lib/action_controller/reloader.rb:34:in `run'
+    /Users/jgalang/.gem/ruby/18/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rails-2.3.4/lib/rails/rack/static.rb:31:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rails-2.3.4/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/handler/webrick.rb:46:in `service'
+    /opt/ruby18/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/ruby18/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/ruby18/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/ruby18/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/ruby18/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/ruby18/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/ruby18/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/ruby18/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/ruby18/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/ruby18/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/handler/webrick.rb:13:in `run'
+    /Users/jgalang/.gem/ruby/18/gems/rails-2.3.4/lib/commands/server.rb:111
+    /opt/ruby18/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /opt/ruby18/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    ./script/server:3
+/!\ FAILSAFE /!\  Mon Oct 05 12:16:35 -0700 2009
+  Status: 500 Internal Server Error
+  Connection refused - connect(2)
+    /Users/jgalang/.gem/ruby/18/gems/postgres-pr-0.6.1/lib/postgres-pr/connection.rb:165:in `initialize'
+    /Users/jgalang/.gem/ruby/18/gems/postgres-pr-0.6.1/lib/postgres-pr/connection.rb:165:in `new'
+    /Users/jgalang/.gem/ruby/18/gems/postgres-pr-0.6.1/lib/postgres-pr/connection.rb:165:in `establish_connection'
+    /Users/jgalang/.gem/ruby/18/gems/postgres-pr-0.6.1/lib/postgres-pr/connection.rb:51:in `initialize'
+    /Users/jgalang/.gem/ruby/18/gems/postgres-pr-0.6.1/lib/postgres-pr/postgres-compat.rb:23:in `new'
+    /Users/jgalang/.gem/ruby/18/gems/postgres-pr-0.6.1/lib/postgres-pr/postgres-compat.rb:23:in `initialize'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/postgresql_adapter.rb:968:in `connect'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/postgresql_adapter.rb:968:in `connect'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/postgresql_adapter.rb:217:in `initialize'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `new'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    /opt/ruby18/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:28:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/actionpack-2.3.4/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/actionpack-2.3.4/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/actionpack-2.3.4/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:114:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/actionpack-2.3.4/lib/action_controller/reloader.rb:34:in `run'
+    /Users/jgalang/.gem/ruby/18/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rails-2.3.4/lib/rails/rack/static.rb:31:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rails-2.3.4/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/handler/webrick.rb:46:in `service'
+    /opt/ruby18/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/ruby18/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/ruby18/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/ruby18/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/ruby18/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/ruby18/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/ruby18/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/ruby18/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/ruby18/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/ruby18/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/handler/webrick.rb:13:in `run'
+    /Users/jgalang/.gem/ruby/18/gems/rails-2.3.4/lib/commands/server.rb:111
+    /opt/ruby18/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /opt/ruby18/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    ./script/server:3
+/!\ FAILSAFE /!\  Mon Oct 05 14:14:58 -0700 2009
+  Status: 500 Internal Server Error
+  could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/tmp/.s.PGSQL.5432"?
+
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/postgresql_adapter.rb:968:in `initialize'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/postgresql_adapter.rb:968:in `connect'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/postgresql_adapter.rb:968:in `connect'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/postgresql_adapter.rb:217:in `initialize'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `new'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    /opt/ruby18/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:28:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/actionpack-2.3.4/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/actionpack-2.3.4/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/actionpack-2.3.4/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:114:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/actionpack-2.3.4/lib/action_controller/reloader.rb:34:in `run'
+    /Users/jgalang/.gem/ruby/18/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rails-2.3.4/lib/rails/rack/static.rb:31:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rails-2.3.4/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+    /Users/jgalang/.gem/ruby/18/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /Users/jgalang/.gem/ruby/18/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /Users/jgalang/.gem/ruby/18/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /Users/jgalang/.gem/ruby/18/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Users/jgalang/.gem/ruby/18/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /Users/jgalang/.gem/ruby/18/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /Users/jgalang/.gem/ruby/18/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Users/jgalang/.gem/ruby/18/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /Users/jgalang/.gem/ruby/18/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /Users/jgalang/.gem/ruby/18/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+    /Users/jgalang/.gem/ruby/18/gems/rails-2.3.4/lib/commands/server.rb:111
+    /opt/ruby18/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /opt/ruby18/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    ./script/server:3
+/!\ FAILSAFE /!\  Mon Oct 05 14:15:27 -0700 2009
+  Status: 500 Internal Server Error
+  FATAL:  database "breve_development" does not exist
+
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/postgresql_adapter.rb:968:in `initialize'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/postgresql_adapter.rb:968:in `connect'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/postgresql_adapter.rb:968:in `connect'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/postgresql_adapter.rb:217:in `initialize'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `new'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    /opt/ruby18/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:28:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/actionpack-2.3.4/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/actionpack-2.3.4/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/actionpack-2.3.4/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:114:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/actionpack-2.3.4/lib/action_controller/reloader.rb:34:in `run'
+    /Users/jgalang/.gem/ruby/18/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rails-2.3.4/lib/rails/rack/static.rb:31:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rails-2.3.4/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+    /Users/jgalang/.gem/ruby/18/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /Users/jgalang/.gem/ruby/18/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /Users/jgalang/.gem/ruby/18/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /Users/jgalang/.gem/ruby/18/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Users/jgalang/.gem/ruby/18/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /Users/jgalang/.gem/ruby/18/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /Users/jgalang/.gem/ruby/18/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Users/jgalang/.gem/ruby/18/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /Users/jgalang/.gem/ruby/18/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /Users/jgalang/.gem/ruby/18/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /Users/jgalang/.gem/ruby/18/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+    /Users/jgalang/.gem/ruby/18/gems/rails-2.3.4/lib/commands/server.rb:111
+    /opt/ruby18/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /opt/ruby18/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    ./script/server:3
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (4.5ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;35;1mSQL (2.1ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosts (20090910185613)
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (6.0ms)[0m   [0;1mCREATE TABLE "posts" ("id" serial primary key, "user_id" integer, "section_id" integer DEFAULT 1, "points" integer DEFAULT 1, "rank" float DEFAULT 0, "created_at" timestamp, "updated_at" timestamp, "url" character varying(255), "title" character varying(255), "text" text, "comments_count" integer DEFAULT 0) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090910185613')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+Migrating to CreateUsers (20090910194400)
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (5.7ms)[0m   [0;1mCREATE TABLE "users" ("id" serial primary key, "email" character varying(255), "password" character varying(255), "lastname" character varying(255), "firstname" character varying(255), "alias" character varying(255), "points" integer DEFAULT 1, "created_at" timestamp, "updated_at" timestamp, "admin" boolean DEFAULT 'f', "activation_key" character varying(255), "activation_expires_at" timestamp DEFAULT '2009-10-05 14:26:09.056407', "reset_key" character varying(255), "reset_expires_at" timestamp DEFAULT '2009-10-05 14:26:09.056475', "posts_count" integer DEFAULT 0, "comments_count" integer DEFAULT 0) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090910194400')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+Migrating to CreateVotes (20090910231230)
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (3.3ms)[0m   [0;1mCREATE TABLE "votes" ("id" serial primary key, "voteable_id" integer, "voteable_type" character varying(255), "user_id" integer, "value" integer DEFAULT 3, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090910231230')[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCOMMIT[0m
+Migrating to CreateComments (20090911003327)
+  [4;35;1mSQL (0.7ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (5.6ms)[0m   [0;1mCREATE TABLE "comments" ("id" serial primary key, "parent_id" integer, "commentable_id" integer, "commentable_type" character varying(255), "user_id" integer, "text" text, "points" integer DEFAULT 1, "rank" float DEFAULT 0, "created_at" timestamp, "updated_at" timestamp, "comments_count" integer DEFAULT 0) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090911003327')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+Migrating to CreateSections (20090918192812)
+  [4;35;1mSQL (0.6ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (4.2ms)[0m   [0;1mCREATE TABLE "sections" ("id" serial primary key, "name" character varying(255), "description" text, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090918192812')[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSection Load (0.8ms)[0m   [0mSELECT "sections".id FROM "sections" WHERE (LOWER("sections"."name") = E'breve') LIMIT 1[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mINSERT INTO "sections" ("name", "created_at", "updated_at", "description") VALUES(E'Breve', '2009-10-05 21:26:10.891129', '2009-10-05 21:26:10.891129', E'RESERVED. This is the default section used for posts.') RETURNING "id"[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#top_ranked (for 127.0.0.1 at 2009-10-05 14:26:18) [GET]
+  Parameters: {"action"=>"top_ranked", "controller"=>"posts"}
+  [4;36;1mPost Load (2.2ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY rank desc LIMIT 15 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering posts/top_ranked
+Rendered main/_analytics (11.7ms)
+Rendered main/_header (14.9ms)
+Rendered main/_body (14.0ms)
+Rendered main/_footer (8.3ms)
+Completed in 276ms (View: 249, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#top_ranked (for 127.0.0.1 at 2009-10-05 14:27:11) [GET]
+  Parameters: {"action"=>"top_ranked", "controller"=>"posts"}
+  [4;35;1mPost Load (2.2ms)[0m   [0mSELECT * FROM "posts" ORDER BY rank desc LIMIT 15 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering posts/top_ranked
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.8ms)
+Rendered main/_welcome (16.7ms)
+Rendered main/_body (0.2ms)
+Rendered main/_footer (1.0ms)
+Completed in 177ms (View: 28, DB: 2) | 200 OK [http://webapp.local/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#top_ranked (for 127.0.0.1 at 2009-10-05 14:27:51) [GET]
+  Parameters: {"action"=>"top_ranked", "controller"=>"posts"}
+  [4;36;1mPost Load (1.9ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY rank desc LIMIT 15 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering posts/top_ranked
+Rendered main/_analytics (0.6ms)
+Rendered main/_header (3.0ms)
+Rendered main/_body (0.4ms)
+Rendered main/_footer (1.3ms)
+Completed in 104ms (View: 94, DB: 2) | 200 OK [http://webapp.local/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing MainController#view (for 127.0.0.1 at 2009-10-05 14:27:54) [GET]
+  Parameters: {"name"=>"guidelines", "action"=>"view", "controller"=>"main"}
+Rendering template within layouts/application
+Rendering main/view
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (2.0ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 13ms (View: 11, DB: 0) | 200 OK [http://webapp.local/documents/guidelines]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing MainController#view (for 127.0.0.1 at 2009-10-05 14:28:31) [GET]
+  Parameters: {"name"=>"guidelines", "action"=>"view", "controller"=>"main"}
+Rendering template within layouts/application
+Rendering main/view
+Rendered main/_analytics (0.7ms)
+Rendered main/_header (3.9ms)
+Rendered main/_body (0.5ms)
+Rendered main/_footer (1.3ms)
+Completed in 102ms (View: 99, DB: 0) | 200 OK [http://webapp.local/documents/guidelines]
