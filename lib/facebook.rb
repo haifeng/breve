@@ -37,7 +37,9 @@ module Facebook
       params['sig'] = API::sig(@secretkey, params)
       result        = JSON::parse("{\"data\": #{API::post(params)}}")
       data          = result['data']
-      data.instance_of?(Array) ? data.first : data
+      data          = data.first if data.instance_of?(Array) 
+      data          = data.inject({}){ |data, (key, value)| data["#{key}".to_sym] = value; data } if data.instance_of?(Hash)
+      data
     end
 
     def self.sig(key, params)
