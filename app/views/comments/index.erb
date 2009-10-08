@@ -14,7 +14,7 @@
   <% form_for [ @post, Comment.new ] do |f| %>
     <fieldset>
       <%= f.text_area :text %><br/>
-      <%= render :partial => 'comments/textformat_help_widget' %>
+      <%= render_cell :widget, :textformat_help %>
       <%= f.submit 'Add Comment' %>
     </fieldset>
   <% end %>

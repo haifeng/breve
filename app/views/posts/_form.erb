@@ -17,7 +17,7 @@
     <%= f.label :text %>
     <%= f.text_area :text %><br/>
     <div style="margin-left: 75px">
-      <%= render :partial => 'comments/textformat_help_widget' %>
+      <%= render_cell :widget, :textformat_help %>
     </div>
     <p/>
     <%= f.submit 'Submit' %>
