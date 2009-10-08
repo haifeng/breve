@@ -22,13 +22,12 @@ class IdentityConsumerController < ApplicationController
     @user       = User.from_identity(data[:uid].to_s, 'facebook.com', credentials)
     update_session_for @user
     
-    # redirect_to edit_user_url(@user)
     referer           = session[:referer] || root_url
     session[:referer] = nil
     redirect_to referer
   rescue
     flash[:notice] = "ERROR: #{$!.message}"
-    redirect_to root_url
+    redirect_to login_url
   end
   
   def twitter_login(consumer)
@@ -49,9 +48,14 @@ class IdentityConsumerController < ApplicationController
         :oauth_verifier => params[:oauth_verifier])
 
       response = @access_token.get('/account/verify_credentials.json')
-      raise 'Service denied access.' unless response === Net::HTTPSuccess
+      raise 'Service denied access.' unless response.instance_of? Net::HTTPOK
 
-      credentials       = JSON.parse(response.body)
+      data        = JSON.parse(response.body)
+      fn, ln      = data['name'].split
+      credentials = { :firstname => fn, :lastname  => ln || data['screen_name'] }
+      @user       = User.from_identity(data['id'].to_s, 'twitter.com', credentials)
+      update_session_for @user
+      
       referer           = session[:referer] || root_url
       session[:referer] = nil
       redirect_to referer
