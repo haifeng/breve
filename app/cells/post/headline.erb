@@ -1,0 +1,5 @@
+<div style="margin-bottom: 0.3em">
+  <%= link_to truncate_words(textualize @post.headline.truncate, :notags), 
+        @post.url.blank? ? comments_path_for(@post) : @post.url %>
+  <small><%=h "(#{@post.host})" unless @post.host.blank? %></small>
+</div>

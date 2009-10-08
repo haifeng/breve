@@ -1,0 +1,12 @@
+<div style="margin-bottom: 0.3em; font-size: 0.8em">
+  <%= link_to @post.comments.empty? ? 
+        'discuss' : "#{pluralize @post.comments.count, 'comment'}", 
+        comments_path_for(@post), :class => 'link-button' %>
+  <% if @post.owned_by? current_user %>
+    <%= separator_tag %>
+    <%= link_to 'edit', edit_path_for(@post), :class => 'link-button' %>
+    <%= separator_tag %>
+    <%= link_to 'remove', path_for_model(@post), :method => :delete, 
+          :class => 'link-button' %>
+  <% end %>
+</div>
