@@ -113,20 +113,4 @@ class UsersController < ApplicationController
       redirect_to root_url
     end
   end
-
-  protected
-  def authorize(user)
-    create_session_for User.authorize(user[:email], user[:password])
-  end
-
-  def create_session_for(user)
-    if user.nil?
-      session[:user]  = nil
-    else
-      session[:user]  = user.normalized
-    end
-    user
-  end
-  
-  alias :update_session_for :create_session_for
 end

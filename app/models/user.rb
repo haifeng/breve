@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   validates_presence_of   :firstname
   validates_uniqueness_of :alias, :case_sensitive => false, :allow_blank => true
 
+  has_many :identities, :dependent => :destroy
   has_many :posts
   has_many :comments
   has_many :votes
@@ -20,6 +21,16 @@ class User < ActiveRecord::Base
   def User.authorize(email, password)
     user = find :first, :conditions => [ "lower(email) = ?", email.downcase ]
     return user if not user.nil? and user.activated? and Password::check(password, user.password) 
+  end
+  
+  def User.from_identity(uid, provider, credentials)
+    identity = Identity.find_by_uid_and_provider(uid, provider)
+    return identity.owner unless identity.nil?
+    
+    user = User.new(credentials.merge(:email => "#{uid}@#{provider}"))
+    user.identities.build(:uid => uid, :provider => provider)
+    user.save!
+    user
   end
   
   def top_ranked_posts
@@ -130,8 +141,10 @@ class User < ActiveRecord::Base
   end
 
   def configure_for_activation
-    self[:password]              = Password::salt
-    self[:activation_expires_at] = 2.weeks.from_now
-    self[:activation_key]        = Password::serial_number(BREVE_PRIVATE_KEY, email) 
+    self[:password] = Password::salt
+    if self.identities.empty?
+      self[:activation_expires_at] = 2.weeks.from_now
+      self[:activation_key]        = Password::serial_number(BREVE_PRIVATE_KEY, email) 
+    end
   end
 end

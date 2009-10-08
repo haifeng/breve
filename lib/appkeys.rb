@@ -1,0 +1,46 @@
+# TODO: Need to device a better way to do these...
+
+# App sepcific globals
+BREVE_PRIVATE_KEY         = ENV['BREVE_APPLICATION_KEY'] || 'http://stark-robot-87.heroku.com'
+BREVE_PUBLIC_KEY          = ENV['BREVE_APPLICATION_KEY'] || 'http://stark-robot-87.heroku.com'
+
+RECAPTCHA_PRIVATE_KEY     = ENV['RECAPTCHA_PRIVATE_KEY']
+RECAPTCHA_PUBLIC_KEY      = ENV['RECAPTCHA_PUBLIC_KEY']
+
+# Twitter OAuth
+TWITTER_CONSUMER_KEY      = ''
+TWITTER_CONSUMER_SECRET   = ''
+TWITTER_REQUEST_TOKEN_URL = ''
+TWITTER_ACCESS_TOKEN_URL  = ''
+TWITTER_AUTHORIZE_URL     = ''
+TWITTER_URL               = ''
+
+# Facebook 
+FACEBOOK_APPNAME          = ''
+FACEBOOK_APPLICATION_ID   = ''
+FACEBOOK_CONSUMER_KEY     = ''
+FACEBOOK_CONSUMER_SECRET  = ''
+FACEBOOK_XD_CHANNEL_URL   = ''
+
+# Google OAuth
+GOOGLE_CONSUMER_KEY       = ''
+GOOGLE_CONSUMER_SECRET    = ''
+GOOGLE_URL                = ''
+
+# FireEagle OAuth
+FIREEAGLE_CONSUMER_KEY    = ''
+FIREEAGLE_CONSUMER_SECRET = ''
+FIREEAGLE_GENERAL_PURPOSE_TOKEN  = ''
+FIREEAGLE_GENERAL_PURPOSE_SECRET = ''
+FIREEAGLE_URL             = ''
+
+# Yahoo OAuth
+YAHOO_APPLICATION_ID      = ''
+YAHOO_CONSUMER_KEY        = ''
+YAHOO_CONSUMER_SECRET     = ''
+YAHOO_URL                 = ''
+
+# Netflix OAuth
+NETFLIX_CONSUMER_KEY      = ''
+NETFLIX_CONSUMER_SECRET   = ''
+NETFLIX_URL               = ''

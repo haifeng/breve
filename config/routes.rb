@@ -1,10 +1,13 @@
-ActionController::Routing::Routes.draw do |map|
-  map.login      'login',           :controller => 'users', :action => 'login'
-  map.logout     'logout',          :controller => 'users', :action => 'logout'
-  map.reset      'reset',           :controller => 'users', :action => 'reset'
-  map.activation 'activate',        :controller => 'users', :action => 'activate'
-  map.settings   'settings',        :controller => 'users', :action => 'edit'
-  map.documents  'documents/:name', :controller => 'main',  :action => 'view'
+ActionController::Routing::Routes.draw do |map|  # controller for 
+  map.identity_login    ':provider/login',    :controller => 'identity_consumer', :action => 'login'
+  map.identity_callback ':provider/callback', :controller => 'identity_consumer', :action => 'callback'
+  
+  map.login       'login',           :controller => 'users', :action => 'login'
+  map.logout      'logout',          :controller => 'users', :action => 'logout'
+  map.reset       'reset',           :controller => 'users', :action => 'reset'
+  map.activation  'activate',        :controller => 'users', :action => 'activate'
+  map.settings    'settings',        :controller => 'users', :action => 'edit'
+  map.documents   'documents/:name', :controller => 'main',  :action => 'view'
 
   map.namespace :admin do |admin|
     map.admin 'admin/', :controller => 'main'

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090918192812) do
+ActiveRecord::Schema.define(:version => 20091007221758) do
 
   create_table "comments", :force => true do |t|
     t.integer  "parent_id"
@@ -22,6 +22,14 @@ ActiveRecord::Schema.define(:version => 20090918192812) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "comments_count",   :default => 0
+  end
+
+  create_table "identities", :force => true do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "posts", :force => true do |t|
@@ -55,9 +63,9 @@ ActiveRecord::Schema.define(:version => 20090918192812) do
     t.datetime "updated_at"
     t.boolean  "admin",                 :default => false
     t.string   "activation_key"
-    t.datetime "activation_expires_at", :default => '2009-10-05 14:26:09'
+    t.datetime "activation_expires_at", :default => '2009-10-07 17:24:18'
     t.string   "reset_key"
-    t.datetime "reset_expires_at",      :default => '2009-10-05 14:26:09'
+    t.datetime "reset_expires_at",      :default => '2009-10-07 17:24:18'
     t.integer  "posts_count",           :default => 0
     t.integer  "comments_count",        :default => 0
   end
