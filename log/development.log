@@ -38252,3 +38252,2180 @@ Rendered main/_header (1.8ms)
 Rendered main/_body (0.1ms)
 Rendered main/_footer (0.7ms)
 Completed in 49ms (View: 39, DB: 3) | 200 OK [http://webapp.local/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#top_ranked (for 127.0.0.1 at 2009-10-07 20:37:14) [GET]
+  Parameters: {"action"=>"top_ranked", "controller"=>"posts"}
+  [4;36;1mPost Load (2.0ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY rank desc LIMIT 15 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering posts/top_ranked
+Rendered posts/_headline_widget (3.2ms)
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_info_widget (40.5ms)
+Rendered posts/_controls_widget (67.5ms)
+Rendered posts/_item (604.6ms)
+Rendered main/_analytics (0.6ms)
+Rendered main/_header (3.0ms)
+Rendered main/_body (0.4ms)
+Rendered main/_footer (1.7ms)
+Completed in 651ms (View: 638, DB: 3) | 200 OK [http://webapp.local/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-10-07 20:37:17) [GET]
+  Parameters: {"action"=>"login", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/login
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (2.1ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 29ms (View: 22, DB: 0) | 200 OK [http://webapp.local/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-10-07 20:39:56) [GET]
+  Parameters: {"action"=>"login", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/login
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.9ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (70.3ms)
+Completed in 93ms (View: 86, DB: 0) | 200 OK [http://webapp.local/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#top_ranked (for 127.0.0.1 at 2009-10-07 20:42:03) [GET]
+  Parameters: {"action"=>"top_ranked", "controller"=>"posts"}
+  [4;36;1mPost Load (2.0ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY rank desc LIMIT 15 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering posts/top_ranked
+Rendered posts/_headline_widget (2.2ms)
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_info_widget (7.6ms)
+Rendered posts/_controls_widget (7.9ms)
+Rendered posts/_item (32.5ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.7ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 57ms (View: 46, DB: 3) | 200 OK [http://webapp.local/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-10-07 20:42:06) [GET]
+  Parameters: {"action"=>"login", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/login
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (2.3ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 24ms (View: 17, DB: 0) | 200 OK [http://webapp.local/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing IdentityConsumerController#callback (for 127.0.0.1 at 2009-10-07 20:44:25) [GET]
+  Parameters: {"session_key"=>"3.sR5zPk9j5p_YTnnCB9SEEw__.86400.1255060800-1834986624", "action"=>"callback", "uid"=>"1834986624", "controller"=>"identity_consumer", "provider"=>"facebook"}
+Redirected to http://webapp.local:3000/
+Completed in 263ms (DB: 0) | 302 Found [http://webapp.local/facebook/callback?session_key=3.sR5zPk9j5p_YTnnCB9SEEw__.86400.1255060800-1834986624&uid=1834986624]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#top_ranked (for 127.0.0.1 at 2009-10-07 20:44:25) [GET]
+  Parameters: {"action"=>"top_ranked", "controller"=>"posts"}
+  [4;36;1mPost Load (2.1ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY rank desc LIMIT 15 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering posts/top_ranked
+Rendered posts/_headline_widget (2.3ms)
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_info_widget (8.1ms)
+Rendered posts/_controls_widget (69.4ms)
+Rendered posts/_item (94.1ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (2.2ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 114ms (View: 102, DB: 3) | 200 OK [http://webapp.local/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-10-07 20:47:10) [GET]
+  Parameters: {"action"=>"login", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/login
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.7ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 23ms (View: 16, DB: 0) | 200 OK [http://webapp.local/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing IdentityConsumerController#callback (for 127.0.0.1 at 2009-10-07 20:47:12) [GET]
+  Parameters: {"session_key"=>"3.sR5zPk9j5p_YTnnCB9SEEw__.86400.1255060800-1834986624", "action"=>"callback", "uid"=>"1834986624", "controller"=>"identity_consumer", "provider"=>"facebook"}
+Redirected to http://webapp.local:3000/
+Completed in 426ms (DB: 0) | 302 Found [http://webapp.local/facebook/callback?session_key=3.sR5zPk9j5p_YTnnCB9SEEw__.86400.1255060800-1834986624&uid=1834986624]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#top_ranked (for 127.0.0.1 at 2009-10-07 20:47:12) [GET]
+  Parameters: {"action"=>"top_ranked", "controller"=>"posts"}
+  [4;36;1mPost Load (3.0ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY rank desc LIMIT 15 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering posts/top_ranked
+Rendered posts/_headline_widget (2.2ms)
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_info_widget (8.4ms)
+Rendered posts/_controls_widget (8.1ms)
+Rendered posts/_item (33.8ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.7ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 120ms (View: 42, DB: 4) | 200 OK [http://webapp.local/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-10-07 20:47:44) [GET]
+  Parameters: {"action"=>"login", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/login
+Rendered main/_analytics (0.6ms)
+Rendered main/_header (3.2ms)
+Rendered main/_body (0.5ms)
+Rendered main/_footer (1.3ms)
+Completed in 58ms (View: 52, DB: 0) | 200 OK [http://webapp.local/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing IdentityConsumerController#callback (for 127.0.0.1 at 2009-10-07 20:47:45) [GET]
+  Parameters: {"session_key"=>"3.sR5zPk9j5p_YTnnCB9SEEw__.86400.1255060800-1834986624", "action"=>"callback", "uid"=>"1834986624", "controller"=>"identity_consumer", "provider"=>"facebook"}
+  [4;36;1mIdentity Load (1.4ms)[0m   [0;1mSELECT * FROM "identities" WHERE ("identities"."provider" = E'facebook.com' AND "identities"."uid" = E'') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (17.7ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = E'@facebook.com') LIMIT 1[0m
+  [4;35;1mIdentity Load (0.3ms)[0m   [0mSELECT "identities".id FROM "identities" WHERE (LOWER("identities"."uid") = E'' AND "identities".provider = E'facebook.com') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mROLLBACK[0m
+Redirected to http://webapp.local:3000/
+Completed in 1015ms (DB: 20) | 302 Found [http://webapp.local/facebook/callback?session_key=3.sR5zPk9j5p_YTnnCB9SEEw__.86400.1255060800-1834986624&uid=1834986624]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#top_ranked (for 127.0.0.1 at 2009-10-07 20:47:46) [GET]
+  Parameters: {"action"=>"top_ranked", "controller"=>"posts"}
+  [4;35;1mPost Load (2.1ms)[0m   [0mSELECT * FROM "posts" ORDER BY rank desc LIMIT 15 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering posts/top_ranked
+Rendered posts/_headline_widget (2.8ms)
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_info_widget (40.2ms)
+Rendered posts/_controls_widget (77.6ms)
+Rendered posts/_item (148.9ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (2.0ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 179ms (View: 166, DB: 3) | 200 OK [http://webapp.local/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-10-07 20:49:02) [GET]
+  Parameters: {"action"=>"login", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/login
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.9ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 23ms (View: 16, DB: 0) | 200 OK [http://webapp.local/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing IdentityConsumerController#callback (for 127.0.0.1 at 2009-10-07 20:49:04) [GET]
+  Parameters: {"session_key"=>"3.sR5zPk9j5p_YTnnCB9SEEw__.86400.1255060800-1834986624", "action"=>"callback", "uid"=>"1834986624", "controller"=>"identity_consumer", "provider"=>"facebook"}
+  [4;35;1mIdentity Load (0.9ms)[0m   [0mSELECT * FROM "identities" WHERE ("identities"."provider" = E'facebook.com' AND "identities"."uid" = E'1834986624') LIMIT 1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Redirected to http://webapp.local:3000/
+Completed in 628ms (DB: 2) | 302 Found [http://webapp.local/facebook/callback?session_key=3.sR5zPk9j5p_YTnnCB9SEEw__.86400.1255060800-1834986624&uid=1834986624]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#top_ranked (for 127.0.0.1 at 2009-10-07 20:49:04) [GET]
+  Parameters: {"action"=>"top_ranked", "controller"=>"posts"}
+  [4;35;1mPost Load (2.1ms)[0m   [0mSELECT * FROM "posts" ORDER BY rank desc LIMIT 15 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering posts/top_ranked
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_headline_widget (2.3ms)
+Rendered posts/_info_widget (4.6ms)
+Rendered posts/_controls_widget (10.2ms)
+Rendered posts/_item (32.6ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.8ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 127ms (View: 40, DB: 3) | 200 OK [http://webapp.local/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#logout (for 127.0.0.1 at 2009-10-07 20:49:08) [GET]
+  Parameters: {"action"=>"logout", "controller"=>"users"}
+Redirected to http://webapp.local:3000/
+Completed in 3ms (DB: 0) | 302 Found [http://webapp.local/logout]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#top_ranked (for 127.0.0.1 at 2009-10-07 20:49:08) [GET]
+  Parameters: {"action"=>"top_ranked", "controller"=>"posts"}
+  [4;35;1mPost Load (2.2ms)[0m   [0mSELECT * FROM "posts" ORDER BY rank desc LIMIT 15 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering posts/top_ranked
+Rendered posts/_headline_widget (2.2ms)
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_info_widget (7.7ms)
+Rendered posts/_controls_widget (6.8ms)
+Rendered posts/_item (31.2ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.7ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 118ms (View: 38, DB: 3) | 200 OK [http://webapp.local/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-10-07 20:49:18) [GET]
+  Parameters: {"action"=>"login", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/login
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.7ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (1.0ms)
+Completed in 23ms (View: 16, DB: 0) | 200 OK [http://webapp.local/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing IdentityConsumerController#callback (for 127.0.0.1 at 2009-10-07 20:49:19) [GET]
+  Parameters: {"session_key"=>"3.sR5zPk9j5p_YTnnCB9SEEw__.86400.1255060800-1834986624", "action"=>"callback", "uid"=>"1834986624", "controller"=>"identity_consumer", "provider"=>"facebook"}
+Redirected to http://webapp.local:3000/
+Completed in 707ms (DB: 0) | 302 Found [http://webapp.local/facebook/callback?session_key=3.sR5zPk9j5p_YTnnCB9SEEw__.86400.1255060800-1834986624&uid=1834986624]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#top_ranked (for 127.0.0.1 at 2009-10-07 20:49:20) [GET]
+  Parameters: {"action"=>"top_ranked", "controller"=>"posts"}
+  [4;35;1mPost Load (2.1ms)[0m   [0mSELECT * FROM "posts" ORDER BY rank desc LIMIT 15 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering posts/top_ranked
+Rendered posts/_headline_widget (2.3ms)
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_info_widget (8.1ms)
+Rendered posts/_controls_widget (6.8ms)
+Rendered posts/_item (32.6ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.8ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 52ms (View: 40, DB: 3) | 200 OK [http://webapp.local/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-10-07 20:50:25) [GET]
+  Parameters: {"action"=>"login", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/login
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.9ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 92ms (View: 85, DB: 0) | 200 OK [http://webapp.local/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing IdentityConsumerController#callback (for 127.0.0.1 at 2009-10-07 20:50:27) [GET]
+  Parameters: {"session_key"=>"3.sR5zPk9j5p_YTnnCB9SEEw__.86400.1255060800-1834986624", "action"=>"callback", "uid"=>"1834986624", "controller"=>"identity_consumer", "provider"=>"facebook"}
+  [4;35;1mIdentity Load (0.9ms)[0m   [0mSELECT * FROM "identities" WHERE ("identities"."provider" = E'facebook.com' AND "identities"."uid" = E'1834986624') LIMIT 1[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Redirected to http://webapp.local:3000/
+Completed in 580ms (DB: 2) | 302 Found [http://webapp.local/facebook/callback?session_key=3.sR5zPk9j5p_YTnnCB9SEEw__.86400.1255060800-1834986624&uid=1834986624]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#top_ranked (for 127.0.0.1 at 2009-10-07 20:50:28) [GET]
+  Parameters: {"action"=>"top_ranked", "controller"=>"posts"}
+  [4;35;1mPost Load (2.1ms)[0m   [0mSELECT * FROM "posts" ORDER BY rank desc LIMIT 15 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering posts/top_ranked
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_headline_widget (2.3ms)
+Rendered posts/_info_widget (5.0ms)
+Rendered posts/_controls_widget (81.1ms)
+Rendered posts/_item (105.5ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.9ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.8ms)
+Completed in 126ms (View: 114, DB: 3) | 200 OK [http://webapp.local/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2009-10-07 20:50:30) [GET]
+  Parameters: {"action"=>"edit", "controller"=>"users"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering users/edit
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT sum("posts".points) AS sum_points FROM "posts" WHERE ("posts".user_id = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "posts" WHERE ("posts".user_id = 1) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT sum("comments".points) AS sum_points FROM "comments" WHERE ("comments".user_id = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".user_id = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "posts" WHERE ("posts".user_id = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".user_id = 1) [0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSELECT count(DISTINCT "posts".id) AS count_all FROM "posts" LEFT OUTER JOIN "votes" ON "votes".voteable_id = "posts".id AND "votes".voteable_type = E'Post'WHERE (votes.user_id = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(DISTINCT "posts".id) AS count_all FROM "posts" LEFT OUTER JOIN "votes" ON "votes".voteable_id = "posts".id AND "votes".voteable_type = E'Post'WHERE (votes.user_id = 1) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(DISTINCT "comments".id) AS count_all FROM "comments" LEFT OUTER JOIN "votes" ON "votes".voteable_id = "comments".id AND "votes".voteable_type = E'Comment'WHERE (votes.user_id = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(DISTINCT "comments".id) AS count_all FROM "comments" LEFT OUTER JOIN "votes" ON "votes".voteable_id = "comments".id AND "votes".voteable_type = E'Comment'WHERE (votes.user_id = 1) [0m
+Rendered users/_stats (99.7ms)
+Rendered users/_sidebar (103.1ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.8ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 229ms (View: 217, DB: 4) | 200 OK [http://webapp.local/settings]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2009-10-07 20:50:43) [GET]
+  Parameters: {"action"=>"edit", "controller"=>"users"}
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering users/edit
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT sum("posts".points) AS sum_points FROM "posts" WHERE ("posts".user_id = 1) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "posts" WHERE ("posts".user_id = 1) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT sum("comments".points) AS sum_points FROM "comments" WHERE ("comments".user_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".user_id = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "posts" WHERE ("posts".user_id = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".user_id = 1) [0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT count(DISTINCT "posts".id) AS count_all FROM "posts" LEFT OUTER JOIN "votes" ON "votes".voteable_id = "posts".id AND "votes".voteable_type = E'Post'WHERE (votes.user_id = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(DISTINCT "posts".id) AS count_all FROM "posts" LEFT OUTER JOIN "votes" ON "votes".voteable_id = "posts".id AND "votes".voteable_type = E'Post'WHERE (votes.user_id = 1) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(DISTINCT "comments".id) AS count_all FROM "comments" LEFT OUTER JOIN "votes" ON "votes".voteable_id = "comments".id AND "votes".voteable_type = E'Comment'WHERE (votes.user_id = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(DISTINCT "comments".id) AS count_all FROM "comments" LEFT OUTER JOIN "votes" ON "votes".voteable_id = "comments".id AND "votes".voteable_type = E'Comment'WHERE (votes.user_id = 1) [0m
+Rendered users/_stats (114.2ms)
+Rendered users/_sidebar (114.5ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (2.0ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.8ms)
+Completed in 139ms (View: 126, DB: 4) | 200 OK [http://webapp.local/settings]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#logout (for 127.0.0.1 at 2009-10-07 20:50:48) [GET]
+  Parameters: {"action"=>"logout", "controller"=>"users"}
+Redirected to http://webapp.local:3000/
+Completed in 3ms (DB: 0) | 302 Found [http://webapp.local/logout]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#top_ranked (for 127.0.0.1 at 2009-10-07 20:50:48) [GET]
+  Parameters: {"action"=>"top_ranked", "controller"=>"posts"}
+  [4;35;1mPost Load (2.1ms)[0m   [0mSELECT * FROM "posts" ORDER BY rank desc LIMIT 15 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering posts/top_ranked
+Rendered posts/_headline_widget (78.8ms)
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_info_widget (8.0ms)
+Rendered posts/_controls_widget (6.9ms)
+Rendered posts/_item (108.6ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.8ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.8ms)
+Completed in 126ms (View: 116, DB: 3) | 200 OK [http://webapp.local/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-10-07 20:50:50) [GET]
+  Parameters: {"action"=>"login", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/login
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.7ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 23ms (View: 16, DB: 0) | 200 OK [http://webapp.local/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing IdentityConsumerController#callback (for 127.0.0.1 at 2009-10-07 20:51:04) [GET]
+  Parameters: {"session_key"=>"3.xVfbGxC1Jh_BZ6PlhG2R2Q__.86400.1255060800-1834986624", "action"=>"callback", "uid"=>"1834986624", "controller"=>"identity_consumer", "provider"=>"facebook"}
+  [4;35;1mIdentity Load (0.9ms)[0m   [0mSELECT * FROM "identities" WHERE ("identities"."provider" = E'facebook.com' AND "identities"."uid" = E'1834986624') LIMIT 1[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Redirected to http://webapp.local:3000/
+Completed in 770ms (DB: 2) | 302 Found [http://webapp.local/facebook/callback?session_key=3.xVfbGxC1Jh_BZ6PlhG2R2Q__.86400.1255060800-1834986624&uid=1834986624]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#top_ranked (for 127.0.0.1 at 2009-10-07 20:51:05) [GET]
+  Parameters: {"action"=>"top_ranked", "controller"=>"posts"}
+  [4;35;1mPost Load (2.0ms)[0m   [0mSELECT * FROM "posts" ORDER BY rank desc LIMIT 15 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering posts/top_ranked
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_headline_widget (2.2ms)
+Rendered posts/_info_widget (4.3ms)
+Rendered posts/_controls_widget (10.2ms)
+Rendered posts/_item (32.3ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.9ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 50ms (View: 40, DB: 3) | 200 OK [http://webapp.local/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#logout (for 127.0.0.1 at 2009-10-07 20:51:09) [GET]
+  Parameters: {"action"=>"logout", "controller"=>"users"}
+Redirected to http://webapp.local:3000/
+Completed in 2ms (DB: 0) | 302 Found [http://webapp.local/logout]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#top_ranked (for 127.0.0.1 at 2009-10-07 20:51:09) [GET]
+  Parameters: {"action"=>"top_ranked", "controller"=>"posts"}
+  [4;35;1mPost Load (2.1ms)[0m   [0mSELECT * FROM "posts" ORDER BY rank desc LIMIT 15 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering posts/top_ranked
+Rendered posts/_headline_widget (2.1ms)
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_info_widget (7.6ms)
+Rendered posts/_controls_widget (7.3ms)
+Rendered posts/_item (31.3ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.7ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 49ms (View: 38, DB: 3) | 200 OK [http://webapp.local/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#top_ranked (for 127.0.0.1 at 2009-10-07 20:51:12) [GET]
+  Parameters: {"action"=>"top_ranked", "controller"=>"posts"}
+  [4;35;1mPost Load (2.0ms)[0m   [0mSELECT * FROM "posts" ORDER BY rank desc LIMIT 15 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering posts/top_ranked
+Rendered posts/_headline_widget (2.2ms)
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_info_widget (7.9ms)
+Rendered posts/_controls_widget (7.1ms)
+Rendered posts/_item (99.8ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.8ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 117ms (View: 107, DB: 3) | 200 OK [http://webapp.local/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-10-07 20:53:46) [GET]
+  Parameters: {"action"=>"login", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/login
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.8ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.9ms)
+Completed in 25ms (View: 18, DB: 0) | 200 OK [http://webapp.local/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing IdentityConsumerController#callback (for 127.0.0.1 at 2009-10-07 20:53:59) [GET]
+  Parameters: {"session_key"=>"3.xVfbGxC1Jh_BZ6PlhG2R2Q__.86400.1255060800-1834986624", "action"=>"callback", "uid"=>"1834986624", "controller"=>"identity_consumer", "provider"=>"facebook"}
+  [4;35;1mIdentity Load (0.9ms)[0m   [0mSELECT * FROM "identities" WHERE ("identities"."provider" = E'facebook.com' AND "identities"."uid" = E'1834986624') LIMIT 1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Redirected to http://webapp.local:3000/
+Completed in 538ms (DB: 2) | 302 Found [http://webapp.local/facebook/callback?session_key=3.xVfbGxC1Jh_BZ6PlhG2R2Q__.86400.1255060800-1834986624&uid=1834986624]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#top_ranked (for 127.0.0.1 at 2009-10-07 20:53:59) [GET]
+  Parameters: {"action"=>"top_ranked", "controller"=>"posts"}
+  [4;35;1mPost Load (2.1ms)[0m   [0mSELECT * FROM "posts" ORDER BY rank desc LIMIT 15 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering posts/top_ranked
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_headline_widget (2.3ms)
+Rendered posts/_info_widget (4.6ms)
+Rendered posts/_controls_widget (10.0ms)
+Rendered posts/_item (32.4ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.8ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 51ms (View: 40, DB: 3) | 200 OK [http://webapp.local/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#logout (for 127.0.0.1 at 2009-10-07 20:54:02) [GET]
+  Parameters: {"action"=>"logout", "controller"=>"users"}
+Redirected to http://webapp.local:3000/
+Completed in 2ms (DB: 0) | 302 Found [http://webapp.local/logout]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#top_ranked (for 127.0.0.1 at 2009-10-07 20:54:02) [GET]
+  Parameters: {"action"=>"top_ranked", "controller"=>"posts"}
+  [4;35;1mPost Load (3.7ms)[0m   [0mSELECT * FROM "posts" ORDER BY rank desc LIMIT 15 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering posts/top_ranked
+Rendered posts/_headline_widget (2.2ms)
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_info_widget (7.8ms)
+Rendered posts/_controls_widget (7.6ms)
+Rendered posts/_item (34.0ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (2.1ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 58ms (View: 44, DB: 4) | 200 OK [http://webapp.local/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-10-07 20:54:23) [GET]
+  Parameters: {"action"=>"login", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/login
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.8ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 22ms (View: 16, DB: 0) | 200 OK [http://webapp.local/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-10-07 20:54:29) [GET]
+  Parameters: {"action"=>"login", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/login
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.8ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 24ms (View: 16, DB: 0) | 200 OK [http://webapp.local/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-10-07 21:01:20) [GET]
+  Parameters: {"action"=>"login", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/login
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.7ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 23ms (View: 16, DB: 0) | 200 OK [http://webapp.local/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-10-07 21:01:27) [GET]
+  Parameters: {"action"=>"login", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/login
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.8ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 23ms (View: 16, DB: 0) | 200 OK [http://webapp.local/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-10-07 21:18:11) [GET]
+  Parameters: {"action"=>"login", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/login
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.8ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 22ms (View: 16, DB: 0) | 200 OK [http://webapp.local/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-10-07 21:18:42) [GET]
+  Parameters: {"action"=>"login", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/login
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.7ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 23ms (View: 16, DB: 0) | 200 OK [http://webapp.local/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-10-07 21:18:47) [GET]
+  Parameters: {"action"=>"login", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/login
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.7ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 24ms (View: 16, DB: 0) | 200 OK [http://webapp.local/login]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-10-07 21:19:27) [GET]
+  Parameters: {"action"=>"login", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/login
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.8ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.8ms)
+Completed in 24ms (View: 17, DB: 0) | 200 OK [http://webapp.local/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing IdentityConsumerController#login (for 127.0.0.1 at 2009-10-07 21:19:29) [GET]
+  Parameters: {"action"=>"login", "controller"=>"identity_consumer", "provider"=>"twitter"}
+Redirected to http://twitter.com/oauth/authorize?oauth_token=WCFxlENscDZtYRErpi5LgGOct4wfCTAC1rKpo2Xknc
+Completed in 125ms (DB: 0) | 302 Found [http://webapp.local/twitter/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-10-07 21:19:32) [GET]
+  Parameters: {"action"=>"login", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/login
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.9ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 24ms (View: 17, DB: 0) | 200 OK [http://webapp.local/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#top_ranked (for 127.0.0.1 at 2009-10-07 21:20:01) [GET]
+  Parameters: {"action"=>"top_ranked", "controller"=>"posts"}
+  [4;36;1mPost Load (2.0ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY rank desc LIMIT 15 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering posts/top_ranked
+Rendered posts/_headline_widget (3.5ms)
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_info_widget (50.6ms)
+Rendered posts/_controls_widget (67.4ms)
+Rendered posts/_item (203.2ms)
+Rendered main/_analytics (0.7ms)
+Rendered main/_header (2.9ms)
+Rendered main/_body (0.5ms)
+Rendered main/_footer (1.9ms)
+Completed in 248ms (View: 237, DB: 3) | 200 OK [http://webapp.local/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-10-07 21:20:07) [GET]
+  Parameters: {"action"=>"login", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/login
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (2.0ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 28ms (View: 21, DB: 0) | 200 OK [http://webapp.local/login]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-10-07 21:20:58) [GET]
+  Parameters: {"action"=>"login", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/login
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.8ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 23ms (View: 17, DB: 0) | 200 OK [http://webapp.local/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-10-07 21:20:59) [GET]
+  Parameters: {"action"=>"login", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/login
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (2.0ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 25ms (View: 18, DB: 0) | 200 OK [http://webapp.local/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-10-07 21:21:06) [GET]
+  Parameters: {"action"=>"login", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/login
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.7ms)
+Rendered main/_body (0.2ms)
+Rendered main/_footer (0.8ms)
+Completed in 81ms (View: 74, DB: 0) | 200 OK [http://webapp.local/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-10-07 21:21:08) [GET]
+  Parameters: {"action"=>"login", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/login
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.8ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (1.3ms)
+Completed in 24ms (View: 17, DB: 0) | 200 OK [http://webapp.local/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing IdentityConsumerController#callback (for 127.0.0.1 at 2009-10-07 21:21:36) [GET]
+  Parameters: {"session_key"=>"3.AM4y0QSkFEElQPVz7S3LAA__.86400.1255064400-1834986624", "action"=>"callback", "uid"=>"1834986624", "controller"=>"identity_consumer", "provider"=>"facebook"}
+  [4;36;1mIdentity Load (0.9ms)[0m   [0;1mSELECT * FROM "identities" WHERE ("identities"."provider" = E'facebook.com' AND "identities"."uid" = E'1834986624') LIMIT 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Redirected to http://webapp.local:3000/
+Completed in 652ms (DB: 2) | 302 Found [http://webapp.local/facebook/callback?session_key=3.AM4y0QSkFEElQPVz7S3LAA__.86400.1255064400-1834986624&uid=1834986624]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#top_ranked (for 127.0.0.1 at 2009-10-07 21:21:37) [GET]
+  Parameters: {"action"=>"top_ranked", "controller"=>"posts"}
+  [4;36;1mPost Load (2.3ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY rank desc LIMIT 15 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering posts/top_ranked
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_headline_widget (2.4ms)
+Rendered posts/_info_widget (5.1ms)
+Rendered posts/_controls_widget (11.1ms)
+Rendered posts/_item (100.0ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.8ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (1.2ms)
+Completed in 119ms (View: 108, DB: 3) | 200 OK [http://webapp.local/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#logout (for 127.0.0.1 at 2009-10-07 21:22:08) [GET]
+  Parameters: {"action"=>"logout", "controller"=>"users"}
+Redirected to http://webapp.local:3000/
+Completed in 2ms (DB: 0) | 302 Found [http://webapp.local/logout]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#top_ranked (for 127.0.0.1 at 2009-10-07 21:22:08) [GET]
+  Parameters: {"action"=>"top_ranked", "controller"=>"posts"}
+  [4;36;1mPost Load (2.2ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY rank desc LIMIT 15 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering posts/top_ranked
+Rendered posts/_headline_widget (2.2ms)
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_info_widget (7.7ms)
+Rendered posts/_controls_widget (7.6ms)
+Rendered posts/_item (97.4ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.7ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 116ms (View: 105, DB: 3) | 200 OK [http://webapp.local/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#top_ranked (for 127.0.0.1 at 2009-10-07 21:22:30) [GET]
+  Parameters: {"action"=>"top_ranked", "controller"=>"posts"}
+  [4;36;1mPost Load (2.1ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY rank desc LIMIT 15 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering posts/top_ranked
+Rendered posts/_headline_widget (2.1ms)
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_info_widget (7.6ms)
+Rendered posts/_controls_widget (7.1ms)
+Rendered posts/_item (30.7ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.9ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 111ms (View: 101, DB: 3) | 200 OK [http://webapp.local/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-10-07 21:22:32) [GET]
+  Parameters: {"action"=>"login", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/login
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (2.3ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 24ms (View: 17, DB: 0) | 200 OK [http://webapp.local/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-10-07 21:24:23) [GET]
+  Parameters: {"action"=>"login", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/login
+Rendered main/_analytics (0.7ms)
+Rendered main/_header (3.2ms)
+Rendered main/_body (0.5ms)
+Rendered main/_footer (1.3ms)
+Completed in 60ms (View: 52, DB: 0) | 200 OK [http://webapp.local/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-10-07 21:26:31) [GET]
+  Parameters: {"action"=>"login", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/login
+Rendered main/_analytics (61.1ms)
+Rendered main/_header (1.9ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 84ms (View: 77, DB: 0) | 200 OK [http://webapp.local/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing IdentityConsumerController#callback (for 127.0.0.1 at 2009-10-07 21:26:46) [GET]
+  Parameters: {"session_key"=>"3.24k6fmOfpdHA_BfF1oPptw__.86400.1255064400-1283523384", "action"=>"callback", "uid"=>"1283523384", "controller"=>"identity_consumer", "provider"=>"facebook"}
+  [4;36;1mIdentity Load (0.9ms)[0m   [0;1mSELECT * FROM "identities" WHERE ("identities"."provider" = E'facebook.com' AND "identities"."uid" = E'1283523384') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = E'1283523384@facebook.com') LIMIT 1[0m
+  [4;35;1mIdentity Load (0.3ms)[0m   [0mSELECT "identities".id FROM "identities" WHERE (LOWER("identities"."uid") = E'1283523384' AND "identities".provider = E'facebook.com') LIMIT 1[0m
+  [4;36;1mSQL (7.0ms)[0m   [0;1mINSERT INTO "users" ("activation_key", "created_at", "updated_at", "admin", "lastname", "points", "posts_count", "reset_key", "firstname", "alias", "reset_expires_at", "comments_count", "password", "activation_expires_at", "email") VALUES(NULL, '2009-10-08 04:26:47.352763', '2009-10-08 04:26:47.352763', 'f', E'Seva', 1, 0, NULL, E'Zorina', NULL, '2009-10-07 17:24:18.790660', 0, E'IulWAS4gwGqAl4zAqPytzMRUMpTQnAiNt9WSm0daElMPxrBIA6USISQyLSphCQs2', '2009-10-07 17:24:18.790595', E'1283523384@facebook.com') RETURNING "id"[0m
+  [4;35;1mIdentity Load (0.3ms)[0m   [0mSELECT "identities".id FROM "identities" WHERE (LOWER("identities"."uid") = E'1283523384' AND "identities".provider = E'facebook.com') LIMIT 1[0m
+  [4;36;1mSQL (20.8ms)[0m   [0;1mINSERT INTO "identities" ("created_at", "updated_at", "uid", "user_id", "provider") VALUES('2009-10-08 04:26:47.399255', '2009-10-08 04:26:47.399255', E'1283523384', 2, E'facebook.com') RETURNING "id"[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCOMMIT[0m
+Redirected to http://webapp.local:3000/
+Completed in 1381ms (DB: 31) | 302 Found [http://webapp.local/facebook/callback?session_key=3.24k6fmOfpdHA_BfF1oPptw__.86400.1255064400-1283523384&uid=1283523384]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#top_ranked (for 127.0.0.1 at 2009-10-07 21:26:47) [GET]
+  Parameters: {"action"=>"top_ranked", "controller"=>"posts"}
+  [4;36;1mPost Load (32.7ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY rank desc LIMIT 15 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering posts/top_ranked
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_headline_widget (2.8ms)
+Rendered posts/_info_widget (36.5ms)
+Rendered posts/_controls_widget (9.9ms)
+Rendered posts/_item (79.0ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.9ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 198ms (View: 98, DB: 33) | 200 OK [http://webapp.local/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2009-10-07 21:26:55) [GET]
+  Parameters: {"action"=>"edit", "controller"=>"users"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/edit
+  [4;35;1mSQL (35.5ms)[0m   [0mSELECT sum("posts".points) AS sum_points FROM "posts" WHERE ("posts".user_id = 2) [0m
+  [4;36;1mSQL (5.9ms)[0m   [0;1mSELECT count(*) AS count_all FROM "posts" WHERE ("posts".user_id = 2) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT sum("comments".points) AS sum_points FROM "comments" WHERE ("comments".user_id = 2) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".user_id = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "posts" WHERE ("posts".user_id = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".user_id = 2) [0m
+  [4;35;1mSQL (1.7ms)[0m   [0mSELECT count(DISTINCT "posts".id) AS count_all FROM "posts" LEFT OUTER JOIN "votes" ON "votes".voteable_id = "posts".id AND "votes".voteable_type = E'Post'WHERE (votes.user_id = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(DISTINCT "posts".id) AS count_all FROM "posts" LEFT OUTER JOIN "votes" ON "votes".voteable_id = "posts".id AND "votes".voteable_type = E'Post'WHERE (votes.user_id = 2) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(DISTINCT "comments".id) AS count_all FROM "comments" LEFT OUTER JOIN "votes" ON "votes".voteable_id = "comments".id AND "votes".voteable_type = E'Comment'WHERE (votes.user_id = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(DISTINCT "comments".id) AS count_all FROM "comments" LEFT OUTER JOIN "votes" ON "votes".voteable_id = "comments".id AND "votes".voteable_type = E'Comment'WHERE (votes.user_id = 2) [0m
+Rendered users/_stats (77.8ms)
+Rendered users/_sidebar (81.2ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.8ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 242ms (View: 186, DB: 45) | 200 OK [http://webapp.local/settings]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#logout (for 127.0.0.1 at 2009-10-07 21:26:59) [GET]
+  Parameters: {"action"=>"logout", "controller"=>"users"}
+Redirected to http://webapp.local:3000/
+Completed in 5ms (DB: 0) | 302 Found [http://webapp.local/logout]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#top_ranked (for 127.0.0.1 at 2009-10-07 21:26:59) [GET]
+  Parameters: {"action"=>"top_ranked", "controller"=>"posts"}
+  [4;35;1mPost Load (2.0ms)[0m   [0mSELECT * FROM "posts" ORDER BY rank desc LIMIT 15 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering posts/top_ranked
+Rendered posts/_headline_widget (2.3ms)
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_info_widget (7.8ms)
+Rendered posts/_controls_widget (84.0ms)
+Rendered posts/_item (108.5ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.8ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 127ms (View: 116, DB: 3) | 200 OK [http://webapp.local/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-10-07 21:27:11) [GET]
+  Parameters: {"action"=>"login", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/login
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.8ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 23ms (View: 16, DB: 0) | 200 OK [http://webapp.local/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing IdentityConsumerController#callback (for 127.0.0.1 at 2009-10-07 21:27:35) [GET]
+  Parameters: {"session_key"=>"3.EDnoW_yqKDiicivntJ6jDQ__.86400.1255064400-1283523384", "action"=>"callback", "uid"=>"1283523384", "controller"=>"identity_consumer", "provider"=>"facebook"}
+  [4;35;1mIdentity Load (1.0ms)[0m   [0mSELECT * FROM "identities" WHERE ("identities"."provider" = E'facebook.com' AND "identities"."uid" = E'1283523384') LIMIT 1[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Redirected to http://webapp.local:3000/
+Completed in 1009ms (DB: 2) | 302 Found [http://webapp.local/facebook/callback?session_key=3.EDnoW_yqKDiicivntJ6jDQ__.86400.1255064400-1283523384&uid=1283523384]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#top_ranked (for 127.0.0.1 at 2009-10-07 21:27:36) [GET]
+  Parameters: {"action"=>"top_ranked", "controller"=>"posts"}
+  [4;35;1mPost Load (2.1ms)[0m   [0mSELECT * FROM "posts" ORDER BY rank desc LIMIT 15 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering posts/top_ranked
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_headline_widget (2.2ms)
+Rendered posts/_info_widget (4.6ms)
+Rendered posts/_controls_widget (6.8ms)
+Rendered posts/_item (31.4ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.9ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 128ms (View: 39, DB: 3) | 200 OK [http://webapp.local/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2009-10-07 21:27:39) [GET]
+  Parameters: {"action"=>"edit", "controller"=>"users"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/edit
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT sum("posts".points) AS sum_points FROM "posts" WHERE ("posts".user_id = 2) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "posts" WHERE ("posts".user_id = 2) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT sum("comments".points) AS sum_points FROM "comments" WHERE ("comments".user_id = 2) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".user_id = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "posts" WHERE ("posts".user_id = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".user_id = 2) [0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSELECT count(DISTINCT "posts".id) AS count_all FROM "posts" LEFT OUTER JOIN "votes" ON "votes".voteable_id = "posts".id AND "votes".voteable_type = E'Post'WHERE (votes.user_id = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(DISTINCT "posts".id) AS count_all FROM "posts" LEFT OUTER JOIN "votes" ON "votes".voteable_id = "posts".id AND "votes".voteable_type = E'Post'WHERE (votes.user_id = 2) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(DISTINCT "comments".id) AS count_all FROM "comments" LEFT OUTER JOIN "votes" ON "votes".voteable_id = "comments".id AND "votes".voteable_type = E'Comment'WHERE (votes.user_id = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(DISTINCT "comments".id) AS count_all FROM "comments" LEFT OUTER JOIN "votes" ON "votes".voteable_id = "comments".id AND "votes".voteable_type = E'Comment'WHERE (votes.user_id = 2) [0m
+Rendered users/_stats (97.5ms)
+Rendered users/_sidebar (97.8ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.8ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 121ms (View: 109, DB: 4) | 200 OK [http://webapp.local/settings]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#update (for 127.0.0.1 at 2009-10-07 21:28:16) [PUT]
+  Parameters: {"commit"=>"Save Changes", "action"=>"update", "_method"=>"put", "authenticity_token"=>"2OoIGa+2xKd9yFJb/sO0I51WOwdeAz4qqi0N6vcgNyo=", "id"=>"2", "controller"=>"users", "user"=>{"lastname"=>"Seva", "alias"=>"Kryx", "firstname"=>"Zorina", "password"=>"[FILTERED]", "email"=>"1283523384@facebook.com"}}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (40.4ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = E'1283523384@facebook.com' AND "users".id <> 2) LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."alias") = E'kryx' AND "users".id <> 2) LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2009-10-08 04:28:16.282007', "alias" = E'Kryx' WHERE "id" = 2[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCOMMIT[0m
+Redirected to http://webapp.local:3000/users/2/edit
+Completed in 58ms (DB: 43) | 302 Found [http://webapp.local/users/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2009-10-07 21:28:16) [GET]
+  Parameters: {"action"=>"edit", "id"=>"2", "controller"=>"users"}
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/edit
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT sum("posts".points) AS sum_points FROM "posts" WHERE ("posts".user_id = 2) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "posts" WHERE ("posts".user_id = 2) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT sum("comments".points) AS sum_points FROM "comments" WHERE ("comments".user_id = 2) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".user_id = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "posts" WHERE ("posts".user_id = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".user_id = 2) [0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSELECT count(DISTINCT "posts".id) AS count_all FROM "posts" LEFT OUTER JOIN "votes" ON "votes".voteable_id = "posts".id AND "votes".voteable_type = E'Post'WHERE (votes.user_id = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(DISTINCT "posts".id) AS count_all FROM "posts" LEFT OUTER JOIN "votes" ON "votes".voteable_id = "posts".id AND "votes".voteable_type = E'Post'WHERE (votes.user_id = 2) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(DISTINCT "comments".id) AS count_all FROM "comments" LEFT OUTER JOIN "votes" ON "votes".voteable_id = "comments".id AND "votes".voteable_type = E'Comment'WHERE (votes.user_id = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(DISTINCT "comments".id) AS count_all FROM "comments" LEFT OUTER JOIN "votes" ON "votes".voteable_id = "comments".id AND "votes".voteable_type = E'Comment'WHERE (votes.user_id = 2) [0m
+Rendered users/_stats (31.7ms)
+Rendered users/_sidebar (32.0ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.8ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 130ms (View: 44, DB: 4) | 200 OK [http://webapp.local/users/2/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#top_ranked (for 127.0.0.1 at 2009-10-07 21:28:20) [GET]
+  Parameters: {"action"=>"top_ranked", "controller"=>"posts"}
+  [4;35;1mPost Load (2.0ms)[0m   [0mSELECT * FROM "posts" ORDER BY rank desc LIMIT 15 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering posts/top_ranked
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_headline_widget (2.2ms)
+Rendered posts/_info_widget (4.3ms)
+Rendered posts/_controls_widget (6.6ms)
+Rendered posts/_item (30.9ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.8ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 49ms (View: 38, DB: 3) | 200 OK [http://webapp.local/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#new (for 127.0.0.1 at 2009-10-07 21:28:21) [GET]
+  Parameters: {"action"=>"new", "controller"=>"posts"}
+Rendering template within layouts/application
+Rendering posts/new
+Rendered comments/_textformat_help_widget (0.8ms)
+Rendered posts/_form (79.7ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.9ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 103ms (View: 92, DB: 0) | 200 OK [http://webapp.local/posts/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#create (for 127.0.0.1 at 2009-10-07 21:28:35) [POST]
+  Parameters: {"commit"=>"Submit", "post"=>{"title"=>"I'm an addict.", "text"=>"I'm addicted to Juris.", "url"=>""}, "action"=>"create", "authenticity_token"=>"2OoIGa+2xKd9yFJb/sO0I51WOwdeAz4qqi0N6vcgNyo=", "controller"=>"posts"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mSQL (17.2ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "title", "section_id", "updated_at", "url", "text", "points", "rank", "user_id", "comments_count") VALUES('2009-10-08 04:28:35.397041', E'I''m an addict.', 1, '2009-10-08 04:28:35.397041', E'', E'I''m addicted to Juris.', 1, 0.0, 2, 0) RETURNING "id"[0m
+  [4;35;1mUser Update (9.1ms)[0m   [0mUPDATE "users" SET "posts_count" = COALESCE("posts_count", 0) + 1 WHERE ("id" = 2) [0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://webapp.local:3000/posts/latest
+Completed in 74ms (DB: 29) | 302 Found [http://webapp.local/posts]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#latest (for 127.0.0.1 at 2009-10-07 21:28:35) [GET]
+  Parameters: {"action"=>"latest", "controller"=>"posts"}
+  [4;35;1mPost Load (3.3ms)[0m   [0mSELECT * FROM "posts" WHERE (created_at > '2009-07-10 04:28:35.488604') ORDER BY created_at desc LIMIT 15 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering posts/latest
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendered posts/_headline_widget (1.9ms)
+Rendered posts/_info_widget (77.3ms)
+Rendered posts/_controls_widget (11.0ms)
+Rendered posts/_item (106.6ms)
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_headline_widget (0.7ms)
+Rendered posts/_info_widget (0.7ms)
+Rendered posts/_controls_widget (0.5ms)
+Rendered posts/_item (11.4ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.8ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 140ms (View: 128, DB: 4) | 200 OK [http://webapp.local/posts/latest]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2009-10-07 21:28:40) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"users"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT sum("posts".points) AS sum_points FROM "posts" WHERE ("posts".user_id = 2) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "posts" WHERE ("posts".user_id = 2) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT sum("comments".points) AS sum_points FROM "comments" WHERE ("comments".user_id = 2) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".user_id = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "posts" WHERE ("posts".user_id = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".user_id = 2) [0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSELECT count(DISTINCT "posts".id) AS count_all FROM "posts" LEFT OUTER JOIN "votes" ON "votes".voteable_id = "posts".id AND "votes".voteable_type = E'Post'WHERE (votes.user_id = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(DISTINCT "posts".id) AS count_all FROM "posts" LEFT OUTER JOIN "votes" ON "votes".voteable_id = "posts".id AND "votes".voteable_type = E'Post'WHERE (votes.user_id = 2) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(DISTINCT "comments".id) AS count_all FROM "comments" LEFT OUTER JOIN "votes" ON "votes".voteable_id = "comments".id AND "votes".voteable_type = E'Comment'WHERE (votes.user_id = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(DISTINCT "comments".id) AS count_all FROM "comments" LEFT OUTER JOIN "votes" ON "votes".voteable_id = "comments".id AND "votes".voteable_type = E'Comment'WHERE (votes.user_id = 2) [0m
+Rendered users/_stats (100.0ms)
+Rendered users/_sidebar (100.3ms)
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "posts" WHERE (user_id = 2) LIMIT 5[0m
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" WHERE (user_id = 2) ORDER BY rank desc LIMIT 5[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendered posts/_headline_widget (2.0ms)
+Rendered posts/_info_widget (0.9ms)
+Rendered posts/_controls_widget (4.1ms)
+Rendered posts/_item (16.9ms)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "comments" WHERE (user_id = 2) LIMIT 5[0m
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.8ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 143ms (View: 131, DB: 5) | 200 OK [http://webapp.local/users/2]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#top_ranked (for 127.0.0.1 at 2009-10-07 21:29:12) [GET]
+  Parameters: {"action"=>"top_ranked", "controller"=>"posts"}
+  [4;35;1mPost Load (2.1ms)[0m   [0mSELECT * FROM "posts" ORDER BY rank desc LIMIT 15 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering posts/top_ranked
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_headline_widget (2.2ms)
+Rendered posts/_info_widget (4.4ms)
+Rendered posts/_controls_widget (6.9ms)
+Rendered posts/_item (102.5ms)
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.7ms)
+Rendered posts/_controls_widget (3.5ms)
+Rendered posts/_item (10.9ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.8ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 132ms (View: 120, DB: 3) | 200 OK [http://webapp.local/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#logout (for 127.0.0.1 at 2009-10-07 21:29:15) [GET]
+  Parameters: {"action"=>"logout", "controller"=>"users"}
+Redirected to http://webapp.local:3000/
+Completed in 3ms (DB: 0) | 302 Found [http://webapp.local/logout]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#top_ranked (for 127.0.0.1 at 2009-10-07 21:29:15) [GET]
+  Parameters: {"action"=>"top_ranked", "controller"=>"posts"}
+  [4;36;1mPost Load (2.1ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY rank desc LIMIT 15 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering posts/top_ranked
+Rendered posts/_headline_widget (2.4ms)
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_info_widget (7.9ms)
+Rendered posts/_controls_widget (7.1ms)
+Rendered posts/_item (32.8ms)
+Rendered posts/_headline_widget (0.3ms)
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendered posts/_info_widget (1.8ms)
+Rendered posts/_controls_widget (0.5ms)
+Rendered posts/_item (9.6ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.7ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 132ms (View: 121, DB: 3) | 200 OK [http://webapp.local/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-10-07 21:29:19) [GET]
+  Parameters: {"action"=>"login", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/login
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.7ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 22ms (View: 15, DB: 0) | 200 OK [http://webapp.local/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing IdentityConsumerController#callback (for 127.0.0.1 at 2009-10-07 21:29:44) [GET]
+  Parameters: {"session_key"=>"3.CKadKccqDwI1ANjwSa_5uA__.86400.1255064400-100000055043349", "action"=>"callback", "uid"=>"100000055043349", "controller"=>"identity_consumer", "provider"=>"facebook"}
+  [4;35;1mIdentity Load (0.9ms)[0m   [0mSELECT * FROM "identities" WHERE ("identities"."provider" = E'facebook.com' AND "identities"."uid" = E'100000055043349') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = E'100000055043349@facebook.com') LIMIT 1[0m
+  [4;36;1mIdentity Load (0.3ms)[0m   [0;1mSELECT "identities".id FROM "identities" WHERE (LOWER("identities"."uid") = E'100000055043349' AND "identities".provider = E'facebook.com') LIMIT 1[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO "users" ("activation_key", "created_at", "updated_at", "admin", "lastname", "points", "posts_count", "reset_key", "firstname", "alias", "reset_expires_at", "comments_count", "password", "activation_expires_at", "email") VALUES(NULL, '2009-10-08 04:29:44.697786', '2009-10-08 04:29:44.697786', 'f', E'Seva Rebano', 1, 0, NULL, E'Maricar', NULL, '2009-10-07 17:24:18.790660', 0, E'UIt54NMvqg1S1teaKy4bQt1Hf2incpYRozY9pO8vJ30KJtAZQuP8jYwHeoOjfFWC', '2009-10-07 17:24:18.790595', E'100000055043349@facebook.com') RETURNING "id"[0m
+  [4;36;1mIdentity Load (0.3ms)[0m   [0;1mSELECT "identities".id FROM "identities" WHERE (LOWER("identities"."uid") = E'100000055043349' AND "identities".provider = E'facebook.com') LIMIT 1[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mINSERT INTO "identities" ("created_at", "updated_at", "uid", "user_id", "provider") VALUES('2009-10-08 04:29:44.705749', '2009-10-08 04:29:44.705749', E'100000055043349', 3, E'facebook.com') RETURNING "id"[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://webapp.local:3000/
+Completed in 704ms (DB: 19) | 302 Found [http://webapp.local/facebook/callback?session_key=3.CKadKccqDwI1ANjwSa_5uA__.86400.1255064400-100000055043349&uid=100000055043349]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#top_ranked (for 127.0.0.1 at 2009-10-07 21:29:44) [GET]
+  Parameters: {"action"=>"top_ranked", "controller"=>"posts"}
+  [4;35;1mPost Load (2.1ms)[0m   [0mSELECT * FROM "posts" ORDER BY rank desc LIMIT 15 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering posts/top_ranked
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_headline_widget (2.3ms)
+Rendered posts/_info_widget (4.4ms)
+Rendered posts/_controls_widget (6.7ms)
+Rendered posts/_item (31.0ms)
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.7ms)
+Rendered posts/_controls_widget (0.5ms)
+Rendered posts/_item (75.9ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (2.0ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 128ms (View: 117, DB: 3) | 200 OK [http://webapp.local/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2009-10-07 21:29:50) [GET]
+  Parameters: {"action"=>"edit", "controller"=>"users"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering users/edit
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT sum("posts".points) AS sum_points FROM "posts" WHERE ("posts".user_id = 3) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "posts" WHERE ("posts".user_id = 3) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT sum("comments".points) AS sum_points FROM "comments" WHERE ("comments".user_id = 3) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".user_id = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "posts" WHERE ("posts".user_id = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".user_id = 3) [0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT count(DISTINCT "posts".id) AS count_all FROM "posts" LEFT OUTER JOIN "votes" ON "votes".voteable_id = "posts".id AND "votes".voteable_type = E'Post'WHERE (votes.user_id = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(DISTINCT "posts".id) AS count_all FROM "posts" LEFT OUTER JOIN "votes" ON "votes".voteable_id = "posts".id AND "votes".voteable_type = E'Post'WHERE (votes.user_id = 3) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(DISTINCT "comments".id) AS count_all FROM "comments" LEFT OUTER JOIN "votes" ON "votes".voteable_id = "comments".id AND "votes".voteable_type = E'Comment'WHERE (votes.user_id = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(DISTINCT "comments".id) AS count_all FROM "comments" LEFT OUTER JOIN "votes" ON "votes".voteable_id = "comments".id AND "votes".voteable_type = E'Comment'WHERE (votes.user_id = 3) [0m
+Rendered users/_stats (97.0ms)
+Rendered users/_sidebar (97.3ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.9ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 123ms (View: 109, DB: 4) | 200 OK [http://webapp.local/settings]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#update (for 127.0.0.1 at 2009-10-07 21:30:00) [PUT]
+  Parameters: {"commit"=>"Save Changes", "action"=>"update", "_method"=>"put", "authenticity_token"=>"2OoIGa+2xKd9yFJb/sO0I51WOwdeAz4qqi0N6vcgNyo=", "id"=>"3", "controller"=>"users", "user"=>{"lastname"=>"Seva Rebaño", "alias"=>"", "firstname"=>"Maricar", "password"=>"[FILTERED]", "email"=>"100000055043349@facebook.com"}}
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = E'100000055043349@facebook.com' AND "users".id <> 3) LIMIT 1[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "lastname" = E'Seva Rebaño', "updated_at" = '2009-10-08 04:30:00.780860', "alias" = E'' WHERE "id" = 3[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCOMMIT[0m
+Redirected to http://webapp.local:3000/users/3/edit
+Completed in 20ms (DB: 3) | 302 Found [http://webapp.local/users/3]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2009-10-07 21:30:00) [GET]
+  Parameters: {"action"=>"edit", "id"=>"3", "controller"=>"users"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering users/edit
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT sum("posts".points) AS sum_points FROM "posts" WHERE ("posts".user_id = 3) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "posts" WHERE ("posts".user_id = 3) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT sum("comments".points) AS sum_points FROM "comments" WHERE ("comments".user_id = 3) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".user_id = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "posts" WHERE ("posts".user_id = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".user_id = 3) [0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT count(DISTINCT "posts".id) AS count_all FROM "posts" LEFT OUTER JOIN "votes" ON "votes".voteable_id = "posts".id AND "votes".voteable_type = E'Post'WHERE (votes.user_id = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(DISTINCT "posts".id) AS count_all FROM "posts" LEFT OUTER JOIN "votes" ON "votes".voteable_id = "posts".id AND "votes".voteable_type = E'Post'WHERE (votes.user_id = 3) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(DISTINCT "comments".id) AS count_all FROM "comments" LEFT OUTER JOIN "votes" ON "votes".voteable_id = "comments".id AND "votes".voteable_type = E'Comment'WHERE (votes.user_id = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(DISTINCT "comments".id) AS count_all FROM "comments" LEFT OUTER JOIN "votes" ON "votes".voteable_id = "comments".id AND "votes".voteable_type = E'Comment'WHERE (votes.user_id = 3) [0m
+Rendered users/_stats (107.4ms)
+Rendered users/_sidebar (107.7ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.9ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 131ms (View: 119, DB: 4) | 200 OK [http://webapp.local/users/3/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#update (for 127.0.0.1 at 2009-10-07 21:30:09) [PUT]
+  Parameters: {"commit"=>"Save Changes", "action"=>"update", "_method"=>"put", "authenticity_token"=>"2OoIGa+2xKd9yFJb/sO0I51WOwdeAz4qqi0N6vcgNyo=", "id"=>"3", "controller"=>"users", "user"=>{"lastname"=>"Seva Rebaño", "alias"=>"Kaj", "firstname"=>"Maricar", "password"=>"[FILTERED]", "email"=>"100000055043349@facebook.com"}}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = E'100000055043349@facebook.com' AND "users".id <> 3) LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."alias") = E'kaj' AND "users".id <> 3) LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2009-10-08 04:30:09.357655', "alias" = E'Kaj' WHERE "id" = 3[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://webapp.local:3000/users/3/edit
+Completed in 18ms (DB: 3) | 302 Found [http://webapp.local/users/3]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2009-10-07 21:30:09) [GET]
+  Parameters: {"action"=>"edit", "id"=>"3", "controller"=>"users"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering users/edit
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT sum("posts".points) AS sum_points FROM "posts" WHERE ("posts".user_id = 3) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "posts" WHERE ("posts".user_id = 3) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT sum("comments".points) AS sum_points FROM "comments" WHERE ("comments".user_id = 3) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".user_id = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "posts" WHERE ("posts".user_id = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".user_id = 3) [0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSELECT count(DISTINCT "posts".id) AS count_all FROM "posts" LEFT OUTER JOIN "votes" ON "votes".voteable_id = "posts".id AND "votes".voteable_type = E'Post'WHERE (votes.user_id = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(DISTINCT "posts".id) AS count_all FROM "posts" LEFT OUTER JOIN "votes" ON "votes".voteable_id = "posts".id AND "votes".voteable_type = E'Post'WHERE (votes.user_id = 3) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(DISTINCT "comments".id) AS count_all FROM "comments" LEFT OUTER JOIN "votes" ON "votes".voteable_id = "comments".id AND "votes".voteable_type = E'Comment'WHERE (votes.user_id = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(DISTINCT "comments".id) AS count_all FROM "comments" LEFT OUTER JOIN "votes" ON "votes".voteable_id = "comments".id AND "votes".voteable_type = E'Comment'WHERE (votes.user_id = 3) [0m
+Rendered users/_stats (32.6ms)
+Rendered users/_sidebar (32.9ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.8ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.8ms)
+Completed in 56ms (View: 44, DB: 4) | 200 OK [http://webapp.local/users/3/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#top_ranked (for 127.0.0.1 at 2009-10-07 21:30:12) [GET]
+  Parameters: {"action"=>"top_ranked", "controller"=>"posts"}
+  [4;36;1mPost Load (2.1ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY rank desc LIMIT 15 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering posts/top_ranked
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_headline_widget (2.1ms)
+Rendered posts/_info_widget (4.4ms)
+Rendered posts/_controls_widget (6.7ms)
+Rendered posts/_item (30.5ms)
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.7ms)
+Rendered posts/_controls_widget (0.5ms)
+Rendered posts/_item (9.7ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.7ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 58ms (View: 47, DB: 3) | 200 OK [http://webapp.local/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2009-10-07 21:30:43) [GET]
+  Parameters: {"post_id"=>"2", "action"=>"index", "controller"=>"comments"}
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering comments/index
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendered posts/_headline_widget (1.8ms)
+Rendered posts/_info_widget (4.3ms)
+Rendered posts/_controls_widget (0.4ms)
+Rendered posts/_item (21.4ms)
+Rendered comments/_textformat_help_widget (0.1ms)
+  [4;35;1mComment Load (1.1ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".commentable_id = 2 AND "comments".commentable_type = E'Post') AND ("comments".commentable_id = 2 AND "comments".commentable_type = E'Post') ORDER BY rank desc LIMIT 250[0m
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.8ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 59ms (View: 39, DB: 2) | 200 OK [http://webapp.local/posts/2/comments]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2009-10-07 21:31:08) [POST]
+  Parameters: {"comment"=>{"text"=>"Yes <i><b>you</b></i> are!"}, "commit"=>"Add Comment", "post_id"=>"2", "action"=>"create", "authenticity_token"=>"2OoIGa+2xKd9yFJb/sO0I51WOwdeAz4qqi0N6vcgNyo=", "controller"=>"comments"}
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (17.8ms)[0m   [0mINSERT INTO "comments" ("created_at", "commentable_type", "commentable_id", "updated_at", "text", "points", "rank", "user_id", "parent_id", "comments_count") VALUES('2009-10-08 04:31:08.948148', E'Post', 2, '2009-10-08 04:31:08.948148', E'Yes <i><b>you</b></i> are!', 1, 0.0, 3, NULL, 0) RETURNING "id"[0m
+  [4;36;1mPost Update (0.6ms)[0m   [0;1mUPDATE "posts" SET "comments_count" = COALESCE("comments_count", 0) + 1 WHERE ("id" = 2) [0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "comments_count" = COALESCE("comments_count", 0) + 1 WHERE ("id" = 3) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://webapp.local:3000/posts/2/comments
+Completed in 156ms (DB: 21) | 302 Found [http://webapp.local/posts/2/comments]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2009-10-07 21:31:09) [GET]
+  Parameters: {"post_id"=>"2", "action"=>"index", "controller"=>"comments"}
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering comments/index
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendered posts/_headline_widget (1.8ms)
+Rendered posts/_info_widget (4.3ms)
+  [4;35;1mSQL (0.9ms)[0m   [0mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".commentable_id = 2 AND "comments".commentable_type = E'Post') [0m
+Rendered posts/_controls_widget (3.6ms)
+Rendered posts/_item (23.7ms)
+Rendered comments/_textformat_help_widget (0.1ms)
+  [4;36;1mComment Load (0.7ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".commentable_id = 2 AND "comments".commentable_type = E'Post') AND ("comments".commentable_id = 2 AND "comments".commentable_type = E'Post') ORDER BY rank desc LIMIT 250[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendered posts/_info_widget (0.8ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+Rendered comments/_controls_widget (5.4ms)
+  [4;35;1mComment Load (0.4ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".commentable_id = 1 AND "comments".commentable_type = E'Comment') AND ("comments".commentable_id = 1 AND "comments".commentable_type = E'Comment') ORDER BY rank desc LIMIT 250[0m
+Rendered comments/_comment (17.1ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.7ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 76ms (View: 55, DB: 4) | 200 OK [http://webapp.local/posts/2/comments]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#top_ranked (for 127.0.0.1 at 2009-10-07 21:31:15) [GET]
+  Parameters: {"action"=>"top_ranked", "controller"=>"posts"}
+  [4;36;1mPost Load (2.0ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY rank desc LIMIT 15 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering posts/top_ranked
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_headline_widget (2.1ms)
+Rendered posts/_info_widget (4.3ms)
+Rendered posts/_controls_widget (6.8ms)
+Rendered posts/_item (30.3ms)
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.6ms)
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".commentable_id = 2 AND "comments".commentable_type = E'Post') [0m
+Rendered posts/_controls_widget (3.5ms)
+Rendered posts/_item (12.4ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.7ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 60ms (View: 49, DB: 4) | 200 OK [http://webapp.local/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2009-10-07 21:31:18) [GET]
+  Parameters: {"post_id"=>"2", "action"=>"index", "controller"=>"comments"}
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering comments/index
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendered posts/_headline_widget (1.8ms)
+Rendered posts/_info_widget (4.4ms)
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".commentable_id = 2 AND "comments".commentable_type = E'Post') [0m
+Rendered posts/_controls_widget (3.7ms)
+Rendered posts/_item (23.9ms)
+Rendered comments/_textformat_help_widget (0.1ms)
+  [4;35;1mComment Load (0.7ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".commentable_id = 2 AND "comments".commentable_type = E'Post') AND ("comments".commentable_id = 2 AND "comments".commentable_type = E'Post') ORDER BY rank desc LIMIT 250[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendered posts/_info_widget (0.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+Rendered comments/_controls_widget (4.7ms)
+  [4;36;1mComment Load (0.4ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".commentable_id = 1 AND "comments".commentable_type = E'Comment') AND ("comments".commentable_id = 1 AND "comments".commentable_type = E'Comment') ORDER BY rank desc LIMIT 250[0m
+Rendered comments/_comment (13.4ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.8ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 69ms (View: 48, DB: 4) | 200 OK [http://webapp.local/posts/2/comments]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#logout (for 127.0.0.1 at 2009-10-07 21:31:21) [GET]
+  Parameters: {"action"=>"logout", "controller"=>"users"}
+Redirected to http://webapp.local:3000/
+Completed in 3ms (DB: 0) | 302 Found [http://webapp.local/logout]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#top_ranked (for 127.0.0.1 at 2009-10-07 21:31:21) [GET]
+  Parameters: {"action"=>"top_ranked", "controller"=>"posts"}
+  [4;35;1mPost Load (2.1ms)[0m   [0mSELECT * FROM "posts" ORDER BY rank desc LIMIT 15 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering posts/top_ranked
+Rendered posts/_headline_widget (2.2ms)
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_info_widget (7.5ms)
+Rendered posts/_controls_widget (6.8ms)
+Rendered posts/_item (30.6ms)
+Rendered posts/_headline_widget (0.3ms)
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendered posts/_info_widget (1.8ms)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".commentable_id = 2 AND "comments".commentable_type = E'Post') [0m
+Rendered posts/_controls_widget (3.4ms)
+Rendered posts/_item (12.4ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.7ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 61ms (View: 49, DB: 4) | 200 OK [http://webapp.local/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-10-07 21:31:23) [GET]
+  Parameters: {"action"=>"login", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/login
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.8ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 24ms (View: 16, DB: 0) | 200 OK [http://webapp.local/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing IdentityConsumerController#callback (for 127.0.0.1 at 2009-10-07 21:31:25) [GET]
+  Parameters: {"session_key"=>"3.CKadKccqDwI1ANjwSa_5uA__.86400.1255064400-100000055043349", "action"=>"callback", "uid"=>"100000055043349", "controller"=>"identity_consumer", "provider"=>"facebook"}
+  [4;35;1mIdentity Load (1.0ms)[0m   [0mSELECT * FROM "identities" WHERE ("identities"."provider" = E'facebook.com' AND "identities"."uid" = E'100000055043349') LIMIT 1[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Redirected to http://webapp.local:3000/
+Completed in 647ms (DB: 2) | 302 Found [http://webapp.local/facebook/callback?session_key=3.CKadKccqDwI1ANjwSa_5uA__.86400.1255064400-100000055043349&uid=100000055043349]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#top_ranked (for 127.0.0.1 at 2009-10-07 21:31:26) [GET]
+  Parameters: {"action"=>"top_ranked", "controller"=>"posts"}
+  [4;35;1mPost Load (2.1ms)[0m   [0mSELECT * FROM "posts" ORDER BY rank desc LIMIT 15 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering posts/top_ranked
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_headline_widget (2.0ms)
+Rendered posts/_info_widget (4.1ms)
+Rendered posts/_controls_widget (77.2ms)
+Rendered posts/_item (100.0ms)
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendered posts/_headline_widget (0.3ms)
+Rendered posts/_info_widget (0.7ms)
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".commentable_id = 2 AND "comments".commentable_type = E'Post') [0m
+Rendered posts/_controls_widget (3.7ms)
+Rendered posts/_item (13.3ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.8ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 131ms (View: 120, DB: 4) | 200 OK [http://webapp.local/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#logout (for 127.0.0.1 at 2009-10-07 21:31:30) [GET]
+  Parameters: {"action"=>"logout", "controller"=>"users"}
+Redirected to http://webapp.local:3000/
+Completed in 3ms (DB: 0) | 302 Found [http://webapp.local/logout]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#top_ranked (for 127.0.0.1 at 2009-10-07 21:31:30) [GET]
+  Parameters: {"action"=>"top_ranked", "controller"=>"posts"}
+  [4;35;1mPost Load (2.1ms)[0m   [0mSELECT * FROM "posts" ORDER BY rank desc LIMIT 15 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering posts/top_ranked
+Rendered posts/_headline_widget (2.1ms)
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_info_widget (79.8ms)
+Rendered posts/_controls_widget (7.0ms)
+Rendered posts/_item (102.4ms)
+Rendered posts/_headline_widget (0.3ms)
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendered posts/_info_widget (1.9ms)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".commentable_id = 2 AND "comments".commentable_type = E'Post') [0m
+Rendered posts/_controls_widget (3.5ms)
+Rendered posts/_item (12.8ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.8ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 133ms (View: 122, DB: 4) | 200 OK [http://webapp.local/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-10-07 21:31:43) [GET]
+  Parameters: {"action"=>"login", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/login
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.7ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 23ms (View: 16, DB: 0) | 200 OK [http://webapp.local/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-10-07 21:39:46) [GET]
+  Parameters: {"action"=>"login", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/login
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.9ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 97ms (View: 90, DB: 0) | 200 OK [http://webapp.local/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-10-07 21:57:38) [GET]
+  Parameters: {"action"=>"login", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/login
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.8ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 23ms (View: 16, DB: 0) | 200 OK [http://webapp.local/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-10-07 21:57:42) [GET]
+  Parameters: {"action"=>"login", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/login
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (2.0ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 24ms (View: 17, DB: 0) | 200 OK [http://webapp.local/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-10-07 21:57:44) [GET]
+  Parameters: {"action"=>"login", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/login
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.8ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 23ms (View: 16, DB: 0) | 200 OK [http://webapp.local/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-10-07 21:59:54) [GET]
+  Parameters: {"action"=>"login", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/login
+Rendered main/_analytics (0.7ms)
+Rendered main/_header (3.3ms)
+Rendered main/_body (0.5ms)
+Rendered main/_footer (1.3ms)
+Completed in 58ms (View: 52, DB: 0) | 200 OK [http://webapp.local/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-10-07 22:00:32) [GET]
+  Parameters: {"action"=>"login", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/login
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.9ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 83ms (View: 76, DB: 0) | 200 OK [http://webapp.local/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#top_ranked (for 127.0.0.1 at 2009-10-07 22:00:44) [GET]
+  Parameters: {"action"=>"top_ranked", "controller"=>"posts"}
+  [4;36;1mPost Load (2.3ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY rank desc LIMIT 15 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering posts/top_ranked
+Rendered posts/_headline_widget (2.9ms)
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_info_widget (198.5ms)
+Rendered posts/_controls_widget (9.9ms)
+Rendered posts/_item (242.3ms)
+Rendered posts/_headline_widget (0.3ms)
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendered posts/_info_widget (1.9ms)
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".commentable_id = 2 AND "comments".commentable_type = E'Post') [0m
+Rendered posts/_controls_widget (3.4ms)
+Rendered posts/_item (12.8ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.8ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (1.0ms)
+Completed in 328ms (View: 314, DB: 4) | 200 OK [http://webapp.local/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-10-07 22:24:23) [GET]
+  Parameters: {"action"=>"login", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/login
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.9ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.8ms)
+Completed in 22ms (View: 16, DB: 0) | 200 OK [http://webapp.local/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#top_ranked (for 127.0.0.1 at 2009-10-08 11:48:10) [GET]
+  Parameters: {"action"=>"top_ranked", "controller"=>"posts"}
+  [4;36;1mPost Load (31.9ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY rank desc LIMIT 15 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering posts/top_ranked
+Rendered posts/_headline_widget (3.3ms)
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_info_widget (89.0ms)
+Rendered posts/_controls_widget (67.3ms)
+Rendered posts/_item (230.4ms)
+Rendered posts/_headline_widget (0.3ms)
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendered posts/_info_widget (1.8ms)
+  [4;35;1mSQL (0.9ms)[0m   [0mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".commentable_id = 2 AND "comments".commentable_type = E'Post') [0m
+Rendered posts/_controls_widget (3.6ms)
+Rendered posts/_item (12.6ms)
+Rendered main/_analytics (0.6ms)
+Rendered main/_header (23.9ms)
+Rendered main/_body (0.5ms)
+Rendered main/_footer (1.3ms)
+Completed in 388ms (View: 325, DB: 34) | 200 OK [http://webapp.local/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PostsController#top_ranked (for 127.0.0.1 at 2009-10-08 11:48:20) [GET]
+  Parameters: {"action"=>"top_ranked", "controller"=>"posts"}
+  [4;36;1mPost Load (2.1ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY rank desc LIMIT 15 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering posts/top_ranked
+Rendered posts/_headline_widget (2.3ms)
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered posts/_info_widget (7.9ms)
+Rendered posts/_controls_widget (71.8ms)
+Rendered posts/_item (96.3ms)
+Rendered posts/_headline_widget (0.3ms)
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendered posts/_info_widget (1.8ms)
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".commentable_id = 2 AND "comments".commentable_type = E'Post') [0m
+Rendered posts/_controls_widget (3.5ms)
+Rendered posts/_item (12.7ms)
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.7ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 127ms (View: 116, DB: 4) | 200 OK [http://webapp.local/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-10-08 11:48:36) [GET]
+  Parameters: {"action"=>"login", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/login
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (2.0ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 27ms (View: 20, DB: 0) | 200 OK [http://webapp.local/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing IdentityConsumerController#login (for 127.0.0.1 at 2009-10-08 11:48:41) [GET]
+  Parameters: {"action"=>"login", "controller"=>"identity_consumer", "provider"=>"twitter"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.downcase):
+  oauth (0.3.6) lib/oauth/request_proxy/base.rb:92:in `normalized_uri'
+  oauth (0.3.6) lib/oauth/request_proxy/base.rb:112:in `signature_base_string'
+  oauth (0.3.6) lib/oauth/signature/base.rb:66:in `signature_base_string'
+  oauth (0.3.6) lib/oauth/signature/hmac/base.rb:9:in `digest'
+  oauth (0.3.6) lib/oauth/signature/base.rb:54:in `signature'
+  oauth (0.3.6) lib/oauth/signature.rb:20:in `sign'
+  oauth (0.3.6) lib/oauth/client/helper.rb:44:in `signature'
+  oauth (0.3.6) lib/oauth/client/helper.rb:67:in `header'
+  oauth (0.3.6) lib/oauth/client/net_http.rb:80:in `set_oauth_header'
+  oauth (0.3.6) lib/oauth/client/net_http.rb:35:in `send'
+  oauth (0.3.6) lib/oauth/client/net_http.rb:35:in `oauth!'
+  oauth (0.3.6) lib/oauth/consumer.rb:208:in `sign!'
+  oauth (0.3.6) lib/oauth/consumer.rb:177:in `create_signed_request'
+  oauth (0.3.6) lib/oauth/consumer.rb:149:in `request'
+  oauth (0.3.6) lib/oauth/consumer.rb:183:in `token_request'
+  oauth (0.3.6) lib/oauth/consumer.rb:128:in `get_request_token'
+  app/controllers/identity_consumer_controller.rb:35:in `twitter_login'
+  app/controllers/identity_consumer_controller.rb:5:in `send'
+  app/controllers/identity_consumer_controller.rb:5:in `login'
+
+Rendered rescues/_trace (108.9ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-10-08 11:48:43) [GET]
+  Parameters: {"action"=>"login", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/login
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.7ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 22ms (View: 15, DB: 0) | 200 OK [http://webapp.local/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing IdentityConsumerController#login (for 127.0.0.1 at 2009-10-08 11:51:07) [GET]
+  Parameters: {"action"=>"login", "controller"=>"identity_consumer", "provider"=>"twitter"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.downcase):
+  oauth (0.3.6) lib/oauth/request_proxy/base.rb:92:in `normalized_uri'
+  oauth (0.3.6) lib/oauth/request_proxy/base.rb:112:in `signature_base_string'
+  oauth (0.3.6) lib/oauth/signature/base.rb:66:in `signature_base_string'
+  oauth (0.3.6) lib/oauth/signature/hmac/base.rb:9:in `digest'
+  oauth (0.3.6) lib/oauth/signature/base.rb:54:in `signature'
+  oauth (0.3.6) lib/oauth/signature.rb:20:in `sign'
+  oauth (0.3.6) lib/oauth/client/helper.rb:44:in `signature'
+  oauth (0.3.6) lib/oauth/client/helper.rb:67:in `header'
+  oauth (0.3.6) lib/oauth/client/net_http.rb:80:in `set_oauth_header'
+  oauth (0.3.6) lib/oauth/client/net_http.rb:35:in `send'
+  oauth (0.3.6) lib/oauth/client/net_http.rb:35:in `oauth!'
+  oauth (0.3.6) lib/oauth/consumer.rb:208:in `sign!'
+  oauth (0.3.6) lib/oauth/consumer.rb:177:in `create_signed_request'
+  oauth (0.3.6) lib/oauth/consumer.rb:149:in `request'
+  oauth (0.3.6) lib/oauth/consumer.rb:183:in `token_request'
+  oauth (0.3.6) lib/oauth/consumer.rb:128:in `get_request_token'
+  app/controllers/identity_consumer_controller.rb:35:in `twitter_login'
+  app/controllers/identity_consumer_controller.rb:5:in `send'
+  app/controllers/identity_consumer_controller.rb:5:in `login'
+
+Rendered rescues/_trace (40.4ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-10-08 11:51:09) [GET]
+  Parameters: {"action"=>"login", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/login
+Rendered main/_analytics (0.7ms)
+Rendered main/_header (3.1ms)
+Rendered main/_body (0.4ms)
+Rendered main/_footer (1.2ms)
+Completed in 122ms (View: 115, DB: 0) | 200 OK [http://webapp.local/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-10-08 11:51:18) [GET]
+  Parameters: {"action"=>"login", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/login
+Rendered main/_analytics (0.6ms)
+Rendered main/_header (3.0ms)
+Rendered main/_body (0.5ms)
+Rendered main/_footer (1.3ms)
+Completed in 57ms (View: 50, DB: 0) | 200 OK [http://webapp.local/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing IdentityConsumerController#login (for 127.0.0.1 at 2009-10-08 11:51:19) [GET]
+  Parameters: {"action"=>"login", "controller"=>"identity_consumer", "provider"=>"twitter"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.downcase):
+  oauth (0.3.6) lib/oauth/request_proxy/base.rb:92:in `normalized_uri'
+  oauth (0.3.6) lib/oauth/request_proxy/base.rb:112:in `signature_base_string'
+  oauth (0.3.6) lib/oauth/signature/base.rb:66:in `signature_base_string'
+  oauth (0.3.6) lib/oauth/signature/hmac/base.rb:9:in `digest'
+  oauth (0.3.6) lib/oauth/signature/base.rb:54:in `signature'
+  oauth (0.3.6) lib/oauth/signature.rb:20:in `sign'
+  oauth (0.3.6) lib/oauth/client/helper.rb:44:in `signature'
+  oauth (0.3.6) lib/oauth/client/helper.rb:67:in `header'
+  oauth (0.3.6) lib/oauth/client/net_http.rb:80:in `set_oauth_header'
+  oauth (0.3.6) lib/oauth/client/net_http.rb:35:in `send'
+  oauth (0.3.6) lib/oauth/client/net_http.rb:35:in `oauth!'
+  oauth (0.3.6) lib/oauth/consumer.rb:208:in `sign!'
+  oauth (0.3.6) lib/oauth/consumer.rb:177:in `create_signed_request'
+  oauth (0.3.6) lib/oauth/consumer.rb:149:in `request'
+  oauth (0.3.6) lib/oauth/consumer.rb:183:in `token_request'
+  oauth (0.3.6) lib/oauth/consumer.rb:128:in `get_request_token'
+  app/controllers/identity_consumer_controller.rb:35:in `twitter_login'
+  app/controllers/identity_consumer_controller.rb:5:in `send'
+  app/controllers/identity_consumer_controller.rb:5:in `login'
+
+Rendered rescues/_trace (99.6ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-10-08 11:51:21) [GET]
+  Parameters: {"action"=>"login", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/login
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.7ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.9ms)
+Completed in 23ms (View: 15, DB: 0) | 200 OK [http://webapp.local/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing IdentityConsumerController#login (for 127.0.0.1 at 2009-10-08 11:51:29) [GET]
+  Parameters: {"action"=>"login", "controller"=>"identity_consumer", "provider"=>"twitter"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.downcase):
+  oauth (0.3.6) lib/oauth/request_proxy/base.rb:92:in `normalized_uri'
+  oauth (0.3.6) lib/oauth/request_proxy/base.rb:112:in `signature_base_string'
+  oauth (0.3.6) lib/oauth/signature/base.rb:66:in `signature_base_string'
+  oauth (0.3.6) lib/oauth/signature/hmac/base.rb:9:in `digest'
+  oauth (0.3.6) lib/oauth/signature/base.rb:54:in `signature'
+  oauth (0.3.6) lib/oauth/signature.rb:20:in `sign'
+  oauth (0.3.6) lib/oauth/client/helper.rb:44:in `signature'
+  oauth (0.3.6) lib/oauth/client/helper.rb:67:in `header'
+  oauth (0.3.6) lib/oauth/client/net_http.rb:80:in `set_oauth_header'
+  oauth (0.3.6) lib/oauth/client/net_http.rb:35:in `send'
+  oauth (0.3.6) lib/oauth/client/net_http.rb:35:in `oauth!'
+  oauth (0.3.6) lib/oauth/consumer.rb:208:in `sign!'
+  oauth (0.3.6) lib/oauth/consumer.rb:177:in `create_signed_request'
+  oauth (0.3.6) lib/oauth/consumer.rb:149:in `request'
+  oauth (0.3.6) lib/oauth/consumer.rb:183:in `token_request'
+  oauth (0.3.6) lib/oauth/consumer.rb:128:in `get_request_token'
+  app/controllers/identity_consumer_controller.rb:35:in `twitter_login'
+  app/controllers/identity_consumer_controller.rb:5:in `send'
+  app/controllers/identity_consumer_controller.rb:5:in `login'
+
+Rendered rescues/_trace (105.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-10-08 11:51:31) [GET]
+  Parameters: {"action"=>"login", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/login
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (1.8ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 22ms (View: 15, DB: 0) | 200 OK [http://webapp.local/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing IdentityConsumerController#login (for 127.0.0.1 at 2009-10-08 11:51:34) [GET]
+  Parameters: {"action"=>"login", "controller"=>"identity_consumer", "provider"=>"twitter"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.downcase):
+  oauth (0.3.6) lib/oauth/request_proxy/base.rb:92:in `normalized_uri'
+  oauth (0.3.6) lib/oauth/request_proxy/base.rb:112:in `signature_base_string'
+  oauth (0.3.6) lib/oauth/signature/base.rb:66:in `signature_base_string'
+  oauth (0.3.6) lib/oauth/signature/hmac/base.rb:9:in `digest'
+  oauth (0.3.6) lib/oauth/signature/base.rb:54:in `signature'
+  oauth (0.3.6) lib/oauth/signature.rb:20:in `sign'
+  oauth (0.3.6) lib/oauth/client/helper.rb:44:in `signature'
+  oauth (0.3.6) lib/oauth/client/helper.rb:67:in `header'
+  oauth (0.3.6) lib/oauth/client/net_http.rb:80:in `set_oauth_header'
+  oauth (0.3.6) lib/oauth/client/net_http.rb:35:in `send'
+  oauth (0.3.6) lib/oauth/client/net_http.rb:35:in `oauth!'
+  oauth (0.3.6) lib/oauth/consumer.rb:208:in `sign!'
+  oauth (0.3.6) lib/oauth/consumer.rb:177:in `create_signed_request'
+  oauth (0.3.6) lib/oauth/consumer.rb:149:in `request'
+  oauth (0.3.6) lib/oauth/consumer.rb:183:in `token_request'
+  oauth (0.3.6) lib/oauth/consumer.rb:128:in `get_request_token'
+  app/controllers/identity_consumer_controller.rb:35:in `twitter_login'
+  app/controllers/identity_consumer_controller.rb:5:in `send'
+  app/controllers/identity_consumer_controller.rb:5:in `login'
+
+Rendered rescues/_trace (106.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing IdentityConsumerController#login (for 127.0.0.1 at 2009-10-08 12:10:17) [GET]
+  Parameters: {"action"=>"login", "controller"=>"identity_consumer", "provider"=>"twitter"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.downcase):
+  oauth (0.3.6) lib/oauth/request_proxy/base.rb:92:in `normalized_uri'
+  oauth (0.3.6) lib/oauth/request_proxy/base.rb:112:in `signature_base_string'
+  oauth (0.3.6) lib/oauth/signature/base.rb:66:in `signature_base_string'
+  oauth (0.3.6) lib/oauth/signature/hmac/base.rb:9:in `digest'
+  oauth (0.3.6) lib/oauth/signature/base.rb:54:in `signature'
+  oauth (0.3.6) lib/oauth/signature.rb:20:in `sign'
+  oauth (0.3.6) lib/oauth/client/helper.rb:44:in `signature'
+  oauth (0.3.6) lib/oauth/client/helper.rb:67:in `header'
+  oauth (0.3.6) lib/oauth/client/net_http.rb:80:in `set_oauth_header'
+  oauth (0.3.6) lib/oauth/client/net_http.rb:35:in `send'
+  oauth (0.3.6) lib/oauth/client/net_http.rb:35:in `oauth!'
+  oauth (0.3.6) lib/oauth/consumer.rb:208:in `sign!'
+  oauth (0.3.6) lib/oauth/consumer.rb:177:in `create_signed_request'
+  oauth (0.3.6) lib/oauth/consumer.rb:149:in `request'
+  oauth (0.3.6) lib/oauth/consumer.rb:183:in `token_request'
+  oauth (0.3.6) lib/oauth/consumer.rb:128:in `get_request_token'
+  app/controllers/identity_consumer_controller.rb:35:in `twitter_login'
+  app/controllers/identity_consumer_controller.rb:5:in `send'
+  app/controllers/identity_consumer_controller.rb:5:in `login'
+
+Rendered rescues/_trace (42.9ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing IdentityConsumerController#login (for 127.0.0.1 at 2009-10-08 12:10:18) [GET]
+  Parameters: {"action"=>"login", "controller"=>"identity_consumer", "provider"=>"twitter"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.downcase):
+  oauth (0.3.6) lib/oauth/request_proxy/base.rb:92:in `normalized_uri'
+  oauth (0.3.6) lib/oauth/request_proxy/base.rb:112:in `signature_base_string'
+  oauth (0.3.6) lib/oauth/signature/base.rb:66:in `signature_base_string'
+  oauth (0.3.6) lib/oauth/signature/hmac/base.rb:9:in `digest'
+  oauth (0.3.6) lib/oauth/signature/base.rb:54:in `signature'
+  oauth (0.3.6) lib/oauth/signature.rb:20:in `sign'
+  oauth (0.3.6) lib/oauth/client/helper.rb:44:in `signature'
+  oauth (0.3.6) lib/oauth/client/helper.rb:67:in `header'
+  oauth (0.3.6) lib/oauth/client/net_http.rb:80:in `set_oauth_header'
+  oauth (0.3.6) lib/oauth/client/net_http.rb:35:in `send'
+  oauth (0.3.6) lib/oauth/client/net_http.rb:35:in `oauth!'
+  oauth (0.3.6) lib/oauth/consumer.rb:208:in `sign!'
+  oauth (0.3.6) lib/oauth/consumer.rb:177:in `create_signed_request'
+  oauth (0.3.6) lib/oauth/consumer.rb:149:in `request'
+  oauth (0.3.6) lib/oauth/consumer.rb:183:in `token_request'
+  oauth (0.3.6) lib/oauth/consumer.rb:128:in `get_request_token'
+  app/controllers/identity_consumer_controller.rb:35:in `twitter_login'
+  app/controllers/identity_consumer_controller.rb:5:in `send'
+  app/controllers/identity_consumer_controller.rb:5:in `login'
+
+Rendered rescues/_trace (112.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-10-08 12:10:19) [GET]
+  Parameters: {"action"=>"login", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/login
+Rendered main/_analytics (0.8ms)
+Rendered main/_header (2.9ms)
+Rendered main/_body (0.5ms)
+Rendered main/_footer (1.9ms)
+Completed in 58ms (View: 50, DB: 0) | 200 OK [http://webapp.local/login]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-10-08 12:10:20) [GET]
+  Parameters: {"action"=>"login", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/login
+Rendered main/_analytics (0.1ms)
+Rendered main/_header (2.4ms)
+Rendered main/_body (0.1ms)
+Rendered main/_footer (0.7ms)
+Completed in 22ms (View: 16, DB: 0) | 200 OK [http://webapp.local/login]
