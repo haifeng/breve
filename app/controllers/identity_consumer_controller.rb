@@ -12,24 +12,6 @@ class IdentityConsumerController < ApplicationController
   end
   
   protected
-  def facebook_callback(consumer)
-    api  = Facebook::API.new(consumer[:consumer_key], consumer[:consumer_secret])
-    data = api.users.getLoggedInUser('session_key' => params[:session_key])
-    raise "Service denied access." unless params[:uid] =~ /^#{data}$/
-    
-    data        = api.users.getStandardInfo('uids' => params[:uid], 'fields' => 'uid, proxied_email, first_name, last_name, username, name')
-    credentials = { :firstname => data[:first_name], :lastname  => data[:last_name] }
-    @user       = User.from_identity(data[:uid].to_s, 'facebook.com', credentials)
-    update_session_for @user
-    
-    referer           = session[:referer] || root_url
-    session[:referer] = nil
-    redirect_to referer
-  rescue
-    flash[:notice] = "ERROR: #{$!.message}"
-    redirect_to login_url
-  end
-  
   def twitter_login(consumer)
     @request_token = consumer.get_request_token(
       :oauth_callback => identity_callback_url(:provider => 'twitter'))
@@ -67,6 +49,24 @@ class IdentityConsumerController < ApplicationController
     redirect_to login_url
   end
 
+  def facebook_callback(consumer)
+    api  = Facebook::API.new(consumer[:consumer_key], consumer[:consumer_secret])
+    data = api.users.getLoggedInUser('session_key' => params[:session_key])
+    raise "Service denied access." unless params[:uid] =~ /^#{data}$/
+    
+    data        = api.users.getStandardInfo('uids' => params[:uid], 'fields' => 'uid, proxied_email, first_name, last_name, username, name')
+    credentials = { :firstname => data[:first_name], :lastname  => data[:last_name] }
+    @user       = User.from_identity(data[:uid].to_s, 'facebook.com', credentials)
+    update_session_for @user
+    
+    referer           = session[:referer] || root_url
+    session[:referer] = nil
+    redirect_to referer
+  rescue
+    flash[:notice] = "ERROR: #{$!.message}"
+    redirect_to login_url
+  end
+  
   #def google_login(consumer)
   #  @request_token = consumer.get_request_token(
   #    { :oauth_callback => identity_callback_url(:provider => 'google') },

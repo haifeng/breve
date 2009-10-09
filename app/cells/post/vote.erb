@@ -1,16 +1,16 @@
-<div style="float: left; text-align: center; padding: 5px">
+<div style="float: left; text-align: center">
   <% if authorized? %>
     <% if @post.owned_by?(current_user) %>
-      <span style="color: orange; font-size: 1em">&#x272a;<!-- &#x272a; --></span>
+      <span style="color: orange">&#x272a;</span>
     <% else %>
       <%= link_to_remote '&#8679;', 
+            :class   => 'vote-button',
             :url     => vote_path_for(@post),
             :update  => { :success => "vote-#{@post.class.name.downcase}-#{@post.id}", :failure => '' },
             :success => "$j('#vote-#{@post.class.name.downcase}-#{@post.id}').show('highlight', {}, 2000)",
             :html    => { :class => 'vote-button' } %>
-    <% end %>
-    <br/>
+    <% end %>    <br/>
   <% else %>
-    <%= link_to '&#8679;', vote_path_for(@post), :method => :post, :class => 'vote-button' %><br/>
+    <%= link_to '&#8679;', vote_path_for(@post), :method => :post, :class => 'vote-button' %>
   <% end %>
 </div>
