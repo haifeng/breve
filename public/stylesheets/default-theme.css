@@ -51,7 +51,6 @@ textarea {
 
 a {
    color: steelblue;
-   color: #4d2c00;
 }
 
 a:visited {
@@ -68,7 +67,6 @@ a.prev_page,
 a.next_page,
 a.link-button {
    color: steelblue; 
-   color: #4d2c00;
    text-decoration: none;
 }
 
@@ -135,7 +133,6 @@ a.logo {
 
 .page-footer a {
    color: steelblue;
-   color: #4d2c00;
 }
 
 .page-content {
