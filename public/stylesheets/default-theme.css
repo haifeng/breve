@@ -56,10 +56,12 @@ a {
 
 a:visited {
    color: #aaaaaa;
+   color: #4d2c00;
 }
 
 a:hover {
    color: #88cc88;
+   color: chocolate;
 }
 
 a.prev_page,
