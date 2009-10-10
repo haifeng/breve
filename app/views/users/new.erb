@@ -1,10 +1,15 @@
 <%= flash_tag %>
 
+<%= render_cell :identity, :login %>
+<p/>
+
 <div>
   <h2>Register</h2>
   <% form_for @user do |f| %>
-    All of these fields are required. Your <%= label_tag :firstname, 'First' %> and 
-    <%= label_tag :lastname, 'Last Name' %> is used as byline for your posts. 
+    All of these fields are required.  Your <%= label_tag :firstname, 'First' %> and 
+    <%= label_tag :lastname, 'Last Name' %> is used as byline for your posts <em>(you will 
+    also be able to use an <%= label_tag :alias %>)</em>
+    <p/>
     
     Please use a valid <%= label_tag :email %> address, this is where we'll send a 
     confirmation to activate your account.
