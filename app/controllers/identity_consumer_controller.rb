@@ -8,63 +8,59 @@ class IdentityConsumerController < ApplicationController
   def callback
     provider = params[:provider]
     consumer = @@consumer[provider.to_sym]
-    send("#{provider}_callback", consumer)
+    send("#{provider}_callback", consumer) do |uid, domain, credentials|
+      @user = User.from_identity(uid, domain, credentials)
+      update_session_for @user
+      referer           = session[:referer] || root_url
+      session[:referer] = nil
+      redirect_to referer
+    end
+  rescue
+    flash[:notice] = "ERROR: #{$!.message}"
+    redirect_to login_url
   end
   
   protected
   def twitter_login(consumer)
     @request_token = consumer.get_request_token(
       :oauth_callback => identity_callback_url(:provider => 'twitter'))
-    
+
     session[:oauth_token]        = @request_token.token 
     session[:oauth_token_secret] = @request_token.secret
-    
+
     redirect_to @request_token.authorize_url
   end
   
   def twitter_callback(consumer)
-    if params[:denied].blank?
-      @request_token = OAuth::RequestToken.new(consumer, 
-        session[:oauth_token], session[:oauth_token_secret])
-      @access_token = @request_token.get_access_token(
-        :oauth_verifier => params[:oauth_verifier])
+    redirect_to login_url unless params[:denied].blank?
+    
+    @request_token = OAuth::RequestToken.new(consumer, 
+      session[:oauth_token], session[:oauth_token_secret])
+    @access_token = @request_token.get_access_token(
+      :oauth_verifier => params[:oauth_verifier])
 
-      response = @access_token.get('/account/verify_credentials.json')
-      raise 'Service denied access.' unless response.instance_of? Net::HTTPOK
+    response = @access_token.get('/account/verify_credentials.json')
+    raise 'Service denied access.' unless response.instance_of? Net::HTTPOK
 
-      data        = JSON.parse(response.body)
-      fn, ln      = data['name'].split
-      credentials = { :firstname => fn, :lastname  => ln || data['screen_name'] }
-      @user       = User.from_identity(data['id'].to_s, 'twitter.com', credentials)
-      update_session_for @user
-      
-      referer           = session[:referer] || root_url
-      session[:referer] = nil
-      redirect_to referer
-    else
-      redirect_to login_url
-    end
-  rescue
-    flash[:notice] = "ERROR: #{$!.message}"
-    redirect_to login_url
+    data        = JSON.parse(response.body)
+    fn, ln      = data['name'].split
+    credentials = { :firstname => fn, :lastname  => ln || data['screen_name'] }
+
+    yield "#{data['id']}", 'twitter.com', credentials 
   end
 
   def facebook_callback(consumer)
-    api  = Facebook::API.new(consumer[:consumer_key], consumer[:consumer_secret])
+    api = Facebook::API.new(consumer[:consumer_key], 
+      consumer[:consumer_secret])
     data = api.users.getLoggedInUser('session_key' => params[:session_key])
     raise "Service denied access." unless params[:uid] =~ /^#{data}$/
     
-    data        = api.users.getStandardInfo('uids' => params[:uid], 'fields' => 'uid, proxied_email, first_name, last_name, username, name')
-    credentials = { :firstname => data[:first_name], :lastname  => data[:last_name] }
-    @user       = User.from_identity(data[:uid].to_s, 'facebook.com', credentials)
-    update_session_for @user
+    data = api.users.getStandardInfo('uids' => params[:uid], 
+      'fields' => 'uid, proxied_email, first_name, last_name, username, name')
+    credentials = { :firstname => data[:first_name], 
+      :lastname  => data[:last_name] }
     
-    referer           = session[:referer] || root_url
-    session[:referer] = nil
-    redirect_to referer
-  rescue
-    flash[:notice] = "ERROR: #{$!.message}"
-    redirect_to login_url
+    yield "#{data[:uid]}", 'facebook.com', credentials 
   end
   
   #def google_login(consumer)
@@ -105,7 +101,7 @@ class IdentityConsumerController < ApplicationController
     :twitter => OAuth::Consumer.new(
       TWITTER_CONSUMER_KEY, 
       TWITTER_CONSUMER_SECRET, 
-      :site => TWITTER_URL)
+      :site => TWITTER_URL )
     #:google => OAuth::Consumer.new(
     #  GOOGLE_CONSUMER_KEY, 
     #  GOOGLE_CONSUMER_SECRET, 
