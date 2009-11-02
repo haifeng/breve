@@ -17,7 +17,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 On Comments
 -----------
 
-When posting comments regarding an article or responding to another comment: *be civil and be on point.*
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 
 Regarding Karma
@@ -25,7 +25,7 @@ Regarding Karma
 
 Unlike most community-driven sites, we did not implement a karma-system. 
 
-Instead we associate your true identity with all of your activities. This we hope, is incentive enough towards positive behavior in the community.
+Members of the community are in equal standing, all of the features are available Instead we associate your true identity with all of your activities. This we hope, is incentive enough towards positive behavior in the community.
 
 The *karma*, if there must be one, is the value you derive from being a member of the community. 
 
