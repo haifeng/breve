@@ -25,6 +25,7 @@ Rails::Initializer.run do |config|
     :lib => 'will_paginate', :source => 'http://gems.github.com'
   config.gem 'thoughtbot-pacecar', :version => '1.1.7', 
     :lib => 'pacecar', :source => 'http://gems.github.com'
+  config.gem 'facebook', :version => '0.0.1'
 
   if RUBY_VERSION == '1.8.6' 
     config.gem 'openrain-action_mailer_tls', :verison => '1.1.3', 
