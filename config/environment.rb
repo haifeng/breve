@@ -20,7 +20,7 @@ Rails::Initializer.run do |config|
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
   config.gem 'oauth', :version => '0.3.6'
-  config.gem 'rdiscount', :version => '1.3.5'
+  config.gem 'rdiscount', :version => '1.5.5'
   config.gem 'mislav-will_paginate', :version => '2.3.11', 
     :lib => 'will_paginate', :source => 'http://gems.github.com'
   config.gem 'thoughtbot-pacecar', :version => '1.1.7', 
